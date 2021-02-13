@@ -16,7 +16,7 @@ jobs:
       - name: Link Checker
         uses: lycheeverse/lychee-action@v1
         with:
-          args: -v "content/posts/**/*.md"
+          args: -v "content/**/*.md"
       - name: Create Issue From File
         uses: peter-evans/create-issue-from-file@v2
         with:
