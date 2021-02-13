@@ -1,5 +1,5 @@
 # bigelectrons
-My blogging website
+Source code for my blogging website
 
 ## Credits
 - [Zola](https://www.getzola.org)
