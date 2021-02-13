@@ -444,7 +444,6 @@ The HTML looks like this:
 
 ```markdown
 <https://assemble.io>
-<contact@revolunet.com>
 [Assemble](https://assemble.io)
 ```
 
@@ -452,15 +451,12 @@ The rendered output looks like this (hover over the link, there is no tooltip):
 
 <https://assemble.io>
 
-<contact@revolunet.com>
-
 [Assemble](https://assemble.io)
 
 The HTML looks like this:
 
 ```html
 <a href="https://assemble.io">https://assemble.io</a>
-<a href="mailto:contact@revolunet.com">contact@revolunet.com</a>
 <a href="https://assemble.io">Assemble</a>
 ```
 
