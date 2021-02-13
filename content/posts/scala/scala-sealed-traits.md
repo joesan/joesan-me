@@ -5,7 +5,7 @@ date=2016-04-06
 
 [taxonomies]
 categories = ["Technical Stuff"]
-tags = ["blog"]
+tags = ["scala"]
 +++
 
 

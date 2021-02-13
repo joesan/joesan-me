@@ -5,7 +5,7 @@ date=2015-10-22
 
 [taxonomies]
 categories = ["Technical Stuff"]
-tags = ["blog", "design"]
+tags = ["scala", "design"]
 +++
 
 [This should fail](https://www.fail)

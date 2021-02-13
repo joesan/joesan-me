@@ -5,9 +5,8 @@ date=2016-05-13
 
 [taxonomies]
 categories = ["Technical Stuff"]
-tags = ["blog"]
+tags = ["scala"]
 +++
-
 
 
 Scala seems to be like a gold mine, the more you dig into, the more you get. While you deal with tuples, when you want to access the elements of a 
