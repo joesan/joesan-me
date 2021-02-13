@@ -1,0 +1,64 @@
+base_url = "https://www.bigelectrons.com"
+title = "bigelectrons"
+default_language = "en"
+highlight_code = true
+highlight_theme = "one-dark"
+generate_feed = true
+feed_filename = "rss.xml"
+taxonomies = [
+	{ name = "categories", feed = true, paginate_by = 10 },
+	{ name = "tags", fees = true, paginate_by = 10 },
+]
+languages = []
+compile_sass = true
+build_search_index = true
+ignored_content = []
+extra_syntaxes = []
+
+[link_checker]
+skip_prefixes = ["http://[2001:db8::]/"]
+skip_anchor_prefixes = ["https://caniuse.com/"]
+
+[slugify]
+paths = "on"
+taxonomies = "on"
+anchors = "on"
+
+[translations]
+
+[extra]
+
+
+navbar_items = [
+	{ url = "$BASE_URL/posts", name = "Posts" },
+	{ url = "$BASE_URL/docs", name = "Docs" },
+	{ url = "$BASE_URL/links", name = "Links" },
+	{ url = "$BASE_URL/categories", name = "Categories" },
+	{ url = "$BASE_URL/about", name = "About" }
+]
+
+[extra.favicon]
+favicon_16x16 = "/icons/favicon-16x16.png"
+favicon_32x32 = "/icons/favicon-32x32.png"
+apple_touch_icon = "/icons/apple-touch-icon.png"
+safari_pinned_tab = "/icons/safari-pinned-tab.svg"
+webmanifest = "/icons/site.webmanifest"
+
+[extra.author]
+name = "bigelectrons"
+avatar = "/images/avatar.png"
+
+[extra.social]
+github = "joesan"
+linkedin = ""
+stackoverflow = "3102968"
+email = "test@test.com"
+
+[extra.analytics]
+google = ""
+
+[extra.commenting]
+hyvor = "1967"
+
+[extra.mapbox]
+access_token="pk.eyJ1Ijoiam9lc2FuIiwiYSI6ImNrbDM4OGxuaDB6MWgydW80NnRxaWlhY2EifQ.IRaOVRhkIOrcJz_AFTFJqg"
