@@ -1,5 +1,6 @@
 +++
 title="Builder, Strategy Patterns Still relevant?"
+description="How functional programming makes such design patterns irrelevant"
 date=2015-10-22
 
 [taxonomies]
@@ -31,7 +32,8 @@ public class VegetarianPizza extends Pizza {
 }
 ```
 
-Now as I see the instance fields, I can see 9*9 ways of instantiating a VegetarianPizza. I do not definitely want to write those many constructors! Builder pattern to the rescue!
+Now as I see the instance fields, I can see 9*9 ways of instantiating a VegetarianPizza. I do not definitely want to write those many constructors! 
+Builder pattern to the rescue!
 
 Here is how I could add a VegetarianPizza builder to make a VegetarianPizza instantiation much organised:
 
