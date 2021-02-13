@@ -27,7 +27,7 @@ jobs:
           git config --global user.name "workflow-bot"
           git checkout --orphan $TARGET_BRANCH
           git rm .github/*
-          rm -Rf .github
+          rm -rf .github
           mv public ..
           rm -rf *
           mv ../public/* .
