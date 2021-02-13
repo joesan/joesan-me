@@ -23,7 +23,7 @@ jobs:
         run: zola build
       - name: Commit and push to target branch
         run: |-
-          git config --global user.email "workflow-bot@example.com"
+          git config --global user.email "workflow-bot@bigelectrons.com"
           git config --global user.name "workflow-bot"
           git checkout --orphan $TARGET_BRANCH
           git rm --cached -r .
