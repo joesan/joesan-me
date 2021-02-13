@@ -20,7 +20,7 @@ jobs:
       - name: Deploy to gh-pages branch
         uses: shalzz/zola-deploy-action@v0.13.0
         env:
-         # Target branch
-         PAGES_BRANCH: gh-pages
+         # Target Repository
+         REPOSITORY: https://github.com/joesan/bigelectrons.git
          # Provide personal access token
          TOKEN: ${{ secrets.TOKEN }}
