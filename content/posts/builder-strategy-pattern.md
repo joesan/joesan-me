@@ -7,7 +7,7 @@ categories = ["Technical Stuff"]
 tags = ["blog", "design"]
 +++
 
-<a href="http://www.fail" >Fail</a>
+[This should fail](http://www.fail)
 If you agree with me that writing less code equals lesser bugs, you are going to appreciate how Scala simplifies Strategy and 
 Builder design patterns by making you write less code!
 
