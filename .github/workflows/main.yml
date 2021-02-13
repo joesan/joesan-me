@@ -9,6 +9,21 @@ on:
       - master
 
 jobs:
+  linkChecker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Link Checker
+        uses: lycheeverse/lychee-action@v1
+        with:
+          args: -v "content/posts/**/*.md"
+      - name: Create Issue From File
+        uses: peter-evans/create-issue-from-file@v2
+        with:
+          title: Link Checker Report
+          content-filepath: ./lychee/out.md
+          labels: report, automated issue
+
   build:
     runs-on: macos-10.15
     if: github.ref == 'refs/heads/master'
