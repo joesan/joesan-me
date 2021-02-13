@@ -26,7 +26,8 @@ jobs:
           git config --global user.email "workflow-bot@bigelectrons.com"
           git config --global user.name "workflow-bot"
           git checkout --orphan $TARGET_BRANCH
-          git rm --cached -r .
+          git rm .github/*
+          rm -Rf .github
           mv public ..
           rm -rf *
           mv ../public/* .
