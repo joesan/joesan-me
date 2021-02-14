@@ -5,7 +5,7 @@ date=2018-12-14
 
 [taxonomies]
 categories = ["Miscellaneous"]
-tags = ["mechanican watch"]
+tags = ["mechanical watch"]
 +++
 
 

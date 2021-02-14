@@ -5,7 +5,7 @@ date=2018-11-13
 
 [taxonomies]
 categories = ["Technical Stuff"]
-tags = ["ML & AI"]
+tags = ["ml & ai"]
 +++
 
 
