@@ -15,7 +15,7 @@ After a couple of months of staying away from my MTB, I'm back with it and I'm l
 importantly, without any accidents and injuries! I got my bike serviced and about a week ago. This is how "The Beast" looked after returning back from the 
 service!
 
-![Trak Remedy](/images/mtb/mtb-trek-remedy-1.jpg)
+![Trek Remedy](/images/mtb/mtb-trek-remedy-1.jpg)
 
 I took it for a spin in the trails around Düsseldorf. I drove for about 30+ km and occasionally I had some strange feelings on my injured knee. The weather 
 just got better that day. It was drizzling and the days before this, we had the storm "Eberhardt" that wrecked havoc near the area! As a result of all this, 

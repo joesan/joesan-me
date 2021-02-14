@@ -6,6 +6,10 @@ date=2015-10-22
 [taxonomies]
 categories = ["Technical Stuff"]
 tags = ["scala", "design"]
+
+[extra]
+toc = true
+comments = false
 +++
 
 [This should fail](https://www.fail)
@@ -13,6 +17,8 @@ If you agree with me that writing less code equals lesser bugs, you are going to
 Builder design patterns by making you write less code!
 
 Let's look at them one by one. Let us see how the Builder design pattern is implemented in Java.
+
+## Builder Pattern
 
 Builder design pattern helps in constructing a complex object in a series of steps. Let me take a classical example of preparing a Pizza, 
 especially a vegetable Pizza! Our Pizza modelled as a POJO would look like below! Assume that we have the needed getters and setters to 
@@ -130,6 +136,7 @@ val withoutOnions = VegetarianPizza(isOnion = false)
 val withoutSpinachAndTomato = VegetarianPizza(isTomato = false, isSpinach = false)
 ```
 
+## Strategy Pattern
 Let's now dive into the Strategy pattern and see what Scala has to offer in terms of brevity
 The definition of the strategy pattern goes like this "... enable an algorithm's behavior to be determined at runtime. Let me take the classical 
 example of doing something with two Integers. What could be done with them? Add, Subtract, Multiply or Divide!

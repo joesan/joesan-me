@@ -1,6 +1,6 @@
 +++
-title = "Posts"
-description = "Blog posts accumulated over the time."
+title = "Recent Posts"
+description = "Chronologically posted content here"
 sort_by = "date"
-paginate_by = 5
+paginate_by = 10
 +++
