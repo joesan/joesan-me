@@ -10,7 +10,7 @@ tags = ["acl"]
 
 
 Last Thursday, I took a day off. As the weather was good I decided to take my kids and my mom to Apeldoorn in the Netherlands. We wanted to visit the [theme 
-park](https://www.julianatoren.nl/">Julianatoren) and spend the day there. My mom is here with us in Germany to visit us and to take care of the 
+park](https://www.julianatoren.nl) and spend the day there. My mom is here with us in Germany to visit us and to take care of the 
 kids during their summer vacation. Apeldoorn is a 2-hour drive from where we live. As usual, we did not manage to start early and ended up reaching our 
 destination around 12:00. By this time, the park was already crowded. Thinking that my mom could not walk for extended periods in the park, I reserved a 
 battery operated wheel chain the day before - only to realise later that it was a big mistake!
