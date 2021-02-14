@@ -5,7 +5,7 @@ date=2020-07-19
 
 [taxonomies]
 categories = ["Miscellaneous"]
-tags = ["ubuntu", "tuxedo notebook]
+tags = ["ubuntu", "tuxedo notebook"]
 +++
 
 
