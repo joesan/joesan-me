@@ -9,7 +9,7 @@ tags = ["acl"]
 +++
 
 
-It is now roughy 4 months since I injured my knee and the recovery so far has been very positive. On the downside, I have the feeling that my knee is not 
+It is now roughly 4 months since I injured my knee and the recovery so far has been very positive. On the downside, I have the feeling that my knee is not 
 like it was before! Occasionally I get a strange wobbly feeling on my injured knee!
 
 So for the first 2 months, I was not able to fully stretch or bend my injured leg, but that got a lot better now. I can fully flex my left leg - as good as 
