@@ -38,7 +38,7 @@ If you have watched those videos about how a mechanical watch is made, you will 
 time, research and investment. I've got to appreciate NOMOS for putting that effort in coming up an in house caliber. Mind it - it is not easy to come up with an 
 in house movement for a company that is relatively young in terms of horologic timescales! 
 
-The NOMOS Tangente has this so called Bauhaus design. Have a look [here](https://en.wikipedia.org/wiki/Bauhaus) of what it represents! So to me 
+The NOMOS Tangente has this so-called Bauhaus design. Have a look [here](https://en.wikipedia.org/wiki/Bauhaus) of what it represents! So to me 
 this kind of Bauhaus design on a watch would mean simplicity and elegance. The Tangente stands true to this simplicity and elegance! There is not very much 
 happening on this watch. Even lettered with a seconds dial located at the 6 '0' clock position. This is elegance in simplicity.
 

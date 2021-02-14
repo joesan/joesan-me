@@ -1,7 +1,7 @@
 +++
 title="CI for Kubernetes Resources"
 description="Why not?"
-date=2018-05-04
+date=2020-05-20
 
 [taxonomies]
 categories = ["Technical Stuff"]
