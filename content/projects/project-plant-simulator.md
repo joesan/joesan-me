@@ -16,7 +16,7 @@ TODO.... document about the project
 
 ## Here's some lists
 
-- let's list some stuff
+- let's list some stuff here
 - unordered, of course.
 
 1. We can also order lists
