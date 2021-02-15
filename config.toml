@@ -33,8 +33,10 @@ anchors = "on"
 navbar_items = [
 	{ url = "$BASE_URL/", name = "Home" },
 	{ url = "$BASE_URL/posts", name = "Posts" },
+	{ url = "$BASE_URL/projects", name = "Projects" },
 	{ url = "$BASE_URL/links", name = "Links" },
-	{ url = "$BASE_URL/categories", name = "Categories" }
+	{ url = "$BASE_URL/categories", name = "Categories" },
+	{ url = "$BASE_URL/tags", name = "Tags" }
 ]
 
 [extra.favicon]
@@ -49,15 +51,12 @@ name = "joesan"
 
 [extra.social]
 github = "joesan"
-linkedin = ""
+youtube = "UCWj0B-W_fJvQqDG6ILyGgrA"
+#instagram = "joesandech"
 stackoverflow = "3102968"
-email = "test@test.com"
 
 [extra.analytics]
 google = ""
-
-[extra.commenting]
-hyvor = "1967"
 
 [extra.mapbox]
 access_token="pk.eyJ1Ijoiam9lc2FuIiwiYSI6ImNrbDM4OGxuaDB6MWgydW80NnRxaWlhY2EifQ.IRaOVRhkIOrcJz_AFTFJqg"
