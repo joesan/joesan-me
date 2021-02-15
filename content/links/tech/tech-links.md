@@ -1,6 +1,10 @@
 +++
 title="Link to technical articles worth reading or watching"
-date=2018-08-20
+date=2018-08-22
+
+[taxonomies]
+categories = ["Links"]
+tags = ["links"]
 
 [extra]
 toc = true

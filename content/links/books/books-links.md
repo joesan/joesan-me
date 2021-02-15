@@ -2,6 +2,10 @@
 title="Lists of useful books"
 date=2018-08-20
 
+[taxonomies]
+categories = ["Books"]
+tags = ["books"]
+
 [extra]
 toc = true
 +++
@@ -23,6 +27,7 @@ ___
 | Topic  | Source |
 | ------ | -----------: |
 | Algorithms  | [Grokking Algorithms](https://www.manning.com/books/grokking-algorithms) |
+| C++         | [C++ Primer](https://www.amazon.com/C-Primer-Stanley-B-Lippman-ebook/dp/B0091I7FEQ) |
 | Go          | [Effective Go](https://golang.org/doc/effective_go.html) |
 | Kubernetes  | [Kubernetes Patterns](https://www.amazon.de/-/en/Bilgin-Ibryam/dp/1492050288) |
 | Rust        | [Rust Programming](https://doc.rust-lang.org/stable/book/) |
