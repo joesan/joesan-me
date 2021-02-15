@@ -25,7 +25,7 @@ jobs:
 #          labels: report, automated issue
 
   build:
-    needs: linkChecker
+    #needs: linkChecker
     runs-on: macos-10.15
     if: github.ref == 'refs/heads/master'
     env:
