@@ -42,7 +42,7 @@ res3: scala.collection.mutable.Buffer[Int] = ArrayBuffer(2, 3)
 
 What happened above is that we imported the JavaConversions package available in the Scala library to tell the compiler that it should implicitly convert 
 the java.util.ArrayList to a closest possible collection type in Scala which in our case happened to be an ArrayBuffer. If you take a look at the
-[Scala's API documentation](http://www.scala-lang.org/api/current/index.html#scala.collection.JavaConversions$) on
+[Scala's API documentation](https://www.scala-lang.org/api/current/scala/collection/convert/index.html) on
 JavaConversions</a> there is an implicit method called asScalaBuffer which was used in our example implicitly to convert the
 java.util.ArrayList to a Scala collection type.
 

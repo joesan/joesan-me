@@ -1,5 +1,6 @@
 +++
-title="Link to technical articles worth reading or watching"
+title="List of useful links"
+description="Guaranteed, your time is well invested"
 date=2018-08-22
 
 [taxonomies]
@@ -10,36 +11,6 @@ tags = ["links"]
 toc = true
 +++
 
-
-# Kubernetes
-
-| Option | Description |
-| ------ | -----------: |
-| data   | path to data files to supply the data that will be passed into templates. |
-| engine | engine to be used for processing templates. Handlebars is the default. |
-| ext    | extension to be used for dest files. |
-
-___
-
-# Git
-
-| Topic | Source |
-| ------ | -----------: |
-| data   | path to data files to supply the data that will be passed into templates. |
-| engine | engine to be used for processing templates. Handlebars is the default. |
-| ext    | extension to be used for dest files. |
-
-___
-
-# ROS
-
-| Topic | Source |
-| ------ | -----------: |
-| data   | path to data files to supply the data that will be passed into templates. |
-| engine | engine to be used for processing templates. Handlebars is the default. |
-| ext    | extension to be used for dest files. |
-
-___
 
 # Math
 
@@ -54,17 +25,25 @@ ___
 
 ___
 
-# Books
+# Useful Projects
+
+| Title | Source |
+| ------ | -----------: |
+| Grandslam 3D Mapping  | [SLAM Mapping for Navigational Robots](https://gradslam.github.io/) |
+| Monix                 | [Asynchronous programming for the JVM](https://monix.io/) |
+
+___
+
+# Technical Articles & Blogs
 
 | Title | Source |
 | ------ | -----------: |
 | Scala   | [Functional Programming in Scala - The Red Book](https://www.manning.com/books/functional-programming-in-scala) |
 | Statistics | [Introduction to Statistical Learning](https://www.springer.com/de/book/9781461471370) |
-| ext    | extension to be used for dest files. |
 
 ___
 
-# This Blog
+# Markdown Syntax Reference
 
 | Title | Source |
 | ------ | -----------: |
