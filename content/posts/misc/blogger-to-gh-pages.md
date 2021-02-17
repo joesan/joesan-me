@@ -32,6 +32,8 @@ Clearly there are a few advantages of using Markdown files for the content:
 
 4. Very lightweight and easy to get started
 
+The most important factor for this migration is that I can focus on the content rather than the HTML formatting that I had to deal with in Blogger!
+
 So my research began, the first SSG platform that I tried was Zola. Rust as a programming language occupies the same spot in my heart as Scala. Zola is built using Rust. Without any
 second thought, I decided to give Zola a try. It was the easiest thing to do in this world. Just 3 commands, and your static site is up and running. It took my about 20 minutes, yes, just 
 under 20 minutes to try out Zola, choose a theme, get it up and running on my local machine.
@@ -41,7 +43,9 @@ I created a new project in my GitHub account, migrated all of my content from Bl
 
 Does it stop there? No, no no, it does not stop there, since your content is going to be in GitHub, you could apply that CI / CD pipeline. This was exactly my next step where I added a very
 [basic HTTP link checker](https://github.com/lycheeverse/lychee-action) which when added to the [GitHub action workflow](https://github.com/joesan/joesan-me/actions) could scan the Markdown files
-recursively and validate all the HTTP links. It goes even further by automatically creating an issue with a summary of all the HTTP links that failed to resolve with a HTTP OK status. I do not need
+recursively and validate all the HTTP links. 
+
+It goes even further by automatically creating an issue with a summary of all the HTTP links that failed to resolve with a HTTP OK status. I do not need
 that as it makes sense to have such automation in a team set up. I could also set up a spell checker for my content as I realized during the migration of my content from Blogger is that I had lots
 of spelling mistakes / typo errors. Nevertheless, I did not want to overcomplicate this and decided not to add [this action](https://github.com/marketplace/actions/check-spelling-js-vue-html-markdown-text) for spell check.
 

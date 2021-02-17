@@ -10,115 +10,30 @@ transparent = true
 toc = true
 +++
 
-TODO.... document about the project
+If you are in the Energy & utilities industry, you might have probably heard about a concept called [Virtual Power Plant](https://en.wikipedia.org/wiki/Virtual_power_plant)
 
-<!-- more -->
+The idea is not new, but it is kind of gaining importance as more and more power producing units (also power consuming units) gets distributed. What does it mean?
+It just means that the internet offers the possibility to command and control remote power units. The way it works is relatively simple. One of the main uses
+for such a virtual power plant is to provide flexibility services to the grid so that the grid is stable. 
 
-## Here's some lists
+Normally, the grid works by predicting the demand ahead, but as you know it is just a prediction from a historical value which means there is going to be a delta
+plus or minus and this is not good for the grid. The grid has to be operated at it's set frequency otherwise there will be a blackout. This is exactly where
+the virtual power plant's can be used.
 
-- let's list some stuff here
-- unordered, of course.
+The core of a virtual power plant is the software which aggregates smaller power producing units and virtually projects it as a big power plant which can then be
+integrated to the grid. The grid operators are given this aggregated capacity (often called as flexibility) and can be used to offset grid imbalances.
 
-1. We can also order lists
-    1. And nesting here works too
-    2. We can do whatever we want!
-2. And drop back to the original indentation.
+So with that basic understanding of the virtual power plant, I created a simple simulator (a.k.a Virtual Power Plant or in general Digital Twin) that can aggregate and steer such power plants. It is not some system
+that does some random simulation, but a real production ready code base that can take a beating. It is built truly on the principles of reactive programming.
+I tried to incorporate all the best practices that could be attributed. For example., the application has the following features:
 
-# Headers
+1. It is being kept updated for its dependencies using a bot
+2. It is capable of working with any relational database, just change the DB configuration (Oracle, Postgress or MySQL)
+3. It is extremely scalable
+4. It has in-built alerting & monitoring with no additional dependency on any external library
+5. It has a very good unit test coverage
+6. It has aan automated deploy mechanism (using GitOps)
+7. It has deployment files that are run through CI / CD steps
+8. It has streaming API's
 
-## Smaller
-
-### Smaller still!
-
-#### Can't really get much smaller than this
-
-##### Even if you try
-
-###### It won't do anything
-
-We can also *italicize* stuff, or make it **bold**.
-
-# Code
-
-Want some Rust code?  We got Rust code.
-
-```rust
-
-// `vst` uses macros, so we'll need to specify that we're using them!
-#[macro_use]
-extern crate vst;
-
-// We're implementing a trait `Plugin` that does all the VST-y stuff for us.
-impl Plugin for Whisper {
-    fn get_info(&self) -> Info {
-        Info {
-            name: "Whisper".to_string()
-        }
-    }
-}
-
-```
-
-We can also add a filename to our code blocks which is super useful when
-providing tutorials, etc.  Here's some HTML we can insert into our
-markdown file right before the code block.  (Meta, right?)
-
-<div class='filename'>
-  <div>www/index.html</div>
-</div>
-
-```html
-<div class='filename'>
-  <div>src/lib.rs</div>
-</div>
-```
-
-If we want, we can also `specify inline code` which is useful for `the small stuff`.
-
-## Horizontal rules
-
-We have them!
-
----
-
-## Youtube
-
-with `youtube(id="the_id_here")`
-{{ youtube(id="dNRDvLACg5Q") }}
-
-## Vimeo
-with `vimeo(id="id_here")`
-{{ vimeo(id="115189988") }}
-
-## Links
-
-[Of Course](https://deepthought-theme.netlify.app/)
-
-## Tables
-You can make tables in markdown, too!  Who would have thought.  Are these styled yet?
-
-First Header  | Second Header
-------------- | -------------
-Content Cell  | Content Cell
-Content Cell  | Content Cell
-
-## Foldable Text
-
-<details>
-    <summary>Title 1</summary>
-    <p>Content 1 Content 1 Content 1 Content 1 Content 1</p>
-</details>
-
-<details>
-    <summary>Title 2</summary>
-    <p>Content 2 Content 2 Content 2 Content 2 Content 2</p>
-</details>
-
-We can do that like this:
-
-```html
-<details>
-    <summary>Title 1</summary>
-    <p>Content 1 Content 1 Content 1 Content 1 Content 1</p>
-</details>
-```
+On top of all that, it is built using Scala, Akka & Monix. Who needs Kafka? [Have a look here for the project](https://github.com/joesan/plant-simulator)
