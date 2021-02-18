@@ -38,8 +38,8 @@ ___
 
 | Title | Source |
 | ------ | -----------: |
-| Scala   | [Functional Programming in Scala - The Red Book](https://www.manning.com/books/functional-programming-in-scala) |
-| Statistics | [Introduction to Statistical Learning](https://www.springer.com/de/book/9781461471370) |
+| IP Addressing | [Classful IP Addressing Basics](https://www.geeksforgeeks.org/introduction-of-classful-ip-addressing/) |
+| SRE           | [How Complex Systems Fail](https://how.complexsystems.fail/) |
 
 ___
 

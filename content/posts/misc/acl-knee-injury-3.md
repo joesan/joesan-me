@@ -18,5 +18,5 @@ my MTB - not yet on gnarly mountains, but on single trails. I was able to do a c
 I remember having a weird feeling on my left knee after the ride, but I believe it is just a one off thing that got eventually better after a couple of minutes!
 
 I'm now terribly confused. The 2019 season would start in just under 2 months from now. Getting a surgery is not an option now as it would put me off by 
-6 months using my bike. What I'm extremely afraid of are those jumps and drops and what effect would they have on my knee. But nevertheless, I don't want 
+6 months using my bike. What I'm extremely afraid of are those jumps and drops and what effect would they have on my knee. Nevertheless, I don't want 
 to be left without driving this season. I will avoid doing stunts and just drive for the fun of it! Hope to have a fun filled MTB season for 2019! 
