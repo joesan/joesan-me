@@ -1,6 +1,6 @@
 # bigelectrons
 
-[![Deployment status](https://github.com/joesan/joesan.me/workflows/deploy/badge.svg)](https://github.com/joesan/joesan.me/actions?query=workflow%3Adeploy)
+[![Build and Deploy](https://github.com/joesan/joesan-me/actions/workflows/main.yml/badge.svg)](https://github.com/joesan/joesan-me/actions/workflows/main.yml)
 
 Source code for my [blogging website](https://www.bigelectrons.com)
 
