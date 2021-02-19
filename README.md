@@ -1,4 +1,7 @@
 # bigelectrons
+
+[![Deployment status](https://github.com/joesan/joesan.me/workflows/deploy/badge.svg)](https://github.com/joesan/joesan.me/actions?query=workflow%3Adeploy)
+
 Source code for my [blogging website](https://www.bigelectrons.com)
 
 ## Credits
