@@ -38,7 +38,7 @@ ___
 # Misc
 
 | Topic  | Source |
-| ------ | -----------: |#
+| ------ | -----------: |
 | Electricity | [Living on the Grid](https://www.amazon.com/Living-Grid-Fundamentals-American-Electric/dp/1491790458) |
 | Investing   | [The Intelligent Investor](https://en.wikipedia.org/wiki/The_Intelligent_Investor) |
 | Memoir      | [Autobiography of a Yogi](https://en.wikipedia.org/wiki/Autobiography_of_a_Yogi) |
