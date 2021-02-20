@@ -48,5 +48,6 @@ ___
 | Title | Source |
 | ------ | -----------: |
 | Markdown Syntax Reference | [Reference on how to format the Markdown content](https://deepthought-theme.netlify.app/docs/basic-markdown-syntax/) |
+| Zola Extended Shortcodes  | [Reference on how to format the Markdown content](https://deepthought-theme.netlify.app/docs/extended-shortcodes/) |
 
 ___
