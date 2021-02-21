@@ -19,7 +19,7 @@ to learn it, try to understand what partial derivatives are!
 In the above solution, I have just solved for m, which is the slope term in a Linear Regression. You can apply the same technique to solve for b! So what you 
 effectively do is to differentiate one term while treating the others as a constant. In simple terms, this is called a partial derivative. A derivative is a 
 measure of something that changes while a partial derivative is a measure of something that changes while treating everything else in this world as a 
-constant! It's that simple! <i>More on <a href="https://en.wikipedia.org/wiki/Partial_derivative">Partial Derivatives</a></i> </br>
+constant! It's that simple! Have a look here at the [Wikipedia article on Partial Derivatives!](https://en.wikipedia.org/wiki/Partial_derivative)
 
-What I have shown you here is a Simple Linear Regression, but the technique applies equally as good as a multi variate Linear Regression! Math is fucking 
+What I have shown you here is a Simple Linear Regression, but the technique applies as good as a multi variate Linear Regression! Math is fucking 
 fun - Once you understand it!
