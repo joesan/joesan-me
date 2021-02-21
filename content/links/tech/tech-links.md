@@ -43,6 +43,15 @@ ___
 
 ___
 
+# Miscellaneous 
+
+| Title | Source |
+| ------ | -----------: |
+| Clutch yourself in a Trance - 1 | [Mahaavatar Babaji - 1](https://www.youtube.com/watch?v=B5sqUD1TPhI) |
+| Clutch yourself in a Trance - 2 | [Mahaavatar Babaji - 1](https://www.youtube.com/watch?v=tPSyvXXMppc) |
+
+___
+
 # Markdown Syntax Reference
 
 | Title | Source |
