@@ -14,7 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Check HTTP Links
-        uses: lycheeverse/lychee-action@v1
+        uses: lycheeverse/lychee-action@v1.0.4
         with:
           args: -v "content/**/*.md"
       #- name: Create Issue From File
