@@ -17,12 +17,12 @@ jobs:
         uses: lycheeverse/lychee-action@v1
         with:
           args: -v "content/**/*.md"
-      - name: Create Issue From File
-        uses: peter-evans/create-issue-from-file@v2
-        with:
-          title: Link Checker Report
-          content-filepath: ./lychee/out.md
-          labels: report, automated issue
+      #- name: Create Issue From File
+       # uses: peter-evans/create-issue-from-file@v2
+        #with:
+         # title: Link Checker Report
+          #content-filepath: ./lychee/out.md
+          #labels: report, automated issue
 
   build:
     needs: linkChecker
