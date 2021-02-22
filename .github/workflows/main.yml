@@ -17,6 +17,7 @@ jobs:
         uses: lycheeverse/lychee-action@v1.0.4
         with:
           args: -v "content/**/*.md"
+      # This action below creates an issue automatically
       #- name: Create Issue From File
        # uses: peter-evans/create-issue-from-file@v2
         #with:
