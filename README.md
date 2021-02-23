@@ -15,3 +15,5 @@ Install Zola, checkout this project and type `zola serve`. You should see your n
 
 ## Deployment
 [Zola](https://www.getzola.org) already has a great documentation for deploying to [Github Pages](https://www.getzola.org/documentation/deployment/github-pages/)
+
+Have a [look at the GitHub actions here](https://github.com/joesan/joesan-me/blob/master/.github/workflows/main.yml) on how we build and deploy the content to the website.
