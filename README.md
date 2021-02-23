@@ -2,7 +2,7 @@
 
 [![Build and Deploy](https://github.com/joesan/joesan-me/actions/workflows/main.yml/badge.svg)](https://github.com/joesan/joesan-me/actions/workflows/main.yml)
 
-Source code for my [blogging website](https://www.bigelectrons.com)
+:no_entry: Source code for my [blogging website](https://www.bigelectrons.com)
 
 ## Credits
 - [Zola](https://www.getzola.org)

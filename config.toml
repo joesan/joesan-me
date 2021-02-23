@@ -16,6 +16,9 @@ build_search_index = true
 ignored_content = []
 extra_syntaxes = []
 
+[markdown]
+render_emoji = true
+
 [link_checker]
 skip_prefixes = ["http://[2001:db8::]/"]
 skip_anchor_prefixes = ["https://caniuse.com/"]
@@ -57,6 +60,3 @@ stackoverflow = "3102968"
 
 [extra.analytics]
 google = ""
-
-[extra.mapbox]
-access_token="pk.eyJ1Ijoiam9lc2FuIiwiYSI6ImNrbDM4OGxuaDB6MWgydW80NnRxaWlhY2EifQ.IRaOVRhkIOrcJz_AFTFJqg"

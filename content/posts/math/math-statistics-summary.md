@@ -2,6 +2,7 @@
 title="Easy Stats"
 description="Summary of important Stats"
 date=2021-02-22
+draft=true
 
 [taxonomies]
 categories = ["Technical Stuff", "Math"]

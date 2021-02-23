@@ -48,7 +48,7 @@ ___
 | Title | Source |
 | ------ | -----------: |
 | Clutch yourself in a Trance - 1 | [Mahaavatar Babaji - 1](https://www.youtube.com/watch?v=B5sqUD1TPhI) |
-| Clutch yourself in a Trance - 2 | [Mahaavatar Babaji - 1](https://www.youtube.com/watch?v=tPSyvXXMppc) |
+| Clutch yourself in a Trance - 2 | [Mahaavatar Babaji - 2](https://www.youtube.com/watch?v=tPSyvXXMppc) |
 
 ___
 
@@ -57,6 +57,7 @@ ___
 | Title | Source |
 | ------ | -----------: |
 | Markdown Syntax Reference | [Reference on how to format the Markdown content](https://deepthought-theme.netlify.app/docs/basic-markdown-syntax/) |
-| Zola Extended Shortcodes  | [Reference on how to format the Markdown content](https://deepthought-theme.netlify.app/docs/extended-shortcodes/) |
+| Zola Extended Shortcodes  | [Reference on how to format the Markdown Shortcodes](https://deepthought-theme.netlify.app/docs/extended-shortcodes/) |
+| Useful Markdown Emoji's   | [All Emoji References for Markdown](https://gist.github.com/rxaviers/7360908) |
 
 ___
