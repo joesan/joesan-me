@@ -20,13 +20,32 @@ piece of wood and have it cut into pieces! I would then assemble the pieces toge
 
 Here are some pictures!
 
-![MTB Ramp 1](/images/mtb/mtb-ramp-1.jpg)
-
-![MTB Ramp 2](/images/mtb/mtb-ramp-2.jpg)
-
-![MTB Ramp 3](/images/mtb/mtb-ramp-3.jpg)
-
-![MTB Ramp 4](/images/mtb/mtb-ramp-4.jpg)
+{% galleria() %}
+{
+    "images": [
+        {
+            "src": "/images/mtb/mtb-ramp-1.jpg",
+            "title": "MTB Ramp 1",
+            "description": "MTB Ramp 1"
+        },
+        {
+            "src": "/images/mtb/mtb-ramp-2.jpg",
+            "title": "MTB Ramp 2",
+            "description": "MTB Ramp 2."
+        },
+        {
+            "src": "/images/mtb/mtb-ramp-3.jpg",
+            "title": "MTB Ramp 3",
+            "description": "MTB Ramp 3"
+        },
+        {
+            "src": "/images/mtb/mtb-ramp-4.jpg",
+            "title": "MTB Ramp 4",
+            "description": "MTB Ramp 4"
+        }
+    ]
+}
+{% end %}
 
 It was fun to build it and it roughly took me 40 minutes to get it done! It is not perfect, but for what it cost me (roughly 15 Euros), this is absolutely 
 fine! I will probably test it the next days, I'm sure I'll have fun with it!
