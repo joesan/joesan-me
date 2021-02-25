@@ -95,25 +95,21 @@ There we have a 0 at index 5, so we have a potential true negative or in other w
 We can indeed tweak the output of the Bloom filter by adjusting the size of the bit set. By adding more elements to the bit set, or the number of indices, we reduce
 the eventual probability of getting false positives. Probability of getting a false positive also decreases by increasing the number of hash functions.
 
-{{ katex(body="\KaTeX") }}
-
 The probability that a hash function sets an index to 1 in a set of m elements is given by:
 
-P(1) = 1 / m
-
-$$ \KaTeX $$
-
-\\[ \\\pm\\sqrt{a^2 + b^2} \\]
-
-$ \\pm\\sqrt{a^2 + b^2} $
+$ P(1) = \frac{1}{m} $
 
 The probability that a given hash function fails to set an index to 1 in a set of m elements is given by:
 
-P(0) = 1 - P(1) // Remember sum of probabilities add up to 1 => P(0) + P(1) = 1, 
+$ P(0) = 1 - P(1) $ 
+
+From the laws of Probabilities, the sum of probabilities add up to 1, hence:
+
+$ 1 = P(0) + P(1) $ rearranging, we get $ P(0) = 1 - P(1) $
 
 So we end up with the following equation for one hash function failing to set a given index or bit to 1:
 
-{{ textcolor(color="red" text="P(0) = 1 - 1 / m") }}
+$ P(0) = 1 - \frac{1}{m} $
 
 Hence, after we have inserted all the elements in the Bloom filter, the probability that a particular index is still 0 is given by the following equation:
 
