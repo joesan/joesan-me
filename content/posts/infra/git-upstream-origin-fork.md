@@ -59,4 +59,4 @@ Step 6: To check if your local forked master is up-to-date with upstream master,
 git fetch upstream && git diff remotes/upstream/master master > changes.diff
 ```
 
-If there are no changes, then the diff file should be empty. That's it!
+If there are no changes, then the diff file should be empty. You could combine all that in a script. That's it!
