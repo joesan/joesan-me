@@ -54,7 +54,7 @@ exactly for this purpose, but I decided not to use it. All I need is the possibi
 project. This [branch](https://github.com/joesan/joesan-me/tree/gh-pages) will then contain the HTML's that will be integrated with the GH Pages for rendering. 
 
 [Setting up GH Pages](https://docs.github.com/en/github/working-with-github-pages/managing-a-custom-domain-for-your-github-pages-site), and linking it to a custom domain name is pretty 
-straightforward. As of today, my content is not yet live as I'm still deciding on organizing my content. Hopefully in a few weeks time, [bigelectrons.com](https://www.bigelectrons.com) will be
+straightforward. As of today, my content is not yet live as I'm still deciding on organizing my content. Hopefully in a few weeks time, [bigelectrons.com](https://bigelectrons.com) will be
 served via Zola and GH Pages.
 
 I will wrap this up here and for me it is Zola and GH Pages for the foreseeable future for all my blogging needs.
