@@ -31,6 +31,9 @@ anchors = "on"
 [translations]
 
 [extra]
+# To enable rendering of KaTeX math formulas
+katex.enabled = true
+katex.auto_render = true
 
 navbar_items = [
 	{ url = "$BASE_URL/", name = "Home" },
@@ -56,7 +59,3 @@ github = "joesan"
 youtube = "UCWj0B-W_fJvQqDG6ILyGgrA"
 #instagram = "joesandech"
 stackoverflow = "3102968"
-
-# To enable rendering of KaTeX math formulas
-katex.enabled = true
-katex.auto_render = true

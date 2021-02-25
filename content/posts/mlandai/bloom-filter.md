@@ -2,7 +2,7 @@
 title="TODO.... Add a proper title"
 description="Dealing with False Negative and False Positive"
 date=2021-02-26
-draft=true
+draft=false
 
 [taxonomies]
 categories = ["Technical Stuff"]
