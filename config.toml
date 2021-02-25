@@ -32,7 +32,6 @@ anchors = "on"
 
 [extra]
 
-
 navbar_items = [
 	{ url = "$BASE_URL/", name = "Home" },
 	{ url = "$BASE_URL/posts", name = "Posts" },
@@ -58,5 +57,6 @@ youtube = "UCWj0B-W_fJvQqDG6ILyGgrA"
 #instagram = "joesandech"
 stackoverflow = "3102968"
 
-[extra.analytics]
-google = ""
+# To enable rendering of KaTeX math formulas
+katex.enabled = true
+katex.auto_render = true

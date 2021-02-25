@@ -15,20 +15,18 @@ toc = true
 
 ## Definition
 Simply put, a Bloom filter is a space-efficient probabilistic data structure with which we can determine the probable existence of a certain thing in a certain 
-data set, and we can determine the non-existence of a certain thing in a certain data set with utmost accuracy. Doing all this is done in a memory space 
-efficient way.
+data set, and we can determine the non-existence of a certain thing in a certain data set with utmost accuracy. Doing all this in a memory space efficient manner.
 
-In a gist, Bloom filters are about determining if an element <span style="color:red">may be in a set</span> or <span style="color:red">is definitely not 
-in a set</span>
+In a gist, Bloom filters are about determining if an element {{ textcolor(color="red" text="may be in a set") }} or {{ textcolor(color="red" text="is definitely not in a set") }}
 
 ## Allowed Operations
 
 You can only do one of the two operations on a given Bloom filter. You could still extend the Bloom filter to remove elements, but we stick to these two
 operations for discussion’s sake:
 
-1. To Add new elements
+1. Insert a new element - {{ textcolor(color="red" text="add") }}
 
-2. To check if an element exist
+2. Check for an element - {{ textcolor(color="red" text="verify") }}
 
 ## Mechanics
 
@@ -40,15 +38,86 @@ a simple and a fast algorithm and finds its usage in common scenarios like check
 
 It is all about doing some math with the following four variables:
 
-- <span style="color:red">n:</span> Represents the number of input elements
+- {{ textcolor(color="red" text="n:") }} Represents the number of input elements
 
-- <span style="color:red">m:</span> Represents the memory used by the bit-array or in other words, the size of the array
+- {{ textcolor(color="red" text="m:") }} Represents the memory used by the bit-array or in other words, the size of the array
 
-- <span style="color:red">k:</span> The total number of hash functions to be used
+- {{ textcolor(color="red" text="k:") }} The total number of hash functions to be used
 
-- <span style="color:red">p:</span> The probability of a false positive
+- {{ textcolor(color="red" text="p:") }} The probability of a false positive
+
+The image below shows an empty Bloom filter with a bit array of size m (here 10 elements), initialized to 0 for all the elements.
 
 ![Bloom Filter 1](/images/mlandai-bloom-filter-1.jpg)
+
+Let us assume that for simplicity we just have k (the number of hash functions) set to 2, and our hash functions looks like this:
+
+Hash Function 1 (H1) {{ textcolor(color="red" text="=") }}  input mod 2 {{ textcolor(color="red" text="=>") }} H1(“foo”) % 2 {{ textcolor(color="red" text="=") }} 2
+
+Hash Function 2 (H2) {{ textcolor(color="red" text="=") }}  input mod 6 {{ textcolor(color="red" text="=>") }} H2(“foo”) % 6 {{ textcolor(color="red" text="=") }} 6
+
+The result of the hash functions mean that we will set the corresponding bits in the Bloom filter array to 1. For example., at the bit positions 2 and 6, we will
+flip the values to 1 as seen in the image below:
+
+![Bloom Filter 2](/images/mlandai-bloom-filter-2.jpg)
+
+Let us now do the same for another entry:
+
+Hash Function 1 (H1) {{ textcolor(color="red" text="=") }} input mod 2 {{ textcolor(color="red" text="=>") }} H1(“bar”) % 2 {{ textcolor(color="red" text="=") }} 4
+
+Hash Function 2 (H2) {{ textcolor(color="red" text="=") }} input mod 6 {{ textcolor(color="red" text="=>") }} H2(“bar”) % 6 {{ textcolor(color="red" text="=") }} 8
+
+We then set our Bloom filter indices accordingly, which is shown in the image below:
+
+![Bloom Filter 3](/images/mlandai-bloom-filter-3.jpg)
+
+That's it, for our example's sake, we are done with insertion. Let us now check for the existence of a certain element in the Bloom filter! The lookup works more or
+less the same way as an insert where we run the text to be looked up through the hash functions, check if the indices are set to 1. If all the indices are set to 1,
+then we can say that particular text is probably present. If in case any one of the indices is not set to 1, then we can for sure say that the text is not present.
+
+Let's test it for the text {{ textcolor(color="red" text="foo") }}:
+
+Hash Function 1 (H1) {{ textcolor(color="red" text="=") }}  input mod 2 {{ textcolor(color="red" text="=>") }} H1(“foo”) % 2 {{ textcolor(color="red" text="=") }} 2
+
+Hash Function 2 (H2) {{ textcolor(color="red" text="=") }}  input mod 6 {{ textcolor(color="red" text="=>") }} H2(“foo”) % 6 {{ textcolor(color="red" text="=") }} 6
+
+We can see from the populated Bloom filter that the indices at positions 2 and 6 are set to 1, so we have a potential false positive or a true positive or in other words
+we can probably say that the text might be present.
+
+Let's test if for the text {{ textcolor(color="red" text="nope") }}:
+
+Hash Function 1 (H1) {{ textcolor(color="red" text="=") }}  input mod 2 {{ textcolor(color="red" text="=>") }} H1(“nope”) % 2 {{ textcolor(color="red" text="=") }} 2
+
+Hash Function 2 (H2) {{ textcolor(color="red" text="=") }}  input mod 6 {{ textcolor(color="red" text="=>") }} H2(“nope”) % 6 {{ textcolor(color="red" text="=") }} 5
+
+There we have a 0 at index 5, so we have a potential true negative or in other words we can for sure say that this text is not present. Yes, it is that simple!
+
+We can indeed tweak the output of the Bloom filter by adjusting the size of the bit set. By adding more elements to the bit set, or the number of indices, we reduce
+the eventual probability of getting false positives. Probability of getting a false positive also decreases by increasing the number of hash functions.
+
+{{ katex(body="\KaTeX") }}
+
+The probability that a hash function sets an index to 1 in a set of m elements is given by:
+
+P(1) = 1 / m
+
+$$ \KaTeX $$
+
+\\[ \\\pm\\sqrt{a^2 + b^2} \\]
+
+$ \\pm\\sqrt{a^2 + b^2} $
+
+The probability that a given hash function fails to set an index to 1 in a set of m elements is given by:
+
+P(0) = 1 - P(1) // Remember sum of probabilities add up to 1 => P(0) + P(1) = 1, 
+
+So we end up with the following equation for one hash function failing to set a given index or bit to 1:
+
+{{ textcolor(color="red" text="P(0) = 1 - 1 / m") }}
+
+Hence, after we have inserted all the elements in the Bloom filter, the probability that a particular index is still 0 is given by the following equation:
+
+{{ textcolor(color="red" text="P(0)^kn") }}
 
 ## Application & Usage
 
