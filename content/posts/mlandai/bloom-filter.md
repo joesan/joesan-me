@@ -1,6 +1,6 @@
 +++
-title="TODO.... Add a proper title"
-description="Dealing with False Negative and False Positive"
+title="When a Bloom filter really blooms...."
+description="Dealing with True Negative and False Positive"
 date=2021-02-26
 draft=true
 
