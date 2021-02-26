@@ -11,7 +11,7 @@ tags = ["blog", "zola"]
 
 I have been documenting so far with Blogger. Recently I started to do some Robotics projects with ROS. As I was doing it, I was looking for ways to get all what
 I do be documented. I know Github offers [GH Pages](https://pages.github.com/), but I was a bit reluctant to try it out. So for the [Navo project](https://navo-org.github.io/navo-docs/), I decided 
-the GH Pages will be my source for a documentation, hence I decided to give it a try. Honestly, I was not disappointed!
+the GH Pages will be the source for my documentation, hence I decided to give it a try. Honestly, I was not disappointed!
 
 I have been documenting all what I have been doing for the [Navo project](https://navo-org.github.io/navo-docs/) with GH Pages and a Jekyll theme. It did not stuck
 my mind until a day ago that why not I move my personal blogging content as well from Blogger to GH Pages? I took the plunge and started to explore on 
@@ -55,6 +55,6 @@ project. This [branch](https://github.com/joesan/joesan-me/tree/gh-pages) will t
 
 [Setting up GH Pages](https://docs.github.com/en/github/working-with-github-pages/managing-a-custom-domain-for-your-github-pages-site), and linking it to a custom domain name is pretty 
 straightforward. As of today, my content is not yet live as I'm still deciding on organizing my content. Hopefully in a few weeks time, [bigelectrons.com](https://bigelectrons.com) will be
-served via Zola and GH Pages.
+served via Zola and GH Pages. {{ textcolor(color="red" text="EDIT: This content is live on Zola & GH Page") }}
 
 I will wrap this up here and for me it is Zola and GH Pages for the foreseeable future for all my blogging needs.
