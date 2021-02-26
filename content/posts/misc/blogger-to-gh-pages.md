@@ -55,6 +55,6 @@ project. This [branch](https://github.com/joesan/joesan-me/tree/gh-pages) will t
 
 [Setting up GH Pages](https://docs.github.com/en/github/working-with-github-pages/managing-a-custom-domain-for-your-github-pages-site), and linking it to a custom domain name is pretty 
 straightforward. As of today, my content is not yet live as I'm still deciding on organizing my content. Hopefully in a few weeks time, [bigelectrons.com](https://bigelectrons.com) will be
-served via Zola and GH Pages. {{ textcolor(color="red" text="EDIT: This content is live on Zola & GH Page") }}
+served via Zola and GH Pages. {{ textcolor(color="red" text="EDIT: The website was taken live on 22.02.2021") }}
 
 I will wrap this up here and for me it is Zola and GH Pages for the foreseeable future for all my blogging needs.
