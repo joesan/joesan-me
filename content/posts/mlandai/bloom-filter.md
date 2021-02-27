@@ -2,7 +2,6 @@
 title="When a Bloom filter really blooms...."
 description="Dealing with True Negative and False Positive"
 date=2021-02-26
-draft=true
 
 [taxonomies]
 categories = ["Technical Stuff"]
@@ -95,31 +94,51 @@ There we have a 0 at index 5, so we have a potential true negative or in other w
 We can indeed tweak the output of the Bloom filter by adjusting the size of the bit set. By adding more elements to the bit set, or the number of indices, we reduce
 the eventual probability of getting false positives. Probability of getting a false positive also decreases by increasing the number of hash functions.
 
-The probability that a hash function sets an index to 1 in a set of m elements is given by: <style>body {text-align: right}</style>
+The probability that a hash function sets an index to 1 in a set of m elements is given by:
 
-$ P(1) = \frac{1}{m} $ ------------------------------------------------- eq (1)
+$ P(1) = \frac{1}{m} $ {{ textcolor(color="red" text="-----> *eq (1)*") }}
 
 The probability that a given hash function fails to set an index to 1 in a set of m elements is given by:
 
-$ P(0) = 1 - P(1) $ ------------------------------------------------- eq (2)
+$ P(0) = 1 - P(1) $ {{ textcolor(color="red" text="-----> *eq (2)*") }}
 
 From the laws of Probabilities, the sum of probabilities add up to 1, hence:
 
-$ P(0) + P(1) = 1 $ rearranging, we get $ P(0) = 1 - P(1) $
+$ P(0) + P(1) = 1 $ rearranging, we get $ P(0) = 1 - P(1) $ {{ textcolor(color="red" text="-----> *eq (3)*") }}
 
 So we end up with the following probability for one hash function failing to set a given index or bit to 1:
 
-$ P(0) = 1 - \frac{1}{m} $ ------------------------------------------------- eq (3)
+$ P(0) = 1 - \frac{1}{m} $ {{ textcolor(color="red" text="-----> *eq (4)*") }}
 
 Hence, after we have inserted all the elements (say n) in the Bloom filter, by running through k number of hash functions, the probability that a particular 
 index is still 0 is given by the following equation:
 
-$ P(0) = (1 - \frac{1}{m})^{kn} $ ------------------------------------------------- eq (4)
+$ P(0) = (1 - \frac{1}{m})^{kn} $ {{ textcolor(color="red" text="-----> *eq (5)*") }}
 
-The above equation is based on the assumption that the hash functions are independent of each other. Now by substituting this value for P(0) in eq (2) and doing
-a bit of re-arranging, we get the following:
+The above equation is based on the assumption that the hash functions are independent of each other. Now by substituting this value for P(0) 
+in {{ textcolor(color="red" text="*eq (2)*") }} and doing a bit of re-arranging, we get the probability of a false positive:
 
+$ P(1) = (1- [1 - \frac{1}{m}]^{kn})^{k} $ {{ textcolor(color="red" text="-----> *eq (6)*") }}
 
+With that being said, how do we choose the number of hash functions and the size of the bit array for the Bloom filter. It turns out thar there are some formulas
+that hold good to determine them:
+
+$ m = -\frac{n*lnP}{(ln2)^{2}} $ {{ textcolor(color="red" text="-----> *eq (7)*") }}
+
+$ k = \frac{m}{n}(ln2) $ {{ textcolor(color="red" text="-----> *eq (8)*") }}
+
+I'm trying to figure out how {{ textcolor(color="red" text="*eq (7)*") }} and {{ textcolor(color="red" text="*eq (8)*") }} works out, but for the sake of 
+this article, we can use them to determine one value from the other.
+
+## Hash Functions
+
+The choice of the hash functions that will be used should be independent of each other, i.,e the outcome of one of the hash function should not have any effect on
+the outcome of the other hash functions. The opted hash functions should be fast. It is recommended to use non-cryptographic hash functions like the murmur hash. 
+
+The performance of the Bloom filter is directly proportional to the number of hash functions used, as there is a tendency for the Bloom filter to become slow when
+more hash functions are used.
+
+I will probably revisit this content later on, but for now I'll wrap it up here!
 
 ## Application & Usage
 
