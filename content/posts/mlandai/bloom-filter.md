@@ -95,25 +95,31 @@ There we have a 0 at index 5, so we have a potential true negative or in other w
 We can indeed tweak the output of the Bloom filter by adjusting the size of the bit set. By adding more elements to the bit set, or the number of indices, we reduce
 the eventual probability of getting false positives. Probability of getting a false positive also decreases by increasing the number of hash functions.
 
-The probability that a hash function sets an index to 1 in a set of m elements is given by:
+The probability that a hash function sets an index to 1 in a set of m elements is given by: <style>body {text-align: right}</style>
 
-$ P(1) = \frac{1}{m} $
+$ P(1) = \frac{1}{m} $ ------------------------------------------------- eq (1)
 
 The probability that a given hash function fails to set an index to 1 in a set of m elements is given by:
 
-$ P(0) = 1 - P(1) $ 
+$ P(0) = 1 - P(1) $ ------------------------------------------------- eq (2)
 
 From the laws of Probabilities, the sum of probabilities add up to 1, hence:
 
-$ 1 = P(0) + P(1) $ rearranging, we get $ P(0) = 1 - P(1) $
+$ P(0) + P(1) = 1 $ rearranging, we get $ P(0) = 1 - P(1) $
 
-So we end up with the following equation for one hash function failing to set a given index or bit to 1:
+So we end up with the following probability for one hash function failing to set a given index or bit to 1:
 
-$ P(0) = 1 - \frac{1}{m} $
+$ P(0) = 1 - \frac{1}{m} $ ------------------------------------------------- eq (3)
 
-Hence, after we have inserted all the elements in the Bloom filter, the probability that a particular index is still 0 is given by the following equation:
+Hence, after we have inserted all the elements (say n) in the Bloom filter, by running through k number of hash functions, the probability that a particular 
+index is still 0 is given by the following equation:
 
-{{ textcolor(color="red" text="P(0)^kn") }}
+$ P(0) = (1 - \frac{1}{m})^{kn} $ ------------------------------------------------- eq (4)
+
+The above equation is based on the assumption that the hash functions are independent of each other. Now by substituting this value for P(0) in eq (2) and doing
+a bit of re-arranging, we get the following:
+
+
 
 ## Application & Usage
 
