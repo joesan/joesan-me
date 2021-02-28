@@ -134,7 +134,8 @@ this article, we can use them to determine one value from the other.
 
 The choice of the hash functions that will be used should be independent of each other, i.,e the outcome of one of the hash function should not have any effect on
 the outcome of the other hash functions. The opted hash functions should be fast. It is recommended to use non-cryptographic hash functions like the murmur hash.
-Have a [look here on why murmur3 should not be used in a security context](https://www.anchor.com.au/blog/2012/12/how-to-explain-hash-dos-to-your-parents-by-using-cats/)
+Have a [look here](https://www.anchor.com.au/blog/2012/12/how-to-explain-hash-dos-to-your-parents-by-using-cats/) on why murmur3 should not be used in a 
+security context.
 
 The performance of the Bloom filter is directly proportional to the number of hash functions used, as there is a tendency for the Bloom filter to become slow when
 more hash functions are used.
