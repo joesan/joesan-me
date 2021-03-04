@@ -34,4 +34,5 @@ P(E)   -> Probability of our observation or evidence that already happened
 P(E|H) -> Probability of the observation or evidence given the hypothesis B
 
 ## Articulation
+TODO.... documentation
 
