@@ -19,7 +19,7 @@ the Bayes theorem. It was invented by the 18th century British statistician [Tho
 conditional probabilities. Conditional probability is the probability of an outcome based on the previous outcome.
 
 Bayes’ theorem is about determining the validity of a hypothesis based on some observation, where observation is the probability that already happened. In a
-mathematical notation, it is given by the formula:
+mathematical notation, given by the formula:
 
 $ P(H|E) = \frac{P(H) * P(E|H)}{P(E)} $
 
