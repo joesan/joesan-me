@@ -1,6 +1,6 @@
 +++
 title="When a Bloom filter really blooms...."
-description="Dealing with True Negative and False Positive"
+description="On dealing with True Negative and False Positive"
 date=2021-02-26
 
 [taxonomies]

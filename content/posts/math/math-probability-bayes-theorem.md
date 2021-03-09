@@ -34,5 +34,17 @@ P(E)   -> Probability of our observation or evidence that already happened
 P(E|H) -> Probability of the observation or evidence given the hypothesis B
 
 ## Articulation
-TODO.... documentation
+The Bayes theorem can be articulated as follows:
+
+```
+The likelihood of the hypothesis (H) in light of new evidence (E) equals the likelihood of the new evidence being true assuming the hypothesis is also true 
+times the likelihood of the hypothesis before the new evidence was observed, all over (divided by) the likelihood of the new evidence
+```
+
+A few terms:
+
+Prior Probability - "Prior" means "before", so "prior probability" just means "probability before we see any new evidence". This is where we start!
+
+
+
 
