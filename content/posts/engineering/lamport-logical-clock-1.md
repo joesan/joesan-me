@@ -32,7 +32,7 @@ about the following Events:
 3. Events that are received on a Node from the other Node - I call them Receive Event or simply RE
 4. All nodes start with a Zero counter
 
-Lamport's logical clock states that each Node should have some form of incremental value (could be timestamp or an integer) that can be associated with an 
+Lamport's logical clock states that each Node should have some form of incremental value (could be timestamp, or an integer) that can be associated with an 
 event and could be compared against another value. So in this case, let us assume that we just have a simple integer counter for our Nodes and this counter 
 will be incremented for every event that happens (be it NE, SE or RE), but how it is incremented depends on the following conditions:
 

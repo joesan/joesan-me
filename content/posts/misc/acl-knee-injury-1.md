@@ -15,7 +15,7 @@ front with me jump landing behind the rear wheels, but the bailout got totally o
 the jump.
 
 It was such a pain for the next 5 to 10 minutes. It kind of subsided, and I thought I could get back on my bike again (What a stupidity from me). As soon as 
-I got on to my bike and tried to put my left leg down to balance the bike, I had a very sharp excruciating pain, I could not balance any more with my 
+I got on to my bike and tried to put my left leg down to balance the bike, I had a very sharp excruciating pain, I could not balance anymore with my 
 left leg and fell down on the street. This is when I realized that there is something seriously wrong with my knee. I managed to limp, tow my bike back 
 home. I was scared to think that I would have inflicted some fractures around my knee. Well, at that point in time I did not know anything about 
 ligaments. All I knew was that I could have either fractured my knee bones or twisted my knee bone. How stupid! After about 2 hours, I went to a hospital 
