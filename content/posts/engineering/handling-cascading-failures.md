@@ -6,7 +6,7 @@ draft=true
 
 [taxonomies]
 categories = ["Technical Stuff"]
-tags = [distributed systems"]
+tags = ["distributed systems"]
 +++
 
 
