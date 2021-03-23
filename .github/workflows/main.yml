@@ -51,7 +51,7 @@ jobs:
           touch README.md
           echo 'https://www.bigelectrons.com - SITE GENERATED USING ZOLA' > README.md
           touch CNAME
-          echo 'bigelectrons.com' > CNAME
+          echo 'www.bigelectrons.com' > CNAME
           git add .
           git commit -m "generated using zola build"
           git push --set-upstream origin $TARGET_BRANCH --force
