@@ -9,7 +9,7 @@ categories = ["Miscellaneous"]
 tags = ["guitar"]
 +++
 
-
+TODO
 Recently, I can say that I made very good progress playing across the neck of my guitar. I memorized few pentatonic shapes, but I was stuck the whole while on
 those specific boxes. The whole thing did not make any sense to me. Just wandering within those boxes is not pleasant music. Frustrated, I looked at
 Youtube for some motivational ideas on how to unstuck me from the boxes.
