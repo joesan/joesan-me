@@ -1,7 +1,8 @@
 +++
-title="On Navigating the Pentatonic scale"
-description="Thinking in terms of triangles"
+title="You've got to pick the right pick"
+description="Plucking made easy...."
 date=2020-09-09
+draft=true
 
 [taxonomies]
 categories = ["Miscellaneous"]
