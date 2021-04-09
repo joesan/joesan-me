@@ -10,23 +10,24 @@ tags = ["ros", "navo"]
 toc = true
 +++
 
-In this section, let us explore and understand this 17th century idea on how we could effectively do a speed control for the DC Motor, the <a href="https://en.wikipedia.org/wiki/PID_controller" target="_blank">PID Controller</a> mechanism
+In this section, let us explore and understand this 17th century idea on how we could effectively do a speed control for the DC Motor, 
+the <a href="https://en.wikipedia.org/wiki/PID_controller" target="_blank">PID Controller</a> mechanism
 
 ## PID Control
 
-We will try to debunk a PID controller from a functional perspective and later on converge on the P, the I and the D. The block diagram below shows the 
-relation between a PID controller and a process that is optimized by using a PID controller. The process here could be anything, but here we assume that 
+We will try to debunk a PID controller from a functional perspective and later on converge on the P, I and the D. The block diagram below shows the 
+relation between a PID controller, and a process that is optimized by using a PID controller. The process here could be anything, but here we assume that 
 the process here is a water heater control system (WHCS). The WHCS works by receiving a desired value for the temperature and heats the water. For 
 example., if we want the WHCS to heat the water to 40° C, we want it to exactly do that.
 
 ![pid-controller-1](/images/navo/pid/pid-controller-1.png)
 
-From the image above, we have the Process which emits a Process Value (PV), the PID Contoller to which we give a Setpoint value (SP), the sensors that 
+From the image above, we have the Process which emits a Process Value (PV), the PID Controller to which we give a Setpoint value (SP), the sensors that 
 measure the actual Process Value (PV) which is then fed back into the PID controller, thus forming a closed loop. It can also be seen that the Process is 
 also affected by external disturbances which makes it deviate from the Setpoint (SP). The PID controller's job is to account for these external 
 disturbances and make the Process Value (PV) match the Setpoint (SP). For our case here where we want to do DC Motor speed control, we have something 
 called a closed-loop controller, where we tell the controller how fast we want the motor to run. We call this the set point. The controller then measures 
-the actual speed of the motor and calculates the difference between the actual speed and the set point which is called the error. The controller then 
+the actual speed of the motor and calculates the difference between the actual speed, and the set point which is called the error. The controller then 
 adjusts the voltage to the motor to reduce the error which in turn makes the Motor run at the set point we gave it originally.
 
 If the SP and the PV are the same – then there is no other thing in this world that is going to be much happy than our PID controller. It does not have to 
@@ -38,7 +39,7 @@ We first need to understand what each of the term in the PID controller represen
 
 ![pid-controller-2](/images/navo/pid/pid-controller-2.png)
 
-As we can see from the image above that the error is calculated by simply calculating the difference between the Setpoint (SV) and the Process Value (PV) or in other words, 
+As we can see from the image above that the error is calculated by simply calculating the difference between the Setpoint (SV), and the Process Value (PV) or in other words, 
 the error is simply the difference between the desired value and the actual value.
 
 Let us now try to mathematically understand what each of the terms mean and how they influence in minimizing the error.
@@ -78,7 +79,7 @@ If the error is large enough, the integral controller will increment / decrement
 
 ![pid-controller-i](/images/navo/pid/pid-controller-i.png)
 
-The equation above sums all the previous errors over a given time interval t and accouns for the error correction accordingly. If we have a larger value 
+The equation above sums all the previous errors over a given time interval t and accounts for the error correction accordingly. If we have a larger value 
 for the term Ki, it will result in an overshoot.
 
 ### Differential Control or Derivative Control
@@ -150,7 +151,7 @@ intervals. That piece of code above does not deserve any further explanation, bu
 
 ### Derivative kick
 
-This happens when a change in the value of the error happens suddenly as a result of a change in the Setpoint. This inturn causes the derivative of the 
+This happens when a change in the value of the error happens suddenly as a result of a change in the Setpoint. This in turn causes the derivative of the 
 error to be instantaneously large enouch so that we see small spikes in our process output. This is not a big deal, but for systems where the change in 
 Setpoint occurs more often, it is better that we address this to avoid putting stress in the system as such. A simple idea to overcome such derivative 
 kick is to assume that the change in the Setpoint is constant, so the rate of change or in mathematical terms, the derivative of a constant (remember 
@@ -181,11 +182,11 @@ Now one question might arise on what values to choose for the PID co-efficients.
 the <a href="https://en.wikipedia.org/wiki/Ziegler%E2%80%93Nichols_method" target="_blank">Ziegler–Nichols method</a> introduced by John G. Ziegler and 
 Nathaniel B. Nichols in the 1940s. It is a <a href="https://en.wikipedia.org/wiki/Heuristic" target="_blank">heuristic technique</a> of tuning a PID 
 controller. The basic idea here is that it starts out by setting the integral and the derivative gains (basically the co-efficients Ki and Kd) to zero. 
-The proportional gain (Kp) is then increased from zero until it reaches the ultimate gain Ku. This untimate gain is the gain where the control loop has 
+The proportional gain (Kp) is then increased from zero until it reaches the ultimate gain Ku. This ultimate gain is the gain where the control loop has 
 achieved a stable and consistent oscillation. The Ku and the oscillation period is then used to set the P, I and the D gains effectively. Let us not dive 
 more into this for now.
 
-Tuning the parameters or the gain in a runnng system is a topic in itself.
+Tuning the parameters or the gain in a running system is a topic in itself.
 
 Hope I was able to explain the PID controller mechanism! With this basic understanding, <a href="https://navo-org.github.io/navo-docs/docs/tutorials/dc-motor-rpm-ros.html" target="_blank">head over here</a> 
 to see how we could combine all what we have learnt theoretically so far to a more practical example.
