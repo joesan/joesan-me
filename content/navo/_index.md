@@ -1,5 +1,8 @@
 +++
 title = "Navo Tutorials"
+
+[extra]
+toc = true
 +++
 
 ## About Navo
