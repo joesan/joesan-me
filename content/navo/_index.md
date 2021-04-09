@@ -1,8 +1,5 @@
 +++
 title = "Navo Tutorials"
-description = "Chronologically posted content here"
-sort_by = "date"
-paginate_by = 20
 +++
 
 ## About Navo
@@ -23,4 +20,4 @@ detail here. The navo project can be found [here](https://github.com/navo-org). 
 
 - <a href="" target="_blank">The Arduino Project</a>
 
-This is a WIP, and I will update it as and when I get time to work on this project! Feel welcomed to read through some tutorials / blogs as seen below!
+This is a WIP, and I will update it as and when I get time to work on this project! Feel welcomed to read through some tutorials [here](/tags/navo/)!
