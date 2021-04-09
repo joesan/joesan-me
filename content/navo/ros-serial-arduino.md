@@ -5,6 +5,9 @@ date=2020-12-12
 [taxonomies]
 categories = ["ros"]
 tags = ["ros", "navo"]
+
+[extra]
+toc = true
 +++
 
 Let us see how we could set up the ROS serial communication between a Raspberry Pi and an Arduino board.
