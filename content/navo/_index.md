@@ -1,8 +1,6 @@
 +++
-title = "Navo Tutorials"
-
-[extra]
-toc = true
+title = "Navo Home"
+description = "Informational content for the Navo project"
 +++
 
 ## About Navo
