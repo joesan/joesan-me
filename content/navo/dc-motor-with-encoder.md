@@ -23,13 +23,13 @@ the motor.
 I will refuse to talk about DC Motors in general as that is not the focus for us, but rather to understand how to make use of the Encoder pulses with 
 which we could measure the RPM and thus control the speed.
 
-### Understanding DC Motor with Encoder
+## Understanding DC Motor with Encoder
 
 So we need to now effectively understand a little about the DC Motor and the need for an Encoder unit. A one liner - a DC Motor is a mechanical 
 device that converts basically electrical energy to mechanical energy. Ok that's simple enough but that's enough. Why do we need an Encoder? With the 
 target that we are trying to build, we need to be able to more precisely control the speed and direction of the motor which effectively translates to 
 the navigability of the Navo. Encoders transform mechanical motion into electrical pulses that can then be used by a controller unit (like the Arduino) to 
-make adjustments and fine tune the motor spped and direction.
+make adjustments and fine tune the motor speed and direction.
 
 As mentioned before, we will use <a href="https://www.pololu.com/product/4843" target="_blank">DC Motor with Encoder</a>. The table and the image below 
 clarifies the wiring definitions.
@@ -65,7 +65,7 @@ clarifies the wiring definitions.
   </tr>
 </table> 
 
-![dc-motor-wiring](/images/motor/dc-motor-wiring-pololu-25d.png)
+![dc-motor-wiring](/images/navo/dcmotor/dc-motor-wiring-pololu-25d.png)
 
 There are different types of encoders available, such as liner encoder or rotary encoders. A DC Motor encoder basically has a rotary encoder which is 
 often times mounted to the shaft of the motor. The rotary encoder used here is a 6 pole magnetic disc attached to the shaft of the motor, along with 
@@ -73,8 +73,8 @@ two <a href="https://en.wikipedia.org/wiki/Hall_effect" target="_blank">Hall eff
 past the two sensors and when each time a magnetic pole passes one of the sensor, the encoder outputs a digital pulse. So here with the two hall effect 
 sensors, we get two output signals separated by 90 dgrees. The sketch below shows the basic working principle behind a Rotary magnetic encoder.
 
-![rotary-encoder](/images/motor/encoder.jpg)
-![rotary-encoder-pulse](/images/motor/square-wave.png)
+![rotary-encoder](/images/navo/dcmotor/encoder.jpg)
+![rotary-encoder-pulse](/images/navo/dcmotor/square-wave.png)
 
 It can be seen that the two sensing units (marked A & B) will emit a pulse signal as soon as they hit the underlying magnetic pin (6 of them as can be 
 seen in the diagram above) and this pulse signal can be translated / understood in terms of the direction and speed of the motor. I will not explain more 
@@ -98,25 +98,25 @@ from the motor shaft and as mentioned before, the ratio of rotation between thes
 turns just 1 time. So with this understanding, the cycles per revolution or pulses per revolution of the gearbox shaft can be calculated with the 
 following formula:
 
-![motor-cpr-formula](/images/motor/motor-cpr-formula.png)
+![motor-cpr-formula](/images/navo/dcmotor/motor-cpr-formula.png)
 
 So with this formula at hand, we get the gearbox CPR = 20.4 * 48 = 979.62
 
 The gearbox output resolution (979.62 CPR) is the only value that we will get from DC motor as feedback which when coupled with time helps us do speed 
 control. Now the formula to calculate the RPM (speed) is given by:
 
-![motor-cpr-formula](/images/motor/dc-motor-rpm-formula-1.png)
+![motor-cpr-formula](/images/navo/dcmotor/dc-motor-rpm-formula-1.png)
 
 where revolutions per count or revolutions per pulse equates to 1 / 979.62 (we know that pulse per revolution PPR or CPR is 979.62), so if we plug in these 
 values into the equation above, we end up with the following:
 
-![motor-cpr-formula](/images/motor/dc-motor-rpm-formula-2.png)
+![motor-cpr-formula](/images/navo/dcmotor/dc-motor-rpm-formula-2.png)
 
 We then have to plug in this equation into the sketch below and measure the number of pulse counts every second. Let us see how the sketch looks like!
 
-### DC Motor Speed Control Arduino Sketch
+## DC Motor Speed Control Arduino Sketch
 
-{% highlight c %}
+```c
 /*
 * DC Motor Encoder Test Sketch
 * by Joesan [https://github.com/joesan]
@@ -186,12 +186,12 @@ digitalWrite(in2, HIGH);
 void m1EncoderEvent() {
 m1Count++;
 }
-{% endhighlight %}
+```
 
 The important part to note about the code above is the use of the attachInterrput function. <a href="https://www.allaboutcircuits.com/technical-articles/using-interrupts-on-arduino/" target="_blank">Have a look here</a> 
 for a very good explanation of the function parameters and its meaning! Here is a very basic explanation behind using interrupts.
 
-**Hardware interrupts**
+## Hardware interrupts
 
 If you are a bit familiar with the pins on the standard <a href="https://www.arduino.cc/en/reference/board" target="_blank">Arduino board</a>, the pins 2 
 and 3 are classified as pins for hardware interrupts. Have a <a href="https://playground.arduino.cc/Code/Interrupts/" target="_blank">look here to 
