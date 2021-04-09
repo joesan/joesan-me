@@ -67,7 +67,7 @@ Make sure to replace the ROS version appropriately. For me it is Noetic!
 
 After this, fire up the Arduino IDE, by typing arduino from a terminal window (see the screenshot below)
 
-![arduino-ide-ubuntu](/images/navo/arduino-ide-ubuntu.png)
+![arduino-ide-ubuntu](/images/navo/arduino/arduino-ide-ubuntu.png)
 
 After this, open a new terminal window and cd into the arduino folder, and then cd into libraries directory. From that libraries' directory, run the following 
 command below. This command should build the needed libraries that will be used by ROS.
