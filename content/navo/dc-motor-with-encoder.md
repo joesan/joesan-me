@@ -10,10 +10,10 @@ tags = ["ros", "navo"]
 toc = true
 +++
 
+## DC Motor
+
 A DC Motor equipped with a built-in encoder is going to immensely help us in precisely controlling the speed at which the motor rotates. Let us go through 
 the basics behind such an encoder and how it relates to the speed ot the motor.
-
-## DC Motor
 
 In this tutorial, we will look at how to do speed control using a DC Motor that has a quadrature shaft encoder. I will be using 
 this <a href="https://www.pololu.com/product/4843" target="_blank">DC Motor with Encoder</a> as a reference. The main reason being that it has a 
@@ -23,7 +23,7 @@ the motor.
 I will refuse to talk about DC Motors in general as that is not the focus for us, but rather to understand how to make use of the Encoder pulses with 
 which we could measure the RPM and thus control the speed.
 
-## Understanding DC Motor with Encoder
+### Understanding DC Motor with Encoder
 
 So we need to now effectively understand a little about the DC Motor and the need for an Encoder unit. A one liner - a DC Motor is a mechanical 
 device that converts basically electrical energy to mechanical energy. Ok that's simple enough but that's enough. Why do we need an Encoder? With the 
@@ -114,7 +114,7 @@ values into the equation above, we end up with the following:
 
 We then have to plug in this equation into the sketch below and measure the number of pulse counts every second. Let us see how the sketch looks like!
 
-## DC Motor Speed Control Arduino Sketch
+### DC Motor Speed Control Arduino Sketch
 
 ```c
 /*

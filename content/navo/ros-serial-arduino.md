@@ -10,11 +10,10 @@ tags = ["ros", "navo"]
 toc = true
 +++
 
-Let us see how we could set up the ROS serial communication between a Raspberry Pi and an Arduino board.
-
 ## Pi with Arduino
 
-So, our very first integration attempt is to integrate the Raspberry Pi with Arduino. We will use the Raspberry Pi 4. Let us break this down into the following steps:
+Let us see how we could set up the ROS serial communication between a Raspberry Pi and an Arduino board. So, our very first integration attempt is to 
+integrate the Raspberry Pi with Arduino. We will use the Raspberry Pi 4. Let us break this down into the following steps:
 
 1. ROS on the Raspberry Pi 4
 2. Serial libraries on the Pi and Arduino
@@ -132,7 +131,7 @@ I made a small video to see this peanut setup in action! Click the image below f
 
 That's all it. To shutdown your Arduino, just disconnect it from your computer's USB port!
 
-### Known Issues
+## Known Issues
 
 While testing this setup, I faced some issues with the ros serial library:
 

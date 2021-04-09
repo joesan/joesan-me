@@ -1,5 +1,5 @@
 +++
-title="PID Controller"
+title="DC Motor RPM Control"
 date=2020-12-15
 
 [taxonomies]
@@ -28,7 +28,7 @@ by using a technique called <a href="https://en.wikipedia.org/wiki/Pulse-width_m
 Okay, so we can now control the speed of the motor with PWM, but what about the direction? Speed is not just about going forwards, but also going 
 backwards. Fortunately this is very simple using a so called <a href="https://en.wikipedia.org/wiki/H-bridge" target="_blank">H bridge</a>.
 
-Hence, by combinig the PWM with an H Bridge, we can acheive what we want which is to control the speed and direction. The L298N is exactly this. I have 
+Hence, by combinig the PWM with an H Bridge, we can achieve what we want which is to control the speed and direction. The L298N is exactly this. I have 
 purchased a few of these L298N Driver units. Each one is capable of controlling upto 2 DC Motors within the 5V and 35V range with a peak current of 2A.
 
 Here is a picture of my L298N H bridge. For the exact model, go here to find the [list of materials](../hardware/) that you need to source!
