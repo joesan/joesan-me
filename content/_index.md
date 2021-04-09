@@ -19,4 +19,5 @@ it down here as a blog! This is my blog!
 
 ## Get in touch
 
-- [x] [Let's talk](https://calendly.com/joesandech) :telephone_receiver:
+- [x] [My calender is clean](https://calendly.com/joesandech) :telephone_receiver:
+- [x] [If you want to chat now](https://gitter.im/joesan/community) :iphone:
