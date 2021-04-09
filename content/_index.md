@@ -5,6 +5,8 @@ description = "Glad you found me...."
 
 # Joesan is my handle :smile:
 
+Here you will find some content, some thoughts, some experiments, some something that I do in my spare time. My memory is so volatile, so I'm well off writing
+it down here as a blog! This is my blog!
 
 ## Few Facts
 
