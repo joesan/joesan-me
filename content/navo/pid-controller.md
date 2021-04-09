@@ -19,7 +19,7 @@ relation between a PID controller and a process that is optimized by using a PID
 the process here is a water heater control system (WHCS). The WHCS works by receiving a desired value for the temperature and heats the water. For 
 example., if we want the WHCS to heat the water to 40° C, we want it to exactly do that.
 
-![pid-controller-1](../assets/images/pid/pid-controller-1.png)
+![pid-controller-1](/images/navo/pid/pid-controller-1.png)
 
 From the image above, we have the Process which emits a Process Value (PV), the PID Contoller to which we give a Setpoint value (SP), the sensors that 
 measure the actual Process Value (PV) which is then fed back into the PID controller, thus forming a closed loop. It can also be seen that the Process is 
@@ -36,7 +36,7 @@ further to understand the basics behind the PID controller.
 We first need to understand what each of the term in the PID controller represent. The image below throws a bit of clarity on how each of the terms 
 (Proportional, Integral & the Derivative) combine to get a smooth target output.
 
-![pid-controller-2](../assets/images/pid/pid-controller-2.png)
+![pid-controller-2](/images/navo/pid/pid-controller-2.png)
 
 As we can see from the image above that the error is calculated by simply calculating the difference between the Setpoint (SV) and the Process Value (PV) or in other words, 
 the error is simply the difference between the desired value and the actual value.
@@ -45,10 +45,10 @@ Let us now try to mathematically understand what each of the terms mean and how 
 
 ### Proportional Control
 
-This is the most simplest of the control where the controller gives an output that is directly proportional to the current error (difference between SV 
+This is the simplest of the control where the controller gives an output that is directly proportional to the current error (difference between SV 
 and PV) times a proportional factor which is synonymous to the error value.
 
-![pid-controller-p](../assets/images/pid/pid-controller-p.png)
+![pid-controller-p](/images/navo/pid/pid-controller-p.png)
 
 It can be seen from the equation above that with a small Kp the controller will make small attempts to minimize the error, while for a larger Kp, the controller will make a larger attempt to minimize the error. This is good, but this approach suffers from either an overshoot (if Kp is too large) or an undershoot (if Kp is too small). Both these effects, called the offset or the steady state error - we do want to avoid. There is always a steady state residual error in the case of a proportional controller. If this is too theoretical, let us understand it from a more practical perspective.
 
@@ -56,7 +56,7 @@ Imagive we have a water tank as shown in the image below with which our goal is 
 long as the system is untouched, nothing changes but change is inevitable which means that the outflow will need to be increased, or the inflow need to be 
 decreased or vice versa. But the goal remains constant which is to maintain the water levek in the tank at the given Setpoint value.
 
-![pid-controller-i](../assets/images/pid/pid-water-tank.png)
+![pid-controller-i](/images/navo/pid/pid-water-tank.png)
 
 So with the goal of maintaining the Setpoint say at level 3, if we now increase the flow out of the tank, the tank level will start to decrease because 
 of the imbalance between the inflow and outflow. While the tank level decreases, the error increases and the proportional controller will increase the 
@@ -76,7 +76,7 @@ By introducing a time component to the proportional controller, we can mitigate 
 
 If the error is large enough, the integral controller will increment / decrement the controller output at a faster rate, while on the other hand if the error is small, the changes will be slow. For any given error, the speed of the integral action is set by the controller's time setting where a larget time setting results in slow integral action and vice versa.
 
-![pid-controller-i](../assets/images/pid/pid-controller-i.png)
+![pid-controller-i](/images/navo/pid/pid-controller-i.png)
 
 The equation above sums all the previous errors over a given time interval t and accouns for the error correction accordingly. If we have a larger value 
 for the term Ki, it will result in an overshoot.
@@ -88,7 +88,7 @@ processes where motion control is needed, hence a good candidate for our Navo ro
 errors, the differential controller is capable of predicting future behavior of the error. As it can be seen from the equation below that the output of 
 the differential controller depends on the rate of change of error over time, multiplied by a derivative constant Kd.
 
-![pid-controller-d](../assets/images/pid/pid-controller-d.png)
+![pid-controller-d](/images/navo/pid/pid-controller-d.png)
 
 The output of the derivative this helps in reducing / minimizing the overshoot error. For example., a larger derivative or a larger slope indicates that 
 the next error will be far away from the previous error but a small derivative or a smaller slope indicates that the next error will be likely close to 
@@ -98,11 +98,11 @@ the previous error.
 
 With the controllers and their equations nailed down, we have the following equations for the PID controller.
 
-![pid-controller-out](../assets/images/pid/pid-controller-out.png)
+![pid-controller-out](/images/navo/pid/pid-controller-out.png)
 
 and by substituting the values, we get
 
-![pid-controller-math-1](../assets/images/pid/pid-controller-math-1.png)
+![pid-controller-math-1](/images/navo/pid/pid-controller-math-1.png)
 
 So what that equation basically mean in our context which is to control the speed of the DC motor is that, the controller output is used to determine 
 how much more or less the motor speed has to be adjusted so that the current speed  (processValue) matches the target speed (setPoint). How does all 
@@ -156,20 +156,20 @@ Setpoint occurs more often, it is better that we address this to avoid putting s
 kick is to assume that the change in the Setpoint is constant, so the rate of change or in mathematical terms, the derivative of a constant (remember 
 derivative is all about slope and for a constant there is no slope) is 0.
 
-![pid-derivative-kick-1](../assets/images/pid/pid-derivative-kick-1.png)
+![pid-derivative-kick-1](/images/navo/pid/pid-derivative-kick-1.png)
 
 Using what we already know for the derivative control, let us use our assumption for a constant Setpoint to the derivative equation
 
-![pid-derivative-kick-2](../assets/images/pid/pid-derivative-kick-2.png)
+![pid-derivative-kick-2](/images/navo/pid/pid-derivative-kick-2.png)
 
 As it can be seen now that our derivative term becomes a measure of the Process value instead of the error term, hence our actual PID controller equation 
 now becomes
 
-![pid-controller-math-2](../assets/images/pid/pid-controller-math-2.png)
+![pid-controller-math-2](/images/navo/pid/pid-controller-math-2.png)
 
 It is easy to visualize this with some numbers and the resulting plat as shown in the image below.
 
-![pid-derivative-kick-image](../assets/images/pid/pid-derivative-kick-image.png)
+![pid-derivative-kick-image](/images/navo/pid/pid-derivative-kick-image.png)
 
 Looking at the plot between the derivative of the error vs time, It can be seen that as the Setpoint changes, it results in the error value to spike and 
 this inturn causes the rate of change in error for a given time interval to result in a spike which we term the derivative kick. So by assuming that the 
