@@ -53,11 +53,9 @@ sure to download the appropriate Arduino IDE version for your Ubuntu version (Fo
 The next step is to prepare and install the serial libraries that is required to make Arduino communicate with the Raspberry Pi. So for this, open a terminal window from 
 the Ubuntu machine and run the following commands one after the other.
 
-
 ```
 sudo apt-get install ros-noetic-rosserial-arduino
 ```
-
 ```
 sudo apt-get install ros-noetic-rosserial
 ```
