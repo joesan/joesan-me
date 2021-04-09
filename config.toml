@@ -38,6 +38,7 @@ katex.auto_render = true
 navbar_items = [
 	{ url = "$BASE_URL/", name = "Home" },
 	{ url = "$BASE_URL/posts", name = "Posts" },
+	{ url = "$BASE_URL/navo", name = "Navo" },
 	{ url = "$BASE_URL/projects", name = "Projects" },
 	{ url = "$BASE_URL/links", name = "Links" },
 	{ url = "$BASE_URL/categories", name = "Categories" },
