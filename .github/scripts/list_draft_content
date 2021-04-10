@@ -32,7 +32,7 @@ object ListDraftContent {
       }
     }
     println("---------------- End: Printing all Files in draft status --------------------------")
-    println("---------------- Start: Writing all Files in draft status to a file ---------------")
+    println(s"---------------- Start: Writing Files in draft status to file $printWriter.---------------")
     try {
       filtered.foreach {
         case Success(value) =>
