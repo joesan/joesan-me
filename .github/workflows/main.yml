@@ -41,12 +41,11 @@ jobs:
           git config --global user.email "workflow-bot@bigelectrons.com"
           git config --global user.name "workflow-bot"
           bash ./.github/scripts/list_draft_content content draftStatus
-          ls -la
-          cp ./.github/scripts/draftStatus README.md
+          cp draftStatus README.md
+          rm -Rf draftStatus
           git add .
           git commit -m "generated informational content added to README.md"
           git push origin master
-          rm -Rf ./.github/scripts/draftStatus
 
   build:
     #needs: linkChecker
