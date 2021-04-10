@@ -25,6 +25,19 @@ jobs:
           #content-filepath: ./lychee/out.md
           #labels: report, automated issue
 
+
+  listDraftContent:
+    #needs: linkChecker
+    runs-on: macos-10.15
+    if: github.ref == 'refs/heads/master'
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v2
+      - name: Install Scala
+        run: |-
+          brew install scala
+          ls -la
+
   build:
     #needs: linkChecker
     runs-on: macos-10.15
