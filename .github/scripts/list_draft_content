@@ -1,6 +1,7 @@
 #!/bin/sh
 exec scala "$0" "$@"
 !#
+
 import scala.io.Source
 import scala.util.Using
 import java.io.File
@@ -17,7 +18,7 @@ object ListDraftContent {
   def main(args: Array[String]) {
     val pathName = if(args(0).isEmpty) "content" else args(0).trim()
     val fileName = if(args(1).isEmpty) "draftStatus" else args(1).trim()
-    val result: Array[File] = fetchFilesRecursively(new File(pathName)) //"/home/joesan/Projects/Private/github-docs/joesan-me/content"))
+    val result: Array[File] = fetchFilesRecursively(new File(pathName))
     val filteredFiles: Seq[File] = result.toSeq.filter{ file => fileExtensions.exists(file.getName.endsWith(_)) }
 
     println("---------------- Start: Printing all Files in draft=true status -------------------")
@@ -34,7 +35,9 @@ object ListDraftContent {
     println("---------------- Start: Writing all Files in draft status to a file ---------------")
     try {
       filtered.foreach {
-        case Success(value) => printWriter.write(s"$value \n")
+        case Success(value) =>
+          println(s"Writing filename $value")
+          printWriter.write(s"$value \n")
         case _ => // do nothing
       }
     } finally { printWriter.close() }
@@ -47,4 +50,3 @@ object ListDraftContent {
     these ++ these.filter(_.isDirectory).flatMap(fetchFilesRecursively)
   }
 }
-ListDraftContent.main(args)

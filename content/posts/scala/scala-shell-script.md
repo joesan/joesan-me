@@ -23,7 +23,6 @@ object HelloShell {
     println("Hello, shell! " + args.toList)
   }
 }
-HelloShell.main(args)
 ```
 
 Worth mentioning is this line {{ textcolor(color="red" text="exec scala "$0" "$@"") }} where:
@@ -32,7 +31,7 @@ Worth mentioning is this line {{ textcolor(color="red" text="exec scala "$0" "$@
 
 @  Expands to the positional parameters, starting from one
 
-Calling it is pretty simple! Save it as helloShell.sh and run:
+Calling it is pretty simple! Save it as helloShell and run:
 
 ```shell
 ./helloShell.sh shebang
@@ -72,7 +71,7 @@ You can [find the script here](https://github.com/joesan/joesan-me/tree/master/s
 ./list_draft_content content draftStatus
 ```
 
-Where, the first argument is the folder where we want to recursively search for markdown files and the second argument is the name of the file where we want to write all the 
+Where, the first argument is the folder where we want to recursively search for markdown files, and the second argument is the name of the file where we want to write all the 
 entries that are found! Quite simple!
 
 TODO:  I have also integrated this in my [GitHub Action workflow](https://www.) which will then add this as a 
