@@ -2,7 +2,6 @@
 title="Running Scala from within"
 description="Might be useful at times"
 date=2021-04-10
-draft=true
 
 [taxonomies]
 categories = ["Technical Stuff"]
@@ -65,7 +64,7 @@ Have a [look here](https://github.com/joesan/joesan-me/tree/master/content/posts
 got to do with this article? Well, nothing much, but I would want to know what all content has been marked with ```draft=true``` so that I know which ones I should come 
 back later and finish the writing. My love for Scala forced me to write this search as a script.
 
-You can [find the script here](https://github.com/joesan/joesan-me/tree/master/scripts/list_draft_content.sh). To call the script, we just do:
+You can [find the script here](https://github.com/joesan/joesan-me/tree/master/.github/scripts/list_draft_content.sh). To call the script, we just do:
 
 ```shell
 ./list_draft_content content draftStatus
