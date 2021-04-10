@@ -69,7 +69,7 @@ back later and finish the writing. My love for Scala forced me to write this sea
 You can [find the script here](https://github.com/joesan/joesan-me/tree/master/scripts/list_draft_content.sh). To call the script, we just do:
 
 ```shell
-./list_draft_content.sh content draftStatus
+./list_draft_content content draftStatus
 ```
 
 Where, the first argument is the folder where we want to recursively search for markdown files and the second argument is the name of the file where we want to write all the 
