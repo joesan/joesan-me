@@ -11,14 +11,14 @@ on:
       - master
 
 jobs:
-  #linkChecker:
-    #runs-on: ubuntu-latest
-    #steps:
-      #- uses: actions/checkout@v2
-      #- name: Check HTTP Links
-        #uses: lycheeverse/lychee-action@v1.0.4
-        #with:
-          #args: -v "content/**/*.md"
+  linkChecker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Check HTTP Links
+        uses: lycheeverse/lychee-action@v1.0.4
+        with:
+          args: -v "content/**/*.md"
       # This action below creates an issue automatically
       #- name: Create Issue From File
        # uses: peter-evans/create-issue-from-file@v2
@@ -27,9 +27,8 @@ jobs:
           #content-filepath: ./lychee/out.md
           #labels: report, automated issue
 
-
   listDraftContent:
-    #needs: linkChecker
+    needs: linkChecker
     runs-on: macos-10.15
     if: github.ref == 'refs/heads/master'
     steps:
@@ -40,15 +39,13 @@ jobs:
           brew install scala
           git config --global user.email "workflow-bot@bigelectrons.com"
           git config --global user.name "workflow-bot"
-          bash ./.github/scripts/list_draft_content content draftStatus
-          cp draftStatus README.md
-          rm -Rf draftStatus
+          bash ./.github/scripts/list_draft_content content draftStatus.txt
           git add .
-          git commit -m "generated informational content added to README.md"
+          git commit -m "generated draftStatus.txt"
           git push origin master
 
   build:
-    #needs: linkChecker
+    needs: linkChecker
     runs-on: macos-10.15
     if: github.ref == 'refs/heads/master'
     env:
@@ -73,10 +70,6 @@ jobs:
           touch .nojekyll
           touch README.md
           echo 'https://www.bigelectrons.com - SITE GENERATED USING ZOLA' > README.md
-          pwd
-          ls -la
-          bash ./.github/scripts/list_draft_content content draftStatus
-          cp draftStatus README.md
           touch CNAME
           echo 'bigelectrons.com' > CNAME
           rm -rf .github/
