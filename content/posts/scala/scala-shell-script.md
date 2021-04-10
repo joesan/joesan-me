@@ -73,4 +73,7 @@ You can [find the script here](https://github.com/joesan/joesan-me/tree/master/.
 Where, the first argument is the folder where we want to recursively search for markdown files, and the second argument is the name of the file where we want to write all the 
 entries that are found! Quite simple!
 
-TODO:  I have also integrated this in my [GitHub Action workflow](https://www.) which will then add this as a 
+I have also integrated this in my [GitHub Action workflow](https://github.com/joesan/joesan-me/blob/master/.github/workflows/main.yml) as a job (listDraftContent) which will 
+then run this script and write a file called [draftStatus.txt](https://github.com/joesan/joesan-me/blob/draft-status/draftStatus.txt) as a new branch called draft-status. 
+
+Cool or?
