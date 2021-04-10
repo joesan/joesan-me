@@ -50,7 +50,7 @@ jobs:
           touch .nojekyll
           touch README.md
           echo 'https://www.bigelectrons.com - SITE GENERATED USING ZOLA' > README.md
-          bash /.github/scripts/list_draft_content.sh content draftStatus
+          bash ./.github/scripts/list_draft_content.sh content draftStatus
           cp draftStatus README.md
           touch CNAME
           echo 'bigelectrons.com' > CNAME
