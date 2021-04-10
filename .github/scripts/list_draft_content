@@ -5,6 +5,8 @@ import scala.io.Source
 import scala.util.Using
 import java.io.File
 import java.io.PrintWriter
+import scala.util.Try
+import scala.util.Success
 
 // Utility to print the files from a directors that matches a specific String
 object ListDraftContent {
