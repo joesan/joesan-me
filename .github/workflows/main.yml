@@ -37,7 +37,7 @@ jobs:
       - name: Install zola
         run: brew install zola
       - name: Install Scala
-        run: bew install scala
+        run: brew install scala
       - name: Generate HTML
         run: zola build
       - name: Commit and push to target branch
