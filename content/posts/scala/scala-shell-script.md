@@ -1,5 +1,5 @@
 +++
-title="Running Scala from within"
+title="Running Scala from within a shell script"
 description="Might be useful at times"
 date=2021-04-10
 
