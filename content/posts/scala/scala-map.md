@@ -8,7 +8,6 @@ categories = ["Technical Stuff"]
 tags = ["scala"]
 +++
 
-
 No, it is not the Map implementation that we are going to talk about. Let me ask you a very simple question. I assume that you have written functions or 
 methods or routines or whatever you call it. What do you think that it actually does? ...., 3...., 2...., 1.... TimeUp. Let me answer that for you.
 
