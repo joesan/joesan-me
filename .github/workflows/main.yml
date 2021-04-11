@@ -39,18 +39,9 @@ jobs:
     steps:
       - name: Check out repo
         uses: actions/checkout@v2
-      - name: Cache SBT & Scala
-        uses: actions/cache@v2
-        with:
-          path: |
-            ~/.ivy2/cache
-            ~/.sbt
-          key: ${{ runner.os }}-sbt-${{ hashFiles('**/build.sbt') }}
       - name: Install Scala
         run: |-
           brew install scala
-          which scala
-          ls -la /usr/local/bin/scala
           git config --global user.email "workflow-bot@bigelectrons.com"
           git config --global user.name "workflow-bot"
           git checkout --orphan $TARGET_BRANCH
