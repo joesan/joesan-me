@@ -24,7 +24,7 @@ object HelloShell {
 }
 ```
 
-Worth mentioning is this line {{ textcolor(color="red" text="exec scala "$0" "$@"") }} where:
+Worth mentioning is this line ```exec scala "$0" "$@"``` where:
 
 0  Expands to the name of the shell script
 
