@@ -8,8 +8,11 @@
 - [Zola](https://www.getzola.org)
 - [DeepThought](https://github.com/RatanShreshtha/DeepThought)
 
+## How to build?
+[Have a look here](https://github.com/joesan/joesan-me/blob/master/.github/workflows/main.yml) on how the project is built.
+
 ## How to serve?
-Install Zola, checkout this project and type `zola serve`. You should see your new site at `localhost:1111` or at `127.0.0.1:1111`
+Install Zola, checkout this project, from the root folder type `zola serve`. You should see your new site at `localhost:1111` or at `127.0.0.1:1111`
 
 **NOTE**: you must provide the theme options variables in `config.toml` to serve a functioning site
 
