@@ -4,7 +4,9 @@ on:
   push:
     paths-ignore:
       - 'README.md'
-      - 'util/*'
+      - 'util/**'
+      - '.gitignore'
+      - 'LICENSE'
     branches:
       - master
   pull_request:
