@@ -49,6 +49,7 @@ jobs:
       - name: Install Scala
         run: |-
           brew install scala
+          which scala
           git config --global user.email "workflow-bot@bigelectrons.com"
           git config --global user.name "workflow-bot"
           git checkout --orphan $TARGET_BRANCH
