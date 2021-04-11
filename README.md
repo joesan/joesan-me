@@ -9,7 +9,9 @@
 - [DeepThought](https://github.com/RatanShreshtha/DeepThought)
 
 ## How to build?
-[Have a look here](https://github.com/joesan/joesan-me/blob/master/.github/workflows/main.yml) on how the project is built.
+[Have a look here](https://github.com/joesan/joesan-me/blob/master/.github/workflows/main.yml) on how the project is built. The GitHub pages is
+configured to map to my domain name (bigelectrons). The build pipeline compiles the markdown content to a static html, pushes it to a 
+branch [gh-pages](https://github.com/joesan/joesan-me/tree/gh-pages) from where the content is served.
 
 ## How to serve?
 Install Zola, checkout this project, from the root folder type `zola serve`. You should see your new site at `localhost:1111` or at `127.0.0.1:1111`
