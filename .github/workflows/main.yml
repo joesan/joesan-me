@@ -39,7 +39,7 @@ jobs:
     steps:
       - name: Check out repo
         uses: actions/checkout@v2
-      - name: Cache SBT
+      - name: Cache SBT & Scala
         uses: actions/cache@v2
         with:
           path: |
