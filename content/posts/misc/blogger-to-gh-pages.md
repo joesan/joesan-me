@@ -10,10 +10,11 @@ tags = ["blog", "zola"]
 
 
 I have been documenting so far with Blogger. Recently I started to do some Robotics projects with ROS. As I was doing it, I was looking for ways to get all what
-I do be documented. I know Github offers [GH Pages](https://pages.github.com/), but I was a bit reluctant to try it out. So for the [Navo project](https://navo-org.github.io/navo-docs/), I decided 
-the GH Pages will be the source for my documentation, hence I decided to give it a try. Honestly, I was not disappointed!
+I do be documented. I know Github offers [GH Pages](https://pages.github.com/), but I was a bit reluctant to try it out. 
+So for the [Navo project](https://github.com/navo-org), I decided that GH Pages will be the source for my documentation, hence I wanted to give it a try. 
+Honestly, I was not disappointed!
 
-I have been documenting all what I have been doing for the [Navo project](https://navo-org.github.io/navo-docs/) with GH Pages and a Jekyll theme. It did not stuck
+I have been documenting all what I have been doing for the [Navo project](https://github.com/navo-org) with GH Pages and a Jekyll theme. It did not click to
 my mind until a day ago that why not I move my personal blogging content as well from Blogger to GH Pages? I took the plunge and started to explore on 
 what [Static Site Generator or SSG in short](https://en.wikipedia.org/wiki/Web_template_system#Static_site_generators) platform should I consider. Jekyll is an option, but
 I wanted to see what other platforms are available. 
@@ -42,8 +43,8 @@ It does not stop there, you could compile your Zola content to be served via GH 
 I created a new project in my GitHub account, migrated all of my content from Blogger (this was a bit of work), organized them into appropriate folder structure.
 
 Does it stop there? No, no no, it does not stop there, since your content is going to be in GitHub, you could apply that CI / CD pipeline. This was exactly my next step where I added a very
-[basic HTTP link checker](https://github.com/lycheeverse/lychee-action) which when added to the [GitHub action workflow](https://github.com/joesan/joesan-me/actions) could scan the Markdown files
-recursively and validate all the HTTP links. 
+[basic HTTP link checker](https://github.com/lycheeverse/lychee-action) which when added to the [GitHub action workflow](https://github.com/joesan/joesan-me/actions) could scan the 
+Markdown files recursively and validate all the HTTP links. 
 
 It goes even further by automatically creating an issue with a summary of all the HTTP links that failed to resolve with a HTTP OK status. I do not need
 that as it makes sense to have such automation in a team set up. I could also set up a spell checker for my content as I realized during the migration of my content from Blogger is that I had lots

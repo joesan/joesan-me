@@ -9,6 +9,7 @@ categories = ["Technical Stuff"]
 tags = ["distributed systems"]
 +++
 
+TODO: Under documentation....
 
 A piece of software is just like a person. It cannot exist alone, it needs other software with which it can and should interact with for accomplishing a certain
 piece of task. This implies that we will have to deal with multiple software systems at once and even more, we need to be able to isolate a problem in 

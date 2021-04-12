@@ -41,18 +41,6 @@
 
   <script crossorigin="anonymous" src="https://kit.fontawesome.com/201b8d5e05.js"></script>
 
-  {% if config.extra.analytics.google %}
-  <script async src="https://www.googletagmanager.com/gtag/js?id={{ config.extra.analytics.google }}"></script>
-  <script type="text/javascript">
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
-    gtag("config", "{{ config.extra.analytics.google }}");
-  </script>
-  {% endif %}
-
   {% if config.extra.katex.enabled %}
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
         integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
@@ -75,19 +63,6 @@
 			});"></script>
   {% endif %}
   {% endif %}
-
-  <!-- Start of Woopra Code -->
-  <script>
-    (function(){
-      var t,i,e,n=window,o=document,a=arguments,s="script",r=["config","track","identify","visit","push","call","trackForm","trackClick"],c=function(){var t,i=this;for(i._e=[],t=0;r.length>t;t++)(function(t){i[t]=function(){return i._e.push([t].concat(Array.prototype.slice.call(arguments,0))),i}})(r[t])};for(n._w=n._w||{},t=0;a.length>t;t++)n._w[a[t]]=n[a[t]]=n[a[t]]||new c;i=o.createElement(s),i.async=1,i.src="//static.woopra.com/js/w.js",e=o.getElementsByTagName(s)[0],e.parentNode.insertBefore(i,e)
-    })("woopra");
-
-    woopra.config({
-      domain: 'bigelectrons.com'
-    });
-    woopra.track();
-  </script>
-  <!-- End of Woopra Code -->
 </head>
 
 <body class="has-background-white">
