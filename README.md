@@ -8,9 +8,8 @@
 - [Zola](https://www.getzola.org)
 - [DeepThought](https://github.com/RatanShreshtha/DeepThought)
 
-## How to build?
-[Have a look here](https://github.com/joesan/joesan-me/blob/master/.github/workflows/main.yml) on how the project is built. We check the HTTP links for all the markdown content,
-fetch all markdown content that is in draft status, report them in a file (this is just for me to know which content I should still work on), and then finally build using Zola. 
+## How to CI?
+[Have a look here](https://github.com/joesan/joesan-me/blob/master/.github/workflows/main.yml) on how the project is built. It is a simple process where we firts check for valid HTTP links across all the markdown files. If that is successful, I then check all the markdown content that is in draft status. I write them to a file in a separate branch. Finally, the project is built using Zola and the resulting HTML pages are published to the [gh-pages branch](https://github.com/joesan/joesan-me/tree/gh-pages) from where the GitHub pages serve my website. 
 
 ## How to serve?
 Install Zola, checkout this project, from the root folder type `zola serve`. You should see your new site at `localhost:1111` or at `127.0.0.1:1111`
