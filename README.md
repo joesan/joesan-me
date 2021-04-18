@@ -9,7 +9,10 @@
 - [DeepThought](https://github.com/RatanShreshtha/DeepThought)
 
 ## How to CI?
-[Have a look here](https://github.com/joesan/joesan-me/blob/master/.github/workflows/main.yml) on how the project is built. It is a simple process where we firts check for valid HTTP links across all the markdown files. If that is successful, I then check all the markdown content that is in draft status. I write them to a file in a separate branch. Finally, the project is built using Zola and the resulting HTML pages are published to the [gh-pages branch](https://github.com/joesan/joesan-me/tree/gh-pages) from where the GitHub pages serve my website. 
+[Have a look here](https://github.com/joesan/joesan-me/blob/master/.github/workflows/main.yml) on how the project is built. It is a simple process where 
+we first check for valid HTTP links across all the markdown files. If that is successful, I then check all the markdown content that is in draft status. 
+I write them to a file in a separate branch. Finally, the project is built using Zola and the resulting HTML pages are published to 
+the [gh-pages branch](https://github.com/joesan/joesan-me/tree/gh-pages) from where the GitHub pages serve my website. 
 
 ## How to serve?
 Install Zola, checkout this project, from the root folder type `zola serve`. You should see your new site at `localhost:1111` or at `127.0.0.1:1111`
