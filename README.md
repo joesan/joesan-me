@@ -24,3 +24,6 @@ Install Zola, checkout this project, from the root folder type `zola serve`. You
 
 The GitHub pages is configured to map to my domain name (bigelectrons). The build pipeline compiles the markdown content to a static html, pushes it to a
 branch [gh-pages](https://github.com/joesan/joesan-me/tree/gh-pages) from where the content is served.
+
+I will leave you with a punch line - Amateurs talks strategy, professionals talk logistics - Not said by me, but that statement means a lot and 
+is applicable to our every single day.
