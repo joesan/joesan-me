@@ -25,7 +25,7 @@ implicit class DoubleExtensions(val d: double) extends AnyVal {
 A few points to note on the code snippet
 1. The implicit keyword makes the primary constructor of the class available for implicit conversions
 2. The implicit classes may be defined inside a trait, class or an object - good practice
-3. Only one non implicit argument is allowed in the primary constructor (the val d: double in the case above)
+3. Only one non-implicit argument is allowed in the primary constructor (the val d: double in the case above)
 4. There may not be any method, member or object in scope with the same name as the implicit class
 
 I find this pretty neat and very simple rules surrounding implicit classes!
