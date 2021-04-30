@@ -7,9 +7,5 @@ draft=true
 [taxonomies]
 categories = ["Technical Stuff"]
 tags = ["scala", "design"]
-
-[extra]
-toc = true
-comments = false
 +++
 
