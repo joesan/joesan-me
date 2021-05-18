@@ -16,4 +16,6 @@ Let us first look into what Type Classes are!
 
 ## Type Classes in Scala
 
+Type classes in Scala is a mechanism with which one can 
+
 
