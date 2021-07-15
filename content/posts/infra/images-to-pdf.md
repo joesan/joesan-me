@@ -22,4 +22,5 @@ sudo apt-get install -y img2pdf
 img2pdf *.jp* --output your-pdf.pdf
 ```
 
-As usual, img2pdf --help is your friend for additional options on how to use this package.
+As usual, img2pdf --help is your friend for additional options on how to use this package. Just for a reference, here is the 
+[link to the GitHub](https://github.com/josch/img2pdf) project.
