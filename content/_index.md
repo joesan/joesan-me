@@ -17,6 +17,8 @@ it down here as a blog! This is my blog!
 - I'm learning through [Coursera](https://www.coursera.org/user/04a614123f3a97ae89e941cb3ba2a9a3) :book:
 - I'm currently working on the [Navo project](https://github.com/navo-org) :robot:
 
+Have a look at my [recent blog articles here](https://www.bigelectrons.com/posts/)
+
 ## Get in touch
 
 - [x] [My calender is clean](https://calendly.com/joesandech) :telephone_receiver:
