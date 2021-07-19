@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+      <title>bigelectrons - Math</title>
+        <link>https://www.bigelectrons.com</link>
+        <description></description>
+        <generator>Zola</generator>
+        <language>en</language>
+        <atom:link href="https://www.bigelectrons.com/categories/math/rss.xml" rel="self" type="application/rss+xml"/>
+        <lastBuildDate>Tue, 10 Dec 2019 00:00:00 +0000</lastBuildDate>
+        <item>
+            <title>Understanding Back Propagation Neural Network Architectures</title>
+            <pubDate>Tue, 10 Dec 2019 00:00:00 +0000</pubDate>
+            <link>https://www.bigelectrons.com/posts/math/back-propogation-neural-network/</link>
+            <guid>https://www.bigelectrons.com/posts/math/back-propogation-neural-network/</guid>
+            <description>&lt;p&gt;Once you understand Feed Forward mechanism which isn&#x27;t much useful when you do not back propagate to update the weights and refine your Neural Network, your 
+Neural Network isn&#x27;t of much use. So in this blog post, let us understand what is back propagation and how could we represent the back propagation 
+mathematically!&lt;&#x2F;p&gt;
+&lt;p&gt;Back propagation generally means that you distribute the errors to the hidden layers in a proportionate manner relative to how much the weights were 
+contributing to the actual error in the subsequent layer. so the larger the weight, the more of the output error is carried back to the hidden layer.&lt;&#x2F;p&gt;
+&lt;p&gt;As always, here is a sheet of paper where I have worked out the Math (Matrix representation). I have &lt;em&gt;vectorised&lt;&#x2F;em&gt; the back propagation mechanism!&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;math-back-propogation-neural-network.jpg&quot; alt=&quot;Feed Forward Neural Network&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Now you might wonder from where did I arrive at my Milestone matrix notation. If you expand on that W&lt;sup&gt;T&lt;&#x2F;sup&gt;&lt;sub&gt;hidden_output&lt;&#x2F;sub&gt; you will find out 
+that this weights matrix is just a &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Transpose&quot;&gt;Transpose&lt;&#x2F;a&gt; of the original weights Matrix during the 
+forward propagation phase. This is a big step in understanding the way we distribute the errors into the subsequent hidden layers of the Neural Networks. &lt;&#x2F;p&gt;
+&lt;p&gt;The hidden_output in my sheet above in the simple 2 layer, 2 node network mean that my hidden layer is also the input layer. The reason why I decided to 
+call it as hidden_output is for the fact that a typical Neural Network will not just have an input and an output layer, but also several hidden layers. 
+So don&#x27;t be confused with the hidden_output, well I could have as well called it input_output! But nevertheless, you get the message! Don&#x27;t you?&lt;&#x2F;p&gt;
+</description>
+        </item>
+        <item>
+            <title>Understanding Feed Forward Neural Network Architectures</title>
+            <pubDate>Tue, 10 Dec 2019 00:00:00 +0000</pubDate>
+            <link>https://www.bigelectrons.com/posts/math/feed-forward-neural-net/</link>
+            <guid>https://www.bigelectrons.com/posts/math/feed-forward-neural-net/</guid>
+            <description>&lt;p&gt;I have been reading through the architectures of Neural Networks and wanted to grasp the idea behind calculating the weights in a Neural Network and as you 
+can see in the image below is a simple 2 node 2 layer Neural Network.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;math-feed-forward-neural-network.jpg&quot; alt=&quot;Feed Forward Neural Network&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;As you can see that for simplicity’s sake, I have just used a 2 node 2 layer network, but the same holds true for any sized Neural Network. It&#x27;s just that 
+the size of the Matrix increases proportionally to the number of inputs! The concepts outlined in the image holds gold!&lt;&#x2F;p&gt;
+</description>
+        </item>
+        <item>
+            <title>Math behind simple Linear Regression</title>
+            <pubDate>Mon, 21 Oct 2019 00:00:00 +0000</pubDate>
+            <link>https://www.bigelectrons.com/posts/math/linear-regression/</link>
+            <guid>https://www.bigelectrons.com/posts/math/linear-regression/</guid>
+            <description>&lt;p&gt;I have been wondering on how the math behind a Linear regression works as in most of the ML books that you encounter, the focus will be on giving you a 
+linear equation and just plugging this equation in a Python library to solve for the slope and bias and then use it to predict the new values. It is very 
+rare that they show you how to find the m and b values. So here in a piece of paper, I decided to try that out, it worked out very well! So if you want 
+to learn it, try to understand what partial derivatives are!&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;math-simple-gradient-descent.jpg&quot; alt=&quot;Liner Regression Gradient Descent&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;In the above solution, I have just solved for m, which is the slope term in a Linear Regression. You can apply the same technique to solve for b! So what you 
+effectively do is to differentiate one term while treating the others as a constant. In simple terms, this is called a partial derivative. A derivative is a 
+measure of something that changes while a partial derivative is a measure of something that changes while treating everything else in this world as a 
+constant! It&#x27;s that simple! Have a look here at the &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Partial_derivative&quot;&gt;Wikipedia article on Partial Derivatives!&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;What I have shown you here is a Simple Linear Regression, but the technique applies as good as a multi variate Linear Regression! Math is fucking 
+fun - Once you understand it!&lt;&#x2F;p&gt;
+</description>
+        </item>
+        <item>
+            <title>Liner Interpolation</title>
+            <pubDate>Wed, 13 Jan 2016 00:00:00 +0000</pubDate>
+            <link>https://www.bigelectrons.com/posts/math/liner-interpolation/</link>
+            <guid>https://www.bigelectrons.com/posts/math/liner-interpolation/</guid>
+            <description>&lt;p&gt;In mathematics, linear interpolation is understood as a method of curve fitting using linear polynomials.
+A polynomial is just an expression that consists of variables along with their co-efficients. An example of a polynomial would be:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#2b303b;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;x+2y&amp;amp;sup2
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;In the above equation, the variable x has 1 as its coefficient, the variable y has 2 as its coefficient. Let us assume that we have a set of linear 
+data points pointing to the x and y-axis:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#2b303b;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;x = {2,5,7,10,11,15,17,19,21,25}
+y = {3,6,8,10,14,16,19,21,23,26}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Given a value x, we can find the value y. For example., for x = 2, the corresponding y is 3, for x = 11, the
+corresponding y is 14. Now we are interested in finding the value of x and y within our set of data points.&lt;&#x2F;p&gt;
+&lt;p&gt;What is the value of y for x = 13 or what is the value of x for y = 13. Since the data points for both the x and y
+co-ordinates are linear, we can use the linear interpolation technique to find out the values for
+the desired data points. Geometrically, the linear interpolant is just a straight line between two known data points.
+Let us assume that our two data points are represented as (x0,y0) and (x1,y1). We are interested in
+finding the values of x and y that lies between these data points. Since we are in the linear boundary, geometrically
+speaking the ratio of the difference between x and y co-ordinates between two data points are equal.&lt;&#x2F;p&gt;
+&lt;p&gt;Let us try to ascertain this with some numbers. Let our data points (x0,y0) be (2,3) and (x1,y1) be (5,6). The
+ratio y1&#x2F;x1 should be equal to the ration y0&#x2F;x0 and in our case, 6&#x2F;5 == 3&#x2F;2. Extending this idea, we can
+now say that the ratio of the difference between two data points should be geometrically equal between the two
+co-ordinates. If we are interested in a data point (x,y) which lies in-between (x0,y0) and (x1,y1), our
+formula now becomes:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#2b303b;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;y - y0 &#x2F; x - x0 = y1 - y0 &#x2F; x1 - x0 which when solving for y, we get the following equation:
+y = y0 + (y1 - y0) * (x - x0) &#x2F; (x1 - x0)
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;We now have the formula for linear interpolation, let&#x27;s now implement that in Scala. Let us represent our data
+points as a Scala List:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#2b303b;&quot;&gt;
+&lt;code class=&quot;language-scala&quot; data-lang=&quot;scala&quot;&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#cd74e8;&quot;&gt;val &lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;x &lt;&#x2F;span&gt;&lt;span style=&quot;color:#adb7c9;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;List(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#db9d63;&quot;&gt;2&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#db9d63;&quot;&gt;5&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#db9d63;&quot;&gt;7&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#db9d63;&quot;&gt;10&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#db9d63;&quot;&gt;11&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#db9d63;&quot;&gt;15&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#db9d63;&quot;&gt;17&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#db9d63;&quot;&gt;19&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#db9d63;&quot;&gt;21&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#db9d63;&quot;&gt;25&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;)
+  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#cd74e8;&quot;&gt;val &lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;y &lt;&#x2F;span&gt;&lt;span style=&quot;color:#adb7c9;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;List(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#db9d63;&quot;&gt;3&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#db9d63;&quot;&gt;6&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#db9d63;&quot;&gt;8&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#db9d63;&quot;&gt;10&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#db9d63;&quot;&gt;14&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#db9d63;&quot;&gt;16&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#db9d63;&quot;&gt;19&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#db9d63;&quot;&gt;21&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#db9d63;&quot;&gt;23&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#db9d63;&quot;&gt;26&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;)
+  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#cd74e8;&quot;&gt;val &lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;zippedDataPoints &lt;&#x2F;span&gt;&lt;span style=&quot;color:#adb7c9;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt; x zip y
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;We define a function that takes these two zipped List of data points and an additional parameter for x. The function
+uses the formula to find the value of y for a given x. Here is the function:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#2b303b;&quot;&gt;
+&lt;code class=&quot;language-scala&quot; data-lang=&quot;scala&quot;&gt;&lt;span style=&quot;color:#cd74e8;&quot;&gt;def &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5cb3fa;&quot;&gt;interpolate&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;givenX&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#cd74e8;&quot;&gt;Int&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;dataPoints&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#f0c678;&quot;&gt;List&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;[(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#cd74e8;&quot;&gt;Int&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#cd74e8;&quot;&gt;Int&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;)]) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#adb7c9;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;{
+  &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#5f697a;&quot;&gt;&#x2F;&#x2F; edge cases
+  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#cd74e8;&quot;&gt;val &lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;headX&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;headY&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#adb7c9;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt; dataPoints.head
+  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#cd74e8;&quot;&gt;val &lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;lastX&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;lastY&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#adb7c9;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt; dataPoints.last
+  givenX &lt;&#x2F;span&gt;&lt;span style=&quot;color:#cd74e8;&quot;&gt;match &lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;{
+    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#cd74e8;&quot;&gt;case &lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;a &lt;&#x2F;span&gt;&lt;span style=&quot;color:#cd74e8;&quot;&gt;if&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt; givenX &amp;gt;= lastX &lt;&#x2F;span&gt;&lt;span style=&quot;color:#cd74e8;&quot;&gt;=&amp;gt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt; lastY
+    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#cd74e8;&quot;&gt;case &lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;b &lt;&#x2F;span&gt;&lt;span style=&quot;color:#cd74e8;&quot;&gt;if&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt; givenX &amp;lt;= headX &lt;&#x2F;span&gt;&lt;span style=&quot;color:#cd74e8;&quot;&gt;=&amp;gt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt; headY
+    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#cd74e8;&quot;&gt;case &lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;c &lt;&#x2F;span&gt;&lt;span style=&quot;color:#cd74e8;&quot;&gt;=&amp;gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;{
+      &lt;&#x2F;span&gt;&lt;span style=&quot;color:#cd74e8;&quot;&gt;val &lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;lower&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;upper&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#adb7c9;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt; dataPoints.span { &lt;&#x2F;span&gt;&lt;span style=&quot;color:#cd74e8;&quot;&gt;case &lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;x&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;y&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#cd74e8;&quot;&gt;=&amp;gt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt; x &amp;lt; givenX }
+      &lt;&#x2F;span&gt;&lt;span style=&quot;color:#cd74e8;&quot;&gt;val &lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;x0&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;y0&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#adb7c9;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt; lower.last
+      &lt;&#x2F;span&gt;&lt;span style=&quot;color:#cd74e8;&quot;&gt;val &lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;x1&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;y1&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#adb7c9;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt; upper.head
+      &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#5f697a;&quot;&gt;&#x2F;&#x2F; finally our formula!
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;      y0 + (y1 - y0) * (givenX - x0) &#x2F; (x1 - x0)
+    }
+  }
+}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Let&#x27;s now write some tests to test our interpolation (using ScalaTest):&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#2b303b;&quot;&gt;
+&lt;code class=&quot;language-scala&quot; data-lang=&quot;scala&quot;&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;  interpolate(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#db9d63;&quot;&gt;2&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;, zippedDataPoints)  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#adb7c9;&quot;&gt;== &lt;&#x2F;span&gt;&lt;span style=&quot;color:#db9d63;&quot;&gt;3
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;  interpolate(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#db9d63;&quot;&gt;4&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;, zippedDataPoints)  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#adb7c9;&quot;&gt;== &lt;&#x2F;span&gt;&lt;span style=&quot;color:#db9d63;&quot;&gt;5
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;  interpolate(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#db9d63;&quot;&gt;27&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;, zippedDataPoints) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#adb7c9;&quot;&gt;== &lt;&#x2F;span&gt;&lt;span style=&quot;color:#db9d63;&quot;&gt;26
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;So there it is! we have our linear interpolation implemented using Scala!&lt;&#x2F;p&gt;
+</description>
+        </item>
+    </channel>
+</rss>

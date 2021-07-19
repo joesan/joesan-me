@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+      <title>bigelectrons - Projects</title>
+        <link>https://www.bigelectrons.com</link>
+        <description></description>
+        <generator>Zola</generator>
+        <language>en</language>
+        <atom:link href="https://www.bigelectrons.com/categories/projects/rss.xml" rel="self" type="application/rss+xml"/>
+        <lastBuildDate>Thu, 22 Nov 2018 00:00:00 +0000</lastBuildDate>
+        <item>
+            <title>Raspberry Pi Motion &amp; Face Detection</title>
+            <pubDate>Thu, 22 Nov 2018 00:00:00 +0000</pubDate>
+            <link>https://www.bigelectrons.com/projects/project-raspi-motion-detection/</link>
+            <guid>https://www.bigelectrons.com/projects/project-raspi-motion-detection/</guid>
+            <description>&lt;p&gt;A few weeks after my terrible MTB accident where I tore my ACL on my left knee, I was off from work for a few weeks, and I kind of got bored with just laying in
+the bed and was pondering what I could be doing something meaningful. Then this idea stuck my mind, why not try doing a small CCTV camera for my home?&lt;&#x2F;p&gt;
+&lt;p&gt;I started to do a bit of research on what hardware I need. Picked up a Raspberry Pi, PIR sensor, a camera and started to assemble the components. Doing a CCTV
+camera using PIR is kind of old-fashioned, hence I decided to do it using OpenCV. I started to read some documentation about OpenCV and how I could do some
+face detection. Thankfully, the algorithms already exist, I just needed to plug in some Python code, train the model with some live samples and bang I have it.&lt;&#x2F;p&gt;
+&lt;p&gt;The goal was to run the face recognition on the Pi and stream that into a computer attached to the network. The Pi monitors and if it detects any movement, it 
+captures the face and can send the image to any destination where currently it is configured to send to Dropbox.&lt;&#x2F;p&gt;
+&lt;p&gt;This was the challenge as I wanted the whole thing to run as a Docker container. If you could not follow what I mean, why 
+not &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;joesan&#x2F;raspi-motion-detection&quot;&gt;have a look at the project here&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+</description>
+        </item>
+        <item>
+            <title>Plant-Simulator</title>
+            <pubDate>Thu, 31 Aug 2017 00:00:00 +0000</pubDate>
+            <link>https://www.bigelectrons.com/projects/project-plant-simulator/</link>
+            <guid>https://www.bigelectrons.com/projects/project-plant-simulator/</guid>
+            <description>&lt;p&gt;If you are in the Energy &amp;amp; utilities industry, you might have probably heard about a concept called &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Virtual_power_plant&quot;&gt;Virtual Power Plant&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;The idea is not new, but it is gaining importance as more and more power producing units (also power consuming units) gets distributed. What does it mean?
+It just means that the internet offers the possibility to command and control remote power units. The way it works is relatively simple. One of the main uses
+for such a virtual power plant is to provide flexibility services to the grid so that the grid is stable. &lt;&#x2F;p&gt;
+&lt;p&gt;Normally, the grid works by predicting the demand ahead, but as you know it is just a prediction from a historical value which means there is going to be a delta
+plus or minus and this is not good for the grid. The grid has to be operated at it&#x27;s set frequency otherwise there will be a blackout. This is exactly where
+the virtual power plant&#x27;s can be used.&lt;&#x2F;p&gt;
+&lt;p&gt;The core of a virtual power plant is the software which aggregates smaller power producing units and virtually projects it as a big power plant which can then be
+integrated to the grid. The grid operators are given this aggregated capacity (often called as flexibility) and can be used to offset grid imbalances.&lt;&#x2F;p&gt;
+&lt;p&gt;So with that basic understanding of the virtual power plant, I created a simple simulator (a.k.a Virtual Power Plant or in general Digital Twin) that can aggregate and steer such power plants. It is not some system
+that does some random simulation, but a real production ready code base that can take a beating. It is built truly on the principles of reactive programming.
+I tried to incorporate all the best practices that could be attributed. For example., the application has the following features:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;It is being kept updated for its dependencies using a bot&lt;&#x2F;li&gt;
+&lt;li&gt;It is capable of working with any relational database, just change the DB configuration (Oracle, Postgress or MySQL)&lt;&#x2F;li&gt;
+&lt;li&gt;It is extremely scalable&lt;&#x2F;li&gt;
+&lt;li&gt;It has in-built alerting &amp;amp; monitoring with no additional dependency on any external library&lt;&#x2F;li&gt;
+&lt;li&gt;It has a very good unit test coverage&lt;&#x2F;li&gt;
+&lt;li&gt;It has an automated deployment mechanism (using GitOps)&lt;&#x2F;li&gt;
+&lt;li&gt;It has deployment files that are run through CI &#x2F; CD steps&lt;&#x2F;li&gt;
+&lt;li&gt;It has streaming API&#x27;s&lt;&#x2F;li&gt;
+&lt;li&gt;It has back-pressure where necessary&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;On top of all that, it is built using Scala, Akka &amp;amp; Monix. Who needs Kafka? &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;joesan&#x2F;plant-simulator&quot;&gt;Have a look here for the project&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+</description>
+        </item>
+    </channel>
+</rss>

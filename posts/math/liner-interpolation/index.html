@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <meta content="#ffffff" name="theme-color" />
+  <meta content="#da532c" name="msapplication-TileColor" />
+
+  
+  <link href='&#x2F;icons&#x2F;site.webmanifest' rel="manifest" />
+  
+  
+  <link color="#5bbad5" href='&#x2F;icons&#x2F;safari-pinned-tab.svg' rel="mask-icon" />
+  
+  
+  <link href='&#x2F;icons&#x2F;favicon-16x16.png' rel="icon" sizes="16x16" type="image/png" />
+  
+  
+  <link href='&#x2F;icons&#x2F;favicon-32x32.png' rel="icon" sizes="32x32" type="image/png" />
+  
+  
+  <link href='&#x2F;icons&#x2F;apple-touch-icon.png' rel="apple-touch-icon" sizes="180x180" />
+  
+
+  <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/themes/folio/galleria.folio.min.css"
+    rel="stylesheet" />
+  <link href="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css" rel="stylesheet" />
+  <link href='https:&#x2F;&#x2F;www.bigelectrons.com&#x2F;site.css' rel="stylesheet" />
+
+  
+  
+
+  <title>
+    
+bigelectrons | Liner Interpolation
+
+  </title>
+
+  <script crossorigin="anonymous" src="https://kit.fontawesome.com/201b8d5e05.js"></script>
+
+  <!-- Cookie consent plugin content -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"></script>
+
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+        integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
+          integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
+          crossorigin="anonymous"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/mathtex-script-type.min.js"
+          integrity="sha384-LJ2FmexL77rmGm6SIpxq7y+XA6bkLzGZEgCywzKOZG/ws4va9fUVu2neMjvc3zdv"
+          crossorigin="anonymous"></script>
+  
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+          integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous" onload="renderMathInElement(document.body, {
+				delimiters: [
+					{left: '$$', right: '$$', display: true},
+					{left: '$', right: '$', display: false},
+					{left: '\\(', right: '\\)', display: false},
+					{left: '\\[', right: '\\]', display: true}
+				]
+			});"></script>
+  
+  
+</head>
+
+<body class="has-background-white">
+  <!-- Content to show cookie consent for GDPR purposes -->
+  <script>
+    window.cookieconsent.initialise({
+      container: document.getElementById("content"),
+      palette:{
+        popup: {background: "#fff"},
+        button: {background: "#aa0000"},
+      },
+      revokable:true,
+      onStatusChange: function(status) {
+        console.log(this.hasConsented() ?
+                'enable cookies' : 'disable cookies');
+      },
+      law: {
+        regionalLaw: false,
+      },
+      location: true,
+    });
+  </script>
+  
+  <nav aria-label="section navigation" class="navbar is-light" role="navigation">
+    <div class="container">
+      <div class="navbar-brand">
+        <a class="navbar-item has-text-weight-bold" href="https:&#x2F;&#x2F;www.bigelectrons.com">bigelectrons</a>
+        <a aria-expanded="false" aria-label="menu" class="navbar-burger burger" data-target="navMenu" role="button">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div class="navbar-menu" id="navMenu">
+        <div class="navbar-end has-text-centered">
+          
+          <a class="navbar-item" href='https:&#x2F;&#x2F;www.bigelectrons.com&#x2F;'>
+            Home
+          </a>
+          
+          <a class="navbar-item" href='https:&#x2F;&#x2F;www.bigelectrons.com&#x2F;posts'>
+            Posts
+          </a>
+          
+          <a class="navbar-item" href='https:&#x2F;&#x2F;www.bigelectrons.com&#x2F;navo'>
+            Navo
+          </a>
+          
+          <a class="navbar-item" href='https:&#x2F;&#x2F;www.bigelectrons.com&#x2F;projects'>
+            Projects
+          </a>
+          
+          <a class="navbar-item" href='https:&#x2F;&#x2F;www.bigelectrons.com&#x2F;links'>
+            Links
+          </a>
+          
+          <a class="navbar-item" href='https:&#x2F;&#x2F;www.bigelectrons.com&#x2F;categories'>
+            Categories
+          </a>
+          
+          <a class="navbar-item" href='https:&#x2F;&#x2F;www.bigelectrons.com&#x2F;tags'>
+            Tags
+          </a>
+          
+          <a class="navbar-item" id="nav-search" title="Search" data-target="#search-modal">
+            <span class="icon">
+              <i class="fas fa-search"></i>
+            </span>
+          </a>
+          <a class="navbar-item" id="dark-mode" title="Switch to dark theme">
+            <span class="icon">
+              <i class="fas fa-adjust"></i>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+
+  
+  
+
+  
+<section class="section">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-8 is-offset-2">
+        <article class="box">
+          <h1 class="title is-1">
+            Liner Interpolation
+          </h1>
+          <p class="subtitle">Linear Interpolation in the XY plane using Scala</p>
+          <div class="columns is-multiline is-gapless">
+            <div class="column is-8">
+              
+  <p class="has-text-grey">
+    <span class="icon">
+      <i class="fas fa-user"></i>
+    </span>
+    joesan published on
+    <span class="icon">
+      <i class="far fa-calendar-alt"></i>
+    </span>
+    <time datetime='2016-01-13'>January 13, 2016</time>
+  </p>
+
+            </div>
+            <div class="column is-4 has-text-right-desktop">
+              
+  <p class="has-text-grey">
+    <span class="icon">
+      <i class="far fa-clock"></i>
+    </span>
+    3 min,
+    <span class="icon">
+      <i class="fas fa-pencil-alt"></i>
+    </span>
+    543 words
+  </p>
+
+            </div>
+            <div class="column">
+              
+              
+  <p>
+    <span class="has-text-black has-text-weight-normal">Categories:</span>
+    
+      <a class="link has-text-weight-light" href='https:&#x2F;&#x2F;www.bigelectrons.com&#x2F;categories&#x2F;technical-stuff&#x2F;'>
+        <span class="icon is-small">
+          <i class="fas fa-folder fa-xs"></i>
+        </span>
+        Technical Stuff
+      </a>
+    
+      <a class="link has-text-weight-light" href='https:&#x2F;&#x2F;www.bigelectrons.com&#x2F;categories&#x2F;math&#x2F;'>
+        <span class="icon is-small">
+          <i class="fas fa-folder fa-xs"></i>
+        </span>
+        Math
+      </a>
+    
+  </p>
+
+              
+            </div>
+            <div class="column has-text-right-desktop">
+              
+              
+  <p>
+    <span class="has-text-black has-text-weight-normal">Tags:</span>
+    
+      <a class="link has-text-weight-light" href='https:&#x2F;&#x2F;www.bigelectrons.com&#x2F;tags&#x2F;blog&#x2F;'>
+        <span class="icon is-small">
+          <i class="fas fa-tag fa-xs"></i>
+        </span>
+        blog
+      </a>
+    
+  </p>
+
+              
+            </div>
+          </div>
+          <div class="content mt-2">
+            <p>In mathematics, linear interpolation is understood as a method of curve fitting using linear polynomials.
+A polynomial is just an expression that consists of variables along with their co-efficients. An example of a polynomial would be:</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#abb2bf;">x+2y&amp;sup2
+</span></code></pre>
+<p>In the above equation, the variable x has 1 as its coefficient, the variable y has 2 as its coefficient. Let us assume that we have a set of linear 
+data points pointing to the x and y-axis:</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#abb2bf;">x = {2,5,7,10,11,15,17,19,21,25}
+y = {3,6,8,10,14,16,19,21,23,26}
+</span></code></pre>
+<p>Given a value x, we can find the value y. For example., for x = 2, the corresponding y is 3, for x = 11, the
+corresponding y is 14. Now we are interested in finding the value of x and y within our set of data points.</p>
+<p>What is the value of y for x = 13 or what is the value of x for y = 13. Since the data points for both the x and y
+co-ordinates are linear, we can use the linear interpolation technique to find out the values for
+the desired data points. Geometrically, the linear interpolant is just a straight line between two known data points.
+Let us assume that our two data points are represented as (x0,y0) and (x1,y1). We are interested in
+finding the values of x and y that lies between these data points. Since we are in the linear boundary, geometrically
+speaking the ratio of the difference between x and y co-ordinates between two data points are equal.</p>
+<p>Let us try to ascertain this with some numbers. Let our data points (x0,y0) be (2,3) and (x1,y1) be (5,6). The
+ratio y1/x1 should be equal to the ration y0/x0 and in our case, 6/5 == 3/2. Extending this idea, we can
+now say that the ratio of the difference between two data points should be geometrically equal between the two
+co-ordinates. If we are interested in a data point (x,y) which lies in-between (x0,y0) and (x1,y1), our
+formula now becomes:</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#abb2bf;">y - y0 / x - x0 = y1 - y0 / x1 - x0 which when solving for y, we get the following equation:
+y = y0 + (y1 - y0) * (x - x0) / (x1 - x0)
+</span></code></pre>
+<p>We now have the formula for linear interpolation, let's now implement that in Scala. Let us represent our data
+points as a Scala List:</p>
+<pre style="background-color:#2b303b;">
+<code class="language-scala" data-lang="scala"><span style="color:#abb2bf;">  </span><span style="color:#cd74e8;">val </span><span style="color:#eb6772;">x </span><span style="color:#adb7c9;">= </span><span style="color:#abb2bf;">List(</span><span style="color:#db9d63;">2</span><span style="color:#abb2bf;">,</span><span style="color:#db9d63;">5</span><span style="color:#abb2bf;">,</span><span style="color:#db9d63;">7</span><span style="color:#abb2bf;">,</span><span style="color:#db9d63;">10</span><span style="color:#abb2bf;">,</span><span style="color:#db9d63;">11</span><span style="color:#abb2bf;">,</span><span style="color:#db9d63;">15</span><span style="color:#abb2bf;">,</span><span style="color:#db9d63;">17</span><span style="color:#abb2bf;">,</span><span style="color:#db9d63;">19</span><span style="color:#abb2bf;">,</span><span style="color:#db9d63;">21</span><span style="color:#abb2bf;">,</span><span style="color:#db9d63;">25</span><span style="color:#abb2bf;">)
+  </span><span style="color:#cd74e8;">val </span><span style="color:#eb6772;">y </span><span style="color:#adb7c9;">= </span><span style="color:#abb2bf;">List(</span><span style="color:#db9d63;">3</span><span style="color:#abb2bf;">,</span><span style="color:#db9d63;">6</span><span style="color:#abb2bf;">,</span><span style="color:#db9d63;">8</span><span style="color:#abb2bf;">,</span><span style="color:#db9d63;">10</span><span style="color:#abb2bf;">,</span><span style="color:#db9d63;">14</span><span style="color:#abb2bf;">,</span><span style="color:#db9d63;">16</span><span style="color:#abb2bf;">,</span><span style="color:#db9d63;">19</span><span style="color:#abb2bf;">,</span><span style="color:#db9d63;">21</span><span style="color:#abb2bf;">,</span><span style="color:#db9d63;">23</span><span style="color:#abb2bf;">,</span><span style="color:#db9d63;">26</span><span style="color:#abb2bf;">)
+  </span><span style="color:#cd74e8;">val </span><span style="color:#eb6772;">zippedDataPoints </span><span style="color:#adb7c9;">=</span><span style="color:#abb2bf;"> x zip y
+</span></code></pre>
+<p>We define a function that takes these two zipped List of data points and an additional parameter for x. The function
+uses the formula to find the value of y for a given x. Here is the function:</p>
+<pre style="background-color:#2b303b;">
+<code class="language-scala" data-lang="scala"><span style="color:#cd74e8;">def </span><span style="color:#5cb3fa;">interpolate</span><span style="color:#abb2bf;">(</span><span style="color:#eb6772;">givenX</span><span style="color:#abb2bf;">: </span><span style="color:#cd74e8;">Int</span><span style="color:#abb2bf;">, </span><span style="color:#eb6772;">dataPoints</span><span style="color:#abb2bf;">: </span><span style="color:#f0c678;">List</span><span style="color:#abb2bf;">[(</span><span style="color:#cd74e8;">Int</span><span style="color:#abb2bf;">, </span><span style="color:#cd74e8;">Int</span><span style="color:#abb2bf;">)]) </span><span style="color:#adb7c9;">= </span><span style="color:#abb2bf;">{
+  </span><span style="font-style:italic;color:#5f697a;">// edge cases
+  </span><span style="color:#cd74e8;">val </span><span style="color:#abb2bf;">(</span><span style="color:#eb6772;">headX</span><span style="color:#abb2bf;">, </span><span style="color:#eb6772;">headY</span><span style="color:#abb2bf;">) </span><span style="color:#adb7c9;">=</span><span style="color:#abb2bf;"> dataPoints.head
+  </span><span style="color:#cd74e8;">val </span><span style="color:#abb2bf;">(</span><span style="color:#eb6772;">lastX</span><span style="color:#abb2bf;">, </span><span style="color:#eb6772;">lastY</span><span style="color:#abb2bf;">) </span><span style="color:#adb7c9;">=</span><span style="color:#abb2bf;"> dataPoints.last
+  givenX </span><span style="color:#cd74e8;">match </span><span style="color:#abb2bf;">{
+    </span><span style="color:#cd74e8;">case </span><span style="color:#eb6772;">a </span><span style="color:#cd74e8;">if</span><span style="color:#abb2bf;"> givenX &gt;= lastX </span><span style="color:#cd74e8;">=&gt;</span><span style="color:#abb2bf;"> lastY
+    </span><span style="color:#cd74e8;">case </span><span style="color:#eb6772;">b </span><span style="color:#cd74e8;">if</span><span style="color:#abb2bf;"> givenX &lt;= headX </span><span style="color:#cd74e8;">=&gt;</span><span style="color:#abb2bf;"> headY
+    </span><span style="color:#cd74e8;">case </span><span style="color:#eb6772;">c </span><span style="color:#cd74e8;">=&gt; </span><span style="color:#abb2bf;">{
+      </span><span style="color:#cd74e8;">val </span><span style="color:#abb2bf;">(</span><span style="color:#eb6772;">lower</span><span style="color:#abb2bf;">,</span><span style="color:#eb6772;">upper</span><span style="color:#abb2bf;">) </span><span style="color:#adb7c9;">=</span><span style="color:#abb2bf;"> dataPoints.span { </span><span style="color:#cd74e8;">case </span><span style="color:#abb2bf;">(</span><span style="color:#eb6772;">x</span><span style="color:#abb2bf;">,</span><span style="color:#eb6772;">y</span><span style="color:#abb2bf;">) </span><span style="color:#cd74e8;">=&gt;</span><span style="color:#abb2bf;"> x &lt; givenX }
+      </span><span style="color:#cd74e8;">val </span><span style="color:#abb2bf;">(</span><span style="color:#eb6772;">x0</span><span style="color:#abb2bf;">,</span><span style="color:#eb6772;">y0</span><span style="color:#abb2bf;">) </span><span style="color:#adb7c9;">=</span><span style="color:#abb2bf;"> lower.last
+      </span><span style="color:#cd74e8;">val </span><span style="color:#abb2bf;">(</span><span style="color:#eb6772;">x1</span><span style="color:#abb2bf;">,</span><span style="color:#eb6772;">y1</span><span style="color:#abb2bf;">) </span><span style="color:#adb7c9;">=</span><span style="color:#abb2bf;"> upper.head
+      </span><span style="font-style:italic;color:#5f697a;">// finally our formula!
+</span><span style="color:#abb2bf;">      y0 + (y1 - y0) * (givenX - x0) / (x1 - x0)
+    }
+  }
+}
+</span></code></pre>
+<p>Let's now write some tests to test our interpolation (using ScalaTest):</p>
+<pre style="background-color:#2b303b;">
+<code class="language-scala" data-lang="scala"><span style="color:#abb2bf;">  interpolate(</span><span style="color:#db9d63;">2</span><span style="color:#abb2bf;">, zippedDataPoints)  </span><span style="color:#adb7c9;">== </span><span style="color:#db9d63;">3
+</span><span style="color:#abb2bf;">  interpolate(</span><span style="color:#db9d63;">4</span><span style="color:#abb2bf;">, zippedDataPoints)  </span><span style="color:#adb7c9;">== </span><span style="color:#db9d63;">5
+</span><span style="color:#abb2bf;">  interpolate(</span><span style="color:#db9d63;">27</span><span style="color:#abb2bf;">, zippedDataPoints) </span><span style="color:#adb7c9;">== </span><span style="color:#db9d63;">26
+</span></code></pre>
+<p>So there it is! we have our linear interpolation implemented using Scala!</p>
+
+          </div>
+        </article>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+
+  
+  <section class="modal" id="search-modal">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+      <div class="field">
+        <p class="control has-icons-right">
+          <input class="input" id="search" placeholder="Search this website." type="search" />
+          <span class="icon is-small is-right">
+            <i class="fas fa-search"></i>
+          </span>
+        </p>
+      </div>
+      <div class="search-results">
+        <div class="search-results__items"></div>
+      </div>
+    </div>
+    <button aria-label="close" class="modal-close is-large"></button>
+  </section>
+  
+
+
+  
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <nav class="level">
+          
+          <div class="level-item has-text-centered">
+            <a class="button is-black is-outlined" href="https:&#x2F;&#x2F;www.bigelectrons.com&#x2F;posts&#x2F;scala&#x2F;scala-sealed-traits&#x2F;">
+              <span class="icon mr-2">
+                <i class="fas fa-arrow-circle-left"></i>
+              </span>
+              Sealed Traits in Scala
+            </a>
+          </div>
+           
+          <div class="level-item has-text-centered">
+            <a class="button is-black is-outlined" href="https:&#x2F;&#x2F;www.bigelectrons.com&#x2F;posts&#x2F;scala&#x2F;scala-builder-strategy-pattern&#x2F;">
+              Builder, Strategy Patterns Still relevant?<span class="icon ml-2">
+                <i class="fas fa-arrow-circle-right"></i>
+              </span>
+            </a>
+          </div>
+            
+        </nav>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  
+
+
+
+  
+  <footer class="py-4 has-background-light">
+    <p class="has-text-centered">
+       Powered By
+      <span class="icon is-small">
+        <i class="fas fa-power-off fa-xs"></i>
+      </span>
+      Zola
+    </p>
+  </footer>
+  
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sharer.js@latest/sharer.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/galleria.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.xkcd@1/dist/chart.xkcd.min.js"></script>
+  <script src="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/themes/folio/galleria.folio.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/elasticlunr/0.9.6/elasticlunr.min.js"></script>
+  <script src='https:&#x2F;&#x2F;www.bigelectrons.com&#x2F;search_index.en.js'></script>
+  <script src='https:&#x2F;&#x2F;www.bigelectrons.com&#x2F;js&#x2F;site.js'></script>
+
+  
+
+
+
+
+</body>
+
+</html>

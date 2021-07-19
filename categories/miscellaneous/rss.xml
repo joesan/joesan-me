@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+      <title>bigelectrons - Miscellaneous</title>
+        <link>https://www.bigelectrons.com</link>
+        <description></description>
+        <generator>Zola</generator>
+        <language>en</language>
+        <atom:link href="https://www.bigelectrons.com/categories/miscellaneous/rss.xml" rel="self" type="application/rss+xml"/>
+        <lastBuildDate>Sun, 14 Feb 2021 00:00:00 +0000</lastBuildDate>
+        <item>
+            <title>Moved from Blogger to GH Pages</title>
+            <pubDate>Sun, 14 Feb 2021 00:00:00 +0000</pubDate>
+            <link>https://www.bigelectrons.com/posts/misc/blogger-to-gh-pages/</link>
+            <guid>https://www.bigelectrons.com/posts/misc/blogger-to-gh-pages/</guid>
+            <description>&lt;p&gt;I have been documenting so far with Blogger. Recently I started to do some Robotics projects with ROS. As I was doing it, I was looking for ways to get all what
+I do be documented. I know Github offers &lt;a href=&quot;https:&#x2F;&#x2F;pages.github.com&#x2F;&quot;&gt;GH Pages&lt;&#x2F;a&gt;, but I was a bit reluctant to try it out. 
+So for the &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;navo-org&quot;&gt;Navo project&lt;&#x2F;a&gt;, I decided that GH Pages will be the source for my documentation, hence I wanted to give it a try. 
+Honestly, I was not disappointed!&lt;&#x2F;p&gt;
+&lt;p&gt;I have been documenting all what I have been doing for the &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;navo-org&quot;&gt;Navo project&lt;&#x2F;a&gt; with GH Pages and a Jekyll theme. It did not click to
+my mind until a day ago that why not I move my personal blogging content as well from Blogger to GH Pages? I took the plunge and started to explore on 
+what &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Web_template_system#Static_site_generators&quot;&gt;Static Site Generator or SSG in short&lt;&#x2F;a&gt; platform should I consider. Jekyll is an option, but
+I wanted to see what other platforms are available. &lt;&#x2F;p&gt;
+&lt;p&gt;Hugo, Gatsby, Octopress, Wordpress, Pelican, Zola were some platforms that I explored and decided to go with Zola. Well first, I liked the idea
+of documenting content for the web using Markdown files. The point here is Markdown is a text-to-HTML conversion tool for web writers, so why not just 
+bother about writing the text and leave the conversion of text-to-HTML to some platform of choice. &lt;&#x2F;p&gt;
+&lt;p&gt;Clearly there are a few advantages of using Markdown files for the content:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;No need of a &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;WYSIWYG&quot;&gt;WYSIWYG&lt;&#x2F;a&gt; editor&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;No HTML clutter in my content&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Platform agnostic, yes that says it all&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Very lightweight and easy to get started&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;The most important factor for this migration is that I can focus on the content rather than the HTML formatting that I had to deal with in Blogger!&lt;&#x2F;p&gt;
+&lt;p&gt;So my research began, the first SSG platform that I tried was Zola. Rust as a programming language occupies the same spot in my heart as Scala. Zola is built using Rust. Without any
+second thought, I decided to give Zola a try. It was the easiest thing to do in this world. Just 3 commands, and your static site is up and running. It took my about 20 minutes, yes, just 
+under 20 minutes to try out Zola, choose a theme, get it up and running on my local machine.&lt;&#x2F;p&gt;
+&lt;p&gt;It does not stop there, you could compile your Zola content to be served via GH Pages, which is what I wanted. I decided on a theme, thankful to this &lt;a href=&quot;https:&#x2F;&#x2F;www.getzola.org&#x2F;themes&#x2F;deepthought&#x2F;&quot;&gt;one here&lt;&#x2F;a&gt;.
+I created a new project in my GitHub account, migrated all of my content from Blogger (this was a bit of work), organized them into appropriate folder structure.&lt;&#x2F;p&gt;
+&lt;p&gt;Does it stop there? No, no no, it does not stop there, since your content is going to be in GitHub, you could apply that CI &#x2F; CD pipeline. This was exactly my next step where I added a very
+&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;lycheeverse&#x2F;lychee-action&quot;&gt;basic HTTP link checker&lt;&#x2F;a&gt; which when added to the &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;joesan&#x2F;joesan-me&#x2F;actions&quot;&gt;GitHub action workflow&lt;&#x2F;a&gt; could scan the 
+Markdown files recursively and validate all the HTTP links. &lt;&#x2F;p&gt;
+&lt;p&gt;It goes even further by automatically creating an issue with a summary of all the HTTP links that failed to resolve with a HTTP OK status. I do not need
+that as it makes sense to have such automation in a team set up. I could also set up a spell checker for my content as I realized during the migration of my content from Blogger is that I had lots
+of spelling mistakes &#x2F; typo errors. Nevertheless, I did not want to overcomplicate this and decided not to add &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;marketplace&#x2F;actions&#x2F;check-spelling-js-vue-html-markdown-text&quot;&gt;this action&lt;&#x2F;a&gt; for spell check.&lt;&#x2F;p&gt;
+&lt;p&gt;After a successful HTTP check, the next step in the build pipeline is to compile the Zola source files into HTML&#x27;s for rendering by GH Pages. There is a &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;shalzz&#x2F;zola-deploy-action&quot;&gt;GitHub action&lt;&#x2F;a&gt; 
+exactly for this purpose, but I decided not to use it. All I need is the possibility to check out the content, using Zola compile it and commit the compiled sources into a branch under the same
+project. This &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;joesan&#x2F;joesan-me&#x2F;tree&#x2F;gh-pages&quot;&gt;branch&lt;&#x2F;a&gt; will then contain the HTML&#x27;s that will be integrated with the GH Pages for rendering. &lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;docs.github.com&#x2F;en&#x2F;github&#x2F;working-with-github-pages&#x2F;managing-a-custom-domain-for-your-github-pages-site&quot;&gt;Setting up GH Pages&lt;&#x2F;a&gt;, and linking it to a custom domain name is pretty 
+straightforward. As of today, my content is not yet live as I&#x27;m still deciding on organizing my content. Hopefully in a few weeks time, &lt;a href=&quot;https:&#x2F;&#x2F;bigelectrons.com&quot;&gt;bigelectrons.com&lt;&#x2F;a&gt; will be
+served via Zola and GH Pages. &lt;span class=&quot;text-color&quot; style=&quot;color: red&quot;&gt;EDIT: The website was taken live on 22.02.2021&lt;&#x2F;span&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;I will wrap this up here and for me it is Zola and GH Pages for the foreseeable future for all my blogging needs.&lt;&#x2F;p&gt;
+</description>
+        </item>
+        <item>
+            <title>Once more a blow, a nasty one this time</title>
+            <pubDate>Sun, 04 Oct 2020 00:00:00 +0000</pubDate>
+            <link>https://www.bigelectrons.com/posts/misc/acl-knee-injury-6/</link>
+            <guid>https://www.bigelectrons.com/posts/misc/acl-knee-injury-6/</guid>
+            <description>&lt;p&gt;I could not say this more than what the title says. I had a very severe blow to my already damaged left knee. First a bit of history &lt;a href=&quot;https:&#x2F;&#x2F;www.bigelectrons.com&#x2F;posts&#x2F;misc&#x2F;acl-knee-injury-6&#x2F;@acl-knee-injury-1.md&quot;&gt;here&lt;&#x2F;a&gt; 
+and &lt;a href=&quot;https:&#x2F;&#x2F;www.bigelectrons.com&#x2F;posts&#x2F;misc&#x2F;acl-knee-injury-6&#x2F;@acl-knee-injury-2.md&quot;&gt;here&lt;&#x2F;a&gt;. &lt;&#x2F;p&gt;
+&lt;p&gt;It was on the 28th of September where I went for my first ever defensive sport training called &amp;quot;VingTsun&amp;quot;. Inspired by my Physio friend who is a beginner, 
+I decided to give this training a try. I indeed watched few videos of it before committing myself to joining him for the training session which starts 
+around 20:00 Hours near to where I live.&lt;&#x2F;p&gt;
+&lt;p&gt;Convinced that if during the training, should I need to use my legs a lot, I would talk to the trainer and avoid such moves, I happily started my session. 
+Well guess, in the first 10 minutes where we were just warming up, I inflicted a severe blow to my left knee. What happened was, we were asked to run, run, 
+stop, jump, run. Run was Okay, Run was Okay, Stop was Okay, but when I jumped (I guess it was the third time of my jump), and landed, my left knee buckled,
+and I fell down with such an excruciating pain. The pain was so intense that I could not breathe anymore, I was gasping for air. &lt;&#x2F;p&gt;
+&lt;p&gt;My Physio friend tried to help out by pressing his hand against my knee, but that did not help. For the next 10 minutes I was just shouting out loud without 
+being able to bear the pain. I got some ice applied, and I was just moved over to the corner of the room. Since my home is a few kilometers away, and I was 
+not in a position to travel back alone, I waited for the session to finish. My physio friend toed my on my bike back home.&lt;&#x2F;p&gt;
+&lt;p&gt;Fast-forward a week, I&#x27;m back with my crutches. I think it is time for me to think about getting this damn thing operated. The pain was there for almost a 
+week, and I still have the effect in my knee from the impact.&lt;&#x2F;p&gt;
+</description>
+        </item>
+        <item>
+            <title>On Navigating the Pentatonic scale</title>
+            <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
+            <link>https://www.bigelectrons.com/posts/misc/guitar-learning-2/</link>
+            <guid>https://www.bigelectrons.com/posts/misc/guitar-learning-2/</guid>
+            <description>&lt;p&gt;Recently, I can say that I made very good progress playing across the neck of my guitar. I memorized few pentatonic shapes, but I was stuck the whole while on
+those specific boxes. The whole thing did not make any sense to me. Just wandering within those boxes is not pleasant music. Frustrated, I looked at
+Youtube for some motivational ideas on how to unstuck me from the boxes.&lt;&#x2F;p&gt;
+&lt;p&gt;Luckily, this one video in Youtube that I found on a random search helped me immensely.&lt;&#x2F;p&gt;
+&lt;div class=&quot;is-flex is-justify-content-center is-align-items-center&quot;&gt;
+    &lt;iframe
+        width=&quot;640&quot; height=&quot;360&quot;
+        src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;7xnBahYdWu8&quot;
+        frameborder=&quot;0&quot; 
+        allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; 
+        allowfullscreen&gt;
+    &lt;&#x2F;iframe&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;The idea is to think in terms of triangles and move back and forth to those triangles. Man this was wonderful, and I now get the idea!&lt;&#x2F;p&gt;
+</description>
+        </item>
+        <item>
+            <title>Moved from Apple to Infinitybook a.k.a Tuxedo a.k.a Ubuntu</title>
+            <pubDate>Sun, 19 Jul 2020 00:00:00 +0000</pubDate>
+            <link>https://www.bigelectrons.com/posts/misc/ubutnu-tuxedo-1/</link>
+            <guid>https://www.bigelectrons.com/posts/misc/ubutnu-tuxedo-1/</guid>
+            <description>&lt;p&gt;I have been using a Mac for over 7 years now, I have used about 3 Mac&#x27;s where the 3rd one is still working fine. I have kids at home, they feed food 
+to it and because of that the keys on my Mac is out of order. So it was time for me to have some privacy and get one machine for myself.&lt;&#x2F;p&gt;
+&lt;p&gt;Looking around the latest iteration of the MacBook Pro 13&amp;quot;, the configuration that I could get for the money and more importantly what I will be doing with 
+it actually got me into thinking if I ever need a Mac at all? So I listed down my usual usage:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;Browsing&lt;&#x2F;li&gt;
+&lt;li&gt;Software Engineering (Running application servers, Kubernetes, Docker images etc.,)&lt;&#x2F;li&gt;
+&lt;li&gt;Occasional photo editing&lt;&#x2F;li&gt;
+&lt;li&gt;Skype calls&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;So given those needs above, I realized that a Mac is a bit pricey. So I started to search for alternatives. I could not tolerate a Windows machine, so the 
+only option was to go for a Linux installed device. Fortunately, there are possibilities today to order one such Linux machine and run it out of the box. 
+Yes, it is from &lt;a href=&quot;https:&#x2F;&#x2F;www.tuxedocomputers.com&#x2F;&quot;&gt;Tuxedo computers&lt;&#x2F;a&gt;. I purchased one of their business Laptops the &lt;strong&gt;TUXEDO InfinityBook 
+S 14 v5&lt;&#x2F;strong&gt;. You can customize the hardware, I maxed out on the RAM as I know this is where my maximum needs are. It came fully pre-installed with their 
+Ubuntu distro, they call it the &amp;quot;Tuxedo_OS 20.04 LTS 64 Bit&amp;quot; which is basically a Ubuntu Linux. Since it is LTS, it is guaranteed to receive updates for 
+the next 5 years. &lt;&#x2F;p&gt;
+&lt;p&gt;It took about 5 business days for the machine to reach me and I have it now with me. So far, I really do not miss my MacBook Pro. This machine is wonderful. 
+What is astounding for me is the battery life. I get about 12 to 13 hours of battery life with some moderate usage (videos, browsing, terminal, docker 
+containers etc.,). I&#x27;m pretty much satisfied with this as it just costed me 1&#x2F;3 of the price for a similarly spec&#x27;d MacBook Pro.&lt;&#x2F;p&gt;
+&lt;p&gt;A quick review of the machine:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;The chassis feels flimsy, not sure if it is truly military grade as mentioned in the website from Tuxedo&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;The Audio quality is poor, the video is kind of Okay. For the intended purpose of this machine, I&#x27;m fine with this!&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;It is very slender and light. I like that&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;The fan is silent and could not be heard under load&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Budgie desktop is pleasing to use and set up&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Keys have a nice reflex, and it is really inviting typing, but the keys could have been a bit bigger&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+</description>
+        </item>
+        <item>
+            <title>My journey thus far with learning to play the guitar</title>
+            <pubDate>Sat, 09 May 2020 00:00:00 +0000</pubDate>
+            <link>https://www.bigelectrons.com/posts/misc/guitar-learning-1/</link>
+            <guid>https://www.bigelectrons.com/posts/misc/guitar-learning-1/</guid>
+            <description>&lt;p&gt;I remember my interest to play the guitar started in the year 2012 and without any hesitation, I went and purchased my first ever electric guitar, the Ibanez 
+GSA 60 and a small Marshall amplifier. I&#x27;m not sure at that point in time if it was the right decision to start with an electric guitar but as I recollect, 
+I don&#x27;t think I made any significant progress with it. I was even struggling to play the basic chord shapes. This deterred me from playing the guitar. The 
+Ibanez mostly saw its life being on the shelf. Now and then I would just pick her up and try to learn something or the other, but never made any 
+significant progress.&lt;&#x2F;p&gt;
+&lt;p&gt;Fast-forward to 2015, my interest to learn the guitar got even stronger, I decided to take some private lessons. This was the time that I made two 
+serious mistakes. One is to buy a very cheap beginner acoustic guitar and two to get some private lessons. I did those private lessons for about 6 months, 
+and I realised it was not worth it. Maybe the teacher did not have any experience teaching beginners like me. The class, the lessons were not structured. 
+No theory, no chords! It was pure waste of time and money. This experience again put me off in making any progress with my guitar learning!&lt;&#x2F;p&gt;
+&lt;p&gt;Fast-forward to 2017, I again made an attempt to learn the chords, but before playing anything on the guitar, I watched tons and tons of videos and I 
+realised that I should have a nice decent enough guitar that would invite me to play. After doing some research, I nailed down that I need to get the 
+Seagull S6 Original. It was not available in stock here in Germany. I placed an order at the Music store in Köln sometime around September 2017 and waited 
+and waited until it was almost a year, the answer from the store was that the stock did not arrive. When I ordered it, it was retailing for a price of about 
+419 Euros, but I got pissed off waiting for it and hence I went ahead and got my first ever proper acoustic guitar from Taylor, the Taylor 114e in November 
+2018 I guess. It was pricier than the Seagull, but in the end it was definitely worth it. Taylor 114e and Justin Guitar helped me to be 
+comfortable playing most of the open chord shapes, change chords, strumming patterns, play a few songs. Overall I did make some considerable progress.&lt;&#x2F;p&gt;
+&lt;p&gt;I went back to Youtube, watched tons more of videos. I got interested in playing blues music. The more I watched those videos, the more I wanted to play 
+blues. I decided that I need a quality electric guitar. I first tried to learn blues with my Ibanez GSA 60, but I somehow did not like the tone that came 
+out of it and it was for me pretty limiting. Remember I&#x27;m not a complete beginner anymore. I would call myself as an advanced beginner. So I decided that 
+I need some quality instrument that I can have forever. I sold the Ibanez and started to do some research.&lt;&#x2F;p&gt;
+&lt;p&gt;Sometime around November 2019, I narrowed down to two of the famous iconic electric guitar models - The Les Paul and the Stratocaster. I went back to Youtube 
+to understand the tonal differences between the two, watched tons and tons of videos, understood what the different pickups mean, humbucker vs single coil...
+and you know!&lt;&#x2F;p&gt;
+&lt;p&gt;I almost decided to get the Les Paul Studio, but after learning about the Fender Strat and making a few visits to the Music store in Köln and trying out 
+both of these icons, I ended up getting the Fender Stratocaster Performer with the HSS configuration, yes in the sunburst color. No regrets, I made the 
+right decision. I also got the Yamaha THR 10 V2 amplifier which made a killer combo with my Strat!&lt;&#x2F;p&gt;
+&lt;p&gt;I started to learn the pentatonic scale shapes, practiced them up and down and made myself comfortable playing it faster. But then I realised that I&#x27;m stuck
+within this one shape, so I wanted to understand how I could move left and right, up and down the neck which is what I&#x27;m learning right now. I did make some 
+progress, but I still have a long long way to go and I have made playing the guitar a regular routine these days.&lt;&#x2F;p&gt;
+&lt;p&gt;So my verdict is, if you are interested in learning to play the guitar, my suggestion is to go and get a decent enough instrument that makes you feel to 
+pick it up and play. If you can afford it, I would strongly recommend to get an American made guitar, Fender it is!&lt;&#x2F;p&gt;
+</description>
+        </item>
+        <item>
+            <title>Oh my left knee - You cause my problems!</title>
+            <pubDate>Sat, 07 Mar 2020 00:00:00 +0000</pubDate>
+            <link>https://www.bigelectrons.com/posts/misc/acl-knee-injury-5/</link>
+            <guid>https://www.bigelectrons.com/posts/misc/acl-knee-injury-5/</guid>
+            <description>&lt;p&gt;This morning it was just a normal day as always. We always have some balloons in our hall as my younger daughter likes to play it like a volleyball with 
+me. I also enjoy entertaining her for some time.&lt;&#x2F;p&gt;
+&lt;p&gt;So there were a few balloons in the hall, I casually like to kick it. As I kicked one off my right leg, my left leg kind of went out of balance, it 
+twisted (as I have no cross ligaments because of my &lt;a href=&quot;https:&#x2F;&#x2F;www.bigelectrons.com&#x2F;posts&#x2F;misc&#x2F;acl-knee-injury-1&#x2F;&quot;&gt;MTB accident 2 years ago&lt;&#x2F;a&gt;). It was such a shocking sensation and such an 
+intense pain that I could not stand anymore, I fell down ferociously!&lt;&#x2F;p&gt;
+&lt;p&gt;My wife and my elder daughter who were nearby came rushing hearing the sound of my fall and my cries against the pain. For the next 5 to 10 minutes I felt 
+such a pounding sensation on my left leg! It felt as though I had a severe accident! This is pure agony! Nevertheless, I guess I need to fix my left knee 
+with an artificial ligament. I will probably consider operating it the next year or probably this winter after the MTB season this year ends. Until then, 
+I&#x27;m gearing up for the summer to be on my MTB! &lt;&#x2F;p&gt;
+</description>
+        </item>
+        <item>
+            <title>My Trek Remedy clocks 1000 km this season</title>
+            <pubDate>Sun, 29 Sep 2019 00:00:00 +0000</pubDate>
+            <link>https://www.bigelectrons.com/posts/misc/mtb-trek-remedy-1000-km/</link>
+            <guid>https://www.bigelectrons.com/posts/misc/mtb-trek-remedy-1000-km/</guid>
+            <description>&lt;p&gt;So as of today, I managed to clock on record a total of 1000 Km with my Trek Remedy 8. It is obviously much higher than that as for several rides I haven&#x27;t 
+turned my Sigma odometer device. But for the record, the mileage is 1000 Km for this year so far.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;mtb&#x2F;mtb-trek-remedy-1000-km.jpg&quot; alt=&quot;Trek Remedy 1000 Km&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;I have explored much of the singles trails around my area! It was fun riding this bike! I hope to do even more miles for the next season!&lt;&#x2F;p&gt;
+</description>
+        </item>
+        <item>
+            <title>Yet another impact on the injured knee!</title>
+            <pubDate>Tue, 13 Aug 2019 00:00:00 +0000</pubDate>
+            <link>https://www.bigelectrons.com/posts/misc/acl-knee-injury-4/</link>
+            <guid>https://www.bigelectrons.com/posts/misc/acl-knee-injury-4/</guid>
+            <description>&lt;p&gt;Last Thursday, I took a day off. As the weather was good I decided to take my kids and my mom to Apeldoorn in the Netherlands. We wanted to visit the &lt;a href=&quot;https:&#x2F;&#x2F;www.julianatoren.nl&quot;&gt;theme 
+park&lt;&#x2F;a&gt; and spend the day there. My mom is here with us in Germany to visit us and to take care of the 
+kids during their summer vacation. Apeldoorn is a 2-hour drive from where we live. As usual, we did not manage to start early and ended up reaching our 
+destination around 12:00. By this time, the park was already crowded. Thinking that my mom could not walk for extended periods in the park, I reserved a 
+battery operated wheel chain the day before - only to realise later that it was a big mistake!&lt;&#x2F;p&gt;
+&lt;p&gt;I reached the entrance, paid the entry, went and took possession of the battery operated wheelchair. To me it was simple to operate as explained by the 
+service personnel at the park. My mom nodded her head as though she understood everything! She sat on it, drove for about 50 meters after which my elder 
+daughter wanted to use the rest room. So I ordered my mom to park the wheelchair in a corner so that it does not hinder the pedestrians and other visitors 
+to the park. She agreed to what I said and started to come towards one corner. I was standing with my younger daughter in my arms and while my mom was 
+navigating the wheelchair to the corner, my elder daughter was trying to help her give directions on how to steer and corner. This somehow confused my 
+mom, she gave full throttle and guess what, she whacked on my leg. &lt;&#x2F;p&gt;
+&lt;p&gt;As I was standing sideways with my left side of my body facing the oncoming wheelchair, my mom was dashing against my left leg, I started to scream with 
+pain and told her to stop which panicked her even further, she instead of taking her hands off the accelerator, she accelerated even further and gave couple 
+more strikes with the wheelchair - the impact being taken by my already injured left leg. Since I do not have my ACL, my left leg would easily bend against 
+this impact and this caused immense pain. Luckily for me the wheelchair came to a stop by dashing against an elevated floor, if not I had been 
+probably fatally injured! All this while my younger daughter was in my arms. All this happened within a couple of seconds!&lt;&#x2F;p&gt;
+&lt;p&gt;The impact of this freaky accident meant that I had to use my crutches for the next couple of days and also use a knee bandage &lt;a href=&quot;https:&#x2F;&#x2F;www.bauerfeind.de&#x2F;de&#x2F;produkte&#x2F;bandagen&#x2F;knie-huefte-oberschenkel&#x2F;genutrain.html&quot;&gt;like this 
+one here&lt;&#x2F;a&gt; to stabilise my knee. Subsequently, the pain 
+kind of went away after a couple of days, but I missed out on those bike rides that I have originally planned! I will henceforth be extra cautious when out 
+in such situations. &lt;&#x2F;p&gt;
+&lt;p&gt;So after all this drama at the park, it was me who was using the wheelchair at the park and my mom was walking comfortably! I shouldn&#x27;t have hired the 
+wheelchair in the first place, I shouldn&#x27;t have given it to my mom to ride it without her having enough practice! Lessons learned!&lt;&#x2F;p&gt;
+</description>
+        </item>
+        <item>
+            <title>Send it... yep! Sendin it...</title>
+            <pubDate>Mon, 22 Jul 2019 00:00:00 +0000</pubDate>
+            <link>https://www.bigelectrons.com/posts/misc/mtb-ramp-1/</link>
+            <guid>https://www.bigelectrons.com/posts/misc/mtb-ramp-1/</guid>
+            <description>&lt;p&gt;What does &amp;quot;Send it mean? It&#x27;s a jargon used within the Mountain Biking community, especially the Downhill community that indicates that you are about to hit a jump and that you have to clear the jump! 
+Jumpin on the trails requires technique, a lot of practice. One way to practice the technique is to do it using some artificially made ramps! That exactly 
+was my DIY project this weekend! I went to the local store &amp;quot;Bauhaus&amp;quot; as it is called here in Germany and shopped for some wood and nails.&lt;&#x2F;p&gt;
+&lt;p&gt;The dimensions for the ramp I wanted are {h = at least 30cm, l = at least 60cm}&lt;&#x2F;p&gt;
+&lt;p&gt;I made the choice that my ramp should be at least 30cm from ground so that I have some decent enough lift off! For this to happen, I had to buy a single 
+piece of wood and have it cut into pieces! I would then assemble the pieces together using the nails!
+&lt;p&gt;Here are some pictures!&lt;&#x2F;p&gt;
+&lt;div class=&quot;galleria mb-6&quot; style=&quot;height: 450px&quot;&gt;{
+    &quot;images&quot;: [
+        {
+            &quot;src&quot;: &quot;&#x2F;images&#x2F;mtb&#x2F;mtb-ramp-1.jpg&quot;,
+            &quot;title&quot;: &quot;MTB Ramp 1&quot;,
+            &quot;description&quot;: &quot;MTB Ramp 1&quot;
+        },
+        {
+            &quot;src&quot;: &quot;&#x2F;images&#x2F;mtb&#x2F;mtb-ramp-2.jpg&quot;,
+            &quot;title&quot;: &quot;MTB Ramp 2&quot;,
+            &quot;description&quot;: &quot;MTB Ramp 2.&quot;
+        },
+        {
+            &quot;src&quot;: &quot;&#x2F;images&#x2F;mtb&#x2F;mtb-ramp-3.jpg&quot;,
+            &quot;title&quot;: &quot;MTB Ramp 3&quot;,
+            &quot;description&quot;: &quot;MTB Ramp 3&quot;
+        },
+        {
+            &quot;src&quot;: &quot;&#x2F;images&#x2F;mtb&#x2F;mtb-ramp-4.jpg&quot;,
+            &quot;title&quot;: &quot;MTB Ramp 4&quot;,
+            &quot;description&quot;: &quot;MTB Ramp 4&quot;
+        }
+    ]
+}&lt;&#x2F;div&gt;
+&lt;p&gt;It was fun to build it and it roughly took me 40 minutes to get it done! It is not perfect, but for what it cost me (roughly 15 Euros), this is absolutely 
+fine! I will probably test it the next days, I&#x27;m sure I&#x27;ll have fun with it!&lt;&#x2F;p&gt;
+</description>
+        </item>
+        <item>
+            <title>How is it to experience a Blackout</title>
+            <pubDate>Sun, 14 Jul 2019 00:00:00 +0000</pubDate>
+            <link>https://www.bigelectrons.com/posts/misc/mtb-ride-black-out/</link>
+            <guid>https://www.bigelectrons.com/posts/misc/mtb-ride-black-out/</guid>
+            <description>&lt;p&gt;Today, I drove to Düsseldorf to Mountain bike the Aaper wald. I made a nasty mistake of not having enough breakfast. It started good, but after reaching the foot of the hill, 
+I started to ride the up-hill section. After pedalling for about a minute or two, I started to notice that my legs were pounding hard. I feel that this must 
+be the activity of my heart trying to pump more blood to my legs to feed them with power. After a while, the slope got even steep, I could not pedal 
+it anymore, so I got down and started to tow my bike. It was demanding! &lt;&#x2F;p&gt;
+&lt;p&gt;Once I reached the peak, I started to get tired and felt a pounding sensation on my face, I started to feel dizzy. It was within seconds, I blacked out!&lt;&#x2F;p&gt;
+&lt;p&gt;The following event is as told by my friend who was with me for the ride!&lt;&#x2F;p&gt;
+&lt;p&gt;I fell down un-conscious, my bike fell over me. My fried then took the bike away and called me twice after which I got my consciousness back and got up! It 
+was roughly less than 10 seconds where I went un-conscious! My friend told me that while I was un-conscious, my eyes were still open, he was not sure if 
+I was breathing or not! I&#x27;m glad that I came back. I&#x27;m thankful to my friend that he called my name which I feel was the trigger to get me back to 
+consciousness! After waking up, I felt as though I was sleeping for longer and while I was un-conscious, I was dreaming of something! Not sure what I was 
+dreaming about. For about 20 to 30 seconds of waking up, I was still a bit dizzy, I was slowly getting back to normal. I had some water to drink and was 
+just asking my friend about what happened to me.&lt;&#x2F;p&gt;
+&lt;p&gt;It was after this incident, we drove through the forest for about 16km, both uphill and downhill where I was shredding the descents! I&#x27;m glad and thankful
+to my friend who offered me a sumptuous lunch with Salmon and some excellent coffee. It was a memorable day!&lt;&#x2F;p&gt;
+</description>
+        </item>
+        <item>
+            <title>Back with MTB Tours and Downhill rides</title>
+            <pubDate>Tue, 09 Apr 2019 00:00:00 +0000</pubDate>
+            <link>https://www.bigelectrons.com/posts/misc/mtb-ride-1/</link>
+            <guid>https://www.bigelectrons.com/posts/misc/mtb-ride-1/</guid>
+            <description>&lt;p&gt;Mountain biking is addictive! Worse than drugs!&lt;&#x2F;p&gt;
+&lt;p&gt;After a couple of months of staying away from my MTB, I&#x27;m back with it and I&#x27;m looking forward to this season to ride as much as possible and more 
+importantly, without any accidents and injuries! I got my bike serviced and about a week ago. This is how &amp;quot;The Beast&amp;quot; looked after returning back from the 
+service!&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;mtb&#x2F;mtb-trek-remedy-1.jpg&quot; alt=&quot;Trek Remedy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;I took it for a spin in the trails around Düsseldorf. I drove for about 30+ km and occasionally I had some strange feelings on my injured knee. The weather 
+just got better that day. It was drizzling and the days before this, we had the storm &amp;quot;Eberhardt&amp;quot; that wrecked havoc near the area! As a result of all this, 
+the trails were mushy and slippery.&lt;&#x2F;p&gt;
+&lt;p&gt;At one point, when riding uphill, I got stuck between the roots and I could not pedal anymore as it was too steep. While I tried to put my left leg down to 
+balance, I felt the buckling sensation! This is when I realised that I&#x27;ve got to be extra careful when riding technical trails and probably I will think of 
+using a Knee protector &#x2F; brace (like the Don Joy brace) that I had during the initial days of my ACL injury! But nevertheless, I continued and was able to 
+complete the planned route. Overall I had a wonderful ride that day and I&#x27;m eagerly looking forward to discovering new trails and make new friends!&lt;&#x2F;p&gt;
+&lt;p&gt;I would like to share an &lt;a href=&quot;https:&#x2F;&#x2F;www.komoot.com&#x2F;&quot;&gt;interesting app called Komoot&lt;&#x2F;a&gt; that I use to plan my MTB tours!&lt;&#x2F;p&gt;
+&lt;p&gt;Komoot is a social cycling app that you can use to plan your tours. Once you do so, you have the option to export your tour as a gpx data and import this 
+into any navigation device. This would then give you a turn-by-turn navigation on your bike. I find this really helpful as I can now ride with confidence 
+and just take any unknown terrain!&lt;&#x2F;p&gt;
+</description>
+        </item>
+        <item>
+            <title>4 Months update of my Knee</title>
+            <pubDate>Fri, 25 Jan 2019 00:00:00 +0000</pubDate>
+            <link>https://www.bigelectrons.com/posts/misc/acl-knee-injury-3/</link>
+            <guid>https://www.bigelectrons.com/posts/misc/acl-knee-injury-3/</guid>
+            <description>&lt;p&gt;It is now roughly 4 months since I injured my knee and the recovery so far has been very positive. On the downside, I have the feeling that my knee is not 
+like it was before! Occasionally I get a strange wobbly feeling on my injured knee!&lt;&#x2F;p&gt;
+&lt;p&gt;So for the first 2 months, I was not able to fully stretch or bend my injured leg, but that got a lot better now. I can fully flex my left leg - as good as 
+the right leg, but there is still a 10 to 20 degrees of deficit when bending it. I&#x27;m happy to have recovered to this extent. The last 2 weeks, I was back on 
+my MTB - not yet on gnarly mountains, but on single trails. I was able to do a couple of rides stretching anywhere between 35 ad 40 km in a single sitting. 
+I remember having a weird feeling on my left knee after the ride, but I believe it is just a one off thing that got eventually better after a couple of minutes!&lt;&#x2F;p&gt;
+&lt;p&gt;I&#x27;m now terribly confused. The 2019 season would start in just under 2 months from now. Getting a surgery is not an option now as it would put me off by 
+6 months using my bike. What I&#x27;m extremely afraid of are those jumps and drops and what effect would they have on my knee. Nevertheless, I don&#x27;t want 
+to be left without driving this season. I will avoid doing stunts and just drive for the fun of it! Hope to have a fun filled MTB season for 2019! &lt;&#x2F;p&gt;
+</description>
+        </item>
+        <item>
+            <title>The beauty that goes behind a Mechanical watch</title>
+            <pubDate>Fri, 14 Dec 2018 00:00:00 +0000</pubDate>
+            <link>https://www.bigelectrons.com/posts/misc/nomos-tangente-1/</link>
+            <guid>https://www.bigelectrons.com/posts/misc/nomos-tangente-1/</guid>
+            <description>&lt;p&gt;Mechanical watches - They are the representation of artistic ingenuity. If you are wondering what is so fascinating about mechanical watches, I welcome 
+you to take a look at some Youtube videos that shows how a mechanical watch is manufactured. It is after knowing, understanding and appreciating the 
+artwork that goes behind the making of a mechanical watch, I decided that I will get one for myself. &lt;&#x2F;p&gt;
+&lt;p&gt;I&#x27;m not a watch collector, I have never owned a time piece until I got my first mechanical watch in the spring of 2018. Here is a snap of that elegance!&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;nomos-tangente.jpg&quot; alt=&quot;nomos-tangente&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;I&#x27;m going to talk about my &lt;a href=&quot;https:&#x2F;&#x2F;nomos-glashuette.com&#x2F;en&#x2F;tangente&#x2F;tangente-139&quot;&gt;NOMOS Tangente Reference 139&lt;&#x2F;a&gt;. This comes with a sapphire crystal glass 
+back so that you can stare at the inner body and feel the heart beat of the Tangente!&lt;&#x2F;p&gt;
+&lt;p&gt;A few terminologies first!&lt;&#x2F;p&gt;
+&lt;p&gt;The movement or in horology terms, a caliber is the central part of any mechanical watch and is the only component that you find in your watch. The movement 
+consists of the following components:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Power Source&lt;&#x2F;strong&gt; - This is the hand screw that you wind your watch every morning&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Wheel Train&lt;&#x2F;strong&gt;  - A set of gears that transmits the force of the power source to the escapement&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Escapement&lt;&#x2F;strong&gt;   - Responsible for controlling the power source to the counting mechanism, the basis for counting seconds&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Oscillator&lt;&#x2F;strong&gt;   - Also called as a balance wheel, oscillated back and forth at a constant time interval&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;What is so special about NOMOS is that they have their own in house movement. Ok but what is so special about having an in house movement? Let&#x27;s first define 
+what an in house movement is - It is a movement that is designed, developed and assembled by the watch manufacturer that uses it for their watches. NOMOS 
+in this context did exactly that! The Tangente has the &lt;a href=&quot;https:&#x2F;&#x2F;nomos-glashuette.com&#x2F;en&#x2F;manufacture&#x2F;caliber&#x2F;alpha&quot;&gt;Alpha movement from NOMOS&lt;&#x2F;a&gt;. &lt;&#x2F;p&gt;
+&lt;p&gt;If you have watched those videos about how a mechanical watch is made, you will realise how hard it is to compose a movement on your own! It requires a lot of 
+time, research and investment. I&#x27;ve got to appreciate NOMOS for putting that effort in coming up an in house caliber. Mind it - it is not easy to come up with an 
+in house movement for a company that is relatively young in terms of horologic timescales! &lt;&#x2F;p&gt;
+&lt;p&gt;The NOMOS Tangente has this so-called Bauhaus design. Have a look &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Bauhaus&quot;&gt;here&lt;&#x2F;a&gt; of what it represents! So to me 
+this kind of Bauhaus design on a watch would mean simplicity and elegance. The Tangente stands true to this simplicity and elegance! There is not very much 
+happening on this watch. Even lettered with a seconds dial located at the 6 &#x27;0&#x27; clock position. This is elegance in simplicity.&lt;&#x2F;p&gt;
+&lt;p&gt;So if you are in the market for a simplistic mechanical timepiece, I would recommend having a look at the NOMOS Tangente. You could also get one with the 
+date option! They look absolutely stunning!&lt;&#x2F;p&gt;
+</description>
+        </item>
+        <item>
+            <title>Iron Ranger 8085 - Copper Rough &amp; Tough Boots</title>
+            <pubDate>Sun, 02 Dec 2018 00:00:00 +0000</pubDate>
+            <link>https://www.bigelectrons.com/posts/misc/ir-crt-8085-1/</link>
+            <guid>https://www.bigelectrons.com/posts/misc/ir-crt-8085-1/</guid>
+            <description>&lt;p&gt;&lt;strong&gt;Disclaimer&lt;&#x2F;strong&gt;: I&#x27;m not paid to write about this post, this is purely my ownership experience using these boots! This one deserves to be mentioned and 
+hence I&#x27;m writing this post!&lt;&#x2F;p&gt;
+&lt;p&gt;I don&#x27;t normally like to write about or make videos about my boots, but I could not resist the temptation to make a video and write about my Red Wing 
+Iron Ranger boots from Red Wing shoe company, Minnesota! &lt;&#x2F;p&gt;
+&lt;p&gt;I purchased a pair of Red Wing Iron Ranger boots from the Red Wing retail store in Amsterdam around early 2018, I absolutely love the way it wears. I like 
+everything about this shoe, be its quality leather, wearability, the comfort and the safety it gives. These shoes are made out of very high quality hide 
+such that it will last you for an eternity. The more you wear them the more they become truly yours. They age so beautifully over time. Here are some 
+videos that I made about my experience using these boots!&lt;&#x2F;p&gt;
+&lt;div class=&quot;is-flex is-justify-content-center is-align-items-center&quot;&gt;
+    &lt;iframe
+        width=&quot;640&quot; height=&quot;360&quot;
+        src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;62rJAHSP-84&quot;
+        frameborder=&quot;0&quot; 
+        allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; 
+        allowfullscreen&gt;
+    &lt;&#x2F;iframe&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;Update on (TODO.... add date): Here is an ownership update after almost a year of using my boots!&lt;&#x2F;p&gt;
+&lt;div class=&quot;is-flex is-justify-content-center is-align-items-center&quot;&gt;
+    &lt;iframe
+        width=&quot;640&quot; height=&quot;360&quot;
+        src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;mvm1YBM66Y4&quot;
+        frameborder=&quot;0&quot; 
+        allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; 
+        allowfullscreen&gt;
+    &lt;&#x2F;iframe&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;Now, if you are looking to purchasing a quality boots that will serve you forever, just grab a pair of Red Wing boots! You will never go wrong!&lt;&#x2F;p&gt;
+</description>
+        </item>
+        <item>
+            <title>6 Weeks Update of my Knee</title>
+            <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
+            <link>https://www.bigelectrons.com/posts/misc/acl-knee-injury-2/</link>
+            <guid>https://www.bigelectrons.com/posts/misc/acl-knee-injury-2/</guid>
+            <description>&lt;p&gt;Roughly 3 weeks ago on the 5th of October, I had an MTB bike accident and in the process I ended up &lt;a href=&quot;https:&#x2F;&#x2F;www.bigelectrons.com&#x2F;posts&#x2F;misc&#x2F;acl-knee-injury-1&#x2F;&quot;&gt;injuring my left knee&lt;&#x2F;a&gt;. I was actually attempting to
+Manual during which I realized that I was about to lose my balance. I wanted to bail out from the Manual, so I tried to pull the bike completely to the
+front with me jump landing behind the rear wheels, but the bailout got totally out of control and eventually I ended up twisting my left knee soon after
+the jump.&lt;&#x2F;p&gt;
+&lt;p&gt;It was such a pain for the next 5 to 10 minutes. It kind of subsided, and I thought I could get back on my bike again (What a stupidity from me). As soon as
+I got on to my bike and tried to put my left leg down to balance the bike, I had a very sharp excruciating pain, and I could not balance any more with my
+left leg and fell down on the street. This is when I realized that there is something seriously wrong with my knee. I managed to limp, tow my bike back
+home. I was scared to think that I would have inflicted some fractures around my knee. Well, at that point in time I did not know anything about
+ligaments. All I knew was that I could have either fractured my knee bones or twisted my knee bone. How stupid! After about 2 hours, I went to a hospital
+that treats patients with emergency needs.&lt;&#x2F;p&gt;
+&lt;p&gt;I had an X-Ray which thankfully confirmed no fractures or whatsoever. Well, by this time I could not neither fully flex my left leg nor bend it completely.
+The doctor then administered some bandage and asked me to check with an Ortho as he was suspecting some injury to the ligament. Given that it was a
+Friday, I had to wait until Monday so that I could make some appointments with an Ortho nearby. Saturday and Sunday was when I did tons of research
+and educated myself about knee ligaments. After understanding ligament injuries, I had sort of mixed feelings - one a feeling that said, ligament injury
+is very common among sports, the other - it takes loads of time to recover completely (What an irony here - it just takes a couple of seconds
+to tear a ligament, it takes about a year to completely heal from it). Come Monday, I quickly managed to make an appointment with a nearby Ortho
+and he sent me for an MRI as he was suspecting ACL tear.&lt;&#x2F;p&gt;
+&lt;p&gt;Fast forward 10 days, I had the MRI done and the results from the MRI centre was suggesting that I have a partial ACL tear, minor bone bruises, fluids 
+build up in the joints, small baker cyst. No cartilage damage and no Meniscus damage. I took the MRI results back to my Ortho and he was just pushing me
+to get it surgically corrected. This was pretty strange as I asked him if I could try a Physio rehab first and then decide on surgery, but he was adamant 
+and just blindly asked me to get a surgery done as soon as possible to fix my ACL. I was not happy about it, so I went and had a second and third opinion 
+where in they told me to wait until the bone bruises go away and then I could still decide if I want the surgery or not!
+&lt;p&gt;So roughly after about 3 weeks, I started with Physio sessions. I still do not have the full Range Of Motion (ROM) on my left leg, but everyday I see some
+very minor improvements - very minor though! Everyday I dream as though I&#x27;m walking normally without crutches. An ACL injury is something that definitely
+both physically and mentally affects you, but you should just take care that the injury does not take over your mind and that you are in control of it!&lt;&#x2F;p&gt;
+</description>
+        </item>
+        <item>
+            <title>What it is like to twist your knee?</title>
+            <pubDate>Thu, 18 Oct 2018 00:00:00 +0000</pubDate>
+            <link>https://www.bigelectrons.com/posts/misc/acl-knee-injury-1/</link>
+            <guid>https://www.bigelectrons.com/posts/misc/acl-knee-injury-1/</guid>
+            <description>&lt;p&gt;Roughly 3 weeks ago on the 5th of October, I had an MTB bike accident and in the process I ended up injuring my left knee. I was actually attempting to 
+Manual during which I realized that I was about to lose my balance. I wanted to bail out from the Manual, so I tried to pull the bike completely to the 
+front with me jump landing behind the rear wheels, but the bailout got totally out of control and eventually I ended up twisting my left knee soon after 
+the jump.&lt;&#x2F;p&gt;
+&lt;p&gt;It was such a pain for the next 5 to 10 minutes. It kind of subsided, and I thought I could get back on my bike again (What a stupidity from me). As soon as 
+I got on to my bike and tried to put my left leg down to balance the bike, I had a very sharp excruciating pain, I could not balance anymore with my 
+left leg and fell down on the street. This is when I realized that there is something seriously wrong with my knee. I managed to limp, tow my bike back 
+home. I was scared to think that I would have inflicted some fractures around my knee. Well, at that point in time I did not know anything about 
+ligaments. All I knew was that I could have either fractured my knee bones or twisted my knee bone. How stupid! After about 2 hours, I went to a hospital 
+that treats patients with emergency needs.&lt;&#x2F;p&gt;
+&lt;p&gt;I had an X-Ray which thankfully confirmed no fractures or whatsoever. Well, by this time I could neither fully flex my left leg nor bend it completely. 
+The doctor then administered some bandage and asked me to check with an Ortho as he was suspecting some injury to the ligament. Given that it was a 
+Friday, I had to wait until Monday so that I could make some appointments with an Ortho nearby. Saturday and Sunday was when I did tons of research 
+and educated myself about knee ligaments. After understanding ligament injuries, I had sort of mixed feelings - one a feeling that said, ligament injury 
+is very common among sports, the other - it takes shit loads of time to recover completely (What an irony here - it just takes a couple of seconds 
+to tear a ligament, it takes about a year to completely heal from it). Come Monday, I quickly managed to make an appointment with a nearby Ortho 
+, he sent me for an MRI as he was suspecting ACL tear. &lt;&#x2F;p&gt;
+&lt;p&gt;Fast-forward 10 days, I had the MRI done, the results from the MRI centre was suggesting that I have a partial ACL tear, minor bone bruises, fluids 
+build up in the joints, small baker cyst. No cartilage damage and no Meniscus damage. I took the MRI results back to my Ortho, he was just pushing me
+to get it surgically corrected. This was pretty strange as I asked him if I could try a Physio rehab first and then decide on surgery, but he was adamant 
+and just blindly asked me to get a surgery done as soon as possible to fix my ACL. I was not happy about it, so I went and had a second and third opinion 
+where in they told me to wait until the bone bruises go away and then I could still decide if I want the surgery or not!&lt;&#x2F;p&gt;
+&lt;p&gt;So roughly after about 3 weeks, I started with Physio sessions. I still do not have the full Range Of Motion (ROM) on my left leg, but everyday I see some 
+very minor improvements - very minor though! Every day, I dream as though I&#x27;m walking normally without crutches. An ACL injury is something that definitely 
+both physically and mentally affects you, but you should just take care that the injury does not take over your mind and that you are in control of it!&lt;&#x2F;p&gt;
+</description>
+        </item>
+    </channel>
+</rss>

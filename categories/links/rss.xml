@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+      <title>bigelectrons - Links</title>
+        <link>https://www.bigelectrons.com</link>
+        <description></description>
+        <generator>Zola</generator>
+        <language>en</language>
+        <atom:link href="https://www.bigelectrons.com/categories/links/rss.xml" rel="self" type="application/rss+xml"/>
+        <lastBuildDate>Wed, 22 Aug 2018 00:00:00 +0000</lastBuildDate>
+        <item>
+            <title>List of useful links</title>
+            <pubDate>Wed, 22 Aug 2018 00:00:00 +0000</pubDate>
+            <link>https://www.bigelectrons.com/links/tech/tech-links/</link>
+            <guid>https://www.bigelectrons.com/links/tech/tech-links/</guid>
+            <description>&lt;h1 id=&quot;math&quot;&gt;Math&lt;&#x2F;h1&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Topic&lt;&#x2F;th&gt;&lt;th align=&quot;right&quot;&gt;Source&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;Simple Linear Regression&lt;&#x2F;td&gt;&lt;td align=&quot;right&quot;&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=iAgYLRy7e20&quot;&gt;Basics about doing Linear Regression&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Probability Bayes Theorem&lt;&#x2F;td&gt;&lt;td align=&quot;right&quot;&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=bUI8ovd07uI&quot;&gt;Basics about Bayes theorem in Probability&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Binomial Distribution&lt;&#x2F;td&gt;&lt;td align=&quot;right&quot;&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=8idr1WZ1A7Q&quot;&gt;Understanding basics behind Binomial distribution&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Doing Gradient Descent&lt;&#x2F;td&gt;&lt;td align=&quot;right&quot;&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=jc2IthslyzM&quot;&gt;Understanding basics on Gradient Descent&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Essence of Calculus&lt;&#x2F;td&gt;&lt;td align=&quot;right&quot;&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr&quot;&gt;Series on understanding Calculus&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Category Theory&lt;&#x2F;td&gt;&lt;td align=&quot;right&quot;&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=JMP6gI5mLHc&quot;&gt;Basics about Category Theory&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;hr &#x2F;&gt;
+&lt;h1 id=&quot;useful-projects&quot;&gt;Useful Projects&lt;&#x2F;h1&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Title&lt;&#x2F;th&gt;&lt;th align=&quot;right&quot;&gt;Source&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;Grandslam 3D Mapping&lt;&#x2F;td&gt;&lt;td align=&quot;right&quot;&gt;&lt;a href=&quot;https:&#x2F;&#x2F;gradslam.github.io&#x2F;&quot;&gt;SLAM Mapping for Navigational Robots&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Monix&lt;&#x2F;td&gt;&lt;td align=&quot;right&quot;&gt;&lt;a href=&quot;https:&#x2F;&#x2F;monix.io&#x2F;&quot;&gt;Asynchronous programming for the JVM&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;hr &#x2F;&gt;
+&lt;h1 id=&quot;technical-articles-blogs&quot;&gt;Technical Articles &amp;amp; Blogs&lt;&#x2F;h1&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Title&lt;&#x2F;th&gt;&lt;th align=&quot;right&quot;&gt;Source&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;IP Addressing&lt;&#x2F;td&gt;&lt;td align=&quot;right&quot;&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.geeksforgeeks.org&#x2F;introduction-of-classful-ip-addressing&#x2F;&quot;&gt;Classful IP Addressing Basics&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;SRE&lt;&#x2F;td&gt;&lt;td align=&quot;right&quot;&gt;&lt;a href=&quot;https:&#x2F;&#x2F;how.complexsystems.fail&#x2F;&quot;&gt;How Complex Systems Fail&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;hr &#x2F;&gt;
+&lt;h1 id=&quot;miscellaneous&quot;&gt;Miscellaneous&lt;&#x2F;h1&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Title&lt;&#x2F;th&gt;&lt;th align=&quot;right&quot;&gt;Source&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;Clutch yourself in a Trance - 1&lt;&#x2F;td&gt;&lt;td align=&quot;right&quot;&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=B5sqUD1TPhI&quot;&gt;Mahaavatar Babaji - 1&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Clutch yourself in a Trance - 2&lt;&#x2F;td&gt;&lt;td align=&quot;right&quot;&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=tPSyvXXMppc&quot;&gt;Mahaavatar Babaji - 2&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;hr &#x2F;&gt;
+&lt;h1 id=&quot;markdown-syntax-reference&quot;&gt;Markdown Syntax Reference&lt;&#x2F;h1&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Title&lt;&#x2F;th&gt;&lt;th align=&quot;right&quot;&gt;Source&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;Markdown Syntax Reference&lt;&#x2F;td&gt;&lt;td align=&quot;right&quot;&gt;&lt;a href=&quot;https:&#x2F;&#x2F;deepthought-theme.netlify.app&#x2F;docs&#x2F;basic-markdown-syntax&#x2F;&quot;&gt;Reference on how to format the Markdown content&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Zola Extended Shortcodes&lt;&#x2F;td&gt;&lt;td align=&quot;right&quot;&gt;&lt;a href=&quot;https:&#x2F;&#x2F;deepthought-theme.netlify.app&#x2F;docs&#x2F;extended-shortcodes&#x2F;&quot;&gt;Reference on how to format the Markdown Shortcodes&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Useful Markdown Emoji&#x27;s&lt;&#x2F;td&gt;&lt;td align=&quot;right&quot;&gt;&lt;a href=&quot;https:&#x2F;&#x2F;gist.github.com&#x2F;rxaviers&#x2F;7360908&quot;&gt;All Emoji References for Markdown&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;hr &#x2F;&gt;
+</description>
+        </item>
+    </channel>
+</rss>

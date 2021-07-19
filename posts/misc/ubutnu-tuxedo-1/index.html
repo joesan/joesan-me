@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <meta content="#ffffff" name="theme-color" />
+  <meta content="#da532c" name="msapplication-TileColor" />
+
+  
+  <link href='&#x2F;icons&#x2F;site.webmanifest' rel="manifest" />
+  
+  
+  <link color="#5bbad5" href='&#x2F;icons&#x2F;safari-pinned-tab.svg' rel="mask-icon" />
+  
+  
+  <link href='&#x2F;icons&#x2F;favicon-16x16.png' rel="icon" sizes="16x16" type="image/png" />
+  
+  
+  <link href='&#x2F;icons&#x2F;favicon-32x32.png' rel="icon" sizes="32x32" type="image/png" />
+  
+  
+  <link href='&#x2F;icons&#x2F;apple-touch-icon.png' rel="apple-touch-icon" sizes="180x180" />
+  
+
+  <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/themes/folio/galleria.folio.min.css"
+    rel="stylesheet" />
+  <link href="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css" rel="stylesheet" />
+  <link href='https:&#x2F;&#x2F;www.bigelectrons.com&#x2F;site.css' rel="stylesheet" />
+
+  
+  
+
+  <title>
+    
+bigelectrons | Moved from Apple to Infinitybook a.k.a Tuxedo a.k.a Ubuntu
+
+  </title>
+
+  <script crossorigin="anonymous" src="https://kit.fontawesome.com/201b8d5e05.js"></script>
+
+  <!-- Cookie consent plugin content -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"></script>
+
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+        integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
+          integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
+          crossorigin="anonymous"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/mathtex-script-type.min.js"
+          integrity="sha384-LJ2FmexL77rmGm6SIpxq7y+XA6bkLzGZEgCywzKOZG/ws4va9fUVu2neMjvc3zdv"
+          crossorigin="anonymous"></script>
+  
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+          integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous" onload="renderMathInElement(document.body, {
+				delimiters: [
+					{left: '$$', right: '$$', display: true},
+					{left: '$', right: '$', display: false},
+					{left: '\\(', right: '\\)', display: false},
+					{left: '\\[', right: '\\]', display: true}
+				]
+			});"></script>
+  
+  
+</head>
+
+<body class="has-background-white">
+  <!-- Content to show cookie consent for GDPR purposes -->
+  <script>
+    window.cookieconsent.initialise({
+      container: document.getElementById("content"),
+      palette:{
+        popup: {background: "#fff"},
+        button: {background: "#aa0000"},
+      },
+      revokable:true,
+      onStatusChange: function(status) {
+        console.log(this.hasConsented() ?
+                'enable cookies' : 'disable cookies');
+      },
+      law: {
+        regionalLaw: false,
+      },
+      location: true,
+    });
+  </script>
+  
+  <nav aria-label="section navigation" class="navbar is-light" role="navigation">
+    <div class="container">
+      <div class="navbar-brand">
+        <a class="navbar-item has-text-weight-bold" href="https:&#x2F;&#x2F;www.bigelectrons.com">bigelectrons</a>
+        <a aria-expanded="false" aria-label="menu" class="navbar-burger burger" data-target="navMenu" role="button">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div class="navbar-menu" id="navMenu">
+        <div class="navbar-end has-text-centered">
+          
+          <a class="navbar-item" href='https:&#x2F;&#x2F;www.bigelectrons.com&#x2F;'>
+            Home
+          </a>
+          
+          <a class="navbar-item" href='https:&#x2F;&#x2F;www.bigelectrons.com&#x2F;posts'>
+            Posts
+          </a>
+          
+          <a class="navbar-item" href='https:&#x2F;&#x2F;www.bigelectrons.com&#x2F;navo'>
+            Navo
+          </a>
+          
+          <a class="navbar-item" href='https:&#x2F;&#x2F;www.bigelectrons.com&#x2F;projects'>
+            Projects
+          </a>
+          
+          <a class="navbar-item" href='https:&#x2F;&#x2F;www.bigelectrons.com&#x2F;links'>
+            Links
+          </a>
+          
+          <a class="navbar-item" href='https:&#x2F;&#x2F;www.bigelectrons.com&#x2F;categories'>
+            Categories
+          </a>
+          
+          <a class="navbar-item" href='https:&#x2F;&#x2F;www.bigelectrons.com&#x2F;tags'>
+            Tags
+          </a>
+          
+          <a class="navbar-item" id="nav-search" title="Search" data-target="#search-modal">
+            <span class="icon">
+              <i class="fas fa-search"></i>
+            </span>
+          </a>
+          <a class="navbar-item" id="dark-mode" title="Switch to dark theme">
+            <span class="icon">
+              <i class="fas fa-adjust"></i>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+
+  
+  
+
+  
+<section class="section">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-8 is-offset-2">
+        <article class="box">
+          <h1 class="title is-1">
+            Moved from Apple to Infinitybook a.k.a Tuxedo a.k.a Ubuntu
+          </h1>
+          <p class="subtitle">A very good alternative to the Mac</p>
+          <div class="columns is-multiline is-gapless">
+            <div class="column is-8">
+              
+  <p class="has-text-grey">
+    <span class="icon">
+      <i class="fas fa-user"></i>
+    </span>
+    joesan published on
+    <span class="icon">
+      <i class="far fa-calendar-alt"></i>
+    </span>
+    <time datetime='2020-07-19'>July 19, 2020</time>
+  </p>
+
+            </div>
+            <div class="column is-4 has-text-right-desktop">
+              
+  <p class="has-text-grey">
+    <span class="icon">
+      <i class="far fa-clock"></i>
+    </span>
+    3 min,
+    <span class="icon">
+      <i class="fas fa-pencil-alt"></i>
+    </span>
+    460 words
+  </p>
+
+            </div>
+            <div class="column">
+              
+              
+  <p>
+    <span class="has-text-black has-text-weight-normal">Categories:</span>
+    
+      <a class="link has-text-weight-light" href='https:&#x2F;&#x2F;www.bigelectrons.com&#x2F;categories&#x2F;miscellaneous&#x2F;'>
+        <span class="icon is-small">
+          <i class="fas fa-folder fa-xs"></i>
+        </span>
+        Miscellaneous
+      </a>
+    
+  </p>
+
+              
+            </div>
+            <div class="column has-text-right-desktop">
+              
+              
+  <p>
+    <span class="has-text-black has-text-weight-normal">Tags:</span>
+    
+      <a class="link has-text-weight-light" href='https:&#x2F;&#x2F;www.bigelectrons.com&#x2F;tags&#x2F;ubuntu&#x2F;'>
+        <span class="icon is-small">
+          <i class="fas fa-tag fa-xs"></i>
+        </span>
+        ubuntu
+      </a>
+    
+      <a class="link has-text-weight-light" href='https:&#x2F;&#x2F;www.bigelectrons.com&#x2F;tags&#x2F;tuxedo-notebook&#x2F;'>
+        <span class="icon is-small">
+          <i class="fas fa-tag fa-xs"></i>
+        </span>
+        tuxedo notebook
+      </a>
+    
+  </p>
+
+              
+            </div>
+          </div>
+          <div class="content mt-2">
+            <p>I have been using a Mac for over 7 years now, I have used about 3 Mac's where the 3rd one is still working fine. I have kids at home, they feed food 
+to it and because of that the keys on my Mac is out of order. So it was time for me to have some privacy and get one machine for myself.</p>
+<p>Looking around the latest iteration of the MacBook Pro 13&quot;, the configuration that I could get for the money and more importantly what I will be doing with 
+it actually got me into thinking if I ever need a Mac at all? So I listed down my usual usage:</p>
+<ol>
+<li>Browsing</li>
+<li>Software Engineering (Running application servers, Kubernetes, Docker images etc.,)</li>
+<li>Occasional photo editing</li>
+<li>Skype calls</li>
+</ol>
+<p>So given those needs above, I realized that a Mac is a bit pricey. So I started to search for alternatives. I could not tolerate a Windows machine, so the 
+only option was to go for a Linux installed device. Fortunately, there are possibilities today to order one such Linux machine and run it out of the box. 
+Yes, it is from <a href="https://www.tuxedocomputers.com/">Tuxedo computers</a>. I purchased one of their business Laptops the <strong>TUXEDO InfinityBook 
+S 14 v5</strong>. You can customize the hardware, I maxed out on the RAM as I know this is where my maximum needs are. It came fully pre-installed with their 
+Ubuntu distro, they call it the &quot;Tuxedo_OS 20.04 LTS 64 Bit&quot; which is basically a Ubuntu Linux. Since it is LTS, it is guaranteed to receive updates for 
+the next 5 years. </p>
+<p>It took about 5 business days for the machine to reach me and I have it now with me. So far, I really do not miss my MacBook Pro. This machine is wonderful. 
+What is astounding for me is the battery life. I get about 12 to 13 hours of battery life with some moderate usage (videos, browsing, terminal, docker 
+containers etc.,). I'm pretty much satisfied with this as it just costed me 1/3 of the price for a similarly spec'd MacBook Pro.</p>
+<p>A quick review of the machine:</p>
+<ol>
+<li>
+<p>The chassis feels flimsy, not sure if it is truly military grade as mentioned in the website from Tuxedo</p>
+</li>
+<li>
+<p>The Audio quality is poor, the video is kind of Okay. For the intended purpose of this machine, I'm fine with this!</p>
+</li>
+<li>
+<p>It is very slender and light. I like that</p>
+</li>
+<li>
+<p>The fan is silent and could not be heard under load</p>
+</li>
+<li>
+<p>Budgie desktop is pleasing to use and set up</p>
+</li>
+<li>
+<p>Keys have a nice reflex, and it is really inviting typing, but the keys could have been a bit bigger</p>
+</li>
+</ol>
+
+          </div>
+        </article>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+
+  
+  <section class="modal" id="search-modal">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+      <div class="field">
+        <p class="control has-icons-right">
+          <input class="input" id="search" placeholder="Search this website." type="search" />
+          <span class="icon is-small is-right">
+            <i class="fas fa-search"></i>
+          </span>
+        </p>
+      </div>
+      <div class="search-results">
+        <div class="search-results__items"></div>
+      </div>
+    </div>
+    <button aria-label="close" class="modal-close is-large"></button>
+  </section>
+  
+
+
+  
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <nav class="level">
+          
+          <div class="level-item has-text-centered">
+            <a class="button is-black is-outlined" href="https:&#x2F;&#x2F;www.bigelectrons.com&#x2F;posts&#x2F;misc&#x2F;guitar-learning-2&#x2F;">
+              <span class="icon mr-2">
+                <i class="fas fa-arrow-circle-left"></i>
+              </span>
+              On Navigating the Pentatonic scale
+            </a>
+          </div>
+           
+          <div class="level-item has-text-centered">
+            <a class="button is-black is-outlined" href="https:&#x2F;&#x2F;www.bigelectrons.com&#x2F;posts&#x2F;infra&#x2F;k8s-deployment-ci&#x2F;">
+              CI for Kubernetes Resources<span class="icon ml-2">
+                <i class="fas fa-arrow-circle-right"></i>
+              </span>
+            </a>
+          </div>
+            
+        </nav>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  
+
+
+
+  
+  <footer class="py-4 has-background-light">
+    <p class="has-text-centered">
+       Powered By
+      <span class="icon is-small">
+        <i class="fas fa-power-off fa-xs"></i>
+      </span>
+      Zola
+    </p>
+  </footer>
+  
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sharer.js@latest/sharer.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/galleria.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.xkcd@1/dist/chart.xkcd.min.js"></script>
+  <script src="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/themes/folio/galleria.folio.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/elasticlunr/0.9.6/elasticlunr.min.js"></script>
+  <script src='https:&#x2F;&#x2F;www.bigelectrons.com&#x2F;search_index.en.js'></script>
+  <script src='https:&#x2F;&#x2F;www.bigelectrons.com&#x2F;js&#x2F;site.js'></script>
+
+  
+
+
+
+
+</body>
+
+</html>

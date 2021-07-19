@@ -1,0 +1,578 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+      <title>bigelectrons - ros</title>
+        <link>https://www.bigelectrons.com</link>
+        <description></description>
+        <generator>Zola</generator>
+        <language>en</language>
+        <atom:link href="https://www.bigelectrons.com/categories/ros/rss.xml" rel="self" type="application/rss+xml"/>
+        <lastBuildDate>Fri, 18 Dec 2020 00:00:00 +0000</lastBuildDate>
+        <item>
+            <title>Arduino with L298N</title>
+            <pubDate>Fri, 18 Dec 2020 00:00:00 +0000</pubDate>
+            <link>https://www.bigelectrons.com/posts/navo/arduino/arduino-with-l298n/</link>
+            <guid>https://www.bigelectrons.com/posts/navo/arduino/arduino-with-l298n/</guid>
+            <description>&lt;h2 id=&quot;arduino-with-l298n&quot;&gt;Arduino with L298N&lt;&#x2F;h2&gt;
+&lt;p&gt;Let us see how we could integrate Arduino with the L298N which is our motor controller. Now, it you are unsure about why we need an L298N H bridge, here 
+is some background information about this! With that being said, our sketch looks like this:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#2b303b;&quot;&gt;
+&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span style=&quot;font-style:italic;color:#5f697a;&quot;&gt;&#x2F;*
+* DC Motor Encoder Test Sketch
+* by Joesan [https:&#x2F;&#x2F;github.com&#x2F;joesan]
+* 27.12.2020
+*
+* Records encoder ticks for each wheel
+* and prints the number of ticks for
+* each encoder every 500ms
+*
+* WARNING: This is a throw away sketch, it is here
+* just for experimental purposes.
+*
+*&#x2F;
+&#x2F;&#x2F; pins for the encoder inputs for Motor M1
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#cd74e8;&quot;&gt;#define &lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;M1_ENCODER_A &lt;&#x2F;span&gt;&lt;span style=&quot;color:#db9d63;&quot;&gt;3 &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#5f697a;&quot;&gt;&#x2F;&#x2F; The yellow wire in the sketch above
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#cd74e8;&quot;&gt;#define &lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;M1_ENCODER_B &lt;&#x2F;span&gt;&lt;span style=&quot;color:#db9d63;&quot;&gt;4 &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#5f697a;&quot;&gt;&#x2F;&#x2F; The green wire in the sketch above
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#cd74e8;&quot;&gt;int&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt; enA &lt;&#x2F;span&gt;&lt;span style=&quot;color:#adb7c9;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#db9d63;&quot;&gt;8&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#cd74e8;&quot;&gt;int&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt; in1 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#adb7c9;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#db9d63;&quot;&gt;9&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#cd74e8;&quot;&gt;int&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt; in2 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#adb7c9;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#db9d63;&quot;&gt;10&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;;
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#5f697a;&quot;&gt;&#x2F;&#x2F; variable to record the number of encoder pulse
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#cd74e8;&quot;&gt;volatile unsigned long&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt; m1Count &lt;&#x2F;span&gt;&lt;span style=&quot;color:#adb7c9;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#db9d63;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#cd74e8;&quot;&gt;double&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt; rpm &lt;&#x2F;span&gt;&lt;span style=&quot;color:#adb7c9;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#db9d63;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#cd74e8;&quot;&gt;unsigned long&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt; lastmillis &lt;&#x2F;span&gt;&lt;span style=&quot;color:#adb7c9;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#db9d63;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;;
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#cd74e8;&quot;&gt;void &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5cb3fa;&quot;&gt;setup&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;() {
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;pinMode&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;(M1_ENCODER_A, INPUT);
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;pinMode&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;(M1_ENCODER_B, INPUT);
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;pinMode&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;(enA, OUTPUT);
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;pinMode&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;(in1, OUTPUT);
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;pinMode&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;(in2, OUTPUT);
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#5f697a;&quot;&gt;&#x2F;&#x2F; initialize hardware interrupt
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;attachInterrupt&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;digitalPinToInterrupt&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;(M1_ENCODER_A), m1EncoderEvent, RISING);
+
+Serial.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;begin&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#db9d63;&quot;&gt;9600&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;);
+}
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#cd74e8;&quot;&gt;void &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5cb3fa;&quot;&gt;loop&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;() {
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#5f697a;&quot;&gt;&#x2F;&#x2F; Turn on Motor A forward direction
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;runForward&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#db9d63;&quot;&gt;255&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;);
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#5f697a;&quot;&gt;&#x2F;&#x2F; Calculate the RPM every second
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#cd74e8;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;millis&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;() &lt;&#x2F;span&gt;&lt;span style=&quot;color:#adb7c9;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt; lastmillis &lt;&#x2F;span&gt;&lt;span style=&quot;color:#adb7c9;&quot;&gt;== &lt;&#x2F;span&gt;&lt;span style=&quot;color:#db9d63;&quot;&gt;1000&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;) {
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#5f697a;&quot;&gt;&#x2F;&#x2F; Disable interrupt when calculating
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;detachInterrupt&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;digitalPinToInterrupt&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;(M1_ENCODER_A));
+
+    &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#5f697a;&quot;&gt;&#x2F;&#x2F; rpm = counts &#x2F; second * seconds &#x2F; minute * revolutions &#x2F; count
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;    rpm &lt;&#x2F;span&gt;&lt;span style=&quot;color:#adb7c9;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt; m1count &lt;&#x2F;span&gt;&lt;span style=&quot;color:#adb7c9;&quot;&gt;* &lt;&#x2F;span&gt;&lt;span style=&quot;color:#db9d63;&quot;&gt;60 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#adb7c9;&quot;&gt;&#x2F; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#db9d63;&quot;&gt;979.62&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;;      
+    Serial.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;print&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#9acc76;&quot;&gt;&amp;quot;RPM =&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5ebfcc;&quot;&gt;\t&lt;&#x2F;span&gt;&lt;span style=&quot;color:#9acc76;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;);
+    Serial.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;println&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;(rpm);  
+    m1Count &lt;&#x2F;span&gt;&lt;span style=&quot;color:#adb7c9;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#db9d63;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;;
+    lastmillis &lt;&#x2F;span&gt;&lt;span style=&quot;color:#adb7c9;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;millis&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;();
+
+    &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#5f697a;&quot;&gt;&#x2F;&#x2F; Enable interrupt
+    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;attachInterrupt&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;digitalPinToInterrupt&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;(M1_ENCODER_A), m1EncoderEvent, RISING);
+}
+}
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#cd74e8;&quot;&gt;void &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5cb3fa;&quot;&gt;runForward&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#cd74e8;&quot;&gt;int &lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;speed&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;) { &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#5f697a;&quot;&gt;&#x2F;&#x2F;speed 0-255
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;analogWrite&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;(enA, speed);
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;digitalWrite&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;(in1, HIGH);
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;digitalWrite&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;(in2, LOW);
+}
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#cd74e8;&quot;&gt;void &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5cb3fa;&quot;&gt;runBackward&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#cd74e8;&quot;&gt;int &lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;speed&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;) { &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#5f697a;&quot;&gt;&#x2F;&#x2F;speed 0-255
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;analogWrite&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;(enA, speed);
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;digitalWrite&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;(in1, LOW);
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;digitalWrite&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;(in2, HIGH);
+}
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#cd74e8;&quot;&gt;void &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5cb3fa;&quot;&gt;m1EncoderEvent&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;() {
+m1Count&lt;&#x2F;span&gt;&lt;span style=&quot;color:#adb7c9;&quot;&gt;++&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;;
+}
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#5f697a;&quot;&gt;&#x2F;&#x2F; encoder event for the interrupt call
+&#x2F;*void m1EncoderEvent() {
+if (digitalRead(M1_ENCODER_A) == HIGH) {
+if (digitalRead(M1_ENCODER_B) == LOW) {
+m1Count++;
+} else {
+m1Count--;
+}
+} else {
+if (digitalRead(M1_ENCODER_B) == LOW) {
+m1Count--;
+} else {
+m1Count++;
+}
+} *&#x2F;
+&lt;&#x2F;span&gt;&lt;span style=&quot;background-color:#e05252;color:#ffffff;&quot;&gt;}&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;That piece of code above deserves some basic explanation. Let us try to do that!&lt;&#x2F;p&gt;
+&lt;p&gt;The important part to note about the code above is the use of the attachInterrput function. &lt;a href=&quot;https:&#x2F;&#x2F;www.allaboutcircuits.com&#x2F;technical-articles&#x2F;using-interrupts-on-arduino&#x2F;&quot; target=&quot;_blank&quot;&gt;
+Have a look here&lt;&#x2F;a&gt; for a very good explanation of the function parameters and its meaning!&lt;&#x2F;p&gt;
+</description>
+        </item>
+        <item>
+            <title>DC Motor RPM Control</title>
+            <pubDate>Tue, 15 Dec 2020 00:00:00 +0000</pubDate>
+            <link>https://www.bigelectrons.com/posts/navo/dcmotor/dc-motor-rpm-ros/</link>
+            <guid>https://www.bigelectrons.com/posts/navo/dcmotor/dc-motor-rpm-ros/</guid>
+            <description>&lt;h2 id=&quot;dc-motor-speed-control-with-ros&quot;&gt;DC Motor Speed Control with ROS&lt;&#x2F;h2&gt;
+&lt;p&gt;We saw from the previous tutorial on &lt;a href=&quot;https:&#x2F;&#x2F;navo-org.github.io&#x2F;&#x2F;navo-docs&#x2F;docs&#x2F;tutorials&#x2F;dc-motor-encoder.html&quot;&gt;how to measure the RPM of a 
+DC Motor&lt;&#x2F;a&gt; fitted with an encoder. In this tutorial, let us see how we could do a basic speed control using commands from a ROS node. Combined with 
+what we learnt on how to use &lt;a href=&quot;https:&#x2F;&#x2F;navo-org.github.io&#x2F;&#x2F;navo-docs&#x2F;docs&#x2F;tutorials&#x2F;dc-motor-pid-control.html&quot;&gt;PID speed control algorithm&lt;&#x2F;a&gt; 
+let us put this all into practice. But first we need to create the circuit.&lt;&#x2F;p&gt;
+&lt;p&gt;Our hardware components are based on the Arduino Uno, the L298N H bridge for controlling the motors, a Raspberry Pi. We start with a brief overview about the 
+L298N H bridge.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;l298n-h-bridge&quot;&gt;L298N H Bridge&lt;&#x2F;h3&gt;
+&lt;p&gt;The L298N is a DC Motor controller. The speed of the DC Motor could be controlled by regulating &#x2F; changing the input voltage to the motor. This is done 
+by using a technique called &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Pulse-width_modulation&quot; target=&quot;_blank&quot;&gt;Pulse Width Modulation (PWM)&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Okay, so we can now control the speed of the motor with PWM, but what about the direction? Speed is not just about going forwards, but also going 
+backwards. Fortunately this is very simple using a so called &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;H-bridge&quot; target=&quot;_blank&quot;&gt;H bridge&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Hence, by combinig the PWM with an H Bridge, we can achieve what we want which is to control the speed and direction. The L298N is exactly this. I have 
+purchased a few of these L298N Driver units. Each one is capable of controlling upto 2 DC Motors within the 5V and 35V range with a peak current of 2A.&lt;&#x2F;p&gt;
+&lt;p&gt;Here is a picture of my L298N H bridge. For the exact model, go here to find the &lt;a href=&quot;..&#x2F;hardware&#x2F;&quot;&gt;list of materials&lt;&#x2F;a&gt; that you need to source!&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;navo&#x2F;arduino&#x2F;l298n-h-bridge.png&quot; alt=&quot;l298n-h-bridge&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Now that we know about the L298N Driver and its intended usgae, let us wire it up with the Arduino and see how we could control the motor.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;putting-it-all-together-arduino-l298n-the-dc-motor&quot;&gt;Putting it all together - Arduino, L298N &amp;amp; the DC Motor&lt;&#x2F;h3&gt;
+&lt;p&gt;So for us, with this fundemental understanding, let us try this out by implementing a simple sketch and testing it out in the wild. Here is the fritzing 
+schematic:&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;navo&#x2F;arduino&#x2F;arduino-h-bridge-motor.png&quot; alt=&quot;arduino-h-bridge&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;I hope understanding the circuit is pretty straight forward. We just need to ensure that we have a common ground while the rest of the connections are 
+self-explanatory. We just have connected a single motor to the circuit, though a single L298N H bridge can take 2 Motors. If we use the L298N H bridge in our Navo robot is a discussion for later as there are much better motor controllers which we will consider when we talk about the actual build.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Power Supply&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;As it can also be seen from the schematic above is that, we are using a 12V external power supply from a battery pack. This is just about enough to also 
+power the Arduino board.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-logic&quot;&gt;The Logic&lt;&#x2F;h2&gt;
+&lt;p&gt;We have already deduced how we could measure the RPM of the DC Motor that we are using. More information about the Arduino sketch can be found 
+&lt;a href=&quot;https:&#x2F;&#x2F;navo-org.github.io&#x2F;&#x2F;navo-docs&#x2F;docs&#x2F;tutorials&#x2F;dc-motor-rpm.html#dc-motor-speed-control-arduino-sketch&quot;&gt; here&lt;&#x2F;a&gt;. There is nothing ROS 
+specific about that sketch. We will use that sketch as a starting point and make it respond to ROS messages from a ROS node, while at the same time, make 
+that sketch send back messages to another ROS node with the RPM that the motor is currently running. Let&#x27;s get our hands dirty!&lt;&#x2F;p&gt;
+&lt;p&gt;Additionally, &lt;a href=&quot;https:&#x2F;&#x2F;navo-org.github.io&#x2F;&#x2F;navo-docs&#x2F;docs&#x2F;tutorials&#x2F;pi-with-arduino.html&quot;&gt;have a look here&lt;&#x2F;a&gt; to understand how ROS works with 
+the Arduino using ROS serial libraries. We use a PID control mechanism for doing the speed control, 
+&lt;a href=&quot;https:&#x2F;&#x2F;navo-org.github.io&#x2F;&#x2F;navo-docs&#x2F;docs&#x2F;tutorials&#x2F;dc-motor-pid-control.html&quot;&gt;have a look here&lt;&#x2F;a&gt; for a basic understanding of the 
+PID controller.&lt;&#x2F;p&gt;
+&lt;p&gt;TODO.... Sketch and further documentation&lt;&#x2F;p&gt;
+</description>
+        </item>
+        <item>
+            <title>PID Controller</title>
+            <pubDate>Mon, 14 Dec 2020 00:00:00 +0000</pubDate>
+            <link>https://www.bigelectrons.com/posts/navo/dcmotor/pid-controller/</link>
+            <guid>https://www.bigelectrons.com/posts/navo/dcmotor/pid-controller/</guid>
+            <description>&lt;p&gt;In this section, let us explore and understand this 17th century idea on how we could effectively do a speed control for the DC Motor, 
+the &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;PID_controller&quot; target=&quot;_blank&quot;&gt;PID Controller&lt;&#x2F;a&gt; mechanism&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;pid-control&quot;&gt;PID Control&lt;&#x2F;h2&gt;
+&lt;p&gt;We will try to debunk a PID controller from a functional perspective and later on converge on the P, I and the D. The block diagram below shows the 
+relation between a PID controller, and a process that is optimized by using a PID controller. The process here could be anything, but here we assume that 
+the process here is a water heater control system (WHCS). The WHCS works by receiving a desired value for the temperature and heats the water. For 
+example., if we want the WHCS to heat the water to 40° C, we want it to exactly do that.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;navo&#x2F;pid&#x2F;pid-controller-1.png&quot; alt=&quot;pid-controller-1&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;From the image above, we have the Process which emits a Process Value (PV), the PID Controller to which we give a Setpoint value (SP), the sensors that 
+measure the actual Process Value (PV) which is then fed back into the PID controller, thus forming a closed loop. It can also be seen that the Process is 
+also affected by external disturbances which makes it deviate from the Setpoint (SP). The PID controller&#x27;s job is to account for these external 
+disturbances and make the Process Value (PV) match the Setpoint (SP). For our case here where we want to do DC Motor speed control, we have something 
+called a closed-loop controller, where we tell the controller how fast we want the motor to run. We call this the set point. The controller then measures 
+the actual speed of the motor and calculates the difference between the actual speed, and the set point which is called the error. The controller then 
+adjusts the voltage to the motor to reduce the error which in turn makes the Motor run at the set point we gave it originally.&lt;&#x2F;p&gt;
+&lt;p&gt;If the SP and the PV are the same – then there is no other thing in this world that is going to be much happy than our PID controller. It does not have to 
+do anything, it will set its output (the CV value from the image above) to zero, but in reality this is never going to be the case. So let us discuss 
+further to understand the basics behind the PID controller.&lt;&#x2F;p&gt;
+&lt;p&gt;We first need to understand what each of the term in the PID controller represent. The image below throws a bit of clarity on how each of the terms 
+(Proportional, Integral &amp;amp; the Derivative) combine to get a smooth target output.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;navo&#x2F;pid&#x2F;pid-controller-2.png&quot; alt=&quot;pid-controller-2&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;As we can see from the image above that the error is calculated by simply calculating the difference between the Setpoint (SV), and the Process Value (PV) or in other words, 
+the error is simply the difference between the desired value and the actual value.&lt;&#x2F;p&gt;
+&lt;p&gt;Let us now try to mathematically understand what each of the terms mean and how they influence in minimizing the error.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;proportional-control&quot;&gt;Proportional Control&lt;&#x2F;h3&gt;
+&lt;p&gt;This is the simplest of the control where the controller gives an output that is directly proportional to the current error (difference between SV 
+and PV) times a proportional factor which is synonymous to the error value.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;navo&#x2F;pid&#x2F;pid-controller-p.png&quot; alt=&quot;pid-controller-p&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;It can be seen from the equation above that with a small Kp the controller will make small attempts to minimize the error, while for a larger Kp, the controller will make a larger attempt to minimize the error. This is good, but this approach suffers from either an overshoot (if Kp is too large) or an undershoot (if Kp is too small). Both these effects, called the offset or the steady state error - we do want to avoid. There is always a steady state residual error in the case of a proportional controller. If this is too theoretical, let us understand it from a more practical perspective.&lt;&#x2F;p&gt;
+&lt;p&gt;Imagive we have a water tank as shown in the image below with which our goal is to maintain a constant water level as defined by a Setpoint (SP) value. As 
+long as the system is untouched, nothing changes but change is inevitable which means that the outflow will need to be increased, or the inflow need to be 
+decreased or vice versa. But the goal remains constant which is to maintain the water levek in the tank at the given Setpoint value.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;navo&#x2F;pid&#x2F;pid-water-tank.png&quot; alt=&quot;pid-controller-i&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;So with the goal of maintaining the Setpoint say at level 3, if we now increase the flow out of the tank, the tank level will start to decrease because 
+of the imbalance between the inflow and outflow. While the tank level decreases, the error increases and the proportional controller will increase the 
+controller output proportionally to this error. Consequently, the valve controlling the flow into the tank opens wider and more water flows into the tank.&lt;&#x2F;p&gt;
+&lt;p&gt;As the water level continues to decrease, the error increases and valve continues to open until it gets to a point where the inflow again matches the 
+outflow. At this point the tank level (and error) will remain constant. Because the error remains constant our proportinal controller will keep its 
+output constant and the control valve will hold its position. The system now remains in balance, but the tank level remains below its set point. This 
+remaining sustained error is called offset or the steady state error.&lt;&#x2F;p&gt;
+&lt;p&gt;To get rid of this offset, the operator has to manually change the bias (the Kp term) such that the controller&#x27;s output removes the offset. How can this 
+be done automatically, that is exactly our next topic, the Integral controller!&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;integral-control&quot;&gt;Integral Control&lt;&#x2F;h3&gt;
+&lt;p&gt;By introducing a time component to the proportional controller, we can mitigate the overshoot and undershoot problems, which we termed as the offset or the steady state error. The integral controller, is capable of handling errors that happen over a certain set time interval. With using an integral component, we can thus overcome the steady state residual error that occurs with the proportional controller.&lt;&#x2F;p&gt;
+&lt;p&gt;If the error is large enough, the integral controller will increment &#x2F; decrement the controller output at a faster rate, while on the other hand if the error is small, the changes will be slow. For any given error, the speed of the integral action is set by the controller&#x27;s time setting where a larget time setting results in slow integral action and vice versa.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;navo&#x2F;pid&#x2F;pid-controller-i.png&quot; alt=&quot;pid-controller-i&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;The equation above sums all the previous errors over a given time interval t and accounts for the error correction accordingly. If we have a larger value 
+for the term Ki, it will result in an overshoot.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;differential-control-or-derivative-control&quot;&gt;Differential Control or Derivative Control&lt;&#x2F;h3&gt;
+&lt;p&gt;The differential controller or the derivative (slope) controller is effectively used to predict the systems future behavior. It is mostly used for 
+processes where motion control is needed, hence a good candidate for our Navo robot. The proportional and the integral controller both respond to past 
+errors, the differential controller is capable of predicting future behavior of the error. As it can be seen from the equation below that the output of 
+the differential controller depends on the rate of change of error over time, multiplied by a derivative constant Kd.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;navo&#x2F;pid&#x2F;pid-controller-d.png&quot; alt=&quot;pid-controller-d&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;The output of the derivative this helps in reducing &#x2F; minimizing the overshoot error. For example., a larger derivative or a larger slope indicates that 
+the next error will be far away from the previous error but a small derivative or a smaller slope indicates that the next error will be likely close to 
+the previous error.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;pid-equation&quot;&gt;PID Equation&lt;&#x2F;h3&gt;
+&lt;p&gt;With the controllers and their equations nailed down, we have the following equations for the PID controller.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;navo&#x2F;pid&#x2F;pid-controller-out.png&quot; alt=&quot;pid-controller-out&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;and by substituting the values, we get&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;navo&#x2F;pid&#x2F;pid-controller-math-1.png&quot; alt=&quot;pid-controller-math-1&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;So what that equation basically mean in our context which is to control the speed of the DC motor is that, the controller output is used to determine 
+how much more or less the motor speed has to be adjusted so that the current speed  (processValue) matches the target speed (setPoint). How does all 
+this look like in reality? This is what we show in the code below:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#2b303b;&quot;&gt;
+&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span style=&quot;color:#cd74e8;&quot;&gt;unsigned long&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt; lastTime;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#cd74e8;&quot;&gt;float&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt; processValue, output, setPoint;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#cd74e8;&quot;&gt;float&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt; errorSum, previousError;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#cd74e8;&quot;&gt;float&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt; kp, ki, kd;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#cd74e8;&quot;&gt;int&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt; interval &lt;&#x2F;span&gt;&lt;span style=&quot;color:#adb7c9;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#db9d63;&quot;&gt;1000&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;; &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#5f697a;&quot;&gt;&#x2F;&#x2F;1 sec
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#cd74e8;&quot;&gt;void &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5cb3fa;&quot;&gt;pidControl&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;()
+{
+   &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#5f697a;&quot;&gt;&#x2F;&#x2F; Time interval to calculate the next error
+   &lt;&#x2F;span&gt;&lt;span style=&quot;color:#cd74e8;&quot;&gt;unsigned long&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt; now &lt;&#x2F;span&gt;&lt;span style=&quot;color:#adb7c9;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;millis&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;();
+   &lt;&#x2F;span&gt;&lt;span style=&quot;color:#cd74e8;&quot;&gt;float&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt; timeDiff &lt;&#x2F;span&gt;&lt;span style=&quot;color:#adb7c9;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#cd74e8;&quot;&gt;float&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;)(now &lt;&#x2F;span&gt;&lt;span style=&quot;color:#adb7c9;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt; lastTime);
+
+   &lt;&#x2F;span&gt;&lt;span style=&quot;color:#cd74e8;&quot;&gt;if&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;(timeDiff &lt;&#x2F;span&gt;&lt;span style=&quot;color:#adb7c9;&quot;&gt;&amp;gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt; interval) 
+   {
+     &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#5f697a;&quot;&gt;&#x2F;&#x2F; Calculate the error
+     &lt;&#x2F;span&gt;&lt;span style=&quot;color:#cd74e8;&quot;&gt;float&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt; error &lt;&#x2F;span&gt;&lt;span style=&quot;color:#adb7c9;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt; setPoint &lt;&#x2F;span&gt;&lt;span style=&quot;color:#adb7c9;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt; processValue;
+     errorSum &lt;&#x2F;span&gt;&lt;span style=&quot;color:#adb7c9;&quot;&gt;+=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt; error;
+     &lt;&#x2F;span&gt;&lt;span style=&quot;color:#cd74e8;&quot;&gt;float&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt; dError &lt;&#x2F;span&gt;&lt;span style=&quot;color:#adb7c9;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;(error &lt;&#x2F;span&gt;&lt;span style=&quot;color:#adb7c9;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt; previousError);
+  
+     &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#5f697a;&quot;&gt;&#x2F;&#x2F; Calculate the PID control output
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;     output &lt;&#x2F;span&gt;&lt;span style=&quot;color:#adb7c9;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt; kp &lt;&#x2F;span&gt;&lt;span style=&quot;color:#adb7c9;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt; error &lt;&#x2F;span&gt;&lt;span style=&quot;color:#adb7c9;&quot;&gt;+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt; ki &lt;&#x2F;span&gt;&lt;span style=&quot;color:#adb7c9;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt; errorSum &lt;&#x2F;span&gt;&lt;span style=&quot;color:#adb7c9;&quot;&gt;+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt; kd &lt;&#x2F;span&gt;&lt;span style=&quot;color:#adb7c9;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt; dError;
+  
+     &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#5f697a;&quot;&gt;&#x2F;&#x2F; Memorize the variables for the next computation
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;     previousError &lt;&#x2F;span&gt;&lt;span style=&quot;color:#adb7c9;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt; error;
+     lastTime &lt;&#x2F;span&gt;&lt;span style=&quot;color:#adb7c9;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt; now;
+   }
+}
+  
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#cd74e8;&quot;&gt;void &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5cb3fa;&quot;&gt;gainTuning&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#cd74e8;&quot;&gt;float &lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;Kp&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#cd74e8;&quot;&gt;float &lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;Ki&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#cd74e8;&quot;&gt;float &lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;Kd&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;)
+{
+   kp &lt;&#x2F;span&gt;&lt;span style=&quot;color:#adb7c9;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt; Kp;
+   ki &lt;&#x2F;span&gt;&lt;span style=&quot;color:#adb7c9;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt; Ki;
+   kd &lt;&#x2F;span&gt;&lt;span style=&quot;color:#adb7c9;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt; Kd;
+}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;As it can be seen from the sketch above that we calculate the output of the controller using the pidControl() function which is called at regular 
+intervals. That piece of code above does not deserve any further explanation, but a few points are worth mentioning and reasoning about.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;derivative-kick&quot;&gt;Derivative kick&lt;&#x2F;h3&gt;
+&lt;p&gt;This happens when a change in the value of the error happens suddenly as a result of a change in the Setpoint. This in turn causes the derivative of the 
+error to be instantaneously large enouch so that we see small spikes in our process output. This is not a big deal, but for systems where the change in 
+Setpoint occurs more often, it is better that we address this to avoid putting stress in the system as such. A simple idea to overcome such derivative 
+kick is to assume that the change in the Setpoint is constant, so the rate of change or in mathematical terms, the derivative of a constant (remember 
+derivative is all about slope and for a constant there is no slope) is 0.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;navo&#x2F;pid&#x2F;pid-derivative-kick-1.png&quot; alt=&quot;pid-derivative-kick-1&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Using what we already know for the derivative control, let us use our assumption for a constant Setpoint to the derivative equation&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;navo&#x2F;pid&#x2F;pid-derivative-kick-2.png&quot; alt=&quot;pid-derivative-kick-2&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;As it can be seen now that our derivative term becomes a measure of the Process value instead of the error term, hence our actual PID controller equation 
+now becomes&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;navo&#x2F;pid&#x2F;pid-controller-math-2.png&quot; alt=&quot;pid-controller-math-2&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;It is easy to visualize this with some numbers and the resulting plat as shown in the image below.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;navo&#x2F;pid&#x2F;pid-derivative-kick-image.png&quot; alt=&quot;pid-derivative-kick-image&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Looking at the plot between the derivative of the error vs time, It can be seen that as the Setpoint changes, it results in the error value to spike and 
+this inturn causes the rate of change in error for a given time interval to result in a spike which we term the derivative kick. So by assuming that the 
+Setpoint is a constant and derivating over the Process value actually helps to get rid of such a derivative kick.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;pid-gain-tuning&quot;&gt;PID Gain Tuning&lt;&#x2F;h3&gt;
+&lt;p&gt;Now one question might arise on what values to choose for the PID co-efficients. Luckily people have thought about this and the one that comes to mind is 
+the &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Ziegler%E2%80%93Nichols_method&quot; target=&quot;_blank&quot;&gt;Ziegler–Nichols method&lt;&#x2F;a&gt; introduced by John G. Ziegler and 
+Nathaniel B. Nichols in the 1940s. It is a &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Heuristic&quot; target=&quot;_blank&quot;&gt;heuristic technique&lt;&#x2F;a&gt; of tuning a PID 
+controller. The basic idea here is that it starts out by setting the integral and the derivative gains (basically the co-efficients Ki and Kd) to zero. 
+The proportional gain (Kp) is then increased from zero until it reaches the ultimate gain Ku. This ultimate gain is the gain where the control loop has 
+achieved a stable and consistent oscillation. The Ku and the oscillation period is then used to set the P, I and the D gains effectively. Let us not dive 
+more into this for now.&lt;&#x2F;p&gt;
+&lt;p&gt;Tuning the parameters or the gain in a running system is a topic in itself.&lt;&#x2F;p&gt;
+&lt;p&gt;Hope I was able to explain the PID controller mechanism! With this basic understanding, &lt;a href=&quot;https:&#x2F;&#x2F;navo-org.github.io&#x2F;navo-docs&#x2F;docs&#x2F;tutorials&#x2F;dc-motor-rpm-ros.html&quot; target=&quot;_blank&quot;&gt;head over here&lt;&#x2F;a&gt; 
+to see how we could combine all what we have learnt theoretically so far to a more practical example.&lt;&#x2F;p&gt;
+</description>
+        </item>
+        <item>
+            <title>DC Motor with Encoder</title>
+            <pubDate>Sun, 13 Dec 2020 00:00:00 +0000</pubDate>
+            <link>https://www.bigelectrons.com/posts/navo/dcmotor/dc-motor-with-encoder/</link>
+            <guid>https://www.bigelectrons.com/posts/navo/dcmotor/dc-motor-with-encoder/</guid>
+            <description>&lt;h2 id=&quot;dc-motor&quot;&gt;DC Motor&lt;&#x2F;h2&gt;
+&lt;p&gt;A DC Motor equipped with a built-in encoder is going to immensely help us in precisely controlling the speed at which the motor rotates. Let us go through 
+the basics behind such an encoder and how it relates to the speed ot the motor.&lt;&#x2F;p&gt;
+&lt;p&gt;In this tutorial, we will look at how to do speed control using a DC Motor that has a quadrature shaft encoder. I will be using 
+this &lt;a href=&quot;https:&#x2F;&#x2F;www.pololu.com&#x2F;product&#x2F;4843&quot; target=&quot;_blank&quot;&gt;DC Motor with Encoder&lt;&#x2F;a&gt; as a reference. The main reason being that it has a 
+very good specification documentation. The instructions here will be the same for any similiar motor with a quadrature encoder attached to the shaft of 
+the motor.&lt;&#x2F;p&gt;
+&lt;p&gt;I will refuse to talk about DC Motors in general as that is not the focus for us, but rather to understand how to make use of the Encoder pulses with 
+which we could measure the RPM and thus control the speed.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;understanding-dc-motor-with-encoder&quot;&gt;Understanding DC Motor with Encoder&lt;&#x2F;h3&gt;
+&lt;p&gt;So we need to now effectively understand a little about the DC Motor and the need for an Encoder unit. A one liner - a DC Motor is a mechanical 
+device that converts basically electrical energy to mechanical energy. Ok that&#x27;s simple enough but that&#x27;s enough. Why do we need an Encoder? With the 
+target that we are trying to build, we need to be able to more precisely control the speed and direction of the motor which effectively translates to 
+the navigability of the Navo. Encoders transform mechanical motion into electrical pulses that can then be used by a controller unit (like the Arduino) to 
+make adjustments and fine tune the motor speed and direction.&lt;&#x2F;p&gt;
+&lt;p&gt;As mentioned before, we will use &lt;a href=&quot;https:&#x2F;&#x2F;www.pololu.com&#x2F;product&#x2F;4843&quot; target=&quot;_blank&quot;&gt;DC Motor with Encoder&lt;&#x2F;a&gt;. The table and the image below 
+clarifies the wiring definitions.&lt;&#x2F;p&gt;
+&lt;table style=&quot;width:100%; border: 1px solid black;&quot;&gt;
+  &lt;tr&gt;
+    &lt;th align=&quot;left&quot; style=&quot;border: 1px solid black;&quot;&gt;Color&lt;&#x2F;th&gt;
+    &lt;th align=&quot;left&quot; style=&quot;border: 1px solid black;&quot;&gt;Function&lt;&#x2F;th&gt; 
+  &lt;&#x2F;tr&gt;
+  &lt;tr&gt;
+    &lt;td style=&quot;border: 1px solid black;&quot;&gt;Red&lt;&#x2F;td&gt;
+    &lt;td style=&quot;border: 1px solid black;&quot;&gt;motor power (connects to one motor terminal)&lt;&#x2F;td&gt;
+  &lt;&#x2F;tr&gt;
+   &lt;tr&gt;
+    &lt;td style=&quot;border: 1px solid black;&quot;&gt;Black&lt;&#x2F;td&gt;
+    &lt;td style=&quot;border: 1px solid black;&quot;&gt;motor power (connects to the other motor terminal)&lt;&#x2F;td&gt;
+  &lt;&#x2F;tr&gt;
+   &lt;tr&gt;
+    &lt;td style=&quot;border: 1px solid black;&quot;&gt;Green&lt;&#x2F;td&gt;
+    &lt;td style=&quot;border: 1px solid black;&quot;&gt;encoder GND&lt;&#x2F;td&gt;
+  &lt;&#x2F;tr&gt;
+   &lt;tr&gt;
+    &lt;td style=&quot;border: 1px solid black;&quot;&gt;Blue&lt;&#x2F;td&gt;
+    &lt;td style=&quot;border: 1px solid black;&quot;&gt;encoder Vcc (3.5 V to 20 V)&lt;&#x2F;td&gt;
+  &lt;&#x2F;tr&gt;
+   &lt;tr&gt;
+    &lt;td style=&quot;border: 1px solid black;&quot;&gt;Yellow&lt;&#x2F;td&gt;
+    &lt;td style=&quot;border: 1px solid black;&quot;&gt;encoder A output&lt;&#x2F;td&gt;
+  &lt;&#x2F;tr&gt;
+   &lt;tr&gt;
+    &lt;td style=&quot;border: 1px solid black;&quot;&gt;White&lt;&#x2F;td&gt;
+    &lt;td style=&quot;border: 1px solid black;&quot;&gt;encoder B output&lt;&#x2F;td&gt;
+  &lt;&#x2F;tr&gt;
+&lt;&#x2F;table&gt; 
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;navo&#x2F;dcmotor&#x2F;dc-motor-wiring-pololu-25d.png&quot; alt=&quot;dc-motor-wiring&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;There are different types of encoders available, such as liner encoder or rotary encoders. A DC Motor encoder basically has a rotary encoder which is 
+often times mounted to the shaft of the motor. The rotary encoder used here is a 6 pole magnetic disc attached to the shaft of the motor, along with 
+two &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Hall_effect&quot; target=&quot;_blank&quot;&gt;Hall effect&lt;&#x2F;a&gt; sensors. When the motor turns, the 6 pole magnetic disk rotates 
+past the two sensors and when each time a magnetic pole passes one of the sensor, the encoder outputs a digital pulse. So here with the two hall effect 
+sensors, we get two output signals separated by 90 dgrees. The sketch below shows the basic working principle behind a Rotary magnetic encoder.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;navo&#x2F;dcmotor&#x2F;encoder.jpg&quot; alt=&quot;rotary-encoder&quot; &#x2F;&gt;
+&lt;img src=&quot;&#x2F;images&#x2F;navo&#x2F;dcmotor&#x2F;square-wave.png&quot; alt=&quot;rotary-encoder-pulse&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;It can be seen that the two sensing units (marked A &amp;amp; B) will emit a pulse signal as soon as they hit the underlying magnetic pin (6 of them as can be 
+seen in the diagram above) and this pulse signal can be translated &#x2F; understood in terms of the direction and speed of the motor. I will not explain more 
+about this topic, but &lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=dMBrR4gDi3s&quot; target=&quot;_blank&quot;&gt;here is a very descriptive video&lt;&#x2F;a&gt; on understanding DC Motor 
+encoders in much detail.&lt;&#x2F;p&gt;
+&lt;p&gt;CW  -&amp;gt; Clockwise Direction
+CCW -&amp;gt; Counter-Clockwise Direction&lt;&#x2F;p&gt;
+&lt;p&gt;we can now infer from the square wave pulse signals that binary combinations for the pulses A &amp;amp; B, we can infer that when we get a pulse signal that has a 
+RISING for the pulse A and during this if we measure a LOW for pulse B, we know that the motor is in the forward direction (CW). If on the other hand when 
+the pulse signal for A has a RISING and during this if we measure a HIGH for pulse B, we know that the motor is in the reverse direction (CCW).&lt;&#x2F;p&gt;
+&lt;p&gt;Ok that&#x27;s for the direction. Now let us see how we could leverage this information and with some additional data from the Motor&#x27;s specification, determine 
+the RPM which forms the basis for doing speed control. To do this we need to understand the motor&#x27;s specification.&lt;&#x2F;p&gt;
+&lt;p&gt;The &lt;a href=&quot;https:&#x2F;&#x2F;www.pololu.com&#x2F;product&#x2F;4843&quot; target=&quot;_blank&quot;&gt; DC Motor that we use &lt;&#x2F;a&gt; has a metal gearbox with a ratio of 20.4:1 and a shaft with a 
+diameter of 25 mm. The resolution of the encoder that is assembled to the motor shaft is rated at 48 Cycles Per Revolution (CPR). What this exactly means 
+is that if the motor shaft turns one round the output of the encoder counts up to 48. It is important to notice that the gearbox shaft is different 
+from the motor shaft and as mentioned before, the ratio of rotation between these shafts is 20.4:1. So if motor shaft turns 20.4 times, gearbox shaft 
+turns just 1 time. So with this understanding, the cycles per revolution or pulses per revolution of the gearbox shaft can be calculated with the 
+following formula:&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;navo&#x2F;dcmotor&#x2F;motor-cpr-formula.png&quot; alt=&quot;motor-cpr-formula&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;So with this formula at hand, we get the gearbox CPR = 20.4 * 48 = 979.62&lt;&#x2F;p&gt;
+&lt;p&gt;The gearbox output resolution (979.62 CPR) is the only value that we will get from DC motor as feedback which when coupled with time helps us do speed 
+control. Now the formula to calculate the RPM (speed) is given by:&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;navo&#x2F;dcmotor&#x2F;dc-motor-rpm-formula-1.png&quot; alt=&quot;motor-cpr-formula&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;where revolutions per count or revolutions per pulse equates to 1 &#x2F; 979.62 (we know that pulse per revolution PPR or CPR is 979.62), so if we plug in these 
+values into the equation above, we end up with the following:&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;navo&#x2F;dcmotor&#x2F;dc-motor-rpm-formula-2.png&quot; alt=&quot;motor-cpr-formula&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;We then have to plug in this equation into the sketch below and measure the number of pulse counts every second. Let us see how the sketch looks like!&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;dc-motor-speed-control-arduino-sketch&quot;&gt;DC Motor Speed Control Arduino Sketch&lt;&#x2F;h3&gt;
+&lt;pre style=&quot;background-color:#2b303b;&quot;&gt;
+&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span style=&quot;font-style:italic;color:#5f697a;&quot;&gt;&#x2F;*
+* DC Motor Encoder Test Sketch
+* by Joesan [https:&#x2F;&#x2F;github.com&#x2F;joesan]
+* 27.12.2020
+*
+* Records encoder pulses and computes the rpm
+* every second
+*
+*&#x2F;
+&#x2F;&#x2F; pins for the encoder inputs for Motor M1
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#cd74e8;&quot;&gt;#define &lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;M1_ENCODER_A &lt;&#x2F;span&gt;&lt;span style=&quot;color:#db9d63;&quot;&gt;3 &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#5f697a;&quot;&gt;&#x2F;&#x2F; The yellow wire in the sketch above
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#cd74e8;&quot;&gt;#define &lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;M1_ENCODER_B &lt;&#x2F;span&gt;&lt;span style=&quot;color:#db9d63;&quot;&gt;4 &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#5f697a;&quot;&gt;&#x2F;&#x2F; The white wire in the sketch above
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#cd74e8;&quot;&gt;int&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt; enA &lt;&#x2F;span&gt;&lt;span style=&quot;color:#adb7c9;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#db9d63;&quot;&gt;8&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#cd74e8;&quot;&gt;int&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt; in1 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#adb7c9;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#db9d63;&quot;&gt;9&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#cd74e8;&quot;&gt;int&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt; in2 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#adb7c9;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#db9d63;&quot;&gt;10&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;;
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#5f697a;&quot;&gt;&#x2F;&#x2F; variable to record the number of encoder pulse
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#cd74e8;&quot;&gt;volatile unsigned long&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt; m1Count &lt;&#x2F;span&gt;&lt;span style=&quot;color:#adb7c9;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#db9d63;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#cd74e8;&quot;&gt;double&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt; rpm &lt;&#x2F;span&gt;&lt;span style=&quot;color:#adb7c9;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#db9d63;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#cd74e8;&quot;&gt;unsigned long&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt; lastmillis &lt;&#x2F;span&gt;&lt;span style=&quot;color:#adb7c9;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#db9d63;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;;
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#cd74e8;&quot;&gt;void &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5cb3fa;&quot;&gt;setup&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;() {
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;pinMode&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;(M1_ENCODER_A, INPUT);
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;pinMode&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;(M1_ENCODER_B, INPUT);
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;pinMode&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;(enA, OUTPUT);
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;pinMode&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;(in1, OUTPUT);
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;pinMode&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;(in2, OUTPUT);
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#5f697a;&quot;&gt;&#x2F;&#x2F; initialize hardware interrupt
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;attachInterrupt&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;digitalPinToInterrupt&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;(M1_ENCODER_A), m1EncoderEvent, RISING);
+
+Serial.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;begin&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#db9d63;&quot;&gt;9600&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;);
+}
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#cd74e8;&quot;&gt;void &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5cb3fa;&quot;&gt;loop&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;() {
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#5f697a;&quot;&gt;&#x2F;&#x2F; Turn on Motor A forward direction
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;runForward&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#db9d63;&quot;&gt;255&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;);
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#5f697a;&quot;&gt;&#x2F;&#x2F; Calculate the RPM every second
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#cd74e8;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;millis&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;() &lt;&#x2F;span&gt;&lt;span style=&quot;color:#adb7c9;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt; lastmillis &lt;&#x2F;span&gt;&lt;span style=&quot;color:#adb7c9;&quot;&gt;== &lt;&#x2F;span&gt;&lt;span style=&quot;color:#db9d63;&quot;&gt;1000&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;) {
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#5f697a;&quot;&gt;&#x2F;&#x2F; Disable interrupt when calculating
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;detachInterrupt&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;digitalPinToInterrupt&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;(M1_ENCODER_A));
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#5f697a;&quot;&gt;&#x2F;&#x2F; rpm = counts &#x2F; second * seconds &#x2F; minute * revolutions &#x2F; count
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;rpm &lt;&#x2F;span&gt;&lt;span style=&quot;color:#adb7c9;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt; m1count &lt;&#x2F;span&gt;&lt;span style=&quot;color:#adb7c9;&quot;&gt;* &lt;&#x2F;span&gt;&lt;span style=&quot;color:#db9d63;&quot;&gt;60 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#adb7c9;&quot;&gt;&#x2F; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#db9d63;&quot;&gt;979.62&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;;      
+Serial.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;print&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#9acc76;&quot;&gt;&amp;quot;RPM =&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5ebfcc;&quot;&gt;\t&lt;&#x2F;span&gt;&lt;span style=&quot;color:#9acc76;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;);
+Serial.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;println&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;(rpm);  
+m1Count &lt;&#x2F;span&gt;&lt;span style=&quot;color:#adb7c9;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#db9d63;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;;
+lastmillis &lt;&#x2F;span&gt;&lt;span style=&quot;color:#adb7c9;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;millis&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;();
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#5f697a;&quot;&gt;&#x2F;&#x2F; Enable interrupt
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;attachInterrupt&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;digitalPinToInterrupt&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;(M1_ENCODER_A), m1EncoderEvent, RISING);
+}
+}
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#cd74e8;&quot;&gt;void &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5cb3fa;&quot;&gt;runForward&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#cd74e8;&quot;&gt;int &lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;speed&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;) { &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#5f697a;&quot;&gt;&#x2F;&#x2F;speed 0-255
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;analogWrite&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;(enA, speed);
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;digitalWrite&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;(in1, HIGH);
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;digitalWrite&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;(in2, LOW);
+}
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#cd74e8;&quot;&gt;void &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5cb3fa;&quot;&gt;runBackward&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#cd74e8;&quot;&gt;int &lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;speed&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;) { &lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#5f697a;&quot;&gt;&#x2F;&#x2F;speed 0-255
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;analogWrite&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;(enA, speed);
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;digitalWrite&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;(in1, LOW);
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#eb6772;&quot;&gt;digitalWrite&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;(in2, HIGH);
+}
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#cd74e8;&quot;&gt;void &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5cb3fa;&quot;&gt;m1EncoderEvent&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;() {
+m1Count&lt;&#x2F;span&gt;&lt;span style=&quot;color:#adb7c9;&quot;&gt;++&lt;&#x2F;span&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;;
+}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;The important part to note about the code above is the use of the attachInterrput function. &lt;a href=&quot;https:&#x2F;&#x2F;www.allaboutcircuits.com&#x2F;technical-articles&#x2F;using-interrupts-on-arduino&#x2F;&quot; target=&quot;_blank&quot;&gt;Have a look here&lt;&#x2F;a&gt; 
+for a very good explanation of the function parameters and its meaning! Here is a very basic explanation behind using interrupts.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;hardware-interrupts&quot;&gt;Hardware interrupts&lt;&#x2F;h2&gt;
+&lt;p&gt;If you are a bit familiar with the pins on the standard &lt;a href=&quot;https:&#x2F;&#x2F;www.arduino.cc&#x2F;en&#x2F;reference&#x2F;board&quot; target=&quot;_blank&quot;&gt;Arduino board&lt;&#x2F;a&gt;, the pins 2 
+and 3 are classified as pins for hardware interrupts. Have a &lt;a href=&quot;https:&#x2F;&#x2F;playground.arduino.cc&#x2F;Code&#x2F;Interrupts&#x2F;&quot; target=&quot;_blank&quot;&gt;look here to 
+understand what interrupts are&lt;&#x2F;a&gt; and how they can be useful. So in essence with hardware interrupts, your main program runs until the state of one of 
+your interrupt pins change. The main program is stopped, a special interrupt method &#x2F; function is called and then the main program resumes. For example., 
+if your main program is about navigating your robot by avoiding obstacles, and if your robot recognizes an obstacle, the interrupt pin can be made to 
+change its state from LOW to HIGH and this would trigger the interrupt function to be called, where you could then adjust the speed of the motor by 
+slowing it down.&lt;&#x2F;p&gt;
+&lt;p&gt;From the sketch above, we have connected the Encoder A pin is connected to the hardware interrupt pin 3 of the Arduino.&lt;&#x2F;p&gt;
+</description>
+        </item>
+        <item>
+            <title>ROS Serial on Arduino</title>
+            <pubDate>Sat, 12 Dec 2020 00:00:00 +0000</pubDate>
+            <link>https://www.bigelectrons.com/posts/navo/arduino/ros-serial-arduino/</link>
+            <guid>https://www.bigelectrons.com/posts/navo/arduino/ros-serial-arduino/</guid>
+            <description>&lt;h2 id=&quot;pi-with-arduino&quot;&gt;Pi with Arduino&lt;&#x2F;h2&gt;
+&lt;p&gt;Let us see how we could set up the ROS serial communication between a Raspberry Pi and an Arduino board. So, our very first integration attempt is to 
+integrate the Raspberry Pi with Arduino. We will use the Raspberry Pi 4. Let us break this down into the following steps:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;ROS on the Raspberry Pi 4&lt;&#x2F;li&gt;
+&lt;li&gt;Serial libraries on the Pi and Arduino&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h3 id=&quot;raspberry-pi-4-setup&quot;&gt;Raspberry Pi 4 Setup&lt;&#x2F;h3&gt;
+&lt;p&gt;It is pretty easy to get your hands on the Pi, so just go grab one and follow along.&lt;&#x2F;p&gt;
+&lt;p&gt;The very first step with setting up your Pi is to install the base OS. You have many choices, but two of them stand out which is installing either Raspbian or Ubuntu. I 
+prefer to run Ubuntu and ROS is very much compatible with Ubuntu, so why not!&lt;&#x2F;p&gt;
+&lt;p&gt;Head over &lt;a href=&quot;https:&#x2F;&#x2F;ubuntu.com&#x2F;download&#x2F;raspberry-pi&quot; target=&quot;_blanl&quot;&gt;here&lt;&#x2F;a&gt; and make sure to download the Ubuntu server 20.04 64 bit LTS version (we will use 
+ROS Noetic which is based on Ubuntu 20.04 LTS)&lt;&#x2F;p&gt;
+&lt;p&gt;After you have downloaded the image, head over &lt;a href=&quot;https:&#x2F;&#x2F;ubuntu.com&#x2F;tutorials&#x2F;how-to-install-ubuntu-on-your-raspberry-pi#1-overview&quot; target=&quot;_blank&quot;&gt;here &lt;&#x2F;a&gt; 
+for a comprehensive installation instruction. It is pretty easy and straightforward!&lt;&#x2F;p&gt;
+&lt;p&gt;Once you have your Raspberry Pi ready with Ubuntu 20.04, it is time to set up &#x2F; install ROS! Since we have installed a headless Ubuntu, we need to first SSH into the 
+Raspberry Pi. For this to work, you need to enable your Raspberry Pi network ready. Follow the instructions from here to make your Raspberry Pi visible to your home 
+network.&lt;&#x2F;p&gt;
+&lt;p&gt;TODO....&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;serial-libraries-set-up&quot;&gt;Serial libraries set up&lt;&#x2F;h3&gt;
+&lt;p&gt;First let us setup Arduino. Now you could do this on your Raspberry Pi 4 or any other computer. You need to install the Arduino IDE.&lt;&#x2F;p&gt;
+&lt;p&gt;The idea here is that we need to be able to make your Arduino serial communication capable and for this we have to install a few ros based libraries. There is nothing 
+more specific to the 
+Raspberry Pi 4. You could do the below steps from the Raspberry Pi 4, but assume that your Raspberry Pi 4 will be the server (probably running in your NAVO), and you do 
+not want to have any IDE running on your production server, so I would set up my Arduino IDE on my Ubuntu machine.&lt;&#x2F;p&gt;
+&lt;p&gt;Follow &lt;a href=&quot;https:&#x2F;&#x2F;ubuntu.com&#x2F;tutorials&#x2F;install-the-arduino-ide#1-overview&quot; target=&quot;_blank&quot;&gt; the instructions from here &lt;&#x2F;a&gt; to install Arduino IDE on Ubuntu. Make 
+sure to download the appropriate Arduino IDE version for your Ubuntu version (For me it is Ubuntu 20.04). Get it installed as per the instructions!&lt;&#x2F;p&gt;
+&lt;p&gt;The next step is to prepare and install the serial libraries that is required to make Arduino communicate with the Raspberry Pi. So for this, open a terminal window from 
+the Ubuntu machine and run the following commands one after the other.&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#2b303b;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;sudo apt-get install ros-noetic-rosserial-arduino
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;pre style=&quot;background-color:#2b303b;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;sudo apt-get install ros-noetic-rosserial
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Make sure to replace the ROS version appropriately. For me it is Noetic!&lt;&#x2F;p&gt;
+&lt;p&gt;After this, fire up the Arduino IDE, by typing arduino from a terminal window (see the screenshot below)&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;navo&#x2F;arduino&#x2F;arduino-ide-ubuntu.png&quot; alt=&quot;arduino-ide-ubuntu&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;After this, open a new terminal window and cd into the arduino folder, and then cd into libraries directory. From that libraries&#x27; directory, run the following 
+command below. This command should build the needed libraries that will be used by ROS.&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#2b303b;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;joesan@joesan-InfinityBook-S-14-v5:~&#x2F;Arduino&#x2F;libraries$ rosrun rosserial_arduino make_libraries.py .
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;If we now type the dir command, we should see the following:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#2b303b;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;joesan@joesan-InfinityBook-S-14-v5:~&#x2F;Arduino&#x2F;libraries$ dir
+readme.txt  ros_lib
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;As it can be seen that there is a new folder called ros_lib. That&#x27;s all it with the setup. Let us now proceed to run some code in the Arduino. We will use some 
+inbuilt program that will blink an LED upon receiving a message from a ROS publisher node.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;integration-and-test&quot;&gt;Integration and test&lt;&#x2F;h3&gt;
+&lt;p&gt;Fire up the Arduino IDE, and Go to File -&amp;gt; Examples -&amp;gt; ros_lib and open the Blink sketch program.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;..&#x2F;assets&#x2F;images&#x2F;arduino&#x2F;arduino-ide-blink-sketch.png&quot; alt=&quot;arduino-ide-blink&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Upload the code to Arduino. Make sure your Arduino is plugged into the USB port on your computer. To do this, either run Ctrl + U command from the Arduino IDE or Go to 
+Sketch -&amp;gt; Upload which will then upload this program into your Arduino hardware.&lt;&#x2F;p&gt;
+&lt;p&gt;Now it is time to test our setup. Open a terminal window on the Ubuntu machine and issue roscore command. TODO: THIS SHOULD BE RASPBERRY PI!!!!!!!!&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#2b303b;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;joesan@joesan-InfinityBook-S-14-v5:~$ roscore
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;In another terminal window, launch the ROS serial server. More information about the &lt;a href=&quot;http:&#x2F;&#x2F;wiki.ros.org&#x2F;rosserial_python#serial_node.py&quot; target=&quot;_blank&quot;&gt;ROS 
+serial server can be found here&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#2b303b;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;joesan@joesan-InfinityBook-S-14-v5:~$ rosrun rosserial_python serial_node.py &#x2F;dev&#x2F;ttyS0
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Now let’s turn on the LED by publishing a single empty message to the &#x2F;toggle_led topic. Open a new terminal window and type:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#2b303b;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;joesan@joesan-InfinityBook-S-14-v5:~$ rostopic pub toggle_led std_msgs&#x2F;Empty --once
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;On my machine, all the three commands above look like this. I&#x27;m using &lt;a href=&quot;https:&#x2F;&#x2F;gnunn1.github.io&#x2F;tilix-web&#x2F;&quot; target=&quot;_blank&quot;&gt; Tilix &lt;&#x2F;a&gt; as my Terminal program. 
+Note that additionally I&#x27;m tailing on the messages that gets published to the &#x2F;toggle_led topic&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;..&#x2F;assets&#x2F;images&#x2F;arduino&#x2F;arduino-ros-blink-test.png&quot; alt=&quot;arduino-ide-light-on&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;I made a small video to see this peanut setup in action! Click the image below for the video!&lt;&#x2F;p&gt;
+&lt;div align=&quot;left&quot;&gt;
+      &lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=n3X2y9Kdcgo&quot; target=&quot;_blank&quot;&gt;
+         &lt;img src=&quot;https:&#x2F;&#x2F;img.youtube.com&#x2F;vi&#x2F;n3X2y9Kdcgo&#x2F;0.jpg&quot; style=&quot;width:100%;&quot;&gt;
+      &lt;&#x2F;a&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;That&#x27;s all it. To shutdown your Arduino, just disconnect it from your computer&#x27;s USB port!&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;known-issues&quot;&gt;Known Issues&lt;&#x2F;h2&gt;
+&lt;p&gt;While testing this setup, I faced some issues with the ros serial library:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#2b303b;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#abb2bf;&quot;&gt;In file included from &#x2F;home&#x2F;user&#x2F;Arduino&#x2F;libraries&#x2F;Rosserial_Arduino_Library&#x2F;src&#x2F;std_msgs&#x2F;Time.h:7:0,
+  from &#x2F;home&#x2F;user&#x2F;Arduino&#x2F;libraries&#x2F;Rosserial_Arduino_Library&#x2F;src&#x2F;ros&#x2F;node_handle.h:40,
+  from &#x2F;home&#x2F;user&#x2F;Arduino&#x2F;libraries&#x2F;Rosserial_Arduino_Library&#x2F;src&#x2F;ros.h:38,
+  from &#x2F;home&#x2F;user&#x2F;Arduino&#x2F;libraries&#x2F;Rosserial_Arduino_Library&#x2F;examples&#x2F;Blink&#x2F;Blink.pde:6:
+  &#x2F;home&#x2F;joesan&#x2F;Arduino&#x2F;libraries&#x2F;Rosserial_Arduino_Library&#x2F;src&#x2F;ros&#x2F;msg.h:40:10:
+  fatal error: cstring: No such file or directory
+    #include &amp;lt;cstring&amp;gt;
+              ^~~~~~~~~
+   compilation terminated.
+   exit status 1
+   Error compiling for board Arduino Uno.
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;To resolve this, do the following:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;Delete the ros_lib folder which is to be found under &#x2F;home&#x2F;user&#x2F;Arduino&#x2F;libraries&#x2F; (here user is your logged-in username)&lt;&#x2F;li&gt;
+&lt;li&gt;Then open the Arduino IDE, in the menu bar go to Tools -&amp;gt; Manage Libraries and search for &amp;quot;rosserial&amp;quot;&lt;&#x2F;li&gt;
+&lt;li&gt;You should see Rosserial Arduino Library by Michael Furguson&lt;&#x2F;li&gt;
+&lt;li&gt;Make sure to install the 0.7.9 version&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;Hope it made sense!&lt;&#x2F;p&gt;
+</description>
+        </item>
+    </channel>
+</rss>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+      <title>bigelectrons - Books</title>
+        <link>https://www.bigelectrons.com</link>
+        <description></description>
+        <generator>Zola</generator>
+        <language>en</language>
+        <atom:link href="https://www.bigelectrons.com/categories/books/rss.xml" rel="self" type="application/rss+xml"/>
+        <lastBuildDate>Mon, 20 Aug 2018 00:00:00 +0000</lastBuildDate>
+        <item>
+            <title>Lists of useful books</title>
+            <pubDate>Mon, 20 Aug 2018 00:00:00 +0000</pubDate>
+            <link>https://www.bigelectrons.com/links/books/books-links/</link>
+            <guid>https://www.bigelectrons.com/links/books/books-links/</guid>
+            <description>&lt;h1 id=&quot;math-ml&quot;&gt;Math &amp;amp; ML&lt;&#x2F;h1&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Title&lt;&#x2F;th&gt;&lt;th align=&quot;right&quot;&gt;Source&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;Deep Learning&lt;&#x2F;td&gt;&lt;td align=&quot;right&quot;&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.deeplearningbook.org&#x2F;&quot;&gt;Deep Learning MIT Press&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Neural Networks&lt;&#x2F;td&gt;&lt;td align=&quot;right&quot;&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.amazon.com&#x2F;Make-Your-Own-Neural-Network-ebook&#x2F;dp&#x2F;B01EER4Z4G&#x2F;&quot;&gt;Make Your Own Neural Network&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Statistics Basics&lt;&#x2F;td&gt;&lt;td align=&quot;right&quot;&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.oreilly.com&#x2F;library&#x2F;view&#x2F;head-first-statistics&#x2F;9780596527587&#x2F;&quot;&gt;Head First Statistics&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Statistics for ML&lt;&#x2F;td&gt;&lt;td align=&quot;right&quot;&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.springer.com&#x2F;de&#x2F;book&#x2F;9781461471370&quot;&gt;Introduction to Statistical Learning&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;hr &#x2F;&gt;
+&lt;h1 id=&quot;programming&quot;&gt;Programming&lt;&#x2F;h1&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Topic&lt;&#x2F;th&gt;&lt;th align=&quot;right&quot;&gt;Source&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;Algorithms&lt;&#x2F;td&gt;&lt;td align=&quot;right&quot;&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.manning.com&#x2F;books&#x2F;grokking-algorithms&quot;&gt;Grokking Algorithms&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;C++&lt;&#x2F;td&gt;&lt;td align=&quot;right&quot;&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.amazon.com&#x2F;C-Primer-Stanley-B-Lippman-ebook&#x2F;dp&#x2F;B0091I7FEQ&quot;&gt;C++ Primer&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Go&lt;&#x2F;td&gt;&lt;td align=&quot;right&quot;&gt;&lt;a href=&quot;https:&#x2F;&#x2F;golang.org&#x2F;doc&#x2F;effective_go.html&quot;&gt;Effective Go&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Kubernetes&lt;&#x2F;td&gt;&lt;td align=&quot;right&quot;&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.amazon.de&#x2F;-&#x2F;en&#x2F;Bilgin-Ibryam&#x2F;dp&#x2F;1492050288&quot;&gt;Kubernetes Patterns&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Rust&lt;&#x2F;td&gt;&lt;td align=&quot;right&quot;&gt;&lt;a href=&quot;https:&#x2F;&#x2F;doc.rust-lang.org&#x2F;stable&#x2F;book&#x2F;&quot;&gt;Rust Programming&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Scala&lt;&#x2F;td&gt;&lt;td align=&quot;right&quot;&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.manning.com&#x2F;books&#x2F;functional-programming-in-scala&quot;&gt;Functional Programming in Scala - The Red Book&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;hr &#x2F;&gt;
+&lt;h1 id=&quot;misc&quot;&gt;Misc&lt;&#x2F;h1&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Topic&lt;&#x2F;th&gt;&lt;th align=&quot;right&quot;&gt;Source&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;Electricity&lt;&#x2F;td&gt;&lt;td align=&quot;right&quot;&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.amazon.com&#x2F;Living-Grid-Fundamentals-American-Electric&#x2F;dp&#x2F;1491790458&quot;&gt;Living on the Grid&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Investing&lt;&#x2F;td&gt;&lt;td align=&quot;right&quot;&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;The_Intelligent_Investor&quot;&gt;The Intelligent Investor&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Memoir&lt;&#x2F;td&gt;&lt;td align=&quot;right&quot;&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Autobiography_of_a_Yogi&quot;&gt;Autobiography of a Yogi&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Thoughtful&lt;&#x2F;td&gt;&lt;td align=&quot;right&quot;&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;The_Innovator%27s_Dilemma&quot;&gt;The Innovators Dilemma&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;hr &#x2F;&gt;
+</description>
+        </item>
+    </channel>
+</rss>
