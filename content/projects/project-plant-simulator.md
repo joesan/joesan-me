@@ -12,7 +12,7 @@ toc = true
 
 If you are in the Energy & utilities industry, you might have probably heard about a concept called [Virtual Power Plant](https://en.wikipedia.org/wiki/Virtual_power_plant)
 
-The idea is not new, but it is kind of gaining importance as more and more power producing units (also power consuming units) gets distributed. What does it mean?
+The idea is not new, but it is gaining importance as more and more power producing units (also power consuming units) gets distributed. What does it mean?
 It just means that the internet offers the possibility to command and control remote power units. The way it works is relatively simple. One of the main uses
 for such a virtual power plant is to provide flexibility services to the grid so that the grid is stable. 
 
@@ -32,8 +32,9 @@ I tried to incorporate all the best practices that could be attributed. For exam
 3. It is extremely scalable
 4. It has in-built alerting & monitoring with no additional dependency on any external library
 5. It has a very good unit test coverage
-6. It has aan automated deploy mechanism (using GitOps)
+6. It has an automated deployment mechanism (using GitOps)
 7. It has deployment files that are run through CI / CD steps
 8. It has streaming API's
+9. It has back-pressure where necessary
 
 On top of all that, it is built using Scala, Akka & Monix. Who needs Kafka? [Have a look here for the project](https://github.com/joesan/plant-simulator)
