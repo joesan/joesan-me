@@ -4,33 +4,29 @@
   weight = -110
 
 [[main]]
-  name = "Archives"
-  url = "post/notices/"
+  name = "Projects"
+  url = "post/projects/"
   weight = -109
 
 [[main]]
   name = "Navo"
   url = "post/navo/"
-  weight = -109
+  weight = -108
 
-# Submenus are done this way: parent -> identifier
 [[main]]
   name = "Links"
-  identifier = "Links"
-  weight = -108
+  url = "post/links/"
+  weight = -107
+
 [[main]]
-  parent = "Links"
-  name = "LinkedIn"
-  url = "https://www.linkedin.com/"
-[[main]]
-  parent = "Links"
-  name = "Twitter"
-  url = "https://twitter.com/"
+  name = "Archives"
+  url = "post/notices/"
+  weight = -106
 
 [[main]]
   name = "About"
   url = "about/"
-  weight = -107
+  weight = -105
 
 # social menu links
 
@@ -40,13 +36,9 @@
   weight = 1
   url = "https://github.com/joesan"
 [[social]]
-  name = "twitter"
+  name = "stackoverflow"
   weight = 2
-  url = "https://twitter.com/#"
-[[social]]
-  name = "linkedin"
-  weight = 3
-  url = "https://www.linkedin.com/in/#"
+  url = "https://stackoverflow.com/users/3102968/joesan"
 [[social]]
   name = "rss"
   weight = 4
