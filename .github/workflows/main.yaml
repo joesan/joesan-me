@@ -34,6 +34,9 @@ jobs:
           hugo version
           echo "PRINTING CURRENT DIRECTORY......"
           pwd
+          echo "PRINTING LS DIRECTORY......"
+          ls -la
+          cd public
           echo "PRINTING LS PUBLIC DIRECTORY......"
           ls -la
           git config --global user.email "workflow-bot@bigelectrons.com"
