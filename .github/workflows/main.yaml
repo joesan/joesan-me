@@ -20,7 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          submodules: true  # Fetch Hugo themes (true OR recursive) tt
+          submodules: true  # Fetch Hugo themes (true OR recursive) tt + another test
           fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
 
       - name: Setup Hugo
