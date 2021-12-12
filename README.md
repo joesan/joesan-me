@@ -34,6 +34,9 @@ site at `localhost:1313` or at `127.0.0.1:1313`
 The GitHub pages is configured to map to my domain name (bigelectrons). The build pipeline compiles the markdown content to a static html, pushes it to a
 branch [gh-pages](https://github.com/joesan/joesan-me/tree/gh-pages) from where the content is served.
 
+## Blog Content
+Most of the blogging content resides in the [content folder](https://github.com/joesan/joesan-me/tree/master/content) which is where the action is.
+
 I will leave you with a punch line - Amateurs talk strategy, professionals talk logistics - Not said by me, but that statement means a lot and
 is applicable to our every single day. Strategy is important, but strategy alone is just not enough!
 
