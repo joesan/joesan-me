@@ -37,6 +37,7 @@ jobs:
           mv public ..
           rm -rf *
           mv ../public/* .
+          echo "PRINTING CURRENT DIRECTORY....."
           pwd
           touch .nojekyll
           touch README.md
