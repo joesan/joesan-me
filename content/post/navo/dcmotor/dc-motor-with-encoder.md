@@ -2,12 +2,7 @@
 title="DC Motor with Encoder"
 date=2020-12-13
 
-[taxonomies]
-categories = ["ros"]
-tags = ["ros", "navo"]
-
-[extra]
-toc = true
+tags = ["dc-motor"]
 +++
 
 ## DC Motor

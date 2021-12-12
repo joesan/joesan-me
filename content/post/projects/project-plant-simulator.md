@@ -2,6 +2,8 @@
 title = "Plant-Simulator"
 description = "Simulating the operations of a power producing unit"
 date = 2017-08-31
+
+tags = ["vpp", "akka", "monix"]
 +++
 
 If you are in the Energy & utilities industry, you might have probably heard about a concept called [Virtual Power Plant](https://en.wikipedia.org/wiki/Virtual_power_plant)

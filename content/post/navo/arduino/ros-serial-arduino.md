@@ -2,12 +2,7 @@
 title="ROS Serial on Arduino"
 date=2020-12-12
 
-[taxonomies]
-categories = ["ros"]
-tags = ["ros", "navo"]
-
-[extra]
-toc = true
+tags = ["arduino"]
 +++
 
 ## Pi with Arduino

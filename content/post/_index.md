@@ -2,5 +2,5 @@
 aliases = ["posts", "articles", "blog", "showcase", "docs"]
 title = "Posts"
 author = "Joesan"
-tags = ["index"]
+categories = ["programming", "math", "ml", "linux", "engineering", "projects"]
 +++

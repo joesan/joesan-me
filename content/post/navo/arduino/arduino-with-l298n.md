@@ -2,9 +2,6 @@
 title="Arduino with L298N"
 date=2020-12-18
 
-[taxonomies]
-categories = ["ros"]
-tags = ["ros", "navo"]
 +++
 
 ## Arduino with L298N

@@ -2,12 +2,7 @@
 title="PID Controller"
 date=2020-12-14
 
-[taxonomies]
-categories = ["ros"]
-tags = ["ros", "navo"]
-
-[extra]
-toc = true
+tags = ["pid-controller"]
 +++
 
 In this section, let us explore and understand this 17th century idea on how we could effectively do a speed control for the DC Motor, 

@@ -21,3 +21,7 @@ hugo server -t YOURTHEME
 - An `about.md` that is intended to provide the `/about/` page for a theme demo
 6. If you intend to build a theme that does not fit in the content structure provided in this repository, then you are still more than welcome to submit it for review at the [Hugo Themes](https://github.com/gohugoio/hugoThemes/issues) respository
 
+TODO:
+
+https://onlinepngtools.com/create-transparent-png - To make the background of a PNG image transparent
+https://looka.com/editor/79356291 - Background editor

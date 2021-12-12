@@ -2,12 +2,7 @@
 title="DC Motor RPM Control"
 date=2020-12-15
 
-[taxonomies]
-categories = ["ros"]
-tags = ["ros", "navo"]
-
-[extra]
-toc = true
+tags = ["dc-motor", "ros"]
 +++
 
 ## DC Motor Speed Control with ROS

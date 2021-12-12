@@ -2,6 +2,8 @@
 title = "Raspberry Pi Motion & Face Detection"
 description = "Detect motion and face using OpenCV & Raspberry Pi"
 date = 2018-11-22
+
+tags = ["pir-sensor", "raspi", "opencv"]
 +++
 
 

@@ -1,4 +1,4 @@
-twitter = "@janedoe"
+twitter = "@joesandech"
 largeTwitterCard = false # set to true if you want to show a large twitter card image. The default is a small twitter card image
 introDescription = "Bits & Pieces of something that I write! Glad you found me...."
 # introURL = "about/" # set the url for the 'read more' button below the introDescription, or set to false to not show the button
@@ -39,7 +39,7 @@ mainSections = ["post"] # see config details here https://gohugo.io/functions/wh
 # center logo on navbar
 centerLogo = false # Set to "true" for centering or "false" for left aligned.
 
-logo = "logos/logo.png"
+logo = "logos/bg-logo.png"
 
 # Label Non inline images on an article body
 figurePositionShow = false # toggle on or off globally
@@ -62,7 +62,7 @@ enforceLightMode = false
 # footerLogo = "icons/copy.svg"
 
 # Text for the languages menu.
-languageMenuName = "🌐"
+# languageMenuName = "🌐"
 
 # Title separator, default to |.
 # titleSeparator = "|"
@@ -98,12 +98,12 @@ name = "Joesan"
 
 [plausible_analytics]
 enable = false # to enable plausible analytics set to true.
-websiteDomain = "example.com" # domain name of your website, most cases same as your base url
+websiteDomain = "bigelectrons.com" # domain name of your website, most cases same as your base url
 # plausibleDomain = "plausible.io" # default is set to plausible.io, only required if plausible is selfhosted
 # scritpName = "plausible" # default is set to plausible, only required if using a custome name for script
 
 [matomo_analytics]
 enable = false # To enable matomo analytics change to `true`.
-websiteDomain = "example.com" # Set the domain name of your website, in most cases same as your base URL this is required.
+websiteDomain = "bigelectrons.com" # Set the domain name of your website, in most cases same as your base URL this is required.
 matomoDomain = "matomo.example.com" # Set to Matomo domain
 matomoSiteID = "1" # Default is set to 1, change this to the siteid being tracked
