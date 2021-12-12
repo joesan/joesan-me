@@ -8,8 +8,8 @@
 Please [find here](https://github.com/joesan/joesan-me/blob/draft-status/draftStatus.txt) is the list of topics / blog articles that I'm currently working on!
 
 ## Credits
-- [Zola](https://www.getzola.org)
-- [DeepThought](https://github.com/RatanShreshtha/DeepThought)
+- [Hugo](https://gohugo.io/)
+- [Hugo Clarity](https://github.com/chipzoller/hugo-clarity)
 
 ## How to CI?
 This project uses GitHub Actions to do CI & CD. [Have a look here](https://github.com/joesan/joesan-me/blob/master/.github/workflows/main.yml) for the CI / CD pipeline.
