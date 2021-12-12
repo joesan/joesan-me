@@ -1,5 +1,4 @@
 baseURL = "https://www.bigelectrons.com/"
-relativeURLs = "true"
 languageCode = "en-us"
 title = "bigelectrons"
 name = "Joesan"
