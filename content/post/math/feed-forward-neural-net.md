@@ -3,8 +3,7 @@ title="Understanding Feed Forward Neural Network Architectures"
 description="Trust me, it is than easy"
 date=2019-12-10
 
-categories = ["Technical Stuff", "Math"]
-tags = ["blog"]
+tags = ["neural-net"]
 +++
 
 
