@@ -16,7 +16,8 @@ on:
 
 jobs:
   deploy:
-    runs-on: macos-10.15
+    #runs-on: macos-10.15
+    runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/master'
     env:
       TARGET_BRANCH: gh-pages
@@ -24,9 +25,9 @@ jobs:
       - name: Check out repo
         uses: actions/checkout@v2
       - name: Install Hugo
-        run: brew install hugo
-      - name: Install Scala
-        run: brew install scala
+        run: snap install hugo --channel=extended
+      #- name: Install Scala
+       # run: brew install scala
       - name: Generate HTML
         run: hugo --minify
       - name: Commit and push to target branch
