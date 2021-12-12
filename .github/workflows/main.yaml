@@ -29,7 +29,7 @@ jobs:
       #- name: Install Scala
        # run: brew install scala
       - name: Generate HTML
-        run: hugo --minify -v
+        run: hugo --minify
       - name: Commit and push to target branch
         run: |-
           hugo version
