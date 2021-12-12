@@ -1,27 +1,48 @@
-# hugoBasicExample
+# bigelectrons
 
-This repository offers an example site for [Hugo](https://gohugo.io/) and also it provides the default content for demos hosted on the [Hugo Themes Showcase](https://themes.gohugo.io/).
+[![Build and Deploy](https://github.com/joesan/joesan-me/actions/workflows/main.yml/badge.svg)](https://github.com/joesan/joesan-me/actions/workflows/main.yml)
 
-# Using
+:no_entry: Source code for my [blogging website](https://www.bigelectrons.com)
 
-1. [Install Hugo](https://gohugo.io/overview/installing/)
-2. Clone this repository
-```bash
-git clone https://github.com/gohugoio/hugoBasicExample.git
-cd hugoBasicExample
-```
-3. Clone the repository you want to test. If you want to test all Hugo Themes then follow the instructions provided [here](https://github.com/gohugoio/hugoThemes#installing-all-themes)
-4. Run Hugo and select the theme of your choosing
-```bash
-hugo server -t YOURTHEME
-```
-5. Under `/content/` this repository contains the following:
-- A section called `/post/` with sample markdown content
-- A headless bundle called `homepage` that you may want to use for single page applications. You can find instructions about headless bundles over [here](https://gohugo.io/content-management/page-bundles/#headless-bundle)
-- An `about.md` that is intended to provide the `/about/` page for a theme demo
-6. If you intend to build a theme that does not fit in the content structure provided in this repository, then you are still more than welcome to submit it for review at the [Hugo Themes](https://github.com/gohugoio/hugoThemes/issues) respository
+## Topics that I'm currently working on
+Please [find here](https://github.com/joesan/joesan-me/blob/draft-status/draftStatus.txt) is the list of topics / blog articles that I'm currently working on!
 
-TODO:
+## Credits
+- [Zola](https://www.getzola.org)
+- [DeepThought](https://github.com/RatanShreshtha/DeepThought)
 
-https://onlinepngtools.com/create-transparent-png - To make the background of a PNG image transparent
-https://looka.com/editor/79356291 - Background editor
+## How to CI?
+This project uses GitHub Actions to do CI & CD. [Have a look here](https://github.com/joesan/joesan-me/blob/master/.github/workflows/main.yml) for the CI / CD pipeline.
+
+**Step 1:** Check for valid HTTP links across all the markdown files.
+
+**Step 2:** If Step 1 is successful (currently I just log and ignore), check all the markdown content that is in draft status as I do not want to publish anything that is still in a draft version. Draft status blog filenames are written to a [file in a separate branch](https://github.com/joesan/joesan-me/blob/draft-status/draftStatus.txt).
+
+**Step 3:** Finally, the project is built using Zola and the resulting HTML pages are published to
+the [gh-pages branch](https://github.com/joesan/joesan-me/tree/gh-pages) from where the GitHub pages serve my website.
+
+## How to serve?
+Install Zola, checkout this project, from the root folder type `zola serve`. You should see your new site at `localhost:1111` or at `127.0.0.1:1111`
+
+**NOTE**: you must provide the theme options variables in `config.toml` to serve a functioning site
+
+## Deployment
+[Hugo](https://gohugo.io/) already has a great documentation for deploying to [Github Pages](https://gohugo.io/hosting-and-deployment/hosting-on-github/)
+
+The GitHub pages is configured to map to my domain name (bigelectrons). The build pipeline compiles the markdown content to a static html, pushes it to a
+branch [gh-pages](https://github.com/joesan/joesan-me/tree/gh-pages) from where the content is served.
+
+I will leave you with a punch line - Amateurs talk strategy, professionals talk logistics - Not said by me, but that statement means a lot and
+is applicable to our every single day. Strategy is important, but strategy alone is just not enough!
+
+## Tools & Useful References
+
+For documentation purposes, I'm summarizing here the list of tools that I use for writing my blog content:
+
+1. Convert LaTeX to PNG images       - http://latex2png.com/
+2. To Serve this static Blog Website - https://www.getzola.org/
+3. Draw circuits & convert to PNG    - https://fritzing.org/
+4. Online LaTeX Editor               - https://cocalc.com/doc/latex-editor.html
+5. Draw LaTeX Symbols                - http://detexify.kirelabs.org/
+6. Online Markdown Editor            - https://dillinger.io/
+7. Markdown Emojis                   - https://gist.github.com/rxaviers/7360908

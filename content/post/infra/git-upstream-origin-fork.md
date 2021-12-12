@@ -14,7 +14,7 @@ issue a pull request to the upstream so that your changes can be reviewed and me
 
 upstream - The original repository from which you fork
 
-Step 1: Add the remote upstream repo
+Step 1: Add the remote upstream repository
 
 ```
 git remote add upstream https://github.com/ORIGINAL_OWNER_NAME/ORIGINAL_REPO_NAME.git
