@@ -3,7 +3,6 @@ title="K8s Cluster SetUp on a Set of Raspberry Pi"
 description="Having fun with K8s and RasPi"
 date=2018-05-04
 
-[taxonomies]
 categories = ["Technical Stuff"]
 tags = ["k8s"]
 +++

@@ -3,7 +3,6 @@ title="CCTV Monitor with Raspberry Pi & OpenCV"
 description="Doing face detection with Raspberry Pi & OpenCV"
 date=2018-11-13
 
-[taxonomies]
 categories = ["Technical Stuff"]
 tags = ["ml & ai"]
 +++

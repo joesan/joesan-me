@@ -3,7 +3,6 @@ title="Understanding Back Propagation Neural Network Architectures"
 description="Trust me, it is more than easy"
 date=2019-12-10
 
-[taxonomies]
 categories = ["Technical Stuff", "Math"]
 tags = ["blog"]
 +++

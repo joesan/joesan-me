@@ -3,7 +3,6 @@ title="Keeping up with Upstream Git Repo"
 description="Make your fork sync with Upstream"
 date=2021-02-22
 
-[taxonomies]
 categories = ["Technical Stuff"]
 tags = ["git"]
 +++

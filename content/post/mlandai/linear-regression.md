@@ -4,12 +4,8 @@ description="Entry ticket into the world of ML"
 date=2021-09-25
 draft=true
 
-[taxonomies]
 categories = ["Technical Stuff"]
 tags = ["ml & ai"]
-
-[extra]
-toc = true
 +++
 
 I have been wondering on how the math behind a Linear regression looks like as in most of the ML books that you encounter, the focus will be on giving you a

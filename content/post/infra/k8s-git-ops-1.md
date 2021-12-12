@@ -3,7 +3,6 @@ title="GitOps with K8s"
 description="The way DevOps should have been"
 date=2020-02-28
 
-[taxonomies]
 categories = ["Technical Stuff"]
 tags = ["k8s"]
 +++

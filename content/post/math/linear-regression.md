@@ -3,7 +3,6 @@ title="Math behind simple Linear Regression"
 description="Entry ticket into the world of ML"
 date=2019-10-21
 
-[taxonomies]
 categories = ["Technical Stuff", "Math"]
 tags = ["blog"]
 +++

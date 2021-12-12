@@ -4,7 +4,6 @@ description="Some proven patterns that actually work"
 date=2021-04-06
 draft=true
 
-[taxonomies]
 categories = ["Technical Stuff"]
 tags = ["distributed systems"]
 +++

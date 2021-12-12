@@ -3,7 +3,6 @@ title="Lamport's Logical Clock - Ordering Events in a Distributed System"
 description="Logical clocks?"
 date=2021-01-06
 
-[taxonomies]
 categories = ["Technical Stuff"]
 tags = ["lamport clock", "distributed systems"]
 +++

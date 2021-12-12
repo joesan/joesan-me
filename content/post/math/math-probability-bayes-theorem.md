@@ -4,12 +4,8 @@ description="Making sense of conditional probabilities"
 date=2021-03-15
 draft=true
 
-[taxonomies]
 categories = ["Technical Stuff", "Math"]
 tags = ["blog"]
-
-[extra]
-toc=true
 +++
 
 

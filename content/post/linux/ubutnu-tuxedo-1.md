@@ -3,7 +3,6 @@ title="Moved from Apple to Infinitybook a.k.a Tuxedo a.k.a Ubuntu"
 description="A very good alternative to the Mac"
 date=2020-07-19
 
-[taxonomies]
 categories = ["linux"]
 tags = ["ubuntu", "tuxedo notebook"]
 +++

@@ -4,12 +4,8 @@ description="Tell me who your neighbours are, I'll tell you who you are"
 date=2021-08-29
 draft=true
 
-[taxonomies]
 categories = ["Technical Stuff"]
 tags = ["ml & ai"]
-
-[extra]
-toc = true
 +++
 
 In this blog article, we will focus on understanding using K-NN algorithm to classify images. We will wrap up the article

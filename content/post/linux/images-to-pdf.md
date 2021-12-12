@@ -3,10 +3,8 @@ title="Convert Images to PDF on Ubuntu"
 date=2021-07-14
 path = "images-to-pdf.md"
 
-[taxonomies]
 categories = ["linux"]
 tags = ["ubuntu", "images", "pdf"]
-
 +++
 
 I had a necessity to generate a PDF document out of a set of jpg images that I had on my local hard drive on my Ubuntu 20.04 

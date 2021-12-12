@@ -3,7 +3,6 @@ title="Deeply disappointed with Travis CI and the way OSS is treated"
 description="Nothing is free in the long run"
 date=2020-12-12
 
-[taxonomies]
 categories = ["Technical Stuff"]
 tags = ["travis", "ci & cd"]
 +++
