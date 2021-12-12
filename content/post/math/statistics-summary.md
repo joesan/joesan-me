@@ -4,8 +4,8 @@ description="Summary of important Stats"
 date=2021-02-22
 draft=true
 
-categories = ["Technical Stuff", "Math"]
-tags = ["blog"]
+categories = ["math"]
+tags = ["statistics"]
 +++
 
 
