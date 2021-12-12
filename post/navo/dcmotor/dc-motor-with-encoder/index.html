@@ -73,7 +73,7 @@
 <span><svg class="icon"><use xlink:href="#calendar"/></svg></span>
 <span class=post_date>
 Dec 13, 2020</span>
-<span class=post_time> · 8 min read</span><span>&nbsp;· <a href=https://bigelectrons.com/tags/dc-motor title=dc-motor class="post_tag button button_translucent">dc-motor
+<span class=post_time> · 7 min read</span><span>&nbsp;· <a href=https://bigelectrons.com/tags/dc-motor title=dc-motor class="post_tag button button_translucent">dc-motor
 </a>
 </span>
 <span class=page_only>&nbsp;·
@@ -138,13 +138,11 @@ clarifies the wiring definitions.</p>
 </tr>
 </table>
 <p>
-<div class="notices warning image-warning">
-<div class=label>Image not found</div>
-<style>a.warning-link{color:inherit!important;font-weight:inherit!important;text-decoration:underline!important;border-bottom:none!important}</style>
-<p>Web path: <a href=https://bigelectrons.com/images/navo/dcmotor/dc-motor-wiring-pololu-25d.png title="Open this web path in a new tab" target=_blank class=warning-link>https://bigelectrons.com/images/navo/dcmotor/dc-motor-wiring-pololu-25d.png</a></p>
-<p>Disk path: /static//images/navo/dcmotor/dc-motor-wiring-pololu-25d.png</p>
-<p>Using <a href=https://gohugo.io/content-management/page-bundles/ title="Information about Hugo Page Bundles" target=_blank class=warning-link>Page Bundles</a>: false</p>
-</div>
+<figure>
+<picture>
+<img class="image_figure image_internal" src=https://bigelectrons.com/images/navo/dcmotor/dc-motor-wiring-pololu-25d.png alt=dc-motor-wiring loading=lazy decoding=async width=1257 height=543>
+</picture>
+</figure>
 </p>
 <p>There are different types of encoders available, such as liner encoder or rotary encoders. A DC Motor encoder basically has a rotary encoder which is
 often times mounted to the shaft of the motor. The rotary encoder used here is a 6 pole magnetic disc attached to the shaft of the motor, along with
@@ -152,20 +150,16 @@ two <a href=https://en.wikipedia.org/wiki/Hall_effect target=_blank>Hall effect<
 past the two sensors and when each time a magnetic pole passes one of the sensor, the encoder outputs a digital pulse. So here with the two hall effect
 sensors, we get two output signals separated by 90 dgrees. The sketch below shows the basic working principle behind a Rotary magnetic encoder.</p>
 <p>
-<div class="notices warning image-warning">
-<div class=label>Image not found</div>
-<style>a.warning-link{color:inherit!important;font-weight:inherit!important;text-decoration:underline!important;border-bottom:none!important}</style>
-<p>Web path: <a href=https://bigelectrons.com/images/navo/dcmotor/encoder.jpg title="Open this web path in a new tab" target=_blank class=warning-link>https://bigelectrons.com/images/navo/dcmotor/encoder.jpg</a></p>
-<p>Disk path: /static//images/navo/dcmotor/encoder.jpg</p>
-<p>Using <a href=https://gohugo.io/content-management/page-bundles/ title="Information about Hugo Page Bundles" target=_blank class=warning-link>Page Bundles</a>: false</p>
-</div>
-<div class="notices warning image-warning">
-<div class=label>Image not found</div>
-<style>a.warning-link{color:inherit!important;font-weight:inherit!important;text-decoration:underline!important;border-bottom:none!important}</style>
-<p>Web path: <a href=https://bigelectrons.com/images/navo/dcmotor/square-wave.png title="Open this web path in a new tab" target=_blank class=warning-link>https://bigelectrons.com/images/navo/dcmotor/square-wave.png</a></p>
-<p>Disk path: /static//images/navo/dcmotor/square-wave.png</p>
-<p>Using <a href=https://gohugo.io/content-management/page-bundles/ title="Information about Hugo Page Bundles" target=_blank class=warning-link>Page Bundles</a>: false</p>
-</div>
+<figure>
+<picture>
+<img class="image_figure image_internal" src=https://bigelectrons.com/images/navo/dcmotor/encoder.jpg alt=rotary-encoder loading=lazy decoding=async width=466 height=306>
+</picture>
+</figure>
+<figure>
+<picture>
+<img class="image_figure image_internal" src=https://bigelectrons.com/images/navo/dcmotor/square-wave.png alt=rotary-encoder-pulse loading=lazy decoding=async width=628 height=370>
+</picture>
+</figure>
 </p>
 <p>It can be seen that the two sensing units (marked A & B) will emit a pulse signal as soon as they hit the underlying magnetic pin (6 of them as can be
 seen in the diagram above) and this pulse signal can be translated / understood in terms of the direction and speed of the motor. I will not explain more
@@ -185,36 +179,30 @@ from the motor shaft and as mentioned before, the ratio of rotation between thes
 turns just 1 time. So with this understanding, the cycles per revolution or pulses per revolution of the gearbox shaft can be calculated with the
 following formula:</p>
 <p>
-<div class="notices warning image-warning">
-<div class=label>Image not found</div>
-<style>a.warning-link{color:inherit!important;font-weight:inherit!important;text-decoration:underline!important;border-bottom:none!important}</style>
-<p>Web path: <a href=https://bigelectrons.com/images/navo/dcmotor/motor-cpr-formula.png title="Open this web path in a new tab" target=_blank class=warning-link>https://bigelectrons.com/images/navo/dcmotor/motor-cpr-formula.png</a></p>
-<p>Disk path: /static//images/navo/dcmotor/motor-cpr-formula.png</p>
-<p>Using <a href=https://gohugo.io/content-management/page-bundles/ title="Information about Hugo Page Bundles" target=_blank class=warning-link>Page Bundles</a>: false</p>
-</div>
+<figure>
+<picture>
+<img class="image_figure image_internal" src=https://bigelectrons.com/images/navo/dcmotor/motor-cpr-formula.png alt=motor-cpr-formula loading=lazy decoding=async width=444 height=27>
+</picture>
+</figure>
 </p>
 <p>So with this formula at hand, we get the gearbox CPR = 20.4 * 48 = 979.62</p>
 <p>The gearbox output resolution (979.62 CPR) is the only value that we will get from DC motor as feedback which when coupled with time helps us do speed
 control. Now the formula to calculate the RPM (speed) is given by:</p>
 <p>
-<div class="notices warning image-warning">
-<div class=label>Image not found</div>
-<style>a.warning-link{color:inherit!important;font-weight:inherit!important;text-decoration:underline!important;border-bottom:none!important}</style>
-<p>Web path: <a href=https://bigelectrons.com/images/navo/dcmotor/dc-motor-rpm-formula-1.png title="Open this web path in a new tab" target=_blank class=warning-link>https://bigelectrons.com/images/navo/dcmotor/dc-motor-rpm-formula-1.png</a></p>
-<p>Disk path: /static//images/navo/dcmotor/dc-motor-rpm-formula-1.png</p>
-<p>Using <a href=https://gohugo.io/content-management/page-bundles/ title="Information about Hugo Page Bundles" target=_blank class=warning-link>Page Bundles</a>: false</p>
-</div>
+<figure>
+<picture>
+<img class="image_figure image_internal" src=https://bigelectrons.com/images/navo/dcmotor/dc-motor-rpm-formula-1.png alt=motor-cpr-formula loading=lazy decoding=async width=476 height=57>
+</picture>
+</figure>
 </p>
 <p>where revolutions per count or revolutions per pulse equates to 1 / 979.62 (we know that pulse per revolution PPR or CPR is 979.62), so if we plug in these
 values into the equation above, we end up with the following:</p>
 <p>
-<div class="notices warning image-warning">
-<div class=label>Image not found</div>
-<style>a.warning-link{color:inherit!important;font-weight:inherit!important;text-decoration:underline!important;border-bottom:none!important}</style>
-<p>Web path: <a href=https://bigelectrons.com/images/navo/dcmotor/dc-motor-rpm-formula-2.png title="Open this web path in a new tab" target=_blank class=warning-link>https://bigelectrons.com/images/navo/dcmotor/dc-motor-rpm-formula-2.png</a></p>
-<p>Disk path: /static//images/navo/dcmotor/dc-motor-rpm-formula-2.png</p>
-<p>Using <a href=https://gohugo.io/content-management/page-bundles/ title="Information about Hugo Page Bundles" target=_blank class=warning-link>Page Bundles</a>: false</p>
-</div>
+<figure>
+<picture>
+<img class="image_figure image_internal" src=https://bigelectrons.com/images/navo/dcmotor/dc-motor-rpm-formula-2.png alt=motor-cpr-formula loading=lazy decoding=async width=284 height=58>
+</picture>
+</figure>
 </p>
 <p>We then have to plug in this equation into the sketch below and measure the number of pulse counts every second. Let us see how the sketch looks like!</p>
 <h3 id=dc-motor-speed-control-arduino-sketch>DC Motor Speed Control Arduino Sketch</h3>

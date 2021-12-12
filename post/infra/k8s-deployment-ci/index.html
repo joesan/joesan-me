@@ -73,7 +73,7 @@
 <span><svg class="icon"><use xlink:href="#calendar"/></svg></span>
 <span class=post_date>
 May 20, 2020</span>
-<span class=post_time> · 3 min read</span><span>&nbsp;· <a href=https://bigelectrons.com/tags/k8s title=k8s class="post_tag button button_translucent">k8s
+<span class=post_time> · 2 min read</span><span>&nbsp;· <a href=https://bigelectrons.com/tags/k8s title=k8s class="post_tag button button_translucent">k8s
 </a>
 </span>
 <span class=page_only>&nbsp;·
@@ -109,38 +109,32 @@ this is the one GitOps looks for!</p>
 <li>
 <p>I create a status check to pass before the changes from a feature branch be merged into master (as seen in the screenshot below)</p>
 <p>
-<div class="notices warning image-warning">
-<div class=label>Image not found</div>
-<style>a.warning-link{color:inherit!important;font-weight:inherit!important;text-decoration:underline!important;border-bottom:none!important}</style>
-<p>Web path: <a href=https://bigelectrons.com/images/k8s-ci-1.jpg title="Open this web path in a new tab" target=_blank class=warning-link>https://bigelectrons.com/images/k8s-ci-1.jpg</a></p>
-<p>Disk path: /static//images/k8s-ci-1.jpg</p>
-<p>Using <a href=https://gohugo.io/content-management/page-bundles/ title="Information about Hugo Page Bundles" target=_blank class=warning-link>Page Bundles</a>: false</p>
-</div>
+<figure>
+<picture>
+<img class="image_figure image_internal" src=https://bigelectrons.com/images/k8s-ci-1.jpg alt="k8s ci 1" loading=lazy decoding=async width=1600 height=1063>
+</picture>
+</figure>
 </p>
 </li>
 <li>
 <p>To test if this works, I intentionally introduced an error in one of my YAML files and you can see below that it was caught by GitHub Actions:</p>
 <p>
-<div class="notices warning image-warning">
-<div class=label>Image not found</div>
-<style>a.warning-link{color:inherit!important;font-weight:inherit!important;text-decoration:underline!important;border-bottom:none!important}</style>
-<p>Web path: <a href=https://bigelectrons.com/images/k8s-ci-2.jpg title="Open this web path in a new tab" target=_blank class=warning-link>https://bigelectrons.com/images/k8s-ci-2.jpg</a></p>
-<p>Disk path: /static//images/k8s-ci-2.jpg</p>
-<p>Using <a href=https://gohugo.io/content-management/page-bundles/ title="Information about Hugo Page Bundles" target=_blank class=warning-link>Page Bundles</a>: false</p>
-</div>
+<figure>
+<picture>
+<img class="image_figure image_internal" src=https://bigelectrons.com/images/k8s-ci-2.jpg alt="k8s ci 2" loading=lazy decoding=async width=1600 height=823>
+</picture>
+</figure>
 </p>
 </li>
 <li>
 <p>Now I issue a pull request from this branch into master, you can now see from the screenshot below that the YAML validation failure shows up. So the
 guy who would do the merge / pull request would not merge it into the master! This is what we want!</p>
 <p>
-<div class="notices warning image-warning">
-<div class=label>Image not found</div>
-<style>a.warning-link{color:inherit!important;font-weight:inherit!important;text-decoration:underline!important;border-bottom:none!important}</style>
-<p>Web path: <a href=https://bigelectrons.com/images/k8s-ci-3.jpg title="Open this web path in a new tab" target=_blank class=warning-link>https://bigelectrons.com/images/k8s-ci-3.jpg</a></p>
-<p>Disk path: /static//images/k8s-ci-3.jpg</p>
-<p>Using <a href=https://gohugo.io/content-management/page-bundles/ title="Information about Hugo Page Bundles" target=_blank class=warning-link>Page Bundles</a>: false</p>
-</div>
+<figure>
+<picture>
+<img class="image_figure image_internal" src=https://bigelectrons.com/images/k8s-ci-3.jpg alt="k8s ci 3" loading=lazy decoding=async width=1600 height=961>
+</picture>
+</figure>
 </p>
 </li>
 </ol>

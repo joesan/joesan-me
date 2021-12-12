@@ -73,7 +73,7 @@
 <span><svg class="icon"><use xlink:href="#calendar"/></svg></span>
 <span class=post_date>
 Dec 14, 2020</span>
-<span class=post_time> · 12 min read</span><span>&nbsp;· <a href=https://bigelectrons.com/tags/pid-controller title=pid-controller class="post_tag button button_translucent">pid-controller
+<span class=post_time> · 10 min read</span><span>&nbsp;· <a href=https://bigelectrons.com/tags/pid-controller title=pid-controller class="post_tag button button_translucent">pid-controller
 </a>
 </span>
 <span class=page_only>&nbsp;·
@@ -98,13 +98,11 @@ relation between a PID controller, and a process that is optimized by using a PI
 the process here is a water heater control system (WHCS). The WHCS works by receiving a desired value for the temperature and heats the water. For
 example., if we want the WHCS to heat the water to 40° C, we want it to exactly do that.</p>
 <p>
-<div class="notices warning image-warning">
-<div class=label>Image not found</div>
-<style>a.warning-link{color:inherit!important;font-weight:inherit!important;text-decoration:underline!important;border-bottom:none!important}</style>
-<p>Web path: <a href=https://bigelectrons.com/images/navo/pid/pid-controller-1.png title="Open this web path in a new tab" target=_blank class=warning-link>https://bigelectrons.com/images/navo/pid/pid-controller-1.png</a></p>
-<p>Disk path: /static//images/navo/pid/pid-controller-1.png</p>
-<p>Using <a href=https://gohugo.io/content-management/page-bundles/ title="Information about Hugo Page Bundles" target=_blank class=warning-link>Page Bundles</a>: false</p>
-</div>
+<figure>
+<picture>
+<img class="image_figure image_internal" src=https://bigelectrons.com/images/navo/pid/pid-controller-1.png alt=pid-controller-1 loading=lazy decoding=async width=780 height=297>
+</picture>
+</figure>
 </p>
 <p>From the image above, we have the Process which emits a Process Value (PV), the PID Controller to which we give a Setpoint value (SP), the sensors that
 measure the actual Process Value (PV) which is then fed back into the PID controller, thus forming a closed loop. It can also be seen that the Process is
@@ -119,13 +117,11 @@ further to understand the basics behind the PID controller.</p>
 <p>We first need to understand what each of the term in the PID controller represent. The image below throws a bit of clarity on how each of the terms
 (Proportional, Integral & the Derivative) combine to get a smooth target output.</p>
 <p>
-<div class="notices warning image-warning">
-<div class=label>Image not found</div>
-<style>a.warning-link{color:inherit!important;font-weight:inherit!important;text-decoration:underline!important;border-bottom:none!important}</style>
-<p>Web path: <a href=https://bigelectrons.com/images/navo/pid/pid-controller-2.png title="Open this web path in a new tab" target=_blank class=warning-link>https://bigelectrons.com/images/navo/pid/pid-controller-2.png</a></p>
-<p>Disk path: /static//images/navo/pid/pid-controller-2.png</p>
-<p>Using <a href=https://gohugo.io/content-management/page-bundles/ title="Information about Hugo Page Bundles" target=_blank class=warning-link>Page Bundles</a>: false</p>
-</div>
+<figure>
+<picture>
+<img class="image_figure image_internal" src=https://bigelectrons.com/images/navo/pid/pid-controller-2.png alt=pid-controller-2 loading=lazy decoding=async width=738 height=455>
+</picture>
+</figure>
 </p>
 <p>As we can see from the image above that the error is calculated by simply calculating the difference between the Setpoint (SV), and the Process Value (PV) or in other words,
 the error is simply the difference between the desired value and the actual value.</p>
@@ -134,26 +130,22 @@ the error is simply the difference between the desired value and the actual valu
 <p>This is the simplest of the control where the controller gives an output that is directly proportional to the current error (difference between SV
 and PV) times a proportional factor which is synonymous to the error value.</p>
 <p>
-<div class="notices warning image-warning">
-<div class=label>Image not found</div>
-<style>a.warning-link{color:inherit!important;font-weight:inherit!important;text-decoration:underline!important;border-bottom:none!important}</style>
-<p>Web path: <a href=https://bigelectrons.com/images/navo/pid/pid-controller-p.png title="Open this web path in a new tab" target=_blank class=warning-link>https://bigelectrons.com/images/navo/pid/pid-controller-p.png</a></p>
-<p>Disk path: /static//images/navo/pid/pid-controller-p.png</p>
-<p>Using <a href=https://gohugo.io/content-management/page-bundles/ title="Information about Hugo Page Bundles" target=_blank class=warning-link>Page Bundles</a>: false</p>
-</div>
+<figure>
+<picture>
+<img class="image_figure image_internal" src=https://bigelectrons.com/images/navo/pid/pid-controller-p.png alt=pid-controller-p loading=lazy decoding=async width=197 height=29>
+</picture>
+</figure>
 </p>
 <p>It can be seen from the equation above that with a small Kp the controller will make small attempts to minimize the error, while for a larger Kp, the controller will make a larger attempt to minimize the error. This is good, but this approach suffers from either an overshoot (if Kp is too large) or an undershoot (if Kp is too small). Both these effects, called the offset or the steady state error - we do want to avoid. There is always a steady state residual error in the case of a proportional controller. If this is too theoretical, let us understand it from a more practical perspective.</p>
 <p>Imagive we have a water tank as shown in the image below with which our goal is to maintain a constant water level as defined by a Setpoint (SP) value. As
 long as the system is untouched, nothing changes but change is inevitable which means that the outflow will need to be increased, or the inflow need to be
 decreased or vice versa. But the goal remains constant which is to maintain the water levek in the tank at the given Setpoint value.</p>
 <p>
-<div class="notices warning image-warning">
-<div class=label>Image not found</div>
-<style>a.warning-link{color:inherit!important;font-weight:inherit!important;text-decoration:underline!important;border-bottom:none!important}</style>
-<p>Web path: <a href=https://bigelectrons.com/images/navo/pid/pid-water-tank.png title="Open this web path in a new tab" target=_blank class=warning-link>https://bigelectrons.com/images/navo/pid/pid-water-tank.png</a></p>
-<p>Disk path: /static//images/navo/pid/pid-water-tank.png</p>
-<p>Using <a href=https://gohugo.io/content-management/page-bundles/ title="Information about Hugo Page Bundles" target=_blank class=warning-link>Page Bundles</a>: false</p>
-</div>
+<figure>
+<picture>
+<img class="image_figure image_internal" src=https://bigelectrons.com/images/navo/pid/pid-water-tank.png alt=pid-controller-i loading=lazy decoding=async width=545 height=399>
+</picture>
+</figure>
 </p>
 <p>So with the goal of maintaining the Setpoint say at level 3, if we now increase the flow out of the tank, the tank level will start to decrease because
 of the imbalance between the inflow and outflow. While the tank level decreases, the error increases and the proportional controller will increase the
@@ -168,13 +160,11 @@ be done automatically, that is exactly our next topic, the Integral controller!<
 <p>By introducing a time component to the proportional controller, we can mitigate the overshoot and undershoot problems, which we termed as the offset or the steady state error. The integral controller, is capable of handling errors that happen over a certain set time interval. With using an integral component, we can thus overcome the steady state residual error that occurs with the proportional controller.</p>
 <p>If the error is large enough, the integral controller will increment / decrement the controller output at a faster rate, while on the other hand if the error is small, the changes will be slow. For any given error, the speed of the integral action is set by the controller's time setting where a larget time setting results in slow integral action and vice versa.</p>
 <p>
-<div class="notices warning image-warning">
-<div class=label>Image not found</div>
-<style>a.warning-link{color:inherit!important;font-weight:inherit!important;text-decoration:underline!important;border-bottom:none!important}</style>
-<p>Web path: <a href=https://bigelectrons.com/images/navo/pid/pid-controller-i.png title="Open this web path in a new tab" target=_blank class=warning-link>https://bigelectrons.com/images/navo/pid/pid-controller-i.png</a></p>
-<p>Disk path: /static//images/navo/pid/pid-controller-i.png</p>
-<p>Using <a href=https://gohugo.io/content-management/page-bundles/ title="Information about Hugo Page Bundles" target=_blank class=warning-link>Page Bundles</a>: false</p>
-</div>
+<figure>
+<picture>
+<img class="image_figure image_internal" src=https://bigelectrons.com/images/navo/pid/pid-controller-i.png alt=pid-controller-i loading=lazy decoding=async width=259 height=98>
+</picture>
+</figure>
 </p>
 <p>The equation above sums all the previous errors over a given time interval t and accounts for the error correction accordingly. If we have a larger value
 for the term Ki, it will result in an overshoot.</p>
@@ -184,13 +174,11 @@ processes where motion control is needed, hence a good candidate for our Navo ro
 errors, the differential controller is capable of predicting future behavior of the error. As it can be seen from the equation below that the output of
 the differential controller depends on the rate of change of error over time, multiplied by a derivative constant Kd.</p>
 <p>
-<div class="notices warning image-warning">
-<div class=label>Image not found</div>
-<style>a.warning-link{color:inherit!important;font-weight:inherit!important;text-decoration:underline!important;border-bottom:none!important}</style>
-<p>Web path: <a href=https://bigelectrons.com/images/navo/pid/pid-controller-d.png title="Open this web path in a new tab" target=_blank class=warning-link>https://bigelectrons.com/images/navo/pid/pid-controller-d.png</a></p>
-<p>Disk path: /static//images/navo/pid/pid-controller-d.png</p>
-<p>Using <a href=https://gohugo.io/content-management/page-bundles/ title="Information about Hugo Page Bundles" target=_blank class=warning-link>Page Bundles</a>: false</p>
-</div>
+<figure>
+<picture>
+<img class="image_figure image_internal" src=https://bigelectrons.com/images/navo/pid/pid-controller-d.png alt=pid-controller-d loading=lazy decoding=async width=235 height=57>
+</picture>
+</figure>
 </p>
 <p>The output of the derivative this helps in reducing / minimizing the overshoot error. For example., a larger derivative or a larger slope indicates that
 the next error will be far away from the previous error but a small derivative or a smaller slope indicates that the next error will be likely close to
@@ -198,23 +186,19 @@ the previous error.</p>
 <h3 id=pid-equation>PID Equation</h3>
 <p>With the controllers and their equations nailed down, we have the following equations for the PID controller.</p>
 <p>
-<div class="notices warning image-warning">
-<div class=label>Image not found</div>
-<style>a.warning-link{color:inherit!important;font-weight:inherit!important;text-decoration:underline!important;border-bottom:none!important}</style>
-<p>Web path: <a href=https://bigelectrons.com/images/navo/pid/pid-controller-out.png title="Open this web path in a new tab" target=_blank class=warning-link>https://bigelectrons.com/images/navo/pid/pid-controller-out.png</a></p>
-<p>Disk path: /static//images/navo/pid/pid-controller-out.png</p>
-<p>Using <a href=https://gohugo.io/content-management/page-bundles/ title="Information about Hugo Page Bundles" target=_blank class=warning-link>Page Bundles</a>: false</p>
-</div>
+<figure>
+<picture>
+<img class="image_figure image_internal" src=https://bigelectrons.com/images/navo/pid/pid-controller-out.png alt=pid-controller-out loading=lazy decoding=async width=366 height=29>
+</picture>
+</figure>
 </p>
 <p>and by substituting the values, we get</p>
 <p>
-<div class="notices warning image-warning">
-<div class=label>Image not found</div>
-<style>a.warning-link{color:inherit!important;font-weight:inherit!important;text-decoration:underline!important;border-bottom:none!important}</style>
-<p>Web path: <a href=https://bigelectrons.com/images/navo/pid/pid-controller-math-1.png title="Open this web path in a new tab" target=_blank class=warning-link>https://bigelectrons.com/images/navo/pid/pid-controller-math-1.png</a></p>
-<p>Disk path: /static//images/navo/pid/pid-controller-math-1.png</p>
-<p>Using <a href=https://gohugo.io/content-management/page-bundles/ title="Information about Hugo Page Bundles" target=_blank class=warning-link>Page Bundles</a>: false</p>
-</div>
+<figure>
+<picture>
+<img class="image_figure image_internal" src=https://bigelectrons.com/images/navo/pid/pid-controller-math-1.png alt=pid-controller-math-1 loading=lazy decoding=async width=629 height=98>
+</picture>
+</figure>
 </p>
 <p>So what that equation basically mean in our context which is to control the speed of the DC motor is that, the controller output is used to determine
 how much more or less the motor speed has to be adjusted so that the current speed (processValue) matches the target speed (setPoint). How does all
@@ -262,44 +246,36 @@ Setpoint occurs more often, it is better that we address this to avoid putting s
 kick is to assume that the change in the Setpoint is constant, so the rate of change or in mathematical terms, the derivative of a constant (remember
 derivative is all about slope and for a constant there is no slope) is 0.</p>
 <p>
-<div class="notices warning image-warning">
-<div class=label>Image not found</div>
-<style>a.warning-link{color:inherit!important;font-weight:inherit!important;text-decoration:underline!important;border-bottom:none!important}</style>
-<p>Web path: <a href=https://bigelectrons.com/images/navo/pid/pid-derivative-kick-1.png title="Open this web path in a new tab" target=_blank class=warning-link>https://bigelectrons.com/images/navo/pid/pid-derivative-kick-1.png</a></p>
-<p>Disk path: /static//images/navo/pid/pid-derivative-kick-1.png</p>
-<p>Using <a href=https://gohugo.io/content-management/page-bundles/ title="Information about Hugo Page Bundles" target=_blank class=warning-link>Page Bundles</a>: false</p>
-</div>
+<figure>
+<picture>
+<img class="image_figure image_internal" src=https://bigelectrons.com/images/navo/pid/pid-derivative-kick-1.png alt=pid-derivative-kick-1 loading=lazy decoding=async width=117 height=57>
+</picture>
+</figure>
 </p>
 <p>Using what we already know for the derivative control, let us use our assumption for a constant Setpoint to the derivative equation</p>
 <p>
-<div class="notices warning image-warning">
-<div class=label>Image not found</div>
-<style>a.warning-link{color:inherit!important;font-weight:inherit!important;text-decoration:underline!important;border-bottom:none!important}</style>
-<p>Web path: <a href=https://bigelectrons.com/images/navo/pid/pid-derivative-kick-2.png title="Open this web path in a new tab" target=_blank class=warning-link>https://bigelectrons.com/images/navo/pid/pid-derivative-kick-2.png</a></p>
-<p>Disk path: /static//images/navo/pid/pid-derivative-kick-2.png</p>
-<p>Using <a href=https://gohugo.io/content-management/page-bundles/ title="Information about Hugo Page Bundles" target=_blank class=warning-link>Page Bundles</a>: false</p>
-</div>
+<figure>
+<picture>
+<img class="image_figure image_internal" src=https://bigelectrons.com/images/navo/pid/pid-derivative-kick-2.png alt=pid-derivative-kick-2 loading=lazy decoding=async width=630 height=57>
+</picture>
+</figure>
 </p>
 <p>As it can be seen now that our derivative term becomes a measure of the Process value instead of the error term, hence our actual PID controller equation
 now becomes</p>
 <p>
-<div class="notices warning image-warning">
-<div class=label>Image not found</div>
-<style>a.warning-link{color:inherit!important;font-weight:inherit!important;text-decoration:underline!important;border-bottom:none!important}</style>
-<p>Web path: <a href=https://bigelectrons.com/images/navo/pid/pid-controller-math-2.png title="Open this web path in a new tab" target=_blank class=warning-link>https://bigelectrons.com/images/navo/pid/pid-controller-math-2.png</a></p>
-<p>Disk path: /static//images/navo/pid/pid-controller-math-2.png</p>
-<p>Using <a href=https://gohugo.io/content-management/page-bundles/ title="Information about Hugo Page Bundles" target=_blank class=warning-link>Page Bundles</a>: false</p>
-</div>
+<figure>
+<picture>
+<img class="image_figure image_internal" src=https://bigelectrons.com/images/navo/pid/pid-controller-math-2.png alt=pid-controller-math-2 loading=lazy decoding=async width=631 height=98>
+</picture>
+</figure>
 </p>
 <p>It is easy to visualize this with some numbers and the resulting plat as shown in the image below.</p>
 <p>
-<div class="notices warning image-warning">
-<div class=label>Image not found</div>
-<style>a.warning-link{color:inherit!important;font-weight:inherit!important;text-decoration:underline!important;border-bottom:none!important}</style>
-<p>Web path: <a href=https://bigelectrons.com/images/navo/pid/pid-derivative-kick-image.png title="Open this web path in a new tab" target=_blank class=warning-link>https://bigelectrons.com/images/navo/pid/pid-derivative-kick-image.png</a></p>
-<p>Disk path: /static//images/navo/pid/pid-derivative-kick-image.png</p>
-<p>Using <a href=https://gohugo.io/content-management/page-bundles/ title="Information about Hugo Page Bundles" target=_blank class=warning-link>Page Bundles</a>: false</p>
-</div>
+<figure>
+<picture>
+<img class="image_figure image_internal" src=https://bigelectrons.com/images/navo/pid/pid-derivative-kick-image.png alt=pid-derivative-kick-image loading=lazy decoding=async width=4452 height=2056>
+</picture>
+</figure>
 </p>
 <p>Looking at the plot between the derivative of the error vs time, It can be seen that as the Setpoint changes, it results in the error value to spike and
 this inturn causes the rate of change in error for a given time interval to result in a spike which we term the derivative kick. So by assuming that the
