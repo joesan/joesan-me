@@ -9,6 +9,11 @@ introDescription = "Bits & Pieces of something that I write! Glad you found me..
 # Google analytics Id
 ga_analytics = "XXXXXXXXXX"
 
+[params.utteranc]   # utteranc is a comment system based on GitHub issues. see https://utteranc.es
+enable = false
+repo = "joesan/comments-for-joesan-me"    # The repo to store comments
+issueTerm = "pathname"
+
 # Baidu analytics Id
 # baidu_analytics = "XXXXXXXX"
 
