@@ -1,7 +1,7 @@
 +++
 title="PID Controller"
 date=2020-12-14
-
+toc="true"
 tags = ["pid-controller"]
 +++
 
