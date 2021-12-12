@@ -82,6 +82,8 @@ jobs:
           touch CNAME
           echo 'bigelectrons.com' > CNAME
           rm -rf .github/
+          rm -Rf .gitignore
+          rm -Rf .idea
           git add .
           git commit -m "generated using hugo build"
           git push --set-upstream origin $TARGET_BRANCH --force
