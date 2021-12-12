@@ -40,7 +40,7 @@ jobs:
           echo "PRINTING CURRENT DIRECTORY......"
           pwd
           echo "PRINTING LS PUBLIC DIRECTORY......"
-          ls -lrt public/
+          ls -la
           touch .nojekyll
           touch README.md
           echo 'https://www.bigelectrons.com - SITE GENERATED USING HUGO' > README.md
