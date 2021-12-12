@@ -5,7 +5,8 @@ baseurl = "https://bigelectrons.com/"  # Include trailing slash
 copyright = "Copyright © 2018 - 2022 @ https://github.com/Joesan"
 # canonifyurls = true
 paginate = 10
-theme = "github.com/chipzoller/hugo-clarity"
+#theme = "github.com/chipzoller/hugo-clarity"
+theme = "hugo-clarity"
 disqusShortname = ""
 
 DefaultContentLanguage = "en"
