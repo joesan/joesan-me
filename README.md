@@ -42,9 +42,8 @@ is applicable to our every single day. Strategy is important, but strategy alone
 For documentation purposes, I'm summarizing here the list of tools that I use for writing my blog content:
 
 1. Convert LaTeX to PNG images       - http://latex2png.com/
-2. To Serve this static Blog Website - https://www.getzola.org/
-3. Draw circuits & convert to PNG    - https://fritzing.org/
-4. Online LaTeX Editor               - https://cocalc.com/doc/latex-editor.html
-5. Draw LaTeX Symbols                - http://detexify.kirelabs.org/
-6. Online Markdown Editor            - https://dillinger.io/
-7. Markdown Emojis                   - https://gist.github.com/rxaviers/7360908
+2. Draw circuits & convert to PNG    - https://fritzing.org/
+3. Online LaTeX Editor               - https://cocalc.com/doc/latex-editor.html
+4. Draw LaTeX Symbols                - http://detexify.kirelabs.org/
+5. Online Markdown Editor            - https://dillinger.io/
+6. Markdown Emojis                   - https://gist.github.com/rxaviers/7360908
