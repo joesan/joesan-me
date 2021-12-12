@@ -3,8 +3,7 @@ title="Liner Interpolation"
 description="Linear Interpolation in the XY plane using Scala"
 date=2016-01-13
 
-categories = ["Technical Stuff", "Math"]
-tags = ["blog"]
+categories = ["math"]
 +++
 
 

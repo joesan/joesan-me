@@ -6,7 +6,6 @@ date=2019-12-10
 tags = ["neural-net"]
 +++
 
-
 I have been reading through the architectures of Neural Networks and wanted to grasp the idea behind calculating the weights in a Neural Network and as you 
 can see in the image below is a simple 2 node 2 layer Neural Network.
 
