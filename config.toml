@@ -1,5 +1,5 @@
-baseURL = "http://www.bigelectrons.com/"
-relativeURLs = "True"
+baseURL = ".bigelectrons.com"
+relativeURLs = "true"
 languageCode = "en-us"
 title = "bigelectrons"
 name = "Joesan"
