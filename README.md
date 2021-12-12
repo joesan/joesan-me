@@ -16,13 +16,15 @@ This project uses GitHub Actions to do CI & CD. [Have a look here](https://githu
 
 **Step 1:** Check for valid HTTP links across all the markdown files.
 
-**Step 2:** If Step 1 is successful (currently I just log and ignore), check all the markdown content that is in draft status as I do not want to publish anything that is still in a draft version. Draft status blog filenames are written to a [file in a separate branch](https://github.com/joesan/joesan-me/blob/draft-status/draftStatus.txt).
+**Step 2:** If Step 1 is successful (currently I just log and ignore), check all the markdown content that is in draft status as I do not want to publish 
+anything that is still in a draft version. Draft status blog filenames are written to a [file in a separate branch](https://github.com/joesan/joesan-me/blob/draft-status/draftStatus.txt).
 
-**Step 3:** Finally, the project is built using Zola and the resulting HTML pages are published to
+**Step 3:** Finally, the project is built using Hugo and the resulting HTML pages are published to
 the [gh-pages branch](https://github.com/joesan/joesan-me/tree/gh-pages) from where the GitHub pages serve my website.
 
 ## How to serve?
-Install Zola, checkout this project, from the root folder type `zola serve`. You should see your new site at `localhost:1111` or at `127.0.0.1:1111`
+To be able to run and serve the project locally, grab a copy of this project, install Hugo, from the root folder type `hugo server`. You should see your new 
+site at `localhost:1313` or at `127.0.0.1:1313`
 
 **NOTE**: you must provide the theme options variables in `config.toml` to serve a functioning site
 
