@@ -2,7 +2,7 @@
 title = "About"
 description = "About Me"
 date = "2019-02-28"
-aliases = ["about-us", "about-hugo", "contact"]
+aliases = ["about-me", "contact"]
 author = "Joesan"
 showShare = false
 +++
