@@ -37,8 +37,10 @@ jobs:
           mv public ..
           rm -rf *
           mv ../public/* .
-          echo "PRINTING CURRENT DIRECTORY....."
+          echo "PRINTING CURRENT DIRECTORY......"
           pwd
+          echo "PRINTING LS PUBLIC DIRECTORY......"
+          ls -lrt public/
           touch .nojekyll
           touch README.md
           echo 'https://www.bigelectrons.com - SITE GENERATED USING HUGO' > README.md
