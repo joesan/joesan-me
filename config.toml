@@ -5,5 +5,5 @@ title = "bigelectrons"
 name = "Joesan"
 
 [params]
-mainSections = ["posts", "docs", "blogs"]
+mainSections = ["post"]
 
