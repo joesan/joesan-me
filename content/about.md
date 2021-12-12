@@ -9,7 +9,7 @@ showShare = false
 
 # Joesan is my handle :smile:
 
-Here you will find some content, some thoughts, some experiments, some something that I do in my spare time. My memory is so volatile, so I thought it is a
+Here you will find some content, some more content, some thoughts, some experiments, some something that I do in my spare time. My memory is so volatile, so I thought it is a
 good idea for me to write them off somewhere and that somewhere is this blog! This is my blog! This is how I feed my curiosity! Have a look
 at my [recent blog articles here](https://www.bigelectrons.com/posts/)
 
