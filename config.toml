@@ -1,4 +1,4 @@
-baseURL = "https://bigelectrons.com/"
+baseURL = "https://bigelectrons.com/" # Should be without the www. otherwise issues with CORS might happen
 languageCode = "en-us"
 title = "bigelectrons"
 name = "Joesan"
