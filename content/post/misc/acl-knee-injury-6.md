@@ -3,7 +3,6 @@ title="Once more a blow, a nasty one this time"
 description="This time even severe with further damage"
 date=2020-10-04
 
-[taxonomies]
 categories = ["Miscellaneous"]
 tags = ["acl"]
 +++

@@ -3,7 +3,6 @@ title="Send it... yep! Sendin it..."
 description="Build a mini ramp for MTB send"
 date=2019-07-22
 
-[taxonomies]
 categories = ["Miscellaneous"]
 tags = ["mtb"]
 +++

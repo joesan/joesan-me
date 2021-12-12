@@ -3,7 +3,6 @@ title="6 Weeks Update of my Knee"
 description="Slowly recovering from my ACL Knee injury"
 date=2018-11-19
 
-[taxonomies]
 categories = ["Miscellaneous"]
 tags = ["acl"]
 +++

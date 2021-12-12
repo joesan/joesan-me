@@ -3,7 +3,6 @@ title="My journey thus far with learning to play the guitar"
 description="Made considerable progress"
 date=2020-05-09
 
-[taxonomies]
 categories = ["Miscellaneous"]
 tags = ["guitar"]
 +++

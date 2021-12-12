@@ -3,7 +3,6 @@ title="Yet another impact on the injured knee!"
 description="Why would fate have it this way?"
 date=2019-08-13
 
-[taxonomies]
 categories = ["Miscellaneous"]
 tags = ["acl"]
 +++

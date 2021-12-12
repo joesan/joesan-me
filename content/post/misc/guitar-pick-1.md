@@ -4,7 +4,6 @@ description="Plucking made easy...."
 date=2020-09-09
 draft=true
 
-[taxonomies]
 categories = ["Miscellaneous"]
 tags = ["guitar"]
 +++

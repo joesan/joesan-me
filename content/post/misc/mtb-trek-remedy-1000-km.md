@@ -3,7 +3,6 @@ title="My Trek Remedy clocks 1000 km this season"
 description="Most productive year with my MTB rides"
 date=2019-09-29
 
-[taxonomies]
 categories = ["Miscellaneous"]
 tags = ["mtb"]
 +++

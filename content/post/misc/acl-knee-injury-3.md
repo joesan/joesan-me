@@ -3,7 +3,6 @@ title="4 Months update of my Knee"
 description="Almost getting back to normal"
 date=2019-01-25
 
-[taxonomies]
 categories = ["Miscellaneous"]
 tags = ["acl"]
 +++

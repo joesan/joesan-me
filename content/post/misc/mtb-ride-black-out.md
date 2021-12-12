@@ -3,7 +3,6 @@ title="How is it to experience a Blackout"
 description="MTB Ride and having a short black out"
 date=2019-07-14
 
-[taxonomies]
 categories = ["Miscellaneous"]
 tags = ["mtb"]
 +++

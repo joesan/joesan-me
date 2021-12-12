@@ -3,7 +3,6 @@ title="Oh my left knee - You cause my problems!"
 description="Keep forgetting"
 date=2020-03-07
 
-[taxonomies]
 categories = ["Miscellaneous"]
 tags = ["acl"]
 +++

@@ -3,7 +3,6 @@ title="On Navigating the Pentatonic scale"
 description="Thinking in terms of triangles"
 date=2020-09-09
 
-[taxonomies]
 categories = ["Miscellaneous"]
 tags = ["guitar"]
 +++

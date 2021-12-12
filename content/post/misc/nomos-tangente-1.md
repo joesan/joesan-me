@@ -3,7 +3,6 @@ title="The beauty that goes behind a Mechanical watch"
 description="My Nomos Tangente"
 date=2018-12-14
 
-[taxonomies]
 categories = ["Miscellaneous"]
 tags = ["mechanical watch"]
 +++

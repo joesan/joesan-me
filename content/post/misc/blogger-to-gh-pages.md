@@ -3,7 +3,6 @@ title="Moved from Blogger to GH Pages"
 description="Simple & a logical step forward"
 date=2021-02-14
 
-[taxonomies]
 categories = ["Miscellaneous"]
 tags = ["blog", "zola"]
 +++

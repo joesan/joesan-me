@@ -3,7 +3,6 @@ title="Back with MTB Tours and Downhill rides"
 description=""
 date=2019-04-09
 
-[taxonomies]
 categories = ["Miscellaneous"]
 tags = ["mtb"]
 +++
