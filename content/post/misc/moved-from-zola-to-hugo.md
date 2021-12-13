@@ -1,12 +1,11 @@
----
-title: "Moved From Zola to Hugo" # Title of the blog post.
-date: 2021-12-13T06:42:11+01:00 # Date of post creation.
-description: "Article description." # Description used for search engine.
-featured: true # Sets if post is a featured post, making appear on the home page side bar.
-toc: false # Controls if a table of contents should be generated for first-level links automatically.
++++
+title= "Moved From Zola to Hugo"
+date= 2021-12-13
+description= "Article description"
+featured= true 
 
-tags = ["zola", "hugo"]
----
+tags: ["zola", "hugo"]
++++
 
 ## What happened?
 
