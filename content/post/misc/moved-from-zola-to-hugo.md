@@ -1,10 +1,10 @@
 +++
 title= "Moved From Zola to Hugo"
-date= 2021-12-13
+date=2021-12-13
 description= "Article description"
-featured= true 
+featured=true 
 
-tags: ["zola", "hugo"]
+tags= ["zola", "hugo"]
 +++
 
 ## What happened?
