@@ -58,8 +58,6 @@ mobileNavigation = "left" # if you prefer right change to 'right'
 enforceLightMode = false
 # enforceDarkMode = false
 
-enableEmoji = true
-
 # customize footer icon. see issue https://github.com/chipzoller/hugo-clarity/issues/77
 # footerLogo = "icons/copy.svg"
 
