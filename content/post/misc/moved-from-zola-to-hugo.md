@@ -2,7 +2,6 @@
 title= "Moved From Zola to Hugo"
 date=2021-12-13
 description= "Article description"
-featured=true 
 
 tags= ["zola", "hugo"]
 +++
