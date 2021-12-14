@@ -8,10 +8,10 @@ tags = ["acl"]
 +++
 
 
-Roughly 3 weeks ago on the 5th of October, I had an MTB bike accident and in the process I ended up [injuring my left knee](@/posts/misc/acl-knee-injury-1.md). I was actually attempting to
-Manual during which I realized that I was about to lose my balance. I wanted to bail out from the Manual, so I tried to pull the bike completely to the
-front with me jump landing behind the rear wheels, but the bailout got totally out of control and eventually I ended up twisting my left knee soon after
-the jump.
+Roughly 3 weeks ago on the 5th of October, I had an MTB bike accident and in the process I ended up [injuring my left knee](@/content/post/misc/acl-knee-injury-1.md). 
+I was actually attempting to Manual during which I realized that I was about to lose my balance. I wanted to bail out from the Manual, so I tried to pull 
+the bike completely to the front with me jump landing behind the rear wheels, but the bailout got totally out of control and eventually I ended up 
+twisting my left knee soon after the jump.
 
 It was such a pain for the next 5 to 10 minutes. It kind of subsided, and I thought I could get back on my bike again (What a stupidity from me). As soon as
 I got on to my bike and tried to put my left leg down to balance the bike, I had a very sharp excruciating pain, and I could not balance any more with my
