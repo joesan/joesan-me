@@ -8,7 +8,7 @@ tags= ["zola", "hugo"]
 
 ## What happened?
 
-It was time to move again! In one of my [earlier posts](../misc/blogger-to-gh-pages.md), I have mentioned my move from
+It was time to move again! In one of my [earlier posts](../blogger-to-gh-pages.md), I have mentioned my move from
 Blogger to GH-Pages and for that I decided to go with Zola. It was all fine, but after a few months, I wanted to have
 few additional features for the [theme that I was using](https://deepthought-theme.netlify.app/). It was such a great and
 a simple theme and looked so elegant, but some features that I was in dire need of was kind of missing. 
