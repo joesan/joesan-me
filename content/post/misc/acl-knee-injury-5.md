@@ -12,7 +12,7 @@ This morning it was just a normal day as always. We always have some balloons in
 me. I also enjoy entertaining her for some time.
 
 So there were a few balloons in the hall, I casually like to kick it. As I kicked one off my right leg, my left leg kind of went out of balance, it 
-twisted (as I have no cross ligaments because of my [MTB accident 2 years ago](@/posts/misc/acl-knee-injury-1.md)). It was such a shocking sensation and such an 
+twisted (as I have no cross ligaments because of my [MTB accident 2 years ago](@post/misc/acl-knee-injury-1.md)). It was such a shocking sensation and such an 
 intense pain that I could not stand anymore, I fell down ferociously!
 
 My wife and my elder daughter who were nearby came rushing hearing the sound of my fall and my cries against the pain. For the next 5 to 10 minutes I felt 
