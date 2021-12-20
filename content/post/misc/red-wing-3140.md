@@ -2,6 +2,7 @@
 title="Navigating the Pentatonic Scale in Triangles"
 description="Thinking in terms of triangles"
 date=2021-12-19
+draft=true
 
 categories = ["Miscellaneous"]
 tags = ["boots"]
