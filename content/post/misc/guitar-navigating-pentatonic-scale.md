@@ -14,7 +14,7 @@ those boxes is not pleasant music. Frustrated, I looked at Youtube for some moti
 
 Luckily, this one video in Youtube that I found on a random search helped me immensely.
 
-{{ youtube(id="7xnBahYdWu8") }}
+{{< youtube 7xnBahYdWu8 >}}
 
 The idea is to think in terms of triangles and move back and forth to those triangles. Man this was wonderful, and 
 I now kind of get the idea! This helped me a lot in playing across the neck of my guitar. I now need to practice this
