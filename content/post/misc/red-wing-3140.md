@@ -8,6 +8,7 @@ categories = ["Miscellaneous"]
 tags = ["boots"]
 +++
 
+TODO: With new pics
 ## A blog on a pair of shoes?
 A bit unusual for my blog that I'm writing about a pair of shoes. It is still just a shoe, but it is a 
 [Red Wing Chukka, the 3140](https://www.redwingshoes.com/heritage/mens/Work-Chukka-03140.html?cgid=mens-heritage) in the Oro-Iginal
