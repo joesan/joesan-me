@@ -1,6 +1,6 @@
 +++
-title="Navigating the Pentatonic Scale in Triangles"
-description="Thinking in terms of triangles"
+title="Red Wing 3140 Work Chukka"
+description="Chukking in a chukka"
 date=2021-12-19
 draft=true
 

@@ -4,6 +4,20 @@
 
 :no_entry: Source code for my [blogging website](https://www.bigelectrons.com)
 
+## To try this project locally
+Use the following command to check out a local copy of the project, but before make sure to have hugo installed on your machine!
+
+```
+git clone --recurse-submodules https://github.com/joesan/joesan-me
+```
+
+Once checked out, navigate to the root folder of the project and just run ```hugo server``` which should start a local
+hugo server and render the static content. Now just open your browser and locate:
+
+```
+localhost:1313
+```
+
 ## Topics that I'm currently working on
 Please [find here](https://github.com/joesan/joesan-me/blob/draft-status/draftStatus.txt) is the list of topics / blog articles that I'm currently working on!
 
