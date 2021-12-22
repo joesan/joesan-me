@@ -18,6 +18,14 @@ hugo server and render the static content. Now just open your browser and locate
 localhost:1313
 ```
 
+## Folder organization
+.
+├── content                # Root folder for all blog content
+│  ├── post                # Contains the blog content
+├── backup                 # For files that I might need or might not need (like a bin)
+├── utils                  # Contains all source files for images, math notations etc.,
+├── help                   # Content to help with the Markdown syntax and theme options
+
 ## Topics that I'm currently working on
 Please [find here](https://github.com/joesan/joesan-me/blob/draft-status/draftStatus.txt) is the list of topics / blog articles that I'm currently working on!
 
