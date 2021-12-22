@@ -64,3 +64,4 @@ For documentation purposes, I'm summarizing here the list of tools that I use fo
 4. Draw LaTeX Symbols                - http://detexify.kirelabs.org/
 5. Online Markdown Editor            - https://dillinger.io/
 6. Markdown Emojis                   - https://gist.github.com/rxaviers/7360908
+7. Architecture Diagrams             - https://app.diagrams.net/
