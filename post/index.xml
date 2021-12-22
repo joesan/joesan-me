@@ -90,7 +90,7 @@ If you agree with me that writing less code equals lesser bugs, you are going to
 Let's look at them one by one. Let us see how the Builder design pattern is implemented in Java.
 Builder Pattern Builder design pattern helps in constructing a complex object in a series of steps. Let me take a classical example of preparing a Pizza, especially a vegetable Pizza!</description></item><item><title>Facts &amp; Knowledge Nuggets</title><link>https://bigelectrons.com/post/facts/facts/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://bigelectrons.com/post/facts/facts/</guid><description>
 This page exists for one single fact that upon a glance on the topic, you get your aha moment
-Scala Variant</description></item><item><title>Privacy Policy</title><link>https://bigelectrons.com/post/privacy/privacy-policy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://bigelectrons.com/post/privacy/privacy-policy/</guid><description>
+Scala Co-Variant &amp;amp; Contra-Variant</description></item><item><title>Privacy Policy</title><link>https://bigelectrons.com/post/privacy/privacy-policy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://bigelectrons.com/post/privacy/privacy-policy/</guid><description>
 Updated on: 19.12.2021
 This website does not collect any personally identifiable information that can be used to personally identify you. There are no cookies installed that could be used to track you.
 To learn more about cookies, please visit this website here.
