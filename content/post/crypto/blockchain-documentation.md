@@ -108,7 +108,7 @@ Roughly every 14 days the Bitcoin difficulty is adjusted such that the time betw
 
 The screeenshot below shows the latest block info (as of 3-Nov-2017) from the Bitcoing network:
 
-![Blockchain Info](https://github.com/joesan/blockchain-documentation/blob/master/images/Screen%20Shot%202018-02-03%20at%2002.06.07.png?raw=true "BlockInfo")
+![Blockchain Info](/images/blockchain-info.png)
 
 The puzzle is to find the hash with 18 leading zeros as it can be seen in the Hash! So you can imagine now why a Million dollar is needed to solve a single puzzle!
 
