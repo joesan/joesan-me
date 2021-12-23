@@ -18,7 +18,9 @@ This is a summary of the concepts around Blockchain technology!
 
 # The Blockchain challenge - The idea behind Mining or Proof-Of-Work:
 
-Here is a very simplistic view of what the actual miners do when mining for the Bitcoin, or rather to put it in mathematical terms, solving a puzzle - The puzzle is always to find the leading zeros in the resulting hash of a new block. For example., take a look at the following function written in Scala:
+Here is a very simplistic view of what the actual miners do when mining for the Bitcoin, or rather to put it in mathematical terms, solving a 
+puzzle - The puzzle is always to find the leading zeros in the resulting hash of a new block. For example., take a look 
+at the following function written in Scala:
 
 ```scala
 def sha256Hash(text: String) : String = String.format("%064x", new java.math.BigInteger(1, java.security.MessageDigest.getInstance("SHA-256").digest(text.getBytes("UTF-8"))))
@@ -35,13 +37,18 @@ def mineSomeShit(str: String, appender: String, difficulty: String): String = {
   }
 }
 ```
-We will hash the String "Hello" and see if the resulting hash contains a leading zero's (the difficulty we set). If we do not find the hash with the expected number of leading zeros (the difficulty we set) we will append the String "Hello" with 1 to the end and re-compute the hash and check if we have the needed number of leading zeros. So here our appender that we pass to the mineSomeShit method is the nonce!
+We will hash the String "Hello" and see if the resulting hash contains a leading zero's (the difficulty we set). If we do not find the 
+hash with the expected number of leading zeros (the difficulty we set) we will append the String "Hello" with 1 to the end and re-compute
+the hash and check if we have the needed number of leading zeros. So here our appender that we pass to the mineSomeShit method is the nonce!
 
 ```scala
 mineSomeShit("Hello", "1", "0")
 ```
 
-See I'm setting the difficulty to single zero which is what I expect to see at the staring position of the resulting hash. If I find a match from the resulting hash, I return, but if not, I keep appending a 1 to the end of "Hello" and continue hashing the resulting new String. This way of adding arbitrary String in our case "1" in Bitcoin terms is called a nonce! So a test run on my Mac would look this:
+See I'm setting the difficulty to single zero which is what I expect to see at the staring position of the resulting hash. If I find 
+a match from the resulting hash, I return, but if not, I keep appending a 1 to the end of "Hello" and continue hashing the 
+resulting new String. This way of adding arbitrary String in our case "1" in Bitcoin terms is called a nonce! So a test 
+run on my Mac would look this:
 
 ```diff
 scala> mineSomeShit("Hello", "1", "0")
@@ -56,7 +63,9 @@ b11cd38a7f952ff52348c60fa6436ad041f4273a6ad43200b48747ff7aae8557
 + 0xc547c99864a134db0c95e459b885e34b5e3ecd70f134e574c593e7fb113ef3
 ```
 
-So there we go! We found out the hash with a single leading zero - I solved this puzzle - I get a ShitCoin for my "Proof of Work". Let us now notch it up a little by setting the difficulty to finding 2 leading zeros in our resulting hash. A test run on my Mac is as below:
+So there we go! We found out the hash with a single leading zero - I solved this puzzle - I get a ShitCoin for my "Proof of Work". 
+Let us now notch it up a little by setting the difficulty to finding 2 leading zeros in our resulting hash. A test run 
+on my Mac is as below:
 
 ```diff
 scala> mineSomeShit("Hello", "1", "00") // Setting the difficulty to two leading zeros
@@ -71,7 +80,9 @@ b11cd38a7f952ff52348c60fa6436ad041f4273a6ad43200b48747ff7aae8557
 + 00c547c99864a134db0c95e459b885e34b5e3ecd70f134e574c593e7fb113ef3
 ```
 
-Ok! I get another ShitCoin - Glad that I can do this with my Mac! Let us notch it up even higher, this time around, the puzzle to solve is to find a hash with 3 leading zeros - Guess what, my Mac could not handle it, the JVM could not handle it! Here it is:
+Ok! I get another ShitCoin - Glad that I can do this with my Mac! Let us notch it up even higher, this time around, the 
+puzzle to solve is to find a hash with 3 leading zeros - Guess what, my Mac could not handle it, the JVM could not 
+handle it! Here it is:
 
 ```
 scala> mineSomeShit("Hello", "1", "000") // I'm setting the difficulty to 3 leading zeros
@@ -102,27 +113,40 @@ e69f3899145b9e4c40802235183ea90f3cb21051fabd05dfe341166a2f4fdb4c
 java.lang.OutOfMemoryError: Java heap space
 ```
 
-This is exactly what happens when mining BitCoins. You need computational power as the difficulty goes higher and higher with every batch of Blocks! There is no other way to find the hash with leading zeros, other than doing a brute force trial and error by adjusting a portion of the input block and calculating hashes over and over again until one of the hashes fulfills the puzzle by chance. Well, finding a hash with leading zero's is one thing while setting a target on the found hash with leadin zeros is what makes the mining even harder!
+This is exactly what happens when mining BitCoins. You need computational power as the difficulty goes higher and higher 
+with every batch of Blocks! There is no other way to find the hash with leading zeros, other than doing a brute force 
+trial and error by adjusting a portion of the input block and calculating hashes over and over again until one of the 
+hashes fulfills the puzzle by chance. Well, finding a hash with leading zero's is one thing while setting a target on 
+the found hash with leadin zeros is what makes the mining even harder!
 
-Roughly every 14 days the Bitcoin difficulty is adjusted such that the time between successive blocks remains constant at 10 minutes.
+Roughly every 14 days the Bitcoin difficulty is adjusted such that the time between successive blocks remains constant 
+at 10 minutes.
 
-The screeenshot below shows the latest block info (as of 3-Nov-2017) from the Bitcoing network:
+The screenshot below shows the latest block info (as of 3-Nov-2017) from the Bitcoin network:
 
 ![Blockchain Info](/images/blockchain-info.png)
 
-The puzzle is to find the hash with 18 leading zeros as it can be seen in the Hash! So you can imagine now why a Million dollar is needed to solve a single puzzle!
+The puzzle is to find the hash with 18 leading zeros as it can be seen in the Hash! So you can imagine now why a Million 
+dollar is needed to solve a single puzzle!
 
-If you then look at the following URL, you can figure out the latest BlockInfo and from there you can figure out the difficulty that is current when mining a block!
+If you then look at the following URL, you can figure out the latest BlockInfo and from there you can figure out the difficulty 
+that is current when mining a block!
 
 https://blockchain.info/block
 
-500 peta hashes per second is produced by the Blockchain network. The average of 10 minutes (time taken to mine a single block) is maintained dynamically by the Blockchain network!
+500 peta hashes per second is produced by the Blockchain network. The average of 10 minutes (time taken to mine a single block) 
+is maintained dynamically by the Blockchain network!
 
-SHA256 is just about flipping bits - flipping bits need energy - heat - with the heat generated from this hardware, I can heat my household, toast a bread, this hardware is specifically designed to do hashes - If you do not cool them they melt! - Doing this in Chennai, my home town which never has Winter, would not be economical!
+SHA256 is just about flipping bits - flipping bits need energy - heat - with the heat generated from this hardware, I can heat 
+my household, toast a bread, this hardware is specifically designed to do hashes - If you do not cool them they melt! - Doing 
+this in Chennai, my hometown which never has Winter, would not be economical!
 
-While at it, I wanted to create a simple private ethereum network and I did manage to do it and run them as Docker container's. I just ran two nodes on my Mac and I never saw my battery draining so fast! These Blockchain networks are certainly power thirsty! Take a look here for the Demo: https://github.com/joesan/lab-chain
+While at it, I wanted to create a simple private ethereum network, and I did manage to do it and run them as Docker container's. I 
+just ran two nodes on my Mac and I never saw my battery draining so fast! These Blockchain networks are certainly power thirsty! 
+Take a look here for the Demo: https://github.com/joesan/lab-chain
 
-Apart form this, if you can grasp the ideas behind the following topics, you have understood somewhat technically what Blockchain is and how it works in the Bitcoin setup.
+Apart from this, if you can grasp the ideas behind the following topics, you have understood somewhat technically what Blockchain 
+is and how it works in the Bitcoin setup.
 
 1. Transactions
 2. Difficulty
