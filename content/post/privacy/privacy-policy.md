@@ -9,7 +9,7 @@ showDate=false
 Updated on: **19.12.2021**
 
 This website does not collect any personally identifiable information that can be used to personally identify you. 
-There are no cookies installed that could be used to track you.
+There are no cookies installed that could be used to individually track you.
 
 To learn more about cookies, please [visit this website here](https://www.cookiesandyou.com).
 
