@@ -57,10 +57,17 @@ where xi are horizontal distances, yi are vertical distances
 
 ## Data Loading
 
+TODO
+
 ## The Algorithm
+
+TODO
 
 ## Train & Validate
 
+TODO
+
 ## Test
 
+TODO
 
