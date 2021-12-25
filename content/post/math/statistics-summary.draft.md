@@ -26,6 +26,8 @@ TODO
 
 ## Mode
 
+TODO
+
 ## Range
 
 ## Quartiles
