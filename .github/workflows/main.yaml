@@ -5,7 +5,7 @@ on:
     paths-ignore:
       - 'README.md'
       - 'backup/**'
-      - 'content/**/*.draft.md'
+      - 'content/**/*.draft'
       - 'util/**'
       - 'help/**'
       - '.gitignore'
