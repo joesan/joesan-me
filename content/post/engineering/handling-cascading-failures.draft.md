@@ -16,4 +16,8 @@ systems at once and even more, we need to be able to isolate a problem in a Soft
 effect is not felt by the other applications. In this blog post, I would like to explore a bit on what possibilities
 exist to safeguard applications from a cascading failure effect.
 
+## Hypothetical System
+
+Let us assume that the system of interest is as below (for explanation’s sake)
+
 
