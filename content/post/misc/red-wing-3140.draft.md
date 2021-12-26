@@ -1,13 +1,14 @@
 +++
 title="Red Wing 3140 Work Chukka"
 description="Chukking in a chukka"
-date=2021-12-19
+date=2021-12-18
 draft=true
 
 categories = ["Miscellaneous"]
 tags = ["boots"]
 +++
 
+**Disclaimer**: I'm not paid to write about this post, this is purely my ownership experience using these boots!
 ## A blog on a pair of shoes?
 A bit unusual for my blog that I'm writing about a pair of shoes. It is still just a shoe, but it is a 
 [Red Wing Chukka, the 3140](https://www.redwingshoes.com/heritage/mens/Work-Chukka-03140.html?cgid=mens-heritage) in the Oro-Iginal
@@ -19,7 +20,8 @@ in serious need of a pair that is rugged and at the same time easy on my knee. E
 ![Red Wing 3140 Boots 2](/images/misc/boots/3140_Boots_2.jpg)
 
 I went with this Oro-Iginal leather as I find the color to be more versatile. It should look good in a casual setting and should
-give me a contrast look when paired with my raw denim pants.
+give me a contrast look when paired with my raw denim pants. I'm not new to Red Wing shoes as I have owned a pair of the
+[Iron Ranger 8085 boots](../red-wing-8085-1) that I have been using for a few years until the recent flooding to which I lost it. 
 
 Why do I want to write a blog article about this? The main reason being that I have been struggling with my pair of shoes that
 I have purchased from the local shoe store which is making my knee problems worse. If you scroll through a few posts from the past, 
@@ -70,6 +72,9 @@ still widely used. This construction gives these boots extreme durability.
 ![Red Wing 3140 Welt](/images/misc/boots/3140_Welt_1.jpg)
 ![Red Wing 3140 Welt](/images/misc/boots/3140_Welt_2.jpg)
 
+Thankfully, I had a pair of laces lying around which was longer by a few inches. The stock ones that came with the shoe is
+a bit smaller. I just replaced it with the Moc Toe laces that I had as a spare.
+
 The soles in the Work Chukka is not stitched to the welt like in the [Moc Toe](https://www.redwingshoes.com/heritage/mens/Classic-Moc-08138.html?cgid=mens-heritage), 
 but rather is just glued. The glue has a tendency to come off after a certain period of time. I have seen people complaining
 of the sloe detaching from the shoe. But this is not an issue as it can be resoled countless number of times (though they incur some cost).
@@ -83,3 +88,6 @@ to wrestle against some hard leather, but trust me it gets smooth (just like eve
 
 A mention on the outer sole which is where the magic for my knee happens. It is super soft that is so very comfortable
 when walking long distances.
+
+So there it is! The [Red Wing 3140 Chukka](https://www.redwingshoes.com/heritage/mens/Work-Chukka-03140.html?cgid=mens-heritage) in 
+Oro-Iginal leather that I can use for decades to come.
