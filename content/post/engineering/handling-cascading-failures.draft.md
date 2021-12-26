@@ -18,6 +18,6 @@ exist to safeguard applications from a cascading failure effect.
 
 ## Hypothetical System
 
-Let us assume that the system of interest is as below (for explanation’s sake)
+Let us assume that the system of interest is as shown below (for explanation’s sake)
 
 
