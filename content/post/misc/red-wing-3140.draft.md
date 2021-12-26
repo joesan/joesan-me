@@ -16,7 +16,7 @@ leather. There is a reason why I'm writing about this piece of hardware that bri
 experienced pain in my left knee for days together after walking with my current shoe and trust me, this is no fun. I was
 in serious need of a pair that is rugged and at the same time easy on my knee. Enter the Red Wing Work Chukka 3140!
 
-![Red Wing 3140 Shoe 1](/images/misc/3140_1.jpg)
+![Red Wing 3140 Shoe 1](/images/misc/boots/3140_Shoe_1.jpg)
 
 I went with this Oro-Iginal leather as I find the color to be more versatile. It should look good in a casual setting and should
 give me a contrast look when paired with my raw denim pants.
@@ -28,7 +28,7 @@ Most of the shoes that I have been using are making the problems worse. I needed
 and at the same time is soft to walk long distances. Red Wing Chukkas kind of tick both the boxes for me. It is this combination
 of the leather, and the tread sole that made me to purchase this pair.
 
-![Red Wing 3140 Shoe 2](/images/misc/3140_1.jpg)
+![Red Wing 3140 Shoe 2](/images/misc/boots/3140_Shoe_2.jpg)
 
 ## Sizing
 You need to be careful with sizing as some Red Wing models like their [Moc Toe](https://www.redwingshoes.com/heritage/mens/Classic-Moc-08138.html?cgid=mens-heritage), 
@@ -40,7 +40,7 @@ With the Work Chukka, go a half size down from your normal shoe size.
 In my case, I'm a US 11 on a normal shoe that you get from the ubiquitous shoe store, hence I landed a US size 10.5 on my Chukka. I can
 wear a think or a thin socks and I have no complaints!
 
-![Red Wing 3140 Size](/images/misc/3140_2_Size.jpg)
+![Red Wing 3140 Size](/images/misc/boots/3140_Size_1.jpg)
 
 ## Leather
 The leather Oil-tanned, meaning that the leather is impregnated with oil during it's construction. It is equivalent to water proofing the leather
@@ -50,9 +50,9 @@ certain extent.
 
 If you take proper care of the leather, it should you last you forever.
 
-![Red Wing 3140 Leather 1](/images/misc/3140_4.jpg)
+![Red Wing 3140 Leather 1](/images/misc/boots/3140_4.jpg)
 
-![Red Wing 3140 Leather 2](/images/misc/3140_5.jpg)
+![Red Wing 3140 Leather 2](/images/misc/boots/3140_5.jpg)
 
 ## Comfort & Durability
 Nope! It is not comfortable the very first moment you have them on your foot. It takes some taming. Be ready to have some pain, discomfort
@@ -66,14 +66,14 @@ absolutely have no complaints on the D width. The fit like a glove.
 The shoe is 360° [Good Year welt](https://en.wikipedia.org/wiki/Goodyear_welt), a construction method introduced in the 19th century and
 still widely used. This construction gives these boots extreme durability. 
 
-TODO...... Show a picture of the welt
+![Red Wing 3140 Welt](/images/misc/boots/3140_Welt_1.jpg)
 
 The soles in the Work Chukka is not stitched to the welt like in the [Moc Toe](https://www.redwingshoes.com/heritage/mens/Classic-Moc-08138.html?cgid=mens-heritage), 
 but rather is just glued. The glue has a tendency to come off after a certain period of time. I have seen people complaining
 of the sloe detaching from the shoe. But this is not an issue as it can be resoled countless number of times (though they incur some cost).
 There is a possibility to resole this in such a way that it can be stitched to the welt. I will do this once my sole wears out.
 
-![Red Wing 3140 Sole](/images/misc/3140_3_Sole.jpg)
+![Red Wing 3140 Sole](/images/misc/boots/3140_Inner_Sole_1.jpg)
 
 There is a leather inner sole that gets shaped to your foot after a few months of wear. You can literally feel your toe marks
 after a few months of wear indicating that the shoes are truly yours. It is a bit uncomfortable when you start as your foot has
