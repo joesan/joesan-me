@@ -8,7 +8,6 @@ categories = ["Miscellaneous"]
 tags = ["boots"]
 +++
 
-TODO: With new pics
 ## A blog on a pair of shoes?
 A bit unusual for my blog that I'm writing about a pair of shoes. It is still just a shoe, but it is a 
 [Red Wing Chukka, the 3140](https://www.redwingshoes.com/heritage/mens/Work-Chukka-03140.html?cgid=mens-heritage) in the Oro-Iginal
@@ -16,7 +15,8 @@ leather. There is a reason why I'm writing about this piece of hardware that bri
 experienced pain in my left knee for days together after walking with my current shoe and trust me, this is no fun. I was
 in serious need of a pair that is rugged and at the same time easy on my knee. Enter the Red Wing Work Chukka 3140!
 
-![Red Wing 3140 Shoe 1](/images/misc/boots/3140_Shoe_1.jpg)
+![Red Wing 3140 Boots 1](/images/misc/boots/3140_Boots_1.jpg)
+![Red Wing 3140 Boots 2](/images/misc/boots/3140_Boots_2.jpg)
 
 I went with this Oro-Iginal leather as I find the color to be more versatile. It should look good in a casual setting and should
 give me a contrast look when paired with my raw denim pants.
@@ -28,6 +28,7 @@ Most of the shoes that I have been using are making the problems worse. I needed
 and at the same time is soft to walk long distances. Red Wing Chukkas kind of tick both the boxes for me. It is this combination
 of the leather, and the tread sole that made me to purchase this pair.
 
+![Red Wing 3140 Shoe 1](/images/misc/boots/3140_Shoe_1.jpg)
 ![Red Wing 3140 Shoe 2](/images/misc/boots/3140_Shoe_2.jpg)
 
 ## Sizing
@@ -50,9 +51,9 @@ certain extent.
 
 If you take proper care of the leather, it should you last you forever.
 
-![Red Wing 3140 Leather 1](/images/misc/boots/3140_4.jpg)
+![Red Wing 3140 Leather 1](/images/misc/boots/3140_Leather_1.jpg)
 
-![Red Wing 3140 Leather 2](/images/misc/boots/3140_5.jpg)
+![Red Wing 3140 Leather 2](/images/misc/boots/3140_Leather_2.jpg)
 
 ## Comfort & Durability
 Nope! It is not comfortable the very first moment you have them on your foot. It takes some taming. Be ready to have some pain, discomfort
