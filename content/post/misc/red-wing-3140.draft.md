@@ -68,6 +68,7 @@ The shoe is 360° [Good Year welt](https://en.wikipedia.org/wiki/Goodyear_welt),
 still widely used. This construction gives these boots extreme durability. 
 
 ![Red Wing 3140 Welt](/images/misc/boots/3140_Welt_1.jpg)
+![Red Wing 3140 Welt](/images/misc/boots/3140_Welt_2.jpg)
 
 The soles in the Work Chukka is not stitched to the welt like in the [Moc Toe](https://www.redwingshoes.com/heritage/mens/Classic-Moc-08138.html?cgid=mens-heritage), 
 but rather is just glued. The glue has a tendency to come off after a certain period of time. I have seen people complaining
@@ -80,5 +81,5 @@ There is a leather inner sole that gets shaped to your foot after a few months o
 after a few months of wear indicating that the shoes are truly yours. It is a bit uncomfortable when you start as your foot has
 to wrestle against some hard leather, but trust me it gets smooth (just like every other relationship) after few interactions.
 
-![Red Wing 3140 Sole](/images/misc/3140_6.jpg)
-
+A mention on the outer sole which is where the magic for my knee happens. It is super soft that is so very comfortable
+when walking long distances.
