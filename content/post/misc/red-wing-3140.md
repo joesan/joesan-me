@@ -2,7 +2,6 @@
 title="Red Wing 3140 Work Chukka"
 description="Chukking in a chukka"
 date=2021-12-18
-draft=true
 
 categories = ["Miscellaneous"]
 tags = ["boots"]
@@ -21,7 +20,7 @@ in serious need of a pair that is rugged and at the same time easy on my knee. E
 
 I went with this Oro-Iginal leather as I find the color to be more versatile. It should look good in a casual setting and should
 give me a contrast look when paired with my raw denim pants. I'm not new to Red Wing shoes as I have owned a pair of the
-[Iron Ranger 8085 boots](../red-wing-8085-1) that I have been using for a few years until the recent flooding to which I lost it. 
+that I have been using for a few years until the recent flooding to which I lost it. 
 
 Why do I want to write a blog article about this? The main reason being that I have been struggling with my pair of shoes that
 I have purchased from the local shoe store which is making my knee problems worse. If you scroll through a few posts from the past, 
