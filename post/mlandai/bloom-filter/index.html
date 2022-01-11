@@ -180,18 +180,18 @@ index is still 0 is given by the following equation:</p>
 <p>The above equation is based on the assumption that the hash functions are independent of each other. Now by substituting this value for P(0)
 in {{ textcolor(color="red" text="<em>eq (2)</em>") }} and doing a bit of re-arranging, we get the probability of a false positive:</p>
 <p>$ P(1) = (1- [1 - \frac{1}{m}]^{kn})^{k} $ -----> <em>eq (6)</em></p>
-<p>With that being said, how do we choose the number of hash functions and the size of the bit array for the Bloom filter. It turns out thar there are some formulas
-that hold good to determine them:</p>
+<p>With that being said, how do we choose the number of hash functions and the size of the bit array for the Bloom filter. It turns out that
+there are some formulas that hold good to determine them:</p>
 <p>$ m = -\frac{n*lnP}{(ln2)^{2}} $ -----> <em>eq (7)</em></p>
 <p>$ k = \frac{m}{n}(ln2) $ -----> <em>eq (8)</em></p>
 <p>I'm trying to figure out how <em>eq (7)</em> and <em>eq (8)</em> works out, but for the sake of this article, we can use them to determine one value from the other.</p>
 <h2 id=hash-functions>Hash Functions</h2>
-<p>The choice of the hash functions that will be used should be independent of each other, i.,e the outcome of one of the hash function should not have any effect on
-the outcome of the other hash functions. The opted hash functions should be fast. It is recommended to use non-cryptographic hash functions like the murmur hash.
-Have a <a href=https://www.anchor.com.au/blog/2012/12/how-to-explain-hash-dos-to-your-parents-by-using-cats/>look here</a> on why murmur3 should not be used in a
+<p>The choice of the hash functions that will be used should be independent of each other, i.,e the outcome of one of the hash function
+should not have any effect on the outcome of the other hash functions. The opted hash functions should be fast. It is recommended
+to use non-cryptographic hash functions like the murmur hash. Have a <a href=https://www.anchor.com.au/blog/2012/12/how-to-explain-hash-dos-to-your-parents-by-using-cats/>look here</a> on why murmur3 should not be used in a
 security context.</p>
-<p>The performance of the Bloom filter is directly proportional to the number of hash functions used, as there is a tendency for the Bloom filter to become slow when
-more hash functions are used.</p>
+<p>The performance of the Bloom filter is directly proportional to the number of hash functions used, as there is a tendency for the Bloom
+filter to become slow when more hash functions are used.</p>
 <p>I will probably revisit this content later on, but for now I'll wrap it up here!</p>
 <h2 id=application--usage>Application & Usage</h2>
 <p>Where do we use Bloom filters - Everywhere where we want to do a look up and everywhere where the false positives can be tolerated!</p>
