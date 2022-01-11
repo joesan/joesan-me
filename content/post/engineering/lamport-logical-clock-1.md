@@ -39,11 +39,10 @@ For any NE, the counter will be incremented and, the new Event will have the inc
 
 For any SE or RE, the following has to happen:
 
-1. The sender Node need to send the Event with the current counter value that the Event which is being sent has
-2. The receiver Node, upon reception of the message, should then check for the counter value and should make sure it satisfies the following conditions:
-   - The time of reception should be greater that the time of send
-   - The receiver node should check against it's very own logical counter, and use the formula below to update the counter value in the newly received message
-   new counter value = max(receive event counter++, local counter)
+    1. The sender Node need to send the Event with the current counter value that the Event which is being sent has
+    2. The receiver Node, upon reception of the message, should then check for the counter value and should make sure it satisfies the following conditions:
+       2.1 The time of reception should be greater that the time of send
+       2.2 The receiver node should check against it's very own logical counter, and use the formula below to update the counter value in the newly received message new counter value = max(receive event counter++, local counter)
 
 So what happens at 2.2 is that as soon as a Node receives an Event, it immediately increments the counter value which is in the event and then 
 checks / compares against its local counter value and whichever is the maximum, will then be this event's new counter value. The global counter in this 
