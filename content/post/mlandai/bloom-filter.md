@@ -121,8 +121,8 @@ in {{ textcolor(color="red" text="*eq (2)*") }} and doing a bit of re-arranging,
 
 $ P(1) = (1- [1 - \frac{1}{m}]^{kn})^{k} $ -----> *eq (6)*
 
-With that being said, how do we choose the number of hash functions and the size of the bit array for the Bloom filter. It turns out thar there are some formulas
-that hold good to determine them:
+With that being said, how do we choose the number of hash functions and the size of the bit array for the Bloom filter. It turns out that 
+there are some formulas that hold good to determine them:
 
 $ m = -\frac{n*lnP}{(ln2)^{2}} $ -----> *eq (7)*
 
@@ -132,13 +132,13 @@ I'm trying to figure out how *eq (7)* and *eq (8)* works out, but for the sake o
 
 ## Hash Functions
 
-The choice of the hash functions that will be used should be independent of each other, i.,e the outcome of one of the hash function should not have any effect on
-the outcome of the other hash functions. The opted hash functions should be fast. It is recommended to use non-cryptographic hash functions like the murmur hash.
-Have a [look here](https://www.anchor.com.au/blog/2012/12/how-to-explain-hash-dos-to-your-parents-by-using-cats/) on why murmur3 should not be used in a 
+The choice of the hash functions that will be used should be independent of each other, i.,e the outcome of one of the hash function 
+should not have any effect on the outcome of the other hash functions. The opted hash functions should be fast. It is recommended 
+to use non-cryptographic hash functions like the murmur hash. Have a [look here](https://www.anchor.com.au/blog/2012/12/how-to-explain-hash-dos-to-your-parents-by-using-cats/) on why murmur3 should not be used in a 
 security context.
 
-The performance of the Bloom filter is directly proportional to the number of hash functions used, as there is a tendency for the Bloom filter to become slow when
-more hash functions are used.
+The performance of the Bloom filter is directly proportional to the number of hash functions used, as there is a tendency for the Bloom 
+filter to become slow when more hash functions are used.
 
 I will probably revisit this content later on, but for now I'll wrap it up here!
 
