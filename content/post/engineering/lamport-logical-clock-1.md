@@ -18,7 +18,7 @@ we need to somehow find a way to guarantee message ordering. Ok, yo we can rely 
 System clocks struggle from [Clock Skew](https://en.wikipedia.org/wiki/Clock_skew) and [Clock Drift](https://en.wikipedia.org/wiki/Clock_drift). On a 
 distributed system, you cannot have something that acts like a global clock as that would one massively bring down scalability and increase your single 
 point of failure. So a finesse solution would be to have something like a logical clock that each node in the application tracks and knows how to adapt 
-it's clock against it's own message evolution and for the messages that it received from other nodes. One such algorithm is the so 
+its clock against its own message evolution and for the messages that it received from other nodes. One such algorithm is the so 
 called [Lamport Logical Clock](https://en.wikipedia.org/wiki/Lamport_timestamp#Lamport's_logical_clock_in_distributed_systems)
 
 I will try to simplify with my explanation on how this algorithm works.
