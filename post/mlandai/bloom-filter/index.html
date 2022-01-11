@@ -81,39 +81,41 @@ Feb 26, 2021</span>
 </span>
 </div>
 <div class=post_body><h2 id=definition>Definition</h2>
-<p>Simply put, a Bloom filter is a space-efficient probabilistic data structure with which we can determine the probable existence of a certain thing in a certain
-data set, and we can determine the non-existence of a certain thing in a certain data set with utmost accuracy. Doing all this in a memory space efficient manner.</p>
-<p>In a gist, Bloom filters are about determining if an element {{ textcolor(color="red" text="may be in a set") }} or {{ textcolor(color="red" text="is definitely not in a set") }}</p>
+<p>Simply put, a Bloom filter is a space-efficient probabilistic data structure with which we can determine the probable existence
+of a certain thing in a certain data set, and we can determine the non-existence of a certain thing in a certain data set
+with utmost accuracy. Doing all this in a memory space efficient manner.</p>
+<p>In a gist, Bloom filters are about determining if an element may be in a set or is definitely not in a set</p>
 <h2 id=allowed-operations>Allowed Operations</h2>
-<p>You can only do one of the two operations on a given Bloom filter. You could still extend the Bloom filter to remove elements, but we stick to these two
-operations for discussion’s sake:</p>
+<p>You can only do one of the two operations on a given Bloom filter. You could still extend the Bloom filter to remove elements,
+but we stick to these two operations for discussion’s sake:</p>
 <ol>
 <li>
-<p>Insert a new element - {{ textcolor(color="red" text="add") }}</p>
+<p>Insert a new element - add</p>
 </li>
 <li>
-<p>Check for an element - {{ textcolor(color="red" text="verify") }}</p>
+<p>Check for an element - verify</p>
 </li>
 </ol>
 <h2 id=mechanics>Mechanics</h2>
 <p>The Bloom filter works by populating a bit Vector of a specific length. To understand Bloom filter, we need to understand Hashing. You might have used
 Hashing in a cryptographic context where you take a data of arbitrary size, run it through some algorithm, and you get back a value that is of a fixed
 size or often times called the hash value. Most of the time such hash functions are one way operations. Why do we care about Hashing by the way for
-discussing Bloom filters? Using a simple non-cryptographic hash such as the murmur3 (multiply, rotate, multiply, rotate) is a good choice for doing lookup tasks based on hashes. It is
-a simple and a fast algorithm and finds its usage in common scenarios like checksum, id generators. So this becomes a natural choice for using with Bloom filters.</p>
+discussing Bloom filters? Using a simple non-cryptographic hash such as the murmur3 (multiply, rotate, multiply, rotate) is a good choice
+for doing lookup tasks based on hashes. It is a simple and a fast algorithm and finds its usage in common scenarios like checksum,
+id generators. So this becomes a natural choice for using with Bloom filters.</p>
 <p>It is all about doing some math with the following four variables:</p>
 <ul>
 <li>
-<p>{{ textcolor(color="red" text="n:") }} Represents the number of input elements</p>
+<p>n: Represents the number of input elements</p>
 </li>
 <li>
-<p>{{ textcolor(color="red" text="m:") }} Represents the memory used by the bit-array or in other words, the size of the array</p>
+<p>m: Represents the memory used by the bit-array or in other words, the size of the array</p>
 </li>
 <li>
-<p>{{ textcolor(color="red" text="k:") }} The total number of hash functions to be used</p>
+<p>k: The total number of hash functions to be used</p>
 </li>
 <li>
-<p>{{ textcolor(color="red" text="p:") }} The probability of a false positive</p>
+<p>p: The probability of a false positive</p>
 </li>
 </ul>
 <p>The image below shows an empty Bloom filter with a bit array of size m (here 10 elements), initialized to 0 for all the elements.</p>
@@ -125,10 +127,10 @@ a simple and a fast algorithm and finds its usage in common scenarios like check
 </figure>
 </p>
 <p>Let us assume that for simplicity we just have k (the number of hash functions) set to 2, and our hash functions looks like this:</p>
-<p>Hash Function 1 (H1) {{ textcolor(color="red" text="=") }} input mod 2 {{ textcolor(color="red" text="=>") }} H1(“foo”) % 2 {{ textcolor(color="red" text="=") }} 2</p>
-<p>Hash Function 2 (H2) {{ textcolor(color="red" text="=") }} input mod 6 {{ textcolor(color="red" text="=>") }} H2(“foo”) % 6 {{ textcolor(color="red" text="=") }} 6</p>
-<p>The result of the hash functions mean that we will set the corresponding bits in the Bloom filter array to 1. For example., at the bit positions 2 and 6, we will
-flip the values to 1 as seen in the image below:</p>
+<p>Hash Function 1 (H1) = input mod 2 => H1(“foo”) % 2 = 2</p>
+<p>Hash Function 2 (H2) = input mod 6 => H2(“foo”) % 6 = 6</p>
+<p>The result of the hash functions mean that we will set the corresponding bits in the Bloom filter array to 1. For example.,
+at the bit positions 2 and 6, we will flip the values to 1 as seen in the image below:</p>
 <p>
 <figure>
 <picture>
@@ -137,8 +139,8 @@ flip the values to 1 as seen in the image below:</p>
 </figure>
 </p>
 <p>Let us now do the same for another entry:</p>
-<p>Hash Function 1 (H1) {{ textcolor(color="red" text="=") }} input mod 2 {{ textcolor(color="red" text="=>") }} H1(“bar”) % 2 {{ textcolor(color="red" text="=") }} 4</p>
-<p>Hash Function 2 (H2) {{ textcolor(color="red" text="=") }} input mod 6 {{ textcolor(color="red" text="=>") }} H2(“bar”) % 6 {{ textcolor(color="red" text="=") }} 8</p>
+<p>Hash Function 1 (H1) = input mod 2 => H1(“bar”) % 2 = 4</p>
+<p>Hash Function 2 (H2) = input mod 6 => H2(“bar”) % 6 = 8</p>
 <p>We then set our Bloom filter indices accordingly, which is shown in the image below:</p>
 <p>
 <figure>
@@ -147,40 +149,42 @@ flip the values to 1 as seen in the image below:</p>
 </picture>
 </figure>
 </p>
-<p>That's it, for our example's sake, we are done with insertion. Let us now check for the existence of a certain element in the Bloom filter! The lookup works more or
-less the same way as an insert where we run the text to be looked up through the hash functions, check if the indices are set to 1. If all the indices are set to 1,
-then we can say that particular text is probably present. If in case any one of the indices is not set to 1, then we can for sure say that the text is not present.</p>
-<p>Let's test it for the text {{ textcolor(color="red" text="foo") }}:</p>
-<p>Hash Function 1 (H1) {{ textcolor(color="red" text="=") }} input mod 2 {{ textcolor(color="red" text="=>") }} H1(“foo”) % 2 {{ textcolor(color="red" text="=") }} 2</p>
-<p>Hash Function 2 (H2) {{ textcolor(color="red" text="=") }} input mod 6 {{ textcolor(color="red" text="=>") }} H2(“foo”) % 6 {{ textcolor(color="red" text="=") }} 6</p>
-<p>We can see from the populated Bloom filter that the indices at positions 2 and 6 are set to 1, so we have a potential false positive or a true positive or in other words
-we can probably say that the text might be present.</p>
-<p>Let's test if for the text {{ textcolor(color="red" text="nope") }}:</p>
-<p>Hash Function 1 (H1) {{ textcolor(color="red" text="=") }} input mod 2 {{ textcolor(color="red" text="=>") }} H1(“nope”) % 2 {{ textcolor(color="red" text="=") }} 2</p>
-<p>Hash Function 2 (H2) {{ textcolor(color="red" text="=") }} input mod 6 {{ textcolor(color="red" text="=>") }} H2(“nope”) % 6 {{ textcolor(color="red" text="=") }} 5</p>
-<p>There we have a 0 at index 5, so we have a potential true negative or in other words we can for sure say that this text is not present. Yes, it is that simple!</p>
-<p>We can indeed tweak the output of the Bloom filter by adjusting the size of the bit set. By adding more elements to the bit set, or the number of indices, we reduce
-the eventual probability of getting false positives. Probability of getting a false positive also decreases by increasing the number of hash functions.</p>
+<p>That's it, for our example's sake, we are done with insertion. Let us now check for the existence of a certain element in
+the Bloom filter! The lookup works more or less the same way as an insert where we run the text to be looked up through the
+hash functions, check if the indices are set to 1. If all the indices are set to 1, then we can say that particular text is
+probably present. If in case any one of the indices is not set to 1, then we can for sure say that the text is not present.</p>
+<p>Let's test it for the text foo:</p>
+<p>Hash Function 1 (H1) = input mod 2 => H1(“foo”) % 2 = 2</p>
+<p>Hash Function 2 (H2) = input mod 6 => H2(“foo”) % 6 = 6</p>
+<p>We can see from the populated Bloom filter that the indices at positions 2 and 6 are set to 1, so we have a potential false
+positive or a true positive or in other words we can probably say that the text might be present.</p>
+<p>Let's test if for the text nope:</p>
+<p>Hash Function 1 (H1) = input mod 2 => H1(“nope”) % 2 = 2</p>
+<p>Hash Function 2 (H2) = input mod 6 => H2(“nope”) % 6 = 5</p>
+<p>There we have a 0 at index 5, so we have a potential true negative or in other words we can for sure say that this text is
+not present. Yes, it is that simple!</p>
+<p>We can indeed tweak the output of the Bloom filter by adjusting the size of the bit set. By adding more elements to the
+bit set, or the number of indices, we reduce the eventual probability of getting false positives. Probability of getting a
+false positive also decreases by increasing the number of hash functions.</p>
 <p>The probability that a hash function sets an index to 1 in a set of m elements is given by:</p>
-<p>$ P(1) = \frac{1}{m} $ {{ textcolor(color="red" text="-----> <em>eq (1)</em>") }}</p>
+<p>$ P(1) = \frac{1}{m} -----> <em>eq (1)</em></p>
 <p>The probability that a given hash function fails to set an index to 1 in a set of m elements is given by:</p>
-<p>$ P(0) = 1 - P(1) $ {{ textcolor(color="red" text="-----> <em>eq (2)</em>") }}</p>
+<p>$ P(0) = 1 - P(1) $ -----> <em>eq (2)</em></p>
 <p>From the laws of Probabilities, the sum of probabilities add up to 1, hence:</p>
-<p>$ P(0) + P(1) = 1 $ rearranging, we get $ P(0) = 1 - P(1) $ {{ textcolor(color="red" text="-----> <em>eq (3)</em>") }}</p>
+<p>$ P(0) + P(1) = 1 $ rearranging, we get $ P(0) = 1 - P(1) $ -----> <em>eq (3)</em></p>
 <p>So we end up with the following probability for one hash function failing to set a given index or bit to 1:</p>
-<p>$ P(0) = 1 - \frac{1}{m} $ {{ textcolor(color="red" text="-----> <em>eq (4)</em>") }}</p>
+<p>$ P(0) = 1 - \frac{1}{m} $ -----> <em>eq (4)</em></p>
 <p>Hence, after we have inserted all the elements (say n) in the Bloom filter, by running through k number of hash functions, the probability that a particular
 index is still 0 is given by the following equation:</p>
-<p>$ P(0) = (1 - \frac{1}{m})^{kn} $ {{ textcolor(color="red" text="-----> <em>eq (5)</em>") }}</p>
+<p>$ P(0) = (1 - \frac{1}{m})^{kn} $ -----> <em>eq (5)</em></p>
 <p>The above equation is based on the assumption that the hash functions are independent of each other. Now by substituting this value for P(0)
 in {{ textcolor(color="red" text="<em>eq (2)</em>") }} and doing a bit of re-arranging, we get the probability of a false positive:</p>
-<p>$ P(1) = (1- [1 - \frac{1}{m}]^{kn})^{k} $ {{ textcolor(color="red" text="-----> <em>eq (6)</em>") }}</p>
+<p>$ P(1) = (1- [1 - \frac{1}{m}]^{kn})^{k} $ -----> <em>eq (6)</em></p>
 <p>With that being said, how do we choose the number of hash functions and the size of the bit array for the Bloom filter. It turns out thar there are some formulas
 that hold good to determine them:</p>
-<p>$ m = -\frac{n*lnP}{(ln2)^{2}} $ {{ textcolor(color="red" text="-----> <em>eq (7)</em>") }}</p>
-<p>$ k = \frac{m}{n}(ln2) $ {{ textcolor(color="red" text="-----> <em>eq (8)</em>") }}</p>
-<p>I'm trying to figure out how {{ textcolor(color="red" text="<em>eq (7)</em>") }} and {{ textcolor(color="red" text="<em>eq (8)</em>") }} works out, but for the sake of
-this article, we can use them to determine one value from the other.</p>
+<p>$ m = -\frac{n*lnP}{(ln2)^{2}} $ -----> <em>eq (7)</em></p>
+<p>$ k = \frac{m}{n}(ln2) $ -----> <em>eq (8)</em></p>
+<p>I'm trying to figure out how <em>eq (7)</em> and <em>eq (8)</em> works out, but for the sake of this article, we can use them to determine one value from the other.</p>
 <h2 id=hash-functions>Hash Functions</h2>
 <p>The choice of the hash functions that will be used should be independent of each other, i.,e the outcome of one of the hash function should not have any effect on
 the outcome of the other hash functions. The opted hash functions should be fast. It is recommended to use non-cryptographic hash functions like the murmur hash.
