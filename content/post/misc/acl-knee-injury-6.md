@@ -8,8 +8,8 @@ tags = ["acl"]
 +++
 
 
-I could not say this more than what the title says. I had a very severe blow to my already damaged left knee. First a bit of history [here](@acl-knee-injury-1.md) 
-and [here](@acl-knee-injury-2.md). 
+I could not say this more than what the title says. I had a very severe blow to my already damaged left knee. First a bit of history [here](../acl-knee-injury-1.md) 
+and [here](../acl-knee-injury-2.md). 
 
 It was on the 28th of September where I went for my first ever defensive sport training called "VingTsun". Inspired by my Physio friend who is a beginner, 
 I decided to give this training a try. I indeed watched few videos of it before committing myself to joining him for the training session which starts 
