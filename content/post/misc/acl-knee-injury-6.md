@@ -21,8 +21,8 @@ stop, jump, run. Run was Okay, Run was Okay, Stop was Okay, but when I jumped (I
 and I fell down with such an excruciating pain. The pain was so intense that I could not breathe anymore, I was gasping for air. 
 
 My Physio friend tried to help out by pressing his hand against my knee, but that did not help. For the next 10 minutes I was just shouting out loud without 
-being able to bear the pain. I got some ice applied, and I was just moved over to the corner of the room. Since my home is a few kilometers away, and I was 
-not in a position to travel back alone, I waited for the session to finish. My physio friend toed my on my bike back home.
+being able to bear the pain. I got some ice applied, and I was just moved over to the corner of the room. As my home is a few kilometers away, and I was 
+not in a position to travel back alone, I waited for the session to finish. My physio friend toed me on my bike back home.
 
 Fast-forward a week, I'm back with my crutches. I think it is time for me to think about getting this damn thing operated. The pain was there for almost a 
 week, and I still have the effect in my knee from the impact.  
