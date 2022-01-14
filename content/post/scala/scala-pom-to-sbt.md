@@ -42,7 +42,7 @@ val lines = (XML.load("pom.xml") \\ "dependencies") \ "dependency" map { depende
   s"""  "$groupId" %  "$artifactId" % "$version"$scope2"""
 }
 
-val buildSbt = io.Source.fromURL("https://raw.githubusercontent.com/mslinn/sbtTemplate/master/build.sbt").mkString
+val buildSbt = io.Source.fromURL("https://gist.githubusercontent.com/joesan/59d36606f0529af148000d54202eb370/raw/f854aa443686051637068667401d1e9a412ad192/build.sbt").mkString
 val libText = "libraryDependencies ++= Seq("
 val buildSbt2 = buildSbt.replace(libText, libText + lines.mkString("\n", ",\n", ""))
 ```
