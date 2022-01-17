@@ -114,7 +114,7 @@ generated build.sbt is rusty, and you need to adapt it after it is converted.</p
 <span class=ln>31</span>val <span class=nv>buildSbt</span> <span class=o>=</span> io.Source.fromURL<span class=o>(</span><span class=s2>&#34;https://gist.githubusercontent.com/joesan/59d36606f0529af148000d54202eb370/raw/f854aa443686051637068667401d1e9a412ad192/build.sbt&#34;</span><span class=o>)</span>.mkString
 <span class=ln>32</span>val <span class=nv>libText</span> <span class=o>=</span> <span class=s2>&#34;libraryDependencies ++= Seq(&#34;</span>
 <span class=ln>33</span>val <span class=nv>buildSbt2</span> <span class=o>=</span> buildSbt.replace<span class=o>(</span>libText, libText + lines.mkString<span class=o>(</span><span class=s2>&#34;\n&#34;</span>, <span class=s2>&#34;,\n&#34;</span>, <span class=s2>&#34;&#34;</span><span class=o>))</span>
-</code></pre></div><p>Save this file as convert.sh</p>
+</code></pre></div><p>Save this file as convert.sh in the same location where your pom.xml is located</p>
 <p>Calling it is pretty simple!</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=ln>1</span>./convert.sh &gt; build.sbt
 </code></pre></div><p>One thing that is worth mentioning that XML support for Scala was dropped with Scala versions 2.13 and up, so to be able to
