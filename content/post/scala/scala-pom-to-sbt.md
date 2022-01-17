@@ -8,8 +8,8 @@ categories = ["Technical Stuff"]
 tags = ["scala"]
 +++
 
-Aren't you at your limits dealing with XML? If so why still bother using a build tool that still uses XML? Why use Maven when
-you can be friends with sbt? Here is a small script that helps you to convert your pom.xml to a build.sbt.
+Aren't you at your limits dealing with XML? If so why still bother using a build tool that still uses an outdated format like the XML? 
+Why use Maven when you can be friends with sbt? Here is a small script that helps you to convert your pom.xml to a build.sbt.
 
 ```
 #!/bin/sh
