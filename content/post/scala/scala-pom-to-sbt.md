@@ -9,7 +9,8 @@ tags = ["scala"]
 +++
 
 Aren't you at your limits dealing with XML? If so why still bother using a build tool that still uses an outdated format like the XML? 
-Why use Maven when you can be friends with sbt? Here is a small script that helps you to convert your pom.xml to a build.sbt.
+Why use Maven when you can be friends with sbt? Here is a small script that helps you to convert your pom.xml to a build.sbt. The 
+generated build.sbt is rusty, and you need to adapt it after it is converted.
 
 ```
 #!/bin/sh
@@ -63,4 +64,5 @@ exec /opt/softwares/scala-2.12.2/bin/scala "$0" "$@"
 ```
 
 For now ignore the two parameters, ```"$0" "$@"``` as they are there if you need to pass parameters from outside. So there you
-have it. Instant conversion of pom.xml to build.sbt.
+have it. Instant conversion of pom.xml to build.sbt. If you need to pass in additional parameters, use these placeholders to
+inject them into the Scala code.
