@@ -48,7 +48,7 @@ val libText = "libraryDependencies ++= Seq("
 val buildSbt2 = buildSbt.replace(libText, libText + lines.mkString("\n", ",\n", ""))
 ```
 
-Save this file as convert.sh
+Save this file as convert.sh in the same location where your pom.xml is located
 
 Calling it is pretty simple!
 
