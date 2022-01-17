@@ -1,25 +1,23 @@
-<!doctype html><html lang=en data-figures class=home>
+<!doctype html><html lang=en data-figures class=page>
 <head>
-<meta name=generator content="Hugo 0.92.0">
-<title>bigelectrons</title>
+<title>Convert your pom xml to build sbt | bigelectrons</title>
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <meta http-equiv=x-ua-compatible content="IE=edge">
 <meta property="og:locale" content="en">
-<meta property="og:type" content="website">
-<meta name=description content="A theme based on VMware's Clarity Design System for publishing technical blogs with Hugo.">
+<meta property="og:type" content="article">
+<meta name=description content="Move on from XML">
 <meta name=twitter:card content="summary">
 <meta name=twitter:creator content="@joesandech">
-<meta name=twitter:title content>
-<meta property="og:url" content="https://bigelectrons.com/">
-<meta property="og:title" content>
-<meta property="og:description" content="A theme based on VMware's Clarity Design System for publishing technical blogs with Hugo.">
+<meta name=twitter:title content="Convert your pom xml to build sbt">
+<meta property="og:url" content="https://bigelectrons.com/post/scala/scala-pom-to-sbt/">
+<meta property="og:title" content="Convert your pom xml to build sbt">
+<meta property="og:description" content="Move on from XML">
 <meta property="og:image" content="https://bigelectrons.com/images/thumbnail.png">
 <link rel=apple-touch-icon sizes=180x180 href=https://bigelectrons.com/icons/apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=https://bigelectrons.com/icons/favicon-32x32.png>
 <link rel=manifest href=https://bigelectrons.com/icons/site.webmanifest>
-<link rel=canonical href=https://bigelectrons.com/>
-<link rel=alternate type=application/rss+xml href=https://bigelectrons.com/index.xml title=bigelectrons>
+<link rel=canonical href=https://bigelectrons.com/post/scala/scala-pom-to-sbt/>
 <link rel=preload href=https://bigelectrons.com/css/styles.01869c76e4757810d94ecbdccadba853d9d01d9416dfeb113df02e1479ff8b36e284e8bfeb3e8f353f2fdcdcbbdfcf27e558dbda96eb6341bfc304d55cd9e986.css integrity="sha512-AYacduR1eBDZTsvcytuoU9nQHZQW3+sRPfAuFHn/izbihOi/6z6PNT8v3Ny7388n5Vjb2pbrY0G/wwTVXNnphg==" as=style crossorigin=anonymous>
 <link rel=preload href=https://bigelectrons.com/js/bundle.min.061d04727b51b0a8fafe2f15b9370a961f33306e7af52abd00d69c906f5d825f1599306159d7756d7d2b4f359767a170625ae541d1f37d05c1daa4d5c7feec25.js as=script integrity="sha512-Bh0EcntRsKj6/i8VuTcKlh8zMG569Sq9ANackG9dgl8VmTBhWdd1bX0rTzWXZ6FwYlrlQdHzfQXB2qTVx/7sJQ==" crossorigin=anonymous>
 <link rel=stylesheet type=text/css href=https://bigelectrons.com/css/styles.01869c76e4757810d94ecbdccadba853d9d01d9416dfeb113df02e1479ff8b36e284e8bfeb3e8f353f2fdcdcbbdfcf27e558dbda96eb6341bfc304d55cd9e986.css integrity="sha512-AYacduR1eBDZTsvcytuoU9nQHZQW3+sRPfAuFHn/izbihOi/6z6PNT8v3Ny7388n5Vjb2pbrY0G/wwTVXNnphg==" crossorigin=anonymous>
@@ -33,7 +31,7 @@
 </div>
 </a>
 <div class="nav_body nav_body_left">
-<div class="nav_parent nav_active">
+<div class=nav_parent>
 <a href=https://bigelectrons.com/ class=nav_item title=Posts>Posts </a>
 </div>
 <div class=nav_parent>
@@ -72,293 +70,61 @@
 </header>
 <main>
 <div class="grid-inverse wrap content">
-<ul class=posts id=posts>
-<li class=post_item>
-<div class=excerpt>
-<div class=excerpt_header>
-<h3 class=post_link>
-<a href=https://bigelectrons.com/post/infra/k8s-deployment-ci/ title="CI for Kubernetes Resources">CI for Kubernetes Resources</a>
-</h3>
+<article class=post_content>
+<h1 class=post_title>Convert your pom xml to build sbt</h1>
 <div class=post_meta>
 <span><svg class="icon"><use xlink:href="#calendar"/></svg></span>
 <span class=post_date>
-May 20, 2020</span>
-<span class=post_time> · 2 min read</span><span>&nbsp;· <a href=https://bigelectrons.com/tags/k8s title=k8s class="post_tag button button_translucent">k8s
-</a>
-</span>
+Jan 15, 2022</span>
+<span class=post_time> · 2 min read</span>
 </div>
+<div class=post_body><p>Aren't you at your limits dealing with XML? If so why still bother using a build tool that still uses an outdated format like the XML?
+Why use Maven when you can be friends with sbt? Here is a small script that helps you to convert your pom.xml to a build.sbt.</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=ln> 1</span><span class=cp>#!/bin/sh
+</span><span class=ln> 2</span><span class=cp></span><span class=nb>exec</span> /opt/softwares/scala-2.12.2/bin/scala <span class=s2>&#34;</span><span class=nv>$0</span><span class=s2>&#34;</span> <span class=s2>&#34;</span><span class=nv>$@</span><span class=s2>&#34;</span>
+<span class=ln> 3</span>!#
+<span class=ln> 4</span>
+<span class=ln> 5</span>/***
+<span class=ln> 6</span>scalaVersion :<span class=o>=</span> <span class=s2>&#34;2.12.2&#34;</span>
+<span class=ln> 7</span>
+<span class=ln> 8</span>libraryDependencies ++<span class=o>=</span> Seq<span class=o>(</span>
+<span class=ln> 9</span>  <span class=s2>&#34;org.scala-lang.modules&#34;</span> %% <span class=s2>&#34;scala-xml&#34;</span> % <span class=s2>&#34;2.0.0&#34;</span>
+<span class=ln>10</span><span class=o>)</span>
+<span class=ln>11</span>*/
+<span class=ln>12</span>
+<span class=ln>13</span>import scala.xml._
+<span class=ln>14</span>
+<span class=ln>15</span>val <span class=nv>lines</span> <span class=o>=</span> <span class=o>(</span>XML.load<span class=o>(</span><span class=s2>&#34;pom.xml&#34;</span><span class=o>)</span> <span class=se>\\</span> <span class=s2>&#34;dependencies&#34;</span><span class=o>)</span> <span class=se>\ </span><span class=s2>&#34;dependency&#34;</span> map <span class=o>{</span> <span class=nv>dependency</span> <span class=o>=</span>&gt;
+<span class=ln>16</span>  val <span class=nv>groupId</span> <span class=o>=</span> <span class=o>(</span>dependency <span class=se>\ </span><span class=s2>&#34;groupId&#34;</span><span class=o>)</span>.text
+<span class=ln>17</span>  val <span class=nv>artifactId</span> <span class=o>=</span> <span class=o>(</span>dependency <span class=se>\ </span><span class=s2>&#34;artifactId&#34;</span><span class=o>)</span>.text
+<span class=ln>18</span>  val <span class=nv>version</span> <span class=o>=</span> <span class=o>(</span>dependency <span class=se>\ </span><span class=s2>&#34;version&#34;</span><span class=o>)</span>.text
+<span class=ln>19</span>  val <span class=nv>scope</span> <span class=o>=</span> <span class=o>(</span>dependency <span class=se>\ </span><span class=s2>&#34;scope&#34;</span><span class=o>)</span>.text
+<span class=ln>20</span>  val <span class=nv>classifier</span> <span class=o>=</span> <span class=o>(</span>dependency <span class=se>\ </span><span class=s2>&#34;classifier&#34;</span><span class=o>)</span>.text
+<span class=ln>21</span>  val artifactValName: <span class=nv>String</span> <span class=o>=</span> artifactId.replaceAll<span class=o>(</span><span class=s2>&#34;[-\\.]&#34;</span>, <span class=s2>&#34;_&#34;</span><span class=o>)</span>
+<span class=ln>22</span>
+<span class=ln>23</span>  val <span class=nv>scope2</span> <span class=o>=</span> scope match <span class=o>{</span>
+<span class=ln>24</span>    <span class=k>case</span> <span class=s2>&#34;&#34;</span> <span class=o>=</span>&gt; <span class=s2>&#34;&#34;</span>
+<span class=ln>25</span>    <span class=k>case</span> <span class=nv>_</span> <span class=o>=</span>&gt; s<span class=s2>&#34;&#34;&#34; % &#34;</span><span class=nv>$scope</span><span class=s2>&#34;&#34;&#34;&#34;</span>
+<span class=ln>26</span>  <span class=o>}</span>
+<span class=ln>27</span>
+<span class=ln>28</span>  s<span class=s2>&#34;&#34;&#34;  &#34;</span><span class=nv>$groupId</span><span class=s2>&#34; %  &#34;</span><span class=nv>$artifactId</span><span class=s2>&#34; % &#34;</span><span class=nv>$version</span><span class=s2>&#34;</span><span class=nv>$scope2</span><span class=s2>&#34;&#34;&#34;</span>
+<span class=ln>29</span><span class=o>}</span>
+<span class=ln>30</span>
+<span class=ln>31</span>val <span class=nv>buildSbt</span> <span class=o>=</span> io.Source.fromURL<span class=o>(</span><span class=s2>&#34;https://gist.githubusercontent.com/joesan/59d36606f0529af148000d54202eb370/raw/f854aa443686051637068667401d1e9a412ad192/build.sbt&#34;</span><span class=o>)</span>.mkString
+<span class=ln>32</span>val <span class=nv>libText</span> <span class=o>=</span> <span class=s2>&#34;libraryDependencies ++= Seq(&#34;</span>
+<span class=ln>33</span>val <span class=nv>buildSbt2</span> <span class=o>=</span> buildSbt.replace<span class=o>(</span>libText, libText + lines.mkString<span class=o>(</span><span class=s2>&#34;\n&#34;</span>, <span class=s2>&#34;,\n&#34;</span>, <span class=s2>&#34;&#34;</span><span class=o>))</span>
+</code></pre></div><p>Save this file as convert.sh</p>
+<p>Calling it is pretty simple!</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=ln>1</span>./convert.sh &gt; build.sbt
+</code></pre></div><p>One thing that is worth mentioning that XML support for Scala was dropped with Scala versions 2.13 and up, so to be able to
+run this script, you need to have Scala 2.12 installed. I have Scala 2.12.2 in my path, and you can see that in this line here:</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=ln>1</span><span class=nb>exec</span> /opt/softwares/scala-2.12.2/bin/scala <span class=s2>&#34;</span><span class=nv>$0</span><span class=s2>&#34;</span> <span class=s2>&#34;</span><span class=nv>$@</span><span class=s2>&#34;</span>
+</code></pre></div><p>For now ignore the two parameters, <code>"$0" "$@"</code> as they are there if you need to pass parameters from outside. So there you
+have it. Instant conversion of pom.xml to build.sbt.</p>
 </div>
-<div class=excerpt_footer>
-<div>
-<p class=pale>
-Recently I have been exploring more around the Kubernetes tooling, especially the ones that can do some pre-validation on the schema and the state of my Kubernetes deployment resources or more precisely the YAML files.
-I came across a few of them like conftest, kubeval etc and a wrapper around such set of tools like …
-</p>
-<a href=https://bigelectrons.com/post/infra/k8s-deployment-ci/ title="Read More" class="excerpt_more button">Read More</a>
+<div class=post_comments>
 </div>
-</div>
-</div>
-</li>
-<li class=post_item>
-<div class=excerpt>
-<div class=excerpt_header>
-<h3 class=post_link>
-<a href=https://bigelectrons.com/post/misc/guitar-learning-1/ title="My journey thus far with learning to play the guitar">My journey thus far with learning to play the guitar</a>
-</h3>
-<div class=post_meta>
-<span><svg class="icon"><use xlink:href="#calendar"/></svg></span>
-<span class=post_date>
-May 9, 2020</span>
-<span class=post_time> · 4 min read</span><span>&nbsp;· <a href=https://bigelectrons.com/tags/guitar title=guitar class="post_tag button button_translucent">guitar
-</a>
-</span>
-</div>
-</div>
-<div class=excerpt_footer>
-<div>
-<p class=pale>
-I remember my interest to play the guitar started in the year 2012 and without any hesitation, I went and purchased my first ever electric guitar, the Ibanez GSA 60 and a small Marshall amplifier. I'm not sure at that point in time if it was the right decision to start with an electric guitar but as I recollect, I …
-</p>
-<a href=https://bigelectrons.com/post/misc/guitar-learning-1/ title="Read More" class="excerpt_more button">Read More</a>
-</div>
-</div>
-</div>
-</li>
-<li class=post_item>
-<div class=excerpt>
-<div class=excerpt_header>
-<h3 class=post_link>
-<a href=https://bigelectrons.com/post/misc/acl-knee-injury-5/ title="Oh my left knee - You cause my problems!">Oh my left knee - You cause my problems!</a>
-</h3>
-<div class=post_meta>
-<span><svg class="icon"><use xlink:href="#calendar"/></svg></span>
-<span class=post_date>
-Mar 7, 2020</span>
-<span class=post_time> · 1 min read</span><span>&nbsp;· <a href=https://bigelectrons.com/tags/acl title=acl class="post_tag button button_translucent">acl
-</a>
-</span>
-</div>
-</div>
-<div class=excerpt_footer>
-<div>
-<p class=pale>
-This morning it was just a normal day as always. We always have some balloons in our hall as my younger daughter likes to play it like a volleyball with me. I also enjoy entertaining her for some time.
-So there were a few balloons in the hall, which I casually like to kick. As I kicked one with my right leg, my left …
-</p>
-<a href=https://bigelectrons.com/post/misc/acl-knee-injury-5/ title="Read More" class="excerpt_more button">Read More</a>
-</div>
-</div>
-</div>
-</li>
-<li class=post_item>
-<div class=excerpt>
-<div class=excerpt_header>
-<h3 class=post_link>
-<a href=https://bigelectrons.com/post/infra/k8s-git-ops-1/ title="GitOps with K8s">GitOps with K8s</a>
-</h3>
-<div class=post_meta>
-<span><svg class="icon"><use xlink:href="#calendar"/></svg></span>
-<span class=post_date>
-Feb 28, 2020</span>
-<span class=post_time> · 4 min read</span><span>&nbsp;· <a href=https://bigelectrons.com/tags/k8s title=k8s class="post_tag button button_translucent">k8s
-</a>
-</span>
-</div>
-</div>
-<div class=excerpt_footer>
-<div>
-<p class=pale>
-Some time around the summer of 2019, I came across a blog post where I read about GitOps and I was flattened by the idea itself and ever since I wanted to give it a try on some serious projects but never had the chance to do it professionally. I had a chat about this with many of my colleagues at work and my team, they …
-</p>
-<a href=https://bigelectrons.com/post/infra/k8s-git-ops-1/ title="Read More" class="excerpt_more button">Read More</a>
-</div>
-</div>
-</div>
-</li>
-<li class=post_item>
-<div class=excerpt>
-<div class=excerpt_header>
-<h3 class=post_link>
-<a href=https://bigelectrons.com/post/math/back-propogation-neural-network/ title="Understanding Back Propagation Neural Network Architectures">Understanding Back Propagation Neural Network Architectures</a>
-</h3>
-<div class=post_meta>
-<span><svg class="icon"><use xlink:href="#calendar"/></svg></span>
-<span class=post_date>
-Dec 10, 2019</span>
-<span class=post_time> · 2 min read</span><span>&nbsp;· <a href=https://bigelectrons.com/tags/neural-net title=neural-net class="post_tag button button_translucent">neural-net
-</a>
-</span>
-</div>
-</div>
-<div class=excerpt_footer>
-<div>
-<p class=pale>
-Once you understand Feed Forward mechanism which isn't much useful when you do not back propagate to update the weights and refine your Neural Network, your Neural Network isn't of much use. So in this blog post, let us understand what is back propagation and how could we represent the back propagation mathematically! …
-</p>
-<a href=https://bigelectrons.com/post/math/back-propogation-neural-network/ title="Read More" class="excerpt_more button">Read More</a>
-</div>
-</div>
-</div>
-</li>
-<li class=post_item>
-<div class=excerpt>
-<div class=excerpt_header>
-<h3 class=post_link>
-<a href=https://bigelectrons.com/post/math/feed-forward-neural-net/ title="Understanding Feed Forward Neural Network Architectures">Understanding Feed Forward Neural Network Architectures</a>
-</h3>
-<div class=post_meta>
-<span><svg class="icon"><use xlink:href="#calendar"/></svg></span>
-<span class=post_date>
-Dec 10, 2019</span>
-<span class=post_time> · 1 min read</span><span>&nbsp;· <a href=https://bigelectrons.com/tags/neural-net title=neural-net class="post_tag button button_translucent">neural-net
-</a>
-</span>
-</div>
-</div>
-<div class=excerpt_footer>
-<div>
-<p class=pale>
-I have been reading through the architectures of Neural Networks and wanted to grasp the idea behind calculating the weights in a Neural Network and as you can see in the image below is a simple 2 node 2 layer Neural Network.
-As you can see that for simplicity’s sake, I have just used a 2 node 2 layer network, but …
-</p>
-<a href=https://bigelectrons.com/post/math/feed-forward-neural-net/ title="Read More" class="excerpt_more button">Read More</a>
-</div>
-</div>
-</div>
-</li>
-<li class=post_item>
-<div class=excerpt>
-<div class=excerpt_header>
-<h3 class=post_link>
-<a href=https://bigelectrons.com/post/math/linear-regression/ title="Math behind simple Linear Regression">Math behind simple Linear Regression</a>
-</h3>
-<div class=post_meta>
-<span><svg class="icon"><use xlink:href="#calendar"/></svg></span>
-<span class=post_date>
-Oct 21, 2019</span>
-<span class=post_time> · 2 min read</span><span>&nbsp;· <a href=https://bigelectrons.com/tags/ml title=ml class="post_tag button button_translucent">ml
-</a>
-</span>
-</div>
-</div>
-<div class=excerpt_footer>
-<div>
-<p class=pale>
-I have been wondering on how the math behind a Linear regression works as in most of the ML books that you encounter, the focus will be on giving you a linear equation and just plugging this equation in a Python library to solve for the slope and bias and then use it to predict the new values. It is very rare that they …
-</p>
-<a href=https://bigelectrons.com/post/math/linear-regression/ title="Read More" class="excerpt_more button">Read More</a>
-</div>
-</div>
-</div>
-</li>
-<li class=post_item>
-<div class=excerpt>
-<div class=excerpt_header>
-<h3 class=post_link>
-<a href=https://bigelectrons.com/post/misc/mtb-trek-remedy-1000-km/ title="My Trek Remedy clocks 1000 km this season">My Trek Remedy clocks 1000 km this season</a>
-</h3>
-<div class=post_meta>
-<span><svg class="icon"><use xlink:href="#calendar"/></svg></span>
-<span class=post_date>
-Sep 29, 2019</span>
-<span class=post_time> · 1 min read</span><span>&nbsp;· <a href=https://bigelectrons.com/tags/mtb title=mtb class="post_tag button button_translucent">mtb
-</a>
-</span>
-</div>
-</div>
-<div class=excerpt_footer>
-<div>
-<p class=pale>
-So as of today, I managed to clock on record a total of 1000 Km with my Trek Remedy 8. It is obviously much higher than that as for several rides I haven't turned my Sigma odometer device. But for the record, the mileage is 1000 Km for this year so far.
-I have explored much of the singles trails around my area! It …
-</p>
-<a href=https://bigelectrons.com/post/misc/mtb-trek-remedy-1000-km/ title="Read More" class="excerpt_more button">Read More</a>
-</div>
-</div>
-</div>
-</li>
-<li class=post_item>
-<div class=excerpt>
-<div class=excerpt_header>
-<h3 class=post_link>
-<a href=https://bigelectrons.com/post/misc/acl-knee-injury-4/ title="Yet another impact on the injured knee!">Yet another impact on the injured knee!</a>
-</h3>
-<div class=post_meta>
-<span><svg class="icon"><use xlink:href="#calendar"/></svg></span>
-<span class=post_date>
-Aug 13, 2019</span>
-<span class=post_time> · 3 min read</span><span>&nbsp;· <a href=https://bigelectrons.com/tags/acl title=acl class="post_tag button button_translucent">acl
-</a>
-</span>
-</div>
-</div>
-<div class=excerpt_footer>
-<div>
-<p class=pale>
-Last Thursday, I took a day off. As the weather was good I decided to take my kids and my mom to Apeldoorn in the Netherlands. We wanted to visit the theme park and spend the day there. My mom is here with us in Germany to visit us and to take care of the kids during their summer vacation. Apeldoorn is a 2-hour drive …
-</p>
-<a href=https://bigelectrons.com/post/misc/acl-knee-injury-4/ title="Read More" class="excerpt_more button">Read More</a>
-</div>
-</div>
-</div>
-</li>
-<li class=post_item>
-<div class=excerpt>
-<div class=excerpt_header>
-<h3 class=post_link>
-<a href=https://bigelectrons.com/post/misc/mtb-ramp-1/ title="Send it... yep! Sendin it...">Send it... yep! Sendin it...</a>
-</h3>
-<div class=post_meta>
-<span><svg class="icon"><use xlink:href="#calendar"/></svg></span>
-<span class=post_date>
-Jul 22, 2019</span>
-<span class=post_time> · 2 min read</span><span>&nbsp;· <a href=https://bigelectrons.com/tags/mtb title=mtb class="post_tag button button_translucent">mtb
-</a>
-</span>
-</div>
-</div>
-<div class=excerpt_footer>
-<div>
-<p class=pale>
-What does "Send it mean? It's a jargon used within the Mountain Biking community, especially the Downhill community that indicates that you are about to hit a jump and that you have to clear the jump! Jumpin on the trails requires technique, a lot of practice. One way to practice the technique is to do it using …
-</p>
-<a href=https://bigelectrons.com/post/misc/mtb-ramp-1/ title="Read More" class="excerpt_more button">Read More</a>
-</div>
-</div>
-</div>
-</li>
-<li>
-<ul class="pagination pagination-default">
-<li class=page-item>
-<a href=/ aria-label=First class=page-link role=button><span aria-hidden=true>&#171;&#171;</span></a>
-</li>
-<li class=page-item>
-<a href=/page/2/ aria-label=Previous class=page-link role=button><span aria-hidden=true>&#171;</span></a>
-</li>
-<li class=page-item>
-<a href=/ aria-label="Page 1" class=page-link role=button>1</a>
-</li>
-<li class=page-item>
-<a href=/page/2/ aria-label="Page 2" class=page-link role=button>2</a>
-</li>
-<li class="page-item active">
-<a aria-current=page aria-label="Page 3" class=page-link role=button>3</a>
-</li>
-<li class=page-item>
-<a href=/page/4/ aria-label="Page 4" class=page-link role=button>4</a>
-</li>
-<li class=page-item>
-<a href=/page/5/ aria-label="Page 5" class=page-link role=button>5</a>
-</li>
-<li class=page-item>
-<a href=/page/4/ aria-label=Next class=page-link role=button><span aria-hidden=true>&#187;</span></a>
-</li>
-<li class=page-item>
-<a href=/page/7/ aria-label=Last class=page-link role=button><span aria-hidden=true>&#187;&#187;</span></a>
-</li>
-</ul>
-</li>
-</ul>
+</article>
 <aside class=sidebar>
 <section class=sidebar_inner>
 <h2>Joesan</h2>
@@ -368,9 +134,6 @@ Bits & Pieces of something that I write! Glad you found me....
 <a href=https://bigelectrons.com/about/ class="button mt-1" role=button title="Read More">Read More</a>
 <h2 class=mt-4>Recent Posts</h2>
 <ul class=flex-column>
-<li>
-<a href=https://bigelectrons.com/post/scala/scala-pom-to-sbt/ class=nav-link title="Convert your pom xml to build sbt">Convert your pom xml to build sbt</a>
-</li>
 <li>
 <a href=https://bigelectrons.com/post/misc/guitar-navigating-pentatonic-scale/ class=nav-link title="Navigating the Pentatonic Scale in Triangles">Navigating the Pentatonic Scale in Triangles</a>
 </li>
@@ -391,6 +154,9 @@ Bits & Pieces of something that I write! Glad you found me....
 </li>
 <li>
 <a href=https://bigelectrons.com/post/infra/git-upstream-origin-fork/ class=nav-link title="Keeping up with Upstream Git Repo">Keeping up with Upstream Git Repo</a>
+</li>
+<li>
+<a href=https://bigelectrons.com/post/misc/blogger-to-gh-pages/ class=nav-link title="Moved from Blogger to GH Pages">Moved from Blogger to GH Pages</a>
 </li>
 </ul>
 <div>
