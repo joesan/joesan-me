@@ -2,7 +2,7 @@
 
 ![Build and Deploy](https://github.com/joesan/joesan-me/actions/workflows/main.yaml/badge.svg)
 
-:no_entry: Source code for my [blogging website](https://www.bigelectrons.com)
+:no_entry: Contains the source code for my [blogging website](https://www.bigelectrons.com)
 
 ## To try this project locally
 Use the following command to check out a local copy of the project, but before make sure to have hugo installed on your machine!
