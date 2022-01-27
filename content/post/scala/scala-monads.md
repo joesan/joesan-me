@@ -49,6 +49,8 @@ is like saying, I can construct a Monad implementation by plugging in a value fo
 literally any effects with which I would like to manipulate my data contained in that effect. For simplicity, let us ignore hkt's for a 
 moment and just deal with simple types. So our definition of a Monad will then look like this:
 
+TODO: Talk about the extract-transform-wrap idea behind Monads!
+
 ```scala
   trait Monad[A] {
     def apply[A](value: => A): Monad[A]
