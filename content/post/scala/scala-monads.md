@@ -30,7 +30,7 @@ So, to be able to qualify as a Monad, we need two things:
 
 At this point what needs to be kept in mind is the fact that Monadic operation is nothing but about extract-transform-wrap design pattern.
 
-With this basic understanding, let us hit the ground with some examples!
+With this basic understanding of Monads, let us hit the ground with some examples!
 
 ## Hitting the ground
 
