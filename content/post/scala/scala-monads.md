@@ -28,6 +28,8 @@ So, to be able to qualify as a Monad, we need two things:
 1. A mechanism to wrap a value, or a Type around a context
 2. A mechanism to sequence computations over a value, or a Type
 
+At this point what needs to be kept in mind is the fact that Monadic operation is nothing but about extract-transform-wrap design pattern.
+
 Let us hit the ground with some examples!
 
 ## Hitting the ground
@@ -48,8 +50,6 @@ What we have done above is that we have created a trait of a higher kinded type 
 is like saying, I can construct a Monad implementation by plugging in a value for the type parameter like M[List], M[Option], M [Try] or M[Either] or
 literally any effects with which I would like to manipulate my data contained in that effect. For simplicity, let us ignore hkt's for a 
 moment and just deal with simple types. So our definition of a Monad will then look like this:
-
-TODO: Talk about the extract-transform-wrap idea behind Monads!
 
 ```scala
   trait Monad[A] {
