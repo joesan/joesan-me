@@ -58,14 +58,11 @@ moment and just deal with simple types. So our definition of a Monad will then l
 }
 ```
 
- So with that in mind, we could say the 
-following:
+We have basically done the same where instead of a higher-kinded-type, we have a simple trait called Monad that is of a certain type A. We have
+defined two operations that the Monad can perform:
 
-```scala
-  trait Monad[M[_]] {
-    def unit[A](value: => A): M[A]
-}
-```
+1. Identity operator - An operator to construct a Monad given the Type A
+2. Transform operator - An operator to apply a transformation to a given Type A
 
 TODO: Documentation
 
