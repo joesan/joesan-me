@@ -1,24 +1,23 @@
-<!doctype html><html lang=en data-figures>
+<!doctype html><html lang=en data-figures class=page>
 <head>
-<title>opencv | bigelectrons</title>
+<title>Functors in Scala | bigelectrons</title>
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <meta http-equiv=x-ua-compatible content="IE=edge">
 <meta property="og:locale" content="en">
 <meta property="og:type" content="article">
-<meta name=description content>
+<meta name=description content="Mapping one category in a container to another">
 <meta name=twitter:card content="summary">
 <meta name=twitter:creator content="@joesandech">
-<meta name=twitter:title content="opencv">
-<meta property="og:url" content="https://bigelectrons.com/tags/opencv/">
-<meta property="og:title" content="opencv">
-<meta property="og:description" content>
+<meta name=twitter:title content="Functors in Scala">
+<meta property="og:url" content="https://bigelectrons.com/post/scala/scala-functors/">
+<meta property="og:title" content="Functors in Scala">
+<meta property="og:description" content="Mapping one category in a container to another">
 <meta property="og:image" content="https://bigelectrons.com/images/thumbnail.png">
 <link rel=apple-touch-icon sizes=180x180 href=https://bigelectrons.com/icons/apple-touch-icon.png>
 <link rel=icon type=image/png sizes=32x32 href=https://bigelectrons.com/icons/favicon-32x32.png>
 <link rel=manifest href=https://bigelectrons.com/icons/site.webmanifest>
-<link rel=canonical href=https://bigelectrons.com/tags/opencv/>
-<link rel=alternate type=application/rss+xml href=https://bigelectrons.com/tags/opencv/index.xml title=bigelectrons>
+<link rel=canonical href=https://bigelectrons.com/post/scala/scala-functors/>
 <link rel=preload href=https://bigelectrons.com/css/styles.01869c76e4757810d94ecbdccadba853d9d01d9416dfeb113df02e1479ff8b36e284e8bfeb3e8f353f2fdcdcbbdfcf27e558dbda96eb6341bfc304d55cd9e986.css integrity="sha512-AYacduR1eBDZTsvcytuoU9nQHZQW3+sRPfAuFHn/izbihOi/6z6PNT8v3Ny7388n5Vjb2pbrY0G/wwTVXNnphg==" as=style crossorigin=anonymous>
 <link rel=preload href=https://bigelectrons.com/js/bundle.min.061d04727b51b0a8fafe2f15b9370a961f33306e7af52abd00d69c906f5d825f1599306159d7756d7d2b4f359767a170625ae541d1f37d05c1daa4d5c7feec25.js as=script integrity="sha512-Bh0EcntRsKj6/i8VuTcKlh8zMG569Sq9ANackG9dgl8VmTBhWdd1bX0rTzWXZ6FwYlrlQdHzfQXB2qTVx/7sJQ==" crossorigin=anonymous>
 <link rel=stylesheet type=text/css href=https://bigelectrons.com/css/styles.01869c76e4757810d94ecbdccadba853d9d01d9416dfeb113df02e1479ff8b36e284e8bfeb3e8f353f2fdcdcbbdfcf27e558dbda96eb6341bfc304d55cd9e986.css integrity="sha512-AYacduR1eBDZTsvcytuoU9nQHZQW3+sRPfAuFHn/izbihOi/6z6PNT8v3Ny7388n5Vjb2pbrY0G/wwTVXNnphg==" crossorigin=anonymous>
@@ -71,38 +70,89 @@
 </header>
 <main>
 <div class="grid-inverse wrap content">
-<ul class=posts id=posts>
-<li class=post_item>
-<div class=excerpt>
-<div class=excerpt_header>
-<h3 class=post_link>
-<a href=https://bigelectrons.com/post/projects/project-raspi-motion-detection/ title="Raspberry Pi Motion & Face Detection">Raspberry Pi Motion & Face Detection</a>
-</h3>
+<article class=post_content>
+<h1 class=post_title>Functors in Scala</h1>
 <div class=post_meta>
 <span><svg class="icon"><use xlink:href="#calendar"/></svg></span>
 <span class=post_date>
-Nov 22, 2018</span>
-<span class=post_time> · 2 min read</span><span>&nbsp;· <a href=https://bigelectrons.com/tags/pir-sensor title=pir-sensor class="post_tag button button_translucent">pir-sensor
-</a><a href=https://bigelectrons.com/tags/raspi title=raspi class="post_tag button button_translucent">raspi
-</a><a href=https://bigelectrons.com/tags/opencv title=opencv class="post_tag button button_translucent">opencv
-</a>
-</span>
+Feb 1, 2022</span>
+<span class=post_time> · 4 min read</span>
 </div>
+<div class=post_body><p>Let us debunk this major, but simple functional abstraction called the <a href=https://en.wikipedia.org/wiki/Functor>Functor</a></p>
+<h2 id=intuition-behind-functors>Intuition behind Functors</h2>
+<p>The idea stems from <a href=https://en.wikipedia.org/wiki/Category_theory>category theory</a> and can be readily applied to elegantly
+look inside a container that contains a certain category and apply a function to the contents, thereby producing another category
+wrapped inside the same container. The name of a functor sounds very much similar to that of a function and in fact it
+is indeed the same, but there is this additional container involved.</p>
+<p>What the heck is that container, or in other words, how is it called in Scala, a context? You might already be familiar with
+such contexts like List[A], Seq[A] that can hold zero to many values of type A. List or Seq can be said that they are the
+containers for holding elements or types of type A. Other containers or contexts like Option, Either, Future etc., also can
+be cited.</p>
+<h2 id=hitting-the-ground>Hitting the ground</h2>
+<p>Now to manipulate the data inside such a container, or a context could be done like this:</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-scala data-lang=scala><span class=ln>1</span>  <span class=c1>// Let us use the Option as our context
+</span><span class=ln>2</span><span class=c1></span>  <span class=k>val</span> <span class=n>somePerson</span> <span class=k>=</span> <span class=nc>Some</span><span class=o>(</span><span class=nc>Person</span><span class=o>(</span><span class=s>&#34;firstName&#34;</span><span class=o>,</span> <span class=s>&#34;lastName&#34;</span><span class=o>,</span> <span class=n>salary</span> <span class=k>=</span> <span class=mi>1000000</span><span class=o>))</span>
+<span class=ln>3</span>  <span class=k>if</span> <span class=o>(</span><span class=n>somePerson</span><span class=o>.</span><span class=n>isDefined</span><span class=o>)</span> <span class=o>{</span>
+<span class=ln>4</span>    <span class=n>somePerson</span><span class=o>.</span><span class=n>get</span><span class=o>.</span><span class=n>map</span><span class=o>(</span><span class=n>person</span> <span class=k>=&gt;</span> <span class=n>person</span><span class=o>.</span><span class=n>copy</span><span class=o>(</span><span class=n>salary</span> <span class=k>=</span> <span class=mi>20000000</span><span class=o>))</span>
+<span class=ln>5</span>  <span class=o>}</span>
+</code></pre></div><p>So, with that example., we simply checked if a Person exists and if yes, we manipulated his salary. That piece of code is
+like telling to scala how to do, which is basically an imperative style of programming. We instead would want to say to Scala
+just what to do and, the programming language should figure out how to do. This is where our Functor intuition could help us out.</p>
+<p>Most of scala's context or containers have built in functor like capabilities. Let us get to the following example:</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-scala data-lang=scala><span class=ln>1</span>  <span class=k>val</span> <span class=n>listOfSalary</span> <span class=k>=</span> <span class=nc>List</span><span class=o>(</span><span class=mi>200000</span><span class=o>,</span> <span class=mi>100000</span><span class=o>,</span> <span class=mi>400000</span><span class=o>,</span> <span class=mi>600000</span><span class=o>,</span> <span class=mi>700000</span><span class=o>,</span> <span class=mi>350000</span><span class=o>)</span>
+<span class=ln>2</span>  <span class=k>val</span> <span class=n>bonusFunction</span><span class=k>:</span> <span class=kt>Int</span> <span class=o>=&gt;</span> <span class=nc>Int</span> <span class=k>=</span> <span class=n>baseSalary</span> <span class=k>=&gt;</span> <span class=n>baseSalary</span> <span class=o>+</span> <span class=mi>100000</span>
+<span class=ln>3</span>  <span class=k>val</span> <span class=n>finalSalaries</span> <span class=k>=</span> <span class=n>listOfSalary</span><span class=o>.</span><span class=n>map</span><span class=o>(</span><span class=n>bonusFunction</span><span class=o>)</span>
+</code></pre></div><p>With that code snippet, we have instructed Scala what we want which is to map the salaries to bonuses. The map function figures
+out how to get the job done. Its signature is like this:</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-scala data-lang=scala><span class=ln>1</span>  <span class=k>trait</span> <span class=nc>F</span><span class=o>[</span><span class=kt>A</span><span class=o>]</span> <span class=o>{</span>
+<span class=ln>2</span>    <span class=k>def</span> <span class=n>map</span><span class=o>[</span><span class=kt>A</span>, <span class=kt>B</span><span class=o>](</span><span class=n>f</span><span class=k>:</span> <span class=kt>A</span> <span class=o>=&gt;</span> <span class=n>B</span><span class=o>)</span><span class=k>:</span> <span class=kt>F</span><span class=o>[</span><span class=kt>B</span><span class=o>]</span>
+<span class=ln>3</span>  <span class=o>}</span>
+</code></pre></div><p>Here F[A] is our container or context in which we have defined a map function that should know how to map from A -> B</p>
+<p>Let us now define a simple Functor. You need three things to do that:</p>
+<ol>
+<li>The container / context that you will plug in (List, Try, Either, Option etc.,) - F[_]</li>
+<li>The Type from which you want to go from - A</li>
+<li>The Type to which you want to go to - B</li>
+</ol>
+<p>With that said, let us implement a Functor interface:</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-scala data-lang=scala><span class=ln>1</span>  <span class=k>import</span> <span class=nn>scala.language.higherKinds</span>
+<span class=ln>2</span>  <span class=k>trait</span> <span class=nc>Functor</span><span class=o>[</span><span class=kt>F</span><span class=o>[</span><span class=k>_</span><span class=o>]]</span> <span class=o>{</span>
+<span class=ln>3</span>    <span class=k>def</span> <span class=n>map</span><span class=o>[</span><span class=kt>A</span>, <span class=kt>B</span><span class=o>](</span><span class=n>fa</span><span class=k>:</span> <span class=kt>F</span><span class=o>[</span><span class=kt>A</span><span class=o>])(</span><span class=n>f</span><span class=k>:</span> <span class=kt>A</span> <span class=o>=&gt;</span> <span class=n>B</span><span class=o>)</span><span class=k>:</span> <span class=kt>F</span><span class=o>[</span><span class=kt>B</span><span class=o>]</span>
+<span class=ln>4</span>  <span class=o>}</span>
+</code></pre></div><p>What we have basically done is, we have created a trait that operates on a generic context which is the F[<em>]. If you follow what
+higher kinded types in Scala mean, that signature should be straight forward. It basically says that in the place of F[</em>], I can plugin
+any context or container which itself is a context or a container to a certain type. For example., List, Option, Try, Either all are
+containers that can contain a certain type. So they qualify to be the F[_] which can be exemplified as F[List], F[Option], F[Try], F[Either]
+and so on. Have a lok <a href=https://typelevel.org/blog/2016/08/21/hkts-moving-forward.html>here for some basic understanding of higher kinded types</a></p>
+<p>For the sake of this blog, let us implement a List Functor as below:</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-scala data-lang=scala><span class=ln>1</span>  <span class=k>val</span> <span class=n>listFunctor</span><span class=k>:</span> <span class=kt>Functor</span><span class=o>[</span><span class=kt>List</span><span class=o>]</span> <span class=k>=</span> <span class=k>new</span> <span class=nc>Functor</span><span class=o>[</span><span class=kt>List</span><span class=o>]</span> <span class=o>{</span>
+<span class=ln>2</span>    <span class=k>def</span> <span class=n>map</span><span class=o>[</span><span class=kt>A</span>, <span class=kt>B</span><span class=o>](</span><span class=n>fa</span><span class=k>:</span> <span class=kt>List</span><span class=o>[</span><span class=kt>A</span><span class=o>])(</span><span class=n>f</span><span class=k>:</span> <span class=kt>A</span> <span class=o>=&gt;</span> <span class=n>B</span><span class=o>)</span><span class=k>:</span> <span class=kt>List</span><span class=o>[</span><span class=kt>B</span><span class=o>]</span> <span class=k>=</span> <span class=n>fa</span><span class=o>.</span><span class=n>map</span><span class=o>(</span><span class=n>f</span><span class=o>)</span>
+<span class=ln>3</span>  <span class=o>}</span>
+</code></pre></div><p>With that, we have now defined a context around List that knows how to map one category in a List to another category. I hope this
+was clear enough.</p>
+<h2 id=functor-laws>Functor laws</h2>
+<p>To qualify for Functorship, the following laws should be respected:</p>
+<h3 id=identity>Identity</h3>
+<p>This basically states that when a map is called on a Functor with an identity function, you get the same Functor back. Remember
+that an identity function is one that returns the exact same input. So basically, we are saying that:</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=ln>1</span>  Functor[X].map(identity) &#34;should be equal to&#34; Functor[X]
+</code></pre></div><h3 id=associativity>Associativity</h3>
+<p>If f and g are two independent functions, then calling a map on f anf then g is as good as calling a map with g composed f or in other words
+calling g(f(x))</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=ln>1</span>Functor[X].map(f).map(g) == Functor[X].map(x =&gt; g(f(x))
+</code></pre></div><h2 id=wrap-up>Wrap up</h2>
+<p>So essentially a Functor is just doing this:</p>
+<ol>
+<li>Unwrap a value from a context</li>
+<li>Apply a function to that context</li>
+<li>Rewrap that value back into that context</li>
+<li>Return the new context</li>
+</ol>
+<p>That is all what is to Functors. Really simple indeed!</p>
 </div>
-<div class=excerpt_footer>
-<div>
-<p class=pale>
-A few weeks after my terrible MTB accident where I tore my ACL on my left knee, I was off from work for a few weeks, and I kind of got bored with just laying in the bed and was pondering what I could be doing something meaningful. Then this idea stuck my mind, why not try doing a small CCTV camera for my home?
-I …
-</p>
-<a href=https://bigelectrons.com/post/projects/project-raspi-motion-detection/ title="Read More" class="excerpt_more button">Read More</a>
+<div class=post_comments>
 </div>
-</div>
-</div>
-</li>
-<li>
-</li>
-</ul>
+</article>
 <aside class=sidebar>
 <section class=sidebar_inner>
 <h2>Joesan</h2>
@@ -112,9 +162,6 @@ Bits & Pieces of something that I write! Glad you found me....
 <a href=https://bigelectrons.com/about/ class="button mt-1" role=button title="Read More">Read More</a>
 <h2 class=mt-4>Recent Posts</h2>
 <ul class=flex-column>
-<li>
-<a href=https://bigelectrons.com/post/scala/scala-functors/ class=nav-link title="Functors in Scala">Functors in Scala</a>
-</li>
 <li>
 <a href=https://bigelectrons.com/post/scala/scala-pom-to-sbt/ class=nav-link title="Convert your pom xml to build sbt">Convert your pom xml to build sbt</a>
 </li>
@@ -135,6 +182,9 @@ Bits & Pieces of something that I write! Glad you found me....
 </li>
 <li>
 <a href=https://bigelectrons.com/post/mlandai/bloom-filter/ class=nav-link title="When a Bloom filter really blooms....">When a Bloom filter really blooms....</a>
+</li>
+<li>
+<a href=https://bigelectrons.com/post/infra/git-upstream-origin-fork/ class=nav-link title="Keeping up with Upstream Git Repo">Keeping up with Upstream Git Repo</a>
 </li>
 </ul>
 <div>
