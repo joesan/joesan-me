@@ -66,11 +66,9 @@ defined two operations that the Monad can perform:
 
 TODO: Documentation
 
-```scala
-  val listOfSalary = List(200000, 100000, 400000, 600000, 700000, 350000)
-  val bonusFunction: Int => Int = baseSalary => baseSalary + 100000
-  val finalSalaries = listOfSalary.map(bonusFunction)
-```
+Let us now implement a Monad by extending the Monad trait.
+
+TODO: Documentation
 
 With that code snippet, we have instructed Scala what we want which is to map the salaries to bonuses. The map function figures
 out how to get the job done. Its signature is like this:
