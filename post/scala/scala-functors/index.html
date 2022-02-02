@@ -83,13 +83,12 @@ Feb 1, 2022</span>
 <p>The idea stems from <a href=https://en.wikipedia.org/wiki/Category_theory>category theory</a> and can be readily applied to elegantly
 look inside a container that contains a certain category and apply a function to the contents, thereby producing another category
 wrapped inside the same container. The name of a functor sounds very much similar to that of a function and in fact it
-is indeed the same, but there is this additional container involved.</p>
-<p>What the heck is that container, or in other words, how is it called in Scala, a context? You might already be familiar with
-such contexts like List[A], Seq[A] that can hold zero to many values of type A. List or Seq can be said that they are the
-containers for holding elements or types of type A. Other containers or contexts like Option, Either, Future etc., also can
-be cited.</p>
+is indeed the same, but there is this additional thingy called the container or in other words a context.</p>
+<p>You might already be familiar with such contexts like List[A], Seq[A] that can hold zero to many values of type A. List or
+Seq can be said that they are the containers for holding elements or types of type A. Other containers or contexts like Option,
+Either, Future etc., also can be cited. Henceforth, we will use the term context instead of a container, but both mean the same.</p>
 <h2 id=hitting-the-ground>Hitting the ground</h2>
-<p>Now to manipulate the data inside such a container, or a context could be done like this:</p>
+<p>To manipulate the data inside a context could be done like this:</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-scala data-lang=scala><span class=ln>1</span>  <span class=c1>// Let us use the Option as our context
 </span><span class=ln>2</span><span class=c1></span>  <span class=k>val</span> <span class=n>somePerson</span> <span class=k>=</span> <span class=nc>Some</span><span class=o>(</span><span class=nc>Person</span><span class=o>(</span><span class=s>&#34;firstName&#34;</span><span class=o>,</span> <span class=s>&#34;lastName&#34;</span><span class=o>,</span> <span class=n>salary</span> <span class=k>=</span> <span class=mi>1000000</span><span class=o>))</span>
 <span class=ln>3</span>  <span class=k>if</span> <span class=o>(</span><span class=n>somePerson</span><span class=o>.</span><span class=n>isDefined</span><span class=o>)</span> <span class=o>{</span>
@@ -98,7 +97,7 @@ be cited.</p>
 </code></pre></div><p>So, with that example., we simply checked if a Person exists and if yes, we manipulated his salary. That piece of code is
 like telling to scala how to do, which is basically an imperative style of programming. We instead would want to say to Scala
 just what to do and, the programming language should figure out how to do. This is where our Functor intuition could help us out.</p>
-<p>Most of scala's context or containers have built in functor like capabilities. Let us get to the following example:</p>
+<p>Most of scala's context have built in functor like capabilities. Let us get to the following example:</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-scala data-lang=scala><span class=ln>1</span>  <span class=k>val</span> <span class=n>listOfSalary</span> <span class=k>=</span> <span class=nc>List</span><span class=o>(</span><span class=mi>200000</span><span class=o>,</span> <span class=mi>100000</span><span class=o>,</span> <span class=mi>400000</span><span class=o>,</span> <span class=mi>600000</span><span class=o>,</span> <span class=mi>700000</span><span class=o>,</span> <span class=mi>350000</span><span class=o>)</span>
 <span class=ln>2</span>  <span class=k>val</span> <span class=n>bonusFunction</span><span class=k>:</span> <span class=kt>Int</span> <span class=o>=&gt;</span> <span class=nc>Int</span> <span class=k>=</span> <span class=n>baseSalary</span> <span class=k>=&gt;</span> <span class=n>baseSalary</span> <span class=o>+</span> <span class=mi>100000</span>
 <span class=ln>3</span>  <span class=k>val</span> <span class=n>finalSalaries</span> <span class=k>=</span> <span class=n>listOfSalary</span><span class=o>.</span><span class=n>map</span><span class=o>(</span><span class=n>bonusFunction</span><span class=o>)</span>
@@ -119,10 +118,10 @@ out how to get the job done. Its signature is like this:</p>
 <span class=ln>2</span>  <span class=k>trait</span> <span class=nc>Functor</span><span class=o>[</span><span class=kt>F</span><span class=o>[</span><span class=k>_</span><span class=o>]]</span> <span class=o>{</span>
 <span class=ln>3</span>    <span class=k>def</span> <span class=n>map</span><span class=o>[</span><span class=kt>A</span>, <span class=kt>B</span><span class=o>](</span><span class=n>fa</span><span class=k>:</span> <span class=kt>F</span><span class=o>[</span><span class=kt>A</span><span class=o>])(</span><span class=n>f</span><span class=k>:</span> <span class=kt>A</span> <span class=o>=&gt;</span> <span class=n>B</span><span class=o>)</span><span class=k>:</span> <span class=kt>F</span><span class=o>[</span><span class=kt>B</span><span class=o>]</span>
 <span class=ln>4</span>  <span class=o>}</span>
-</code></pre></div><p>What we have basically done is, we have created a trait that operates on a generic context which is the F[<em>]. If you follow what
-higher kinded types in Scala mean, that signature should be straight forward. It basically says that in the place of F[</em>], I can plugin
-any context or container which itself is a context or a container to a certain type. For example., List, Option, Try, Either all are
-containers that can contain a certain type. So they qualify to be the F[_] which can be exemplified as F[List], F[Option], F[Try], F[Either]
+</code></pre></div><p>What we have basically done is, we have created a trait that operates on a generic context which is the <code>F[_]</code>. If you follow what
+higher kinded types in Scala mean, that signature should be straight forward. It basically says that in the place of <code>F[_]</code>, I can plugin
+any context which itself is a context around a certain type. For example., List, Option, Try, Either all are
+contexts that around a certain type. So they qualify to be the <code>F[_]</code> which can be exemplified as F[List], F[Option], F[Try], F[Either]
 and so on. Have a lok <a href=https://typelevel.org/blog/2016/08/21/hkts-moving-forward.html>here for some basic understanding of higher kinded types</a></p>
 <p>For the sake of this blog, let us implement a List Functor as below:</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-scala data-lang=scala><span class=ln>1</span>  <span class=k>val</span> <span class=n>listFunctor</span><span class=k>:</span> <span class=kt>Functor</span><span class=o>[</span><span class=kt>List</span><span class=o>]</span> <span class=k>=</span> <span class=k>new</span> <span class=nc>Functor</span><span class=o>[</span><span class=kt>List</span><span class=o>]</span> <span class=o>{</span>
