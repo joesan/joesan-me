@@ -8,7 +8,6 @@ categories = ["Technical Stuff"]
 tags = ["scala"]
 +++
 
-
 Let us debunk this major, but simple functional abstraction called the [Functor](https://en.wikipedia.org/wiki/Functor)
 
 ## Intuition behind Functors
@@ -16,16 +15,14 @@ Let us debunk this major, but simple functional abstraction called the [Functor]
 The idea stems from [category theory](https://en.wikipedia.org/wiki/Category_theory) and can be readily applied to elegantly
 look inside a container that contains a certain category and apply a function to the contents, thereby producing another category
 wrapped inside the same container. The name of a functor sounds very much similar to that of a function and in fact it
-is indeed the same, but there is this additional container involved.
+is indeed the same, but there is this additional thingy called the container or in other words a context.
 
-What the heck is that container, or in other words, how is it called in Scala, a context? You might already be familiar with
-such contexts like List[A], Seq[A] that can hold zero to many values of type A. List or Seq can be said that they are the
-containers for holding elements or types of type A. Other containers or contexts like Option, Either, Future etc., also can
-be cited.
+You might already be familiar with such contexts like List[A], Seq[A] that can hold zero to many values of type A. List or 
+Seq can be said that they are the containers for holding elements or types of type A. Other containers or contexts like Option, 
+Either, Future etc., also can be cited. Henceforth, we will use the term context instead of a container, but both mean the same.
 
 ## Hitting the ground
-
-Now to manipulate the data inside such a container, or a context could be done like this:
+To manipulate the data inside a context could be done like this:
 
 ```scala
   // Let us use the Option as our context
@@ -39,7 +36,7 @@ So, with that example., we simply checked if a Person exists and if yes, we mani
 like telling to scala how to do, which is basically an imperative style of programming. We instead would want to say to Scala
 just what to do and, the programming language should figure out how to do. This is where our Functor intuition could help us out.
 
-Most of scala's context or containers have built in functor like capabilities. Let us get to the following example:
+Most of scala's context have built in functor like capabilities. Let us get to the following example:
 
 ```scala
   val listOfSalary = List(200000, 100000, 400000, 600000, 700000, 350000)
@@ -73,10 +70,10 @@ With that said, let us implement a Functor interface:
   }
 ```
 
-What we have basically done is, we have created a trait that operates on a generic context which is the F[_]. If you follow what
-higher kinded types in Scala mean, that signature should be straight forward. It basically says that in the place of F[_], I can plugin
-any context or container which itself is a context or a container to a certain type. For example., List, Option, Try, Either all are
-containers that can contain a certain type. So they qualify to be the F[_] which can be exemplified as F[List], F[Option], F[Try], F[Either]
+What we have basically done is, we have created a trait that operates on a generic context which is the ```F[_]```. If you follow what
+higher kinded types in Scala mean, that signature should be straight forward. It basically says that in the place of ```F[_]```, I can plugin
+any context which itself is a context around a certain type. For example., List, Option, Try, Either all are
+contexts that around a certain type. So they qualify to be the ```F[_]``` which can be exemplified as F[List], F[Option], F[Try], F[Either]
 and so on. Have a lok [here for some basic understanding of higher kinded types](https://typelevel.org/blog/2016/08/21/hkts-moving-forward.html)
 
 For the sake of this blog, let us implement a List Functor as below:
