@@ -53,11 +53,11 @@ out how to get the job done. Its signature is like this:
   }
 ```
 
-Here F[A] is our container or context in which we have defined a map function that should know how to map from A -> B
+Here ```F[A]``` is our container or context in which we have defined a map function that should know how to map from A -> B
 
 Let us now define a simple Functor. You need three things to do that:
 
-1. The container / context that you will plug in (List, Try, Either, Option etc.,) - F[_]
+1. The container / context that you will plug in (List, Try, Either, Option etc.,) - ```F[_]```
 2. The Type from which you want to go from - A
 3. The Type to which you want to go to - B
 
@@ -101,7 +101,7 @@ that an identity function is one that returns the exact same input. So basically
 
 ### Associativity
 If f and g are two independent functions, then calling a map on f anf then g is as good as calling a map with g composed f or in other words 
-calling g(f(x))
+calling g(f(x)). So basically, we are saying that:
 
 ```
 Functor[X].map(f).map(g) == Functor[X].map(x => g(f(x))
