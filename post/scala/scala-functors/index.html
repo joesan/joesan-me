@@ -106,10 +106,10 @@ out how to get the job done. Its signature is like this:</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-scala data-lang=scala><span class=ln>1</span>  <span class=k>trait</span> <span class=nc>F</span><span class=o>[</span><span class=kt>A</span><span class=o>]</span> <span class=o>{</span>
 <span class=ln>2</span>    <span class=k>def</span> <span class=n>map</span><span class=o>[</span><span class=kt>A</span>, <span class=kt>B</span><span class=o>](</span><span class=n>f</span><span class=k>:</span> <span class=kt>A</span> <span class=o>=&gt;</span> <span class=n>B</span><span class=o>)</span><span class=k>:</span> <span class=kt>F</span><span class=o>[</span><span class=kt>B</span><span class=o>]</span>
 <span class=ln>3</span>  <span class=o>}</span>
-</code></pre></div><p>Here F[A] is our container or context in which we have defined a map function that should know how to map from A -> B</p>
+</code></pre></div><p>Here <code>F[A]</code> is our container or context in which we have defined a map function that should know how to map from A -> B</p>
 <p>Let us now define a simple Functor. You need three things to do that:</p>
 <ol>
-<li>The container / context that you will plug in (List, Try, Either, Option etc.,) - F[_]</li>
+<li>The container / context that you will plug in (List, Try, Either, Option etc.,) - <code>F[_]</code></li>
 <li>The Type from which you want to go from - A</li>
 <li>The Type to which you want to go to - B</li>
 </ol>
@@ -137,7 +137,7 @@ that an identity function is one that returns the exact same input. So basically
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=ln>1</span>  Functor[X].map(identity) &#34;should be equal to&#34; Functor[X]
 </code></pre></div><h3 id=associativity>Associativity</h3>
 <p>If f and g are two independent functions, then calling a map on f anf then g is as good as calling a map with g composed f or in other words
-calling g(f(x))</p>
+calling g(f(x)). So basically, we are saying that:</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=ln>1</span>Functor[X].map(f).map(g) == Functor[X].map(x =&gt; g(f(x))
 </code></pre></div><h2 id=wrap-up>Wrap up</h2>
 <p>So essentially a Functor is just doing this:</p>
