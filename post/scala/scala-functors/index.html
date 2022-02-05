@@ -84,7 +84,7 @@ Feb 1, 2022</span>
 look inside a container that contains a certain category and apply a function to the contents, thereby producing another category
 wrapped inside the same container. The name of a functor sounds very much similar to that of a function and in fact it
 is indeed the same, but there is this additional thingy called the container or in other words a context.</p>
-<p>You might already be familiar with such contexts like List[A], Seq[A] that can hold zero to many values of type A. List or
+<p>You might already be familiar with such contexts like <code>List[A]</code>, <code>Seq[A]</code> that can hold zero to many values of type A. List or
 Seq can be said that they are the containers for holding elements or types of type A. Other containers or contexts like Option,
 Either, Future etc., also can be cited. Henceforth, we will use the term context instead of a container, but both mean the same.</p>
 <h2 id=hitting-the-ground>Hitting the ground</h2>
@@ -137,7 +137,7 @@ that an identity function is one that returns the exact same input. So basically
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=ln>1</span>  Functor[X].map(identity) &#34;should be equal to&#34; Functor[X]
 </code></pre></div><h3 id=associativity>Associativity</h3>
 <p>If f and g are two independent functions, then calling a map on f anf then g is as good as calling a map with g composed f or in other words
-calling g(f(x)). So basically, we are saying that:</p>
+calling <code>g(f(x))</code>. So basically, we are saying that:</p>
 <div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=ln>1</span>Functor[X].map(f).map(g) == Functor[X].map(x =&gt; g(f(x))
 </code></pre></div><h2 id=wrap-up>Wrap up</h2>
 <p>So essentially a Functor is just doing this:</p>
