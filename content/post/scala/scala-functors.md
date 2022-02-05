@@ -17,7 +17,7 @@ look inside a container that contains a certain category and apply a function to
 wrapped inside the same container. The name of a functor sounds very much similar to that of a function and in fact it
 is indeed the same, but there is this additional thingy called the container or in other words a context.
 
-You might already be familiar with such contexts like List[A], Seq[A] that can hold zero to many values of type A. List or 
+You might already be familiar with such contexts like ```List[A]```, ```Seq[A]``` that can hold zero to many values of type A. List or 
 Seq can be said that they are the containers for holding elements or types of type A. Other containers or contexts like Option, 
 Either, Future etc., also can be cited. Henceforth, we will use the term context instead of a container, but both mean the same.
 
@@ -101,7 +101,7 @@ that an identity function is one that returns the exact same input. So basically
 
 ### Associativity
 If f and g are two independent functions, then calling a map on f anf then g is as good as calling a map with g composed f or in other words 
-calling g(f(x)). So basically, we are saying that:
+calling ```g(f(x))```. So basically, we are saying that:
 
 ```
 Functor[X].map(f).map(g) == Functor[X].map(x => g(f(x))
