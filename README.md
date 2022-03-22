@@ -1,6 +1,6 @@
 # bigelectrons
 
-![Build and Deploy](https://github.com/joesan/joesan-me/actions/workflows/main.yaml/badge.svg)
+[![Build and Deploy](https://github.com/joesan/joesan-me/actions/workflows/main.yml/badge.svg)](https://github.com/joesan/joesan-me/actions/workflows/main.yml)
 
 :no_entry: This project contains the source code for my [blogging website](https://www.bigelectrons.com)
 
