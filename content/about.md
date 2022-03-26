@@ -28,3 +28,5 @@ This is my blog! This is how I feed my curiosity! Have a read at some of my cont
 - [x] [If you want to chat now](https://gitter.im/bigelectrons/community) :iphone:
 - [x] [Join the discussions](https://github.com/joesan/joesan-me/discussions/categories/general) :phone:
 - [x] [Look here for Announcements](https://github.com/joesan/joesan-me/discussions/categories/announcements) :trumpet:
+
+Finally, a big thanks to [this template](https://github.com/chipzoller/hugo-clarity) based on which this website runs
