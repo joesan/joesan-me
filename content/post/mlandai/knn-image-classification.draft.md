@@ -5,7 +5,7 @@ date=2021-08-29
 draft=true
 
 categories = ["Technical Stuff"]
-tags = ["ml & ai"]
+tags = ["ml"]
 +++
 
 In this blog article, we will focus on understanding using K-NN algorithm to classify images. We will wrap up the article

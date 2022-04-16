@@ -4,7 +4,7 @@ description="On dealing with True Negative and False Positive"
 date=2021-02-26
 
 categories = ["Technical Stuff"]
-tags = ["ml & ai"]
+tags = ["ml"]
 +++
 
 
