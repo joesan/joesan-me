@@ -36,9 +36,9 @@ TODO: Show the graph for y O= x² with some points P1 P2 and P3
 
 The slope and the points P1, P2 or P3 or as a matter of fact at any given point in the graph is simple the ratio of rise divided by run
 
-TODO: Slope at P = rise / run
+TODO: Slope at point P = rise / run
 
-The slope and point P1 represents a negative slope, meaning that the value of y decreases as the value of x increases which is
+The slope at point P1 represents a negative slope, meaning that the value of y decreases as the value of x increases which is
 kind of obvious from the graph. The slope at point P2 represents a positive slope, meaning that the value of y increases as the 
 value of x increases and the slope and point P3 represents a constant slope where the value of y remains a constant for changing
 values of x.
