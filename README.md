@@ -18,6 +18,12 @@ hugo server and render the static content. Now just open your browser and locate
 localhost:1313
 ```
 
+To keep up with the updates on the submodules (hugo-clarity) in this case, here is the command to use:
+
+```
+git submodule update --recursive --remote
+```
+
 ## Folder organization
 ```
 ├── content                # Root folder for all blog content
