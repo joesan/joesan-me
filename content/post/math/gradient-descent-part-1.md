@@ -21,7 +21,7 @@ is all about moving in a certain direction such that the value of a property is 
 
 I hope that was enough for now! Let us now move on to deriving the equations for a gradient descent. 
 
-## Error Function a.k.a the Cost Function
+## Intuition behind Gradient descent
 
 To be able to derive the equations to calculate the gradient descent, let us consider the following graph which represents the function:
 
@@ -43,6 +43,11 @@ kind of obvious from the graph. The slope at point P2 represents a positive slop
 value of x increases and the slope and point P3 represents a constant slope where the value of y remains a constant for changing
 values of x.
 
-TODO
+TODO: Show the graph with points P1 P2 and P3 and show that the loss is minimum at P3
 
+With that being said, if you now look at the graph above, it could be seen that for the point P3, the minimal point. The whole 
+idea behind gradient descent is to arrive at this minimal point, called as the global minima.
 
+## The Error Function a.k.a The Cost Function
+
+TODO: Documentation
