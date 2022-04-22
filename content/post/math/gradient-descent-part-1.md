@@ -2,7 +2,7 @@
 title="Math behind the optimizer which is behind a Neural Net"
 description="Gradient Descent, a mathematical meaning"
 date=2022-04-20
-draft=false
+draft=true
 
 categories = ["math"]
 +++
