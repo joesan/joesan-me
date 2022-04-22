@@ -20,5 +20,5 @@ effectively do is to differentiate one term while treating the others as a const
 measure of something that changes while a partial derivative is a measure of something that changes while treating everything else in this world as a 
 constant! It's that simple! Have a look here at the [Wikipedia article on Partial Derivatives!](https://en.wikipedia.org/wiki/Partial_derivative)
 
-What I have shown you here is a Simple Linear Regression, but the technique applies as good as a multi variate Linear Regression! Math is fucking 
+What I have shown you is a Simple Linear Regression, but the technique applies as good as a multi variate Linear Regression! Math is fucking 
 fun - Once you understand it!
