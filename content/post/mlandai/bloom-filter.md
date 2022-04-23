@@ -2,6 +2,7 @@
 title="When a Bloom filter really blooms...."
 description="On dealing with True Negative and False Positive"
 date=2021-02-26
+enableMathNotation=true
 
 categories = ["Technical Stuff"]
 tags = ["ml"]
