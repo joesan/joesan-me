@@ -120,3 +120,5 @@ up with a graph like below:
 ![MSE Plat Against m and b (Excuse me for the hand crafted graph, please assume that it is a 3-D graph :smile:](/images/mlandai/mlandai-mse-plot-vs-m-and-b.jpg)
 
 TODO: Show the method of least squares linear regression graph
+
+![](/images/mlandai/mlandai-gradient-partial-1.png)
