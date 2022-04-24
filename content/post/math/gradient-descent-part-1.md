@@ -122,3 +122,8 @@ up with a graph like below:
 TODO: Show the method of least squares linear regression graph
 
 ![](/images/mlandai/mlandai-gradient-partial-1.png)
+![](/images/mlandai/mlandai-gradient-partial-2.png)
+
+A few things could be said about the set of equations from above:
+
+1. We use the chain rule for the derivatives, if unsure what it is, take a look [here](https://en.wikipedia.org/wiki/Chain_rule)
