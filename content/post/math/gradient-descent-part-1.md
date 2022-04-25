@@ -1,5 +1,5 @@
 +++
-title="Gradient Descent, a deeper look inside a Neural Net"
+title="Gradient Descent, the engine behind a Neural Net"
 description="Math behind the optimizer which is behind a Neural Ne"
 date=2022-04-20
 draft=true
@@ -123,7 +123,19 @@ TODO: Show the method of least squares linear regression graph
 
 ![](/images/mlandai/mlandai-gradient-partial-1.png)
 ![](/images/mlandai/mlandai-gradient-partial-2.png)
-
 A few things could be said about the set of equations from above:
 
 1. We use the chain rule for the derivatives, if unsure what it is, take a look [here](https://en.wikipedia.org/wiki/Chain_rule)
+
+![](/images/mlandai/mlandai-gradient-partial-3.png)
+So there we have it! The equations eq (1) and eq(2) represents the rate of change of J relative to m and b respectively.
+
+All now is left is to update the values of m and b using:
+
+m = m - L * partial derivative of J relative to m -- eq(3)
+
+b = b - L * partial derivative of J relative to b -- eq(4)
+
+Where L represents the learning rate (remember the descent, this is exactly it). So now we have worked out the Gradient Descent
+equations. Now all is left is to convert these equations eq(1) to eq(4) into a function and do this iteratively until
+ we have reached the global minima.
