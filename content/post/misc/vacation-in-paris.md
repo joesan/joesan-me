@@ -31,6 +31,14 @@ Our first stop was the Eifel Tower, one of the world wonders. I was unable to se
 we had to wait at the queue to secure an entry, and we had to wait for about roughly 2 Hours to get to the ticket counter. 
 I thought everything after that would be quick, but I was wrong again. We had to wait for another 30 to 45 minutes to get 
 into one of the elevators that would take us to the second floor. Once in the second floor, we spent some time gazing at
-the city of Paris. Again here getting access to the view point was a challenge because of the huge crowd. 
+the city of Paris. Again here getting access to the view point was a challenge because of the huge crowd. However, after a
+few minutes of struggle and changing positions, we were able to secure a spot to view the cits of Paris. 
+
+After clicking some snaps, we moved to the lift to take us to the summit. Again some waiting time! Once at the summit, it
+was more or less the same situation as on the second floor. If you are fear of heights, the summit is not for you. We clicked
+some snaps and tried to locate the other attractions in Paris. We were able to spot a few of them. Overall, we enjoyed visiting
+the Eifel tower minus the huge crowds. We came down to the second floor, and we decided to take the stairs. It was fun doing so!
+
+We were so tired and we went back to our rooms to retire for the day.
 
 TODO: Complete it fully!
