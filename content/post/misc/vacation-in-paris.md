@@ -28,6 +28,9 @@ We just had 2 full days and one half a day to explore Paris. We thought of doing
 wrong. It was so crowded everywhere due to the holiday season, and we had to wait hours together to get into the attractions. 
 
 Our first stop was the Eifel Tower, one of the world wonders. I was unable to secure any online tickets before my visit, so 
-I had to wait at the queue to secure one for the entry, and we had to wait for about roughly 2 Hours to get to the ticket counter. 
+we had to wait at the queue to secure an entry, and we had to wait for about roughly 2 Hours to get to the ticket counter. 
 I thought everything after that would be quick, but I was wrong again. We had to wait for another 30 to 45 minutes to get 
-into one of the elevators that would take us to the second floor. Once in the second floor
+into one of the elevators that would take us to the second floor. Once in the second floor, we spent some time gazing at
+the city of Paris. Again here getting access to the view point was a challenge because of the huge crowd. 
+
+TODO: Complete it fully!
