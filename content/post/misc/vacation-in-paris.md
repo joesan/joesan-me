@@ -22,7 +22,11 @@ Minutes away (with the Metro) from the attractions in Paris (Eifel Tower, Louvre
 better find a hotel that offers you a private car park. It is better to avoid using your car to explore Paris due to 
 safety concerns, and the other main reason being that the Metro in Paris is one of the best and efficient ways to move around.
 
-## What to do
+## What to do 
+
+TODO: Write about....
+
+### The Eifel Tower
 
 We just had 2 full days and one half a day to explore Paris. We thought of doing two attractions every day, but man we were
 wrong. It was so crowded everywhere due to the holiday season, and we had to wait hours together to get into the attractions. 
@@ -39,6 +43,14 @@ was more or less the same situation as on the second floor. If you are fear of h
 some snaps and tried to locate the other attractions in Paris. We were able to spot a few of them. Overall, we enjoyed visiting
 the Eifel tower minus the huge crowds. We came down to the second floor, and we decided to take the stairs. It was fun doing so!
 
-We were so tired and we went back to our rooms to retire for the day.
+We were so tired after the drive, the wait and the visit to the Eifel tower. We went back to our rooms to retire for the day. It was so
+warm, sultry and hot the entire day.
+
+### Galerys Lafayette
+
+The original plan for this day (was a Sunday) was to visit the Louvre museum, but somehow I decided to visit the Lafayette. I had
+to fight a migrane that had set in because of yesterday. We started from the hotel around 9:30 and reached Lafayette in about 30
+minutes. We fell in love with the Metro in Paris. It was easy to get by yourself with little to no help. After reaching Lafayette, we
+realised that it opens only at 11:00 on Sundays. But never mind, we went into the McDonalds nearby and had our breakfast.
 
 TODO: Complete it fully!
