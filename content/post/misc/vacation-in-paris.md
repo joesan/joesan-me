@@ -46,7 +46,7 @@ the Eifel tower minus the huge crowds. We came down to the second floor, and we 
 We were so tired after the drive, the wait and the visit to the Eifel tower. We went back to our rooms to retire for the day. It was so
 warm, sultry and hot the entire day.
 
-### Galerys Lafayette
+### Galeries Lafayette
 
 The original plan for this day (was a Sunday) was to visit the Louvre museum, but somehow I decided to visit the Lafayette. I had
 to fight a migrane that had set in because of yesterday. We started from the hotel around 9:30 and reached Lafayette in about 30
