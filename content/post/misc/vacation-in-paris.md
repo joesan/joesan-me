@@ -49,8 +49,11 @@ warm, sultry and hot the entire day.
 ### Galeries Lafayette
 
 The original plan for this day (was a Sunday) was to visit the Louvre museum, but somehow I decided to visit the Lafayette. I had
-to fight a migrane that had set in because of yesterday. We started from the hotel around 9:30 and reached Lafayette in about 30
+to fight a migraine that had set in because of yesterday. We started from the hotel around 9:30 and reached Lafayette in about 30
 minutes. We fell in love with the Metro in Paris. It was easy to get by yourself with little to no help. After reaching Lafayette, we
-realised that it opens only at 11:00 on Sundays. But never mind, we went into the McDonalds nearby and had our breakfast.
+realised that it opens only at 11:00 on Sundays. But never mind, we went into the McDonald's nearby and had our breakfast.
+
+The shops nearby started to open, and we headed directly to the Lafayette. It is quite a big shopping complex, kind of like a 
+"Open Office" space for shopping where you can see lots and lots of brands nearby.
 
 TODO: Complete it fully!
