@@ -24,7 +24,12 @@ safety concerns, and the other main reason being that the Metro in Paris is one 
 
 ## What to do 
 
-TODO: Write about....
+There are tons of places that you could visit when in Paris. You only need the time to do all that. For us, it was just 3 full days, so
+we nailed it down to a few spots like the Eiffel Tower, the Louvre Museum, the Galeries Lafayette, the Parc des Buttes-Chaumont,
+the Moulin Rogue, the Cathédrale Notre-Dame. That is optimistically ambitious to visit all these places in a span of 3 days.
+
+Soon after my first experience on day 1 at the Eiffel Tower, I realized that all the 6 places that I shortlisted is indeed
+not doable in 3 days.
 
 ### The Eifel Tower
 
