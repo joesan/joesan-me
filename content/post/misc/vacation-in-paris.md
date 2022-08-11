@@ -28,13 +28,13 @@ There are tons of places that you could visit when in Paris. You only need the t
 we nailed it down to a few spots like the Eiffel Tower, the Louvre Museum, the Galeries Lafayette, the Parc des Buttes-Chaumont,
 the Moulin Rogue, the Cathédrale Notre-Dame. That is optimistically ambitious to visit all these places in a span of 3 days.
 
+With 2 full days and one half a day to explore Paris, we thought of doing two attractions every day, but man we were
+wrong. It was so crowded everywhere due to the holiday season, and we had to wait hours together to get into the attractions. 
 Soon after my first experience on day 1 at the Eiffel Tower, I realized that all the 6 places that I shortlisted is indeed
-not doable in 3 days.
+not doable in 3 days. So we decided to do the Eiffel Tower, Galaries Lafayette, the Louvre and of course catch a glimpse of 
+Tour de France.
 
 ### The Eifel Tower
-
-We just had 2 full days and one half a day to explore Paris. We thought of doing two attractions every day, but man we were
-wrong. It was so crowded everywhere due to the holiday season, and we had to wait hours together to get into the attractions. 
 
 Our first stop was the Eiffel Tower, one of the world wonders. I was unable to secure any online tickets before my visit, so 
 we had to wait at the queue to secure an entry, and we had to wait for about roughly 2 Hours to get to the ticket counter. 
