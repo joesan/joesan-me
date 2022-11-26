@@ -41,7 +41,7 @@ this look like in reality? This is what we show in the code below:</p><div class
 </span></span><span class=line><span class=ln> 7</span><span class=cl><span class=kt>void</span> <span class=nf>pidControl</span><span class=p>()</span>
 </span></span><span class=line><span class=ln> 8</span><span class=cl><span class=p>{</span>
 </span></span><span class=line><span class=ln> 9</span><span class=cl>   <span class=c1>// Time interval to calculate the next error
-</span></span></span><span class=line><span class=ln>10</span><span class=cl><span class=c1></span>   <span class=kt>unsigned</span> <span class=kt>long</span> <span class=n>now</span> <span class=o>=</span> <span class=n>millis</span><span class=p>();</span>
+</span></span></span><span class=line><span class=ln>10</span><span class=cl><span class=c1></span>   <span class=kt>unsigned</span> <span class=kt>long</span> <span class=n>now</span> <span class=o>=</span> <span class=nf>millis</span><span class=p>();</span>
 </span></span><span class=line><span class=ln>11</span><span class=cl>   <span class=kt>float</span> <span class=n>timeDiff</span> <span class=o>=</span> <span class=p>(</span><span class=kt>float</span><span class=p>)(</span><span class=n>now</span> <span class=o>-</span> <span class=n>lastTime</span><span class=p>);</span>
 </span></span><span class=line><span class=ln>12</span><span class=cl>
 </span></span><span class=line><span class=ln>13</span><span class=cl>   <span class=k>if</span><span class=p>(</span><span class=n>timeDiff</span> <span class=o>&gt;=</span> <span class=n>interval</span><span class=p>)</span> 

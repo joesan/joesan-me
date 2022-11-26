@@ -29,49 +29,49 @@ is some background information about this! With that being said, our sketch look
 </span></span><span class=line><span class=ln>25</span><span class=cl><span class=kt>unsigned</span> <span class=kt>long</span> <span class=n>lastmillis</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span>
 </span></span><span class=line><span class=ln>26</span><span class=cl>
 </span></span><span class=line><span class=ln>27</span><span class=cl><span class=kt>void</span> <span class=nf>setup</span><span class=p>()</span> <span class=p>{</span>
-</span></span><span class=line><span class=ln>28</span><span class=cl><span class=n>pinMode</span><span class=p>(</span><span class=n>M1_ENCODER_A</span><span class=p>,</span> <span class=n>INPUT</span><span class=p>);</span>
-</span></span><span class=line><span class=ln>29</span><span class=cl><span class=n>pinMode</span><span class=p>(</span><span class=n>M1_ENCODER_B</span><span class=p>,</span> <span class=n>INPUT</span><span class=p>);</span>
-</span></span><span class=line><span class=ln>30</span><span class=cl><span class=n>pinMode</span><span class=p>(</span><span class=n>enA</span><span class=p>,</span> <span class=n>OUTPUT</span><span class=p>);</span>
-</span></span><span class=line><span class=ln>31</span><span class=cl><span class=n>pinMode</span><span class=p>(</span><span class=n>in1</span><span class=p>,</span> <span class=n>OUTPUT</span><span class=p>);</span>
-</span></span><span class=line><span class=ln>32</span><span class=cl><span class=n>pinMode</span><span class=p>(</span><span class=n>in2</span><span class=p>,</span> <span class=n>OUTPUT</span><span class=p>);</span>
+</span></span><span class=line><span class=ln>28</span><span class=cl><span class=nf>pinMode</span><span class=p>(</span><span class=n>M1_ENCODER_A</span><span class=p>,</span> <span class=n>INPUT</span><span class=p>);</span>
+</span></span><span class=line><span class=ln>29</span><span class=cl><span class=nf>pinMode</span><span class=p>(</span><span class=n>M1_ENCODER_B</span><span class=p>,</span> <span class=n>INPUT</span><span class=p>);</span>
+</span></span><span class=line><span class=ln>30</span><span class=cl><span class=nf>pinMode</span><span class=p>(</span><span class=n>enA</span><span class=p>,</span> <span class=n>OUTPUT</span><span class=p>);</span>
+</span></span><span class=line><span class=ln>31</span><span class=cl><span class=nf>pinMode</span><span class=p>(</span><span class=n>in1</span><span class=p>,</span> <span class=n>OUTPUT</span><span class=p>);</span>
+</span></span><span class=line><span class=ln>32</span><span class=cl><span class=nf>pinMode</span><span class=p>(</span><span class=n>in2</span><span class=p>,</span> <span class=n>OUTPUT</span><span class=p>);</span>
 </span></span><span class=line><span class=ln>33</span><span class=cl>
 </span></span><span class=line><span class=ln>34</span><span class=cl><span class=c1>// initialize hardware interrupt
-</span></span></span><span class=line><span class=ln>35</span><span class=cl><span class=c1></span><span class=n>attachInterrupt</span><span class=p>(</span><span class=n>digitalPinToInterrupt</span><span class=p>(</span><span class=n>M1_ENCODER_A</span><span class=p>),</span> <span class=n>m1EncoderEvent</span><span class=p>,</span> <span class=n>RISING</span><span class=p>);</span>
+</span></span></span><span class=line><span class=ln>35</span><span class=cl><span class=c1></span><span class=nf>attachInterrupt</span><span class=p>(</span><span class=nf>digitalPinToInterrupt</span><span class=p>(</span><span class=n>M1_ENCODER_A</span><span class=p>),</span> <span class=n>m1EncoderEvent</span><span class=p>,</span> <span class=n>RISING</span><span class=p>);</span>
 </span></span><span class=line><span class=ln>36</span><span class=cl>
-</span></span><span class=line><span class=ln>37</span><span class=cl><span class=n>Serial</span><span class=p>.</span><span class=n>begin</span><span class=p>(</span><span class=mi>9600</span><span class=p>);</span>
+</span></span><span class=line><span class=ln>37</span><span class=cl><span class=n>Serial</span><span class=p>.</span><span class=nf>begin</span><span class=p>(</span><span class=mi>9600</span><span class=p>);</span>
 </span></span><span class=line><span class=ln>38</span><span class=cl><span class=p>}</span>
 </span></span><span class=line><span class=ln>39</span><span class=cl>
 </span></span><span class=line><span class=ln>40</span><span class=cl><span class=kt>void</span> <span class=nf>loop</span><span class=p>()</span> <span class=p>{</span>
 </span></span><span class=line><span class=ln>41</span><span class=cl><span class=c1>// Turn on Motor A forward direction
-</span></span></span><span class=line><span class=ln>42</span><span class=cl><span class=c1></span><span class=n>runForward</span><span class=p>(</span><span class=mi>255</span><span class=p>);</span>
+</span></span></span><span class=line><span class=ln>42</span><span class=cl><span class=c1></span><span class=nf>runForward</span><span class=p>(</span><span class=mi>255</span><span class=p>);</span>
 </span></span><span class=line><span class=ln>43</span><span class=cl>
 </span></span><span class=line><span class=ln>44</span><span class=cl><span class=c1>// Calculate the RPM every second
-</span></span></span><span class=line><span class=ln>45</span><span class=cl><span class=c1></span><span class=k>if</span> <span class=p>(</span><span class=n>millis</span><span class=p>()</span> <span class=o>-</span> <span class=n>lastmillis</span> <span class=o>==</span> <span class=mi>1000</span><span class=p>)</span> <span class=p>{</span>
+</span></span></span><span class=line><span class=ln>45</span><span class=cl><span class=c1></span><span class=k>if</span> <span class=p>(</span><span class=nf>millis</span><span class=p>()</span> <span class=o>-</span> <span class=n>lastmillis</span> <span class=o>==</span> <span class=mi>1000</span><span class=p>)</span> <span class=p>{</span>
 </span></span><span class=line><span class=ln>46</span><span class=cl><span class=c1>// Disable interrupt when calculating
-</span></span></span><span class=line><span class=ln>47</span><span class=cl><span class=c1></span><span class=n>detachInterrupt</span><span class=p>(</span><span class=n>digitalPinToInterrupt</span><span class=p>(</span><span class=n>M1_ENCODER_A</span><span class=p>));</span>
+</span></span></span><span class=line><span class=ln>47</span><span class=cl><span class=c1></span><span class=nf>detachInterrupt</span><span class=p>(</span><span class=nf>digitalPinToInterrupt</span><span class=p>(</span><span class=n>M1_ENCODER_A</span><span class=p>));</span>
 </span></span><span class=line><span class=ln>48</span><span class=cl>
 </span></span><span class=line><span class=ln>49</span><span class=cl>    <span class=c1>// rpm = counts / second * seconds / minute * revolutions / count
 </span></span></span><span class=line><span class=ln>50</span><span class=cl><span class=c1></span>    <span class=n>rpm</span> <span class=o>=</span> <span class=n>m1count</span> <span class=o>*</span> <span class=mi>60</span> <span class=o>/</span> <span class=mf>979.62</span><span class=p>;</span>      
-</span></span><span class=line><span class=ln>51</span><span class=cl>    <span class=n>Serial</span><span class=p>.</span><span class=n>print</span><span class=p>(</span><span class=s>&#34;RPM =</span><span class=se>\t</span><span class=s>&#34;</span><span class=p>);</span>
-</span></span><span class=line><span class=ln>52</span><span class=cl>    <span class=n>Serial</span><span class=p>.</span><span class=n>println</span><span class=p>(</span><span class=n>rpm</span><span class=p>);</span>  
+</span></span><span class=line><span class=ln>51</span><span class=cl>    <span class=n>Serial</span><span class=p>.</span><span class=nf>print</span><span class=p>(</span><span class=s>&#34;RPM =</span><span class=se>\t</span><span class=s>&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=ln>52</span><span class=cl>    <span class=n>Serial</span><span class=p>.</span><span class=nf>println</span><span class=p>(</span><span class=n>rpm</span><span class=p>);</span>  
 </span></span><span class=line><span class=ln>53</span><span class=cl>    <span class=n>m1Count</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span>
-</span></span><span class=line><span class=ln>54</span><span class=cl>    <span class=n>lastmillis</span> <span class=o>=</span> <span class=n>millis</span><span class=p>();</span>
+</span></span><span class=line><span class=ln>54</span><span class=cl>    <span class=n>lastmillis</span> <span class=o>=</span> <span class=nf>millis</span><span class=p>();</span>
 </span></span><span class=line><span class=ln>55</span><span class=cl>
 </span></span><span class=line><span class=ln>56</span><span class=cl>    <span class=c1>// Enable interrupt
-</span></span></span><span class=line><span class=ln>57</span><span class=cl><span class=c1></span>    <span class=n>attachInterrupt</span><span class=p>(</span><span class=n>digitalPinToInterrupt</span><span class=p>(</span><span class=n>M1_ENCODER_A</span><span class=p>),</span> <span class=n>m1EncoderEvent</span><span class=p>,</span> <span class=n>RISING</span><span class=p>);</span>
+</span></span></span><span class=line><span class=ln>57</span><span class=cl><span class=c1></span>    <span class=nf>attachInterrupt</span><span class=p>(</span><span class=nf>digitalPinToInterrupt</span><span class=p>(</span><span class=n>M1_ENCODER_A</span><span class=p>),</span> <span class=n>m1EncoderEvent</span><span class=p>,</span> <span class=n>RISING</span><span class=p>);</span>
 </span></span><span class=line><span class=ln>58</span><span class=cl><span class=p>}</span>
 </span></span><span class=line><span class=ln>59</span><span class=cl><span class=p>}</span>
 </span></span><span class=line><span class=ln>60</span><span class=cl>
 </span></span><span class=line><span class=ln>61</span><span class=cl><span class=kt>void</span> <span class=nf>runForward</span><span class=p>(</span><span class=kt>int</span> <span class=n>speed</span><span class=p>)</span> <span class=p>{</span> <span class=c1>//speed 0-255
-</span></span></span><span class=line><span class=ln>62</span><span class=cl><span class=c1></span><span class=n>analogWrite</span><span class=p>(</span><span class=n>enA</span><span class=p>,</span> <span class=n>speed</span><span class=p>);</span>
-</span></span><span class=line><span class=ln>63</span><span class=cl><span class=n>digitalWrite</span><span class=p>(</span><span class=n>in1</span><span class=p>,</span> <span class=n>HIGH</span><span class=p>);</span>
-</span></span><span class=line><span class=ln>64</span><span class=cl><span class=n>digitalWrite</span><span class=p>(</span><span class=n>in2</span><span class=p>,</span> <span class=n>LOW</span><span class=p>);</span>
+</span></span></span><span class=line><span class=ln>62</span><span class=cl><span class=c1></span><span class=nf>analogWrite</span><span class=p>(</span><span class=n>enA</span><span class=p>,</span> <span class=n>speed</span><span class=p>);</span>
+</span></span><span class=line><span class=ln>63</span><span class=cl><span class=nf>digitalWrite</span><span class=p>(</span><span class=n>in1</span><span class=p>,</span> <span class=n>HIGH</span><span class=p>);</span>
+</span></span><span class=line><span class=ln>64</span><span class=cl><span class=nf>digitalWrite</span><span class=p>(</span><span class=n>in2</span><span class=p>,</span> <span class=n>LOW</span><span class=p>);</span>
 </span></span><span class=line><span class=ln>65</span><span class=cl><span class=p>}</span>
 </span></span><span class=line><span class=ln>66</span><span class=cl>
 </span></span><span class=line><span class=ln>67</span><span class=cl><span class=kt>void</span> <span class=nf>runBackward</span><span class=p>(</span><span class=kt>int</span> <span class=n>speed</span><span class=p>)</span> <span class=p>{</span> <span class=c1>//speed 0-255
-</span></span></span><span class=line><span class=ln>68</span><span class=cl><span class=c1></span><span class=n>analogWrite</span><span class=p>(</span><span class=n>enA</span><span class=p>,</span> <span class=n>speed</span><span class=p>);</span>
-</span></span><span class=line><span class=ln>69</span><span class=cl><span class=n>digitalWrite</span><span class=p>(</span><span class=n>in1</span><span class=p>,</span> <span class=n>LOW</span><span class=p>);</span>
-</span></span><span class=line><span class=ln>70</span><span class=cl><span class=n>digitalWrite</span><span class=p>(</span><span class=n>in2</span><span class=p>,</span> <span class=n>HIGH</span><span class=p>);</span>
+</span></span></span><span class=line><span class=ln>68</span><span class=cl><span class=c1></span><span class=nf>analogWrite</span><span class=p>(</span><span class=n>enA</span><span class=p>,</span> <span class=n>speed</span><span class=p>);</span>
+</span></span><span class=line><span class=ln>69</span><span class=cl><span class=nf>digitalWrite</span><span class=p>(</span><span class=n>in1</span><span class=p>,</span> <span class=n>LOW</span><span class=p>);</span>
+</span></span><span class=line><span class=ln>70</span><span class=cl><span class=nf>digitalWrite</span><span class=p>(</span><span class=n>in2</span><span class=p>,</span> <span class=n>HIGH</span><span class=p>);</span>
 </span></span><span class=line><span class=ln>71</span><span class=cl><span class=p>}</span>
 </span></span><span class=line><span class=ln>72</span><span class=cl>
 </span></span><span class=line><span class=ln>73</span><span class=cl><span class=kt>void</span> <span class=nf>m1EncoderEvent</span><span class=p>()</span> <span class=p>{</span>
