@@ -13,6 +13,8 @@ Here you will find some content, some more content, some thoughts, some experime
 memory is so volatile, so I thought it is a good idea for me to write them off somewhere and that somewhere is this blog! 
 This is my blog! This is how I feed my curiosity! Have a read at some of my content!
 
+I'm on [Mastodon](https://mstdn.social/@joesan)
+
 ## Few Facts
 
 - I'm into Enduro MTB :bicyclist:
