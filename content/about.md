@@ -22,7 +22,7 @@ I'm on [Mastodon](https://mstdn.social/@joesan)
 - I'm fascinated by math :thumbsup:
 - I'm magnetized to well-made / hand-made products :+1:
 - I'm learning through [Coursera](https://www.coursera.org/user/04a614123f3a97ae89e941cb3ba2a9a3) :book:
-- I'm currently working on the [Navo project](https://github.com/navo-org) :robot:
+- I'm currently working on the [open-electrons project](https://github.com/open-electrons) :robot:
 
 ## Get in touch
 
