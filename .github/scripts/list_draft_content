@@ -1,5 +1,5 @@
 #!/bin/sh
-exec scala "$0" "$@"
+exec scala "$0" "$1" "$@"
 !#
 
 import scala.io.Source
