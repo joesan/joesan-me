@@ -5,8 +5,6 @@ date=2023-01-26
 tags = ["open-electrons"]
 +++
 
-## About open-electrons
-
 open-electrons is an attempt by myself to abstract all e-mobility related protocols, use cases and much more. In the E-Mobility
 industry, there are some well known protocols which are industry standard. With the open-electrons project, my aim is to
 provide a software stack which can be customized and deployed to mimic the functionality of an eMSP (eMobility Service Provider).
