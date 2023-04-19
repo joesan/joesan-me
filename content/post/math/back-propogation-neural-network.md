@@ -73,3 +73,6 @@ there is a batch of N inputs, you can represent the batch as a matrix of dimensi
 to a single input.
 
 w12 -> Weight that goes to the 1st neuron from the 2nd input
+
+In general, if a layer L has N neurons and and the next layer L+1 has M neurons, the weight matrix is an 
+N-by-M matrix (N rows and M columns).
