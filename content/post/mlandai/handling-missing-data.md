@@ -18,15 +18,16 @@ Before diving into imputation techniques, it's important to understand the types
 
 **Missing Completely at Random (MCAR):** The missing values have no relationship with any other data or processes. They occur 
 entirely by chance.
+
 **Missing at Random (MAR):** The missing values are related to some observed data but not the missing data itself.
+
 **Missing Not at Random (MNAR):** The missing values have a pattern or reason behind them.
 
 Choosing the right imputation method depends on the nature of the missing data and the specific requirements of your project.
 
 ## Common Imputation Techniques
 
-1. Mean Imputation
-   Mean imputation replaces missing values with the mean of the non-missing values of the feature.
+1. **Mean Imputation** - Mean imputation replaces missing values with the mean of the non-missing values of the feature.
 
 ```python
 import pandas as pd
@@ -45,15 +46,14 @@ print(df_mean_imputed)
 ```
 
 **Pros**
-Simple and fast to implement.
-Works well with small datasets.
+- Simple and fast to implement.
+- Works well with small datasets.
 
 **Cons**
-Reduces data variability.
-Can lead to biased estimates if data is not MCAR.
+- Reduces data variability.
+- Can lead to biased estimates if data is not MCAR.
 
-2. Median Imputation
-   Median imputation replaces missing values with the median of the non-missing values of the feature.
+2. **Median Imputation** - Median imputation replaces missing values with the median of the non-missing values of the feature.
 
 ```python
 # Initialize the imputer with median strategy
@@ -65,12 +65,12 @@ print(df_median_imputed)
 ```
 
 **Pros**
-More robust to outliers compared to mean imputation.
-Simple to implement.
+- More robust to outliers compared to mean imputation.
+- Simple to implement.
 
 **Cons**
-Reduces data variability.
-Can still lead to biased estimates if data is not MCAR.
+- Reduces data variability.
+- Can still lead to biased estimates if data is not MCAR.
 
 3. Most Frequent Imputation
    Most frequent imputation replaces missing values with the most frequent (mode) value of the feature.
