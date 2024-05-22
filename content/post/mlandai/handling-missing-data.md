@@ -185,7 +185,7 @@ print(df)
 - Not suitable for all types of data.
 - Can propagate errors if the last observed value is incorrect.
 
-### Backfill (bfill)
+#### Backfill (bfill)
 
 Backfill replaces missing values with the next observed value. This method assumes that the next available data point 
 is a reasonable estimate for the missing values that came before it.
@@ -204,7 +204,7 @@ print(df)
 - Not suitable for all types of data.
 - Can propagate errors if the next observed value is incorrect.
 
-### Combining Forward Fill and Backfill
+#### Combining Forward Fill and Backfill
 
 Sometimes, it might be beneficial to combine both forward fill and backfill to ensure that no missing values remain. This 
 can be done sequentially, first applying forward fill and then backfill (or vice versa).
