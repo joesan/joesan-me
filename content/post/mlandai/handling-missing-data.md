@@ -72,8 +72,7 @@ print(df_median_imputed)
 - Reduces data variability.
 - Can still lead to biased estimates if data is not MCAR.
 
-3. Most Frequent Imputation
-   Most frequent imputation replaces missing values with the most frequent (mode) value of the feature.
+3. **Most Frequent Imputation** - Most frequent imputation replaces missing values with the most frequent (mode) value of the feature.
 
 ```python
 # Initialize the imputer with most frequent strategy
@@ -85,15 +84,14 @@ print(df_mode_imputed)
 ```
 
 **Pros**
-Works well with categorical data.
-Simple to implement.
+- Works well with categorical data.
+- Simple to implement.
 
 **Cons**
-Can introduce bias if the mode is not representative.
-Less effective for continuous data.
+- Can introduce bias if the mode is not representative.
+- Less effective for continuous data.
 
-4. Constant Imputation
-   Constant imputation replaces missing values with a constant value specified by the user.
+4. **Constant Imputation** - Constant imputation replaces missing values with a constant value specified by the user.
 
 ```python
 # Initialize the imputer with constant strategy
@@ -105,15 +103,14 @@ print(df_constant_imputed)
 ```
 
 **Pros**
-Useful for indicating missingness with a specific value.
-Simple to implement.
+- Useful for indicating missingness with a specific value.
+- Simple to implement.
 
 **Cons**
-The choice of constant value can be arbitrary.
-May introduce bias if the constant value is not representative.
+- The choice of constant value can be arbitrary.
+- May introduce bias if the constant value is not representative.
 
-5. K-Nearest Neighbors (KNN) Imputation
-   KNN imputation replaces missing values by the mean (or median) of the k-nearest neighbors' values.
+5. **K-Nearest Neighbors (KNN) Imputation** - KNN imputation replaces missing values by the mean (or median) of the k-nearest neighbors' values.
 
 ```python
 from sklearn.impute import KNNImputer
@@ -127,15 +124,14 @@ print(df_knn_imputed)
 ```
 
 **Pros**
-Can capture local patterns in the data.
-Suitable for both continuous and categorical data.
+- Can capture local patterns in the data.
+- Suitable for both continuous and categorical data.
 
 **Cons**
-Computationally expensive for large datasets.
-Sensitive to the choice of k and distance metric.
+- Computationally expensive for large datasets.
+- Sensitive to the choice of k and distance metric.
 
-6. Multivariate Imputation by Chained Equations (MICE)
-   MICE imputes missing values by modeling each feature with missing values as a function of other features in a round-robin fashion.
+6. **Multivariate Imputation by Chained Equations (MICE)** - MICE imputes missing values by modeling each feature with missing values as a function of other features in a round-robin fashion.
 
 ```python
 from sklearn.experimental import enable_iterative_imputer
@@ -150,14 +146,14 @@ print(df_mice_imputed)
 ```
 
 **Pros**
-Can handle complex relationships between features.
-Iteratively refines imputations, improving accuracy.
+- Can handle complex relationships between features.
+- Iteratively refines imputations, improving accuracy.
 
 **Cons**
-Computationally intensive.
-Requires careful parameter tuning.
+- Computationally intensive.
+- Requires careful parameter tuning.
 
-7. Backfill and Forward fill Technique
+7. **Backfill and Forward fill Technique**
 
 In addition to the standard imputation methods like mean, median, and mode, time series data or ordered datasets often 
 benefit from techniques such as Backfill and Forward Fill. These methods leverage the temporal or sequential nature of 
@@ -182,12 +178,12 @@ print(df)
 ```
 
 **Pros**
-Simple to implement.
-Useful when recent past values are good predictors of current values.
+- Simple to implement.
+- Useful when recent past values are good predictors of current values.
 
 **Cons**
-Not suitable for all types of data.
-Can propagate errors if the last observed value is incorrect.
+- Not suitable for all types of data.
+- Can propagate errors if the last observed value is incorrect.
 
 ### Backfill (bfill)
 
@@ -201,14 +197,15 @@ print(df)
 ```
 
 **Pros**
-Simple to implement.
-Useful when future values are better indicators of the missing values.
+- Simple to implement.
+- Useful when future values are better indicators of the missing values.
 
 **Cons**
-Not suitable for all types of data.
-Can propagate errors if the next observed value is incorrect.
+- Not suitable for all types of data.
+- Can propagate errors if the next observed value is incorrect.
 
 ### Combining Forward Fill and Backfill
+
 Sometimes, it might be beneficial to combine both forward fill and backfill to ensure that no missing values remain. This 
 can be done sequentially, first applying forward fill and then backfill (or vice versa).
 
@@ -219,14 +216,15 @@ print(df)
 ```
 
 **Pros**
-Temporal Relevance: Suitable for time series and sequential data where order matters.
-Simplicity: Easy to implement and understand.
-Data Utilization: Makes full use of available data points to estimate missing values.
+- Temporal Relevance: Suitable for time series and sequential data where order matters.
+- Simplicity: Easy to implement and understand.
+- Data Utilization: Makes full use of available data points to estimate missing values.
 
 **Cons**
-Assumption Dependent: Assumes that the last (forward fill) or next (backfill) observed value is a good estimate, which may not always be true.
-Error Propagation: Incorrect values can propagate through the dataset, leading to biased estimates.
-Not Universal: May not be suitable for non-sequential data or data without a natural order.
+- Assumption Dependent: Assumes that the last (forward fill) or next (backfill) observed value is a good estimate, which 
+  may not always be true.
+- Error Propagation: Incorrect values can propagate through the dataset, leading to biased estimates.
+- Not Universal: May not be suitable for non-sequential data or data without a natural order.
 
 ## Summary
 Choosing the right imputation technique depends on the nature of your data and the specific requirements of your machine 
