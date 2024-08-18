@@ -42,7 +42,7 @@ First, let us see what parameters we are going to use
 ## Let us calculate
 
 To keep it simple and not bloat this blog article, I have created the calculations in a Scala REPL. Please have a 
-look [here](https://scastie.scala-lang.org/nX5uMcgZQx2HXVnMk4tFvA)
+look [here](https://scastie.scala-lang.org/dfpAWiu7QI2Lf3Ptig0lZg)
 
 ## What do the results say?
 
