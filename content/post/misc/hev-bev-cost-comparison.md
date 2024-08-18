@@ -37,7 +37,7 @@ First, let us see what parameters we are going to use
 To keep it simple and not bloat this blog article, I have created the calculations in a Scala REPL. Please have a 
 look [here](https://scastie.scala-lang.org/nX5uMcgZQx2HXVnMk4tFvA)
 
-## What do the results say
+## What do the results say?
 
 I compared a Toyota Corolla Cross 2.0 against aa Tesla Model Y and here are the comparison results:
 
