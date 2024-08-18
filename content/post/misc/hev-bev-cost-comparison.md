@@ -26,7 +26,7 @@ First, let us see what parameters we are going to use
 
 **Liters per 100 KM** - How many liters for HEV or how much kWh for BEV is required to cover 100 KM
 
-**Total KM over a year** - Total KM that will be driven over a year
+**Total km over a year** - Total Kilometers that will be driven over a year
 
 **Maintenance Costs per year** - Average maintenance costs per year
 
