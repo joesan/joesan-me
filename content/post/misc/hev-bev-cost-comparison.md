@@ -1,6 +1,6 @@
 +++
 description="This is what it costs when you own a HEV (Hybrid Electric Vehicle) or a BEV"
-title="Operational Cost comparision between a HEV and BEV"
+title="Operational Cost comparison between a HEV and BEV"
 date=2024-08-16
 
 categories = ["misc"]
@@ -16,21 +16,21 @@ First, let us see what parameters we are going to use
 
 ## Parameters to use
 
-Purchase Price - The most important parameter that heavily influences which car to buy
+**Purchase Price** - The most important parameter that heavily influences which car to buy
 
-Total Years of Ownership - For how many years do you want to own your car after purchase
+**Total Years of Ownership** - For how many years do you want to own your car after purchase
 
-Fuel Price - The cost per liter of fuel at the pipe (be it cost per Kwh for BEV or cost per liter for HEV)
+**Fuel Price** - The cost per liter of fuel at the pipe (be it cost per Kwh for BEV or cost per liter for HEV)
 
-Fuel Price Appreciation Percentage - By how much factor does the Fuel price appreciates YoY (Year over Year)
+**Fuel Price Appreciation Percentage** - By how much factor does the Fuel price appreciates YoY (Year over Year)
 
-Liters per 100 KM - How many liters for HEV or how many Kwh for BEV is required to cover 100 KM
+**Liters per 100 KM** - How many liters for HEV or how many Kwh for BEV is required to cover 100 KM
 
-Total KM over a year - Total KM that will be driven over a year
+**Total KM over a year** - Total KM that will be driven over a year
 
-Maintenance Costs per year - Average maintenance costs per year
+**Maintenance Costs per year** - Average maintenance costs per year
 
-Additional Costs - Any other additional costs. For example., installation of a Wallbox at home
+**Additional Costs** - Any other additional costs. For example., installation of a Wallbox at home
 
 ## Let us calculate
 
