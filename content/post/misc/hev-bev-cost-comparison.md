@@ -20,11 +20,11 @@ First, let us see what parameters we are going to use
 
 **Total Years of Ownership** - For how many years do you want to own your car after purchase
 
-**Fuel Price** - The cost per liter of fuel at the pipe (be it cost per Kwh for BEV or cost per liter for HEV)
+**Fuel Price** - The cost per liter of fuel at the pipe (be it cost per kWh for BEV or cost per liter for HEV)
 
 **Fuel Price Appreciation Percentage** - By how much factor does the Fuel price appreciates YoY (Year over Year)
 
-**Liters per 100 KM** - How many liters for HEV or how many Kwh for BEV is required to cover 100 KM
+**Liters per 100 KM** - How many liters for HEV or how much kWh for BEV is required to cover 100 KM
 
 **Total KM over a year** - Total KM that will be driven over a year
 
@@ -39,7 +39,7 @@ look [here](https://scastie.scala-lang.org/nX5uMcgZQx2HXVnMk4tFvA)
 
 ## What do the results say
 
-I compared a Toyota Corolla Cross 2.0 against aa Tesla Model Y and here are the comparision results:
+I compared a Toyota Corolla Cross 2.0 against aa Tesla Model Y and here are the comparison results:
 
 ```
 Corolla Cross 2.0 Hybrid: **********
