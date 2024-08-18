@@ -24,7 +24,7 @@ First, let us see what parameters we are going to use
 
 **Fuel Price Appreciation Percentage** - By how much factor does the Fuel price appreciates YoY (Year over Year)
 
-**Liters per 100 KM** - How many liters for HEV or how much kWh for BEV is required to cover 100 KM
+**Liters per 100 km** - How many liters for HEV or how much kWh for BEV is required to cover 100 Kilometers
 
 **Total km over a year** - Total Kilometers that will be driven over a year
 
