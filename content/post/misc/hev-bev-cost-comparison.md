@@ -78,7 +78,7 @@ is a very strong coupling between Fuel and Electricity prices (unfortunately)!*
 
 Hint: For the Fuel and Electricity prices, I used the following data as source:
 
-For Fuel prices - https://www.statista.com/statistics/1346072/diesel-fuel-average-price-germany/
+For Fuel prices - https://www.statista.com/statistics/1346041/premium-gasoline-average-price-germany/
 
 For Electricity prices - https://tradingeconomics.com/germany/electricity-prices-medium-size-households-eurostat-data.html
 
