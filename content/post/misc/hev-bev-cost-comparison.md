@@ -14,7 +14,7 @@ price crazyness for EV will eventually settle and be more affordable.
 
 After some extensive research, I'm finding that the EV cars offered on the market is atleast ca. 10K Euros more than what 
 they are worthy. For example., a Tesla Model Y should be somewhere between 30K and 40K against what it costs now. This 
-applies to all the other EV cars as well. So I wanted to do some calculations that would give mea sense of what I will 
+applies to all the other EV cars as well. So I wanted to do some calculations that would give me a sense of what I will 
 be spending over the years as operational costs.
 
 In this blog, I wanted to present my simple rational that helped me make my decision.
