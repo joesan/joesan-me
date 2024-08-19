@@ -65,12 +65,12 @@ Plugging in the values we get:
 
 **Fuel price increase over the last 10 years = 33%**
 
-So that more or less works out to a ca. 3% increase YoY for both Fuel and Electricity price over the last 10 years. But in 
-my calculations, I have assumed an YoY increase of 10% for Fuel prices, and a 2% increase YoY for electricity 
-prices which means my calculations work in favor of electricity prices.
+So that more or less works out to a ca. 3% increase YoY for both Fuel and Electricity price over the last 10 years. 
 
-I assumed a 10% increase on Fuel prices YoY from now until the next 10 years considering the fact that the CO2 tax per tonne
-is set to increase over the next years and this has a direct impact on the Fuel prices.
+But in  my calculations, I have assumed an YoY increase of 10% for Fuel prices, and a 2% increase YoY for electricity 
+prices which means my calculations work in favor of electricity prices. A 10% increase is assumed on the fact that Fuel prices 
+YoY from now until the next 10 years considering the fact that the CO2 tax per tonne is set to increase over the next years and this 
+has a direct impact on the Fuel prices.
 
 *Disclaimer: If you understand how the electricity prices (and if you are clever enough) are set (merit order), you will be
 able to infer that the electricity prices will also rise more-or-less on the same percentage YoY like Fuel prices as there
@@ -81,8 +81,6 @@ Hint: For the Fuel and Electricity prices, I used the following data as source:
 For Fuel prices - https://www.statista.com/statistics/1346072/diesel-fuel-average-price-germany/
 
 For Electricity prices - https://tradingeconomics.com/germany/electricity-prices-medium-size-households-eurostat-data.html
-
-
 
 ## What do the results say?
 
