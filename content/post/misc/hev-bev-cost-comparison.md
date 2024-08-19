@@ -46,6 +46,44 @@ First, let us see what parameters we are going to use
 To keep it simple and not bloat this blog article, I have created the calculations in a Scala REPL. Please have a 
 look [here](https://scastie.scala-lang.org/dfpAWiu7QI2Lf3Ptig0lZg)
 
+## What were my assumptions?
+
+In my calculations I assumed a 10% price increase every year for Fuel, and a 2% price increase for electricity every year.
+
+For example., if we look at the electricity household price per kWh, it was around 0.29 Euros per kWh in 2014 and now in 2024
+it is 0.40 Euros per kWh (average). For Fuel prices, it was roughly 1.35 Euros in 2014 and now it is 1.80 Euros per liter (average).
+
+We calculate the percentage increase over the last 10 years, using:
+
+```
+percentaage increaase = ((new_price - old_price) / old_price) * 100
+```
+
+Plugging in the values we get:
+
+**Electricity price increase over the last 10 years = 37%**
+
+**Fuel price increase over the last 10 years = 33%**
+
+So that more or less works out to a ca. 3% increase YoY for both Fuel and Electricity price over the last 10 years. But in 
+my calculations, I have assumed an YoY increase of 10% for Fuel prices, and a 2% increase YoY for electricity 
+prices which means my calculations work in favor of electricity prices.
+
+I assumed a 10% increase on Fuel prices YoY from now until the next 10 years considering the fact that the CO2 tax per tonne
+is set to increase over the next years and this has a direct impact on the Fuel prices.
+
+*Disclaimer: If you understand how the electricity prices (and if you are clever enough) are set (merit order), you will be
+able to infer that the electricity prices will also rise more-or-less on the same percentage YoY like Fuel prices as there
+is a very strong coupling between Fuel and Electricity prices (unfortunately)!*
+
+Hint: For the Fuel and Electricity prices, I used the following data as source:
+
+For Fuel prices - https://www.statista.com/statistics/1346072/diesel-fuel-average-price-germany/
+
+For Electricity prices - https://tradingeconomics.com/germany/electricity-prices-medium-size-households-eurostat-data.html
+
+
+
 ## What do the results say?
 
 I compared a Toyota Corolla Cross 2.0 against aa Tesla Model Y and here are the comparison results:
