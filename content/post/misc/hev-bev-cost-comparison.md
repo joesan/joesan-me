@@ -68,9 +68,9 @@ Plugging in the values we get:
 So that more or less works out to a ca. 3% increase YoY for both Fuel and Electricity price over the last 10 years. 
 
 But in  my calculations, I have assumed an YoY increase of 10% for Fuel prices, and a 2% increase YoY for electricity 
-prices which means my calculations work in favor of electricity prices. A 10% increase is assumed on the fact that Fuel prices 
-YoY from now until the next 10 years considering the fact that the CO2 tax per tonne is set to increase over the next years and this 
-has a direct impact on the Fuel prices.
+prices which means my calculations work in favor of electricity prices. A 10% increase in Fuel prices YoY from now until 
+the next 10 years is based on the fact that there will be an increase in the CO2 emissions tax per ton and this tax will
+have a direct effect on the Fuel prices at the tank stations.
 
 *Disclaimer: If you understand how the electricity prices (and if you are clever enough) are set (merit order), you will be
 able to infer that the electricity prices will also rise more-or-less on the same percentage YoY like Fuel prices as there
