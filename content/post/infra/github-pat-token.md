@@ -4,7 +4,7 @@ description="Use Tokens Instead Of Passwords""
 date=2024-12-12
 
 categories = ["Technical Stuff"]
-tags = ["github", "git"]]
+tags = ["github", "git"]
 +++
 
 TODO: use this as reference - https://sheepblackish.medium.com/set-up-git-credentials-on-mac-os-with-private-key-github-access-token-8bf7b79e91d4
