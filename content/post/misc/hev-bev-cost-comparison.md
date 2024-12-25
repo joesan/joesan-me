@@ -84,7 +84,7 @@ For Electricity prices - https://tradingeconomics.com/germany/electricity-prices
 
 ## What do the results say?
 
-I compared a Toyota Corolla Cross 2.0 against aa Tesla Model Y and here are the comparison results:
+I compared a Toyota Corolla Cross 2.0 (purchasePrice = 33000) against aa Tesla Model Y (purchasePrice = 49000) and here are the comparison results:
 
 ```
 Corolla Cross 2.0 Hybrid: **********
