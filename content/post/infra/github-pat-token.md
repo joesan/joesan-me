@@ -1,6 +1,6 @@
 +++
 title="GitHub Personal Access Token For Local Development"
-description="Use Tokens Instead Of Passwords""
+description="Use Tokens Instead Of Passwords"
 date=2024-12-12
 
 categories = ["Technical Stuff"]
