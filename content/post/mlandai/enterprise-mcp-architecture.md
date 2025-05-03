@@ -8,7 +8,7 @@ categories = ["Technical Stuff"]
 tags = ["ai", "ml", "mcp", "enterprise"]
 +++
 
-## 
+## TODO: Under documentation
 
 Key Components in the Updated Architecture
 
