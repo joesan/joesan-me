@@ -10,7 +10,7 @@ Recently I had to make a choice of which new car to get so that I can replace my
 to electric vehicles, it is definitely an unfortunate time to buy. I mean it is an unfortunate time in the sense that EV is
 an emerging technology market, and we see new cars launched every year and with that new technology, be it the battery (solid state), or
 the charging speed among many others, the prices are insanely expensive. It will definitely take a few years until this
-price crazyness for EV will eventually settle and be more affordable.
+price craziness for EV will eventually settle and be more affordable.
 
 After some extensive research, I'm finding that the EV cars offered on the market is atleast ca. 10K Euros more than what 
 they are worthy. For example., a Tesla Model Y should be somewhere between 30K and 40K against what it costs now. This 
@@ -22,6 +22,12 @@ In this blog, I wanted to present my simple rational that helped me make my deci
 **NOTE: I cannot vouch for the correctness, and I'm not liable if you use this article for basing your purchase decision!**
 
 First, let us see what parameters we are going to use
+
+## Assumptions
+
+-> No comparison based on pure Horse Power or Torque or any other performance metrics
+
+-> This specific comparison is not to be generalized for any cars other than these two cars that are being compared
 
 ## Parameters to use
 
