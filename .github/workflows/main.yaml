@@ -35,7 +35,7 @@ jobs:
 
   listDraftContent:
     needs: linkChecker
-    runs-on: macos-11
+    runs-on: macos-latest
     if: github.ref == 'refs/heads/master'
     env:
       TARGET_BRANCH: draft-status
