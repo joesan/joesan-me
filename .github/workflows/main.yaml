@@ -44,6 +44,11 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
 
+      - name: Configure git
+        run: |
+          git config --global user.email "workflow-bot@bigelectrons.com"
+          git config --global user.name "workflow-bot"
+
       - name: Save script before switching branch
         run: |
           mkdir -p temp_scripts
@@ -69,7 +74,7 @@ jobs:
           git add draftStatus.txt README.md
           git commit -m "generated draftStatus.txt"
           git push --set-upstream origin $TARGET_BRANCH --force
-  
+
 
   deploy:
     runs-on: ubuntu-latest
