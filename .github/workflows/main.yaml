@@ -50,29 +50,29 @@ jobs:
           git config --global user.email "workflow-bot@bigelectrons.com"
           git config --global user.name "workflow-bot"
 
-      - name: Debug directory structure
+      - name: List all files after checkout
         run: |
-          echo "Current files in repo:"
+          echo "=== File tree ==="
           find . -type f
 
       - name: Save script before switching branch
         run: |
           mkdir -p temp_scripts
-          cp scripts/list_draft_content.sh temp_scripts/
-          chmod +x temp_scripts/list_draft_content.sh
+          # Replace the path below based on the output of the step above
+          cp .github/scripts/list_draft_content temp_scripts/
+          chmod +x temp_scripts/list_draft_content
 
       - name: Create orphan branch and restore script
         run: |
           git checkout --orphan $TARGET_BRANCH
           git rm -rf . || true
-
-          mkdir -p scripts
-          mv temp_scripts/list_draft_content.sh scripts/
+          mkdir -p .github/scripts
+          mv temp_scripts/list_draft_content .github/scripts/
 
       - name: Run Draft Content Script
         run: |
           echo "Running script to generate draftStatus.txt..."
-          bash scripts/list_draft_content.sh content draftStatus.txt
+          bash .github/scripts/list_draft_content content draftStatus.txt
           echo "Output:"
           cat draftStatus.txt
 
@@ -83,7 +83,6 @@ jobs:
           git commit -m "generated draftStatus.txt"
           git push --set-upstream origin $TARGET_BRANCH --force
   
-
   deploy:
     runs-on: ubuntu-latest
     needs: linkChecker
