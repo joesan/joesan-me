@@ -16,8 +16,8 @@ object ListDraftContent {
   val fileExtensions: List[String] = List(".md", ".markdown")
 
   def main(args: Array[String]) {
-    val pathName = if(args(0).isEmpty) "../content" else args(0).trim()
-    val fileName = if(args(1).isEmpty) "draftStatus" else args(1).trim()
+    val pathName = if (args(0).isEmpty) "../content" else args(0).trim()
+    val fileName = if (args(1).isEmpty) "draftStatus" else args(1).trim()
     val result: Array[File] = fetchFilesRecursively(new File(pathName))
     val filteredFiles: Seq[File] = result.toSeq.filter{ file => fileExtensions.exists(file.getName.endsWith(_)) }
 
