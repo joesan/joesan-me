@@ -20,7 +20,7 @@ jobs:
   linkChecker:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Check HTTP Links
         uses: lycheeverse/lychee-action@v1.0.8
         with:
@@ -33,29 +33,51 @@ jobs:
           #content-filepath: ./lychee/out.md
           #labels: report, automated issue
 
-  listDraftContent:
-    needs: linkChecker
-    runs-on: macos-latest
-    if: github.ref == 'refs/heads/master'
-    env:
-      TARGET_BRANCH: draft-status
-    steps:
-      - name: Check out repo
-        uses: actions/checkout@v2
-      - name: Install Scala
-        run: |-
-          brew install scala
-          git config --global user.email "workflow-bot@bigelectrons.com"
-          git config --global user.name "workflow-bot"
-          git checkout --orphan $TARGET_BRANCH
-          echo "Current directory: $(pwd)"
-          echo "Current contents: $(ls -lrt)"
-          bash ./.github/scripts/list_draft_content content draftStatus.txt
-          rm README.md
-          echo -e "TEMPORARY BRANCH, PLEASE NAVIGATE TO THE MASTER BRANCH" > README.md
-          git add .
-          git commit -m "generated draftStatus.txt"
-          git push --set-upstream origin $TARGET_BRANCH --force
+listDraftContent:
+  needs: linkChecker
+  runs-on: macos-latest
+  if: github.ref == 'refs/heads/master'
+  env:
+    TARGET_BRANCH: draft-status
+
+  steps:
+    - name: Checkout repo
+      uses: actions/checkout@v3
+
+    - name: Install Scala
+      run: |
+        brew install scala
+        git config --global user.email "workflow-bot@bigelectrons.com"
+        git config --global user.name "workflow-bot"
+
+    - name: Save script before switching branch
+      run: |
+        mkdir -p temp_scripts
+        cp .github/scripts/list_draft_content temp_scripts/
+        chmod +x temp_scripts/list_draft_content
+
+    - name: Create orphan branch and restore script
+      run: |
+        git checkout --orphan $TARGET_BRANCH
+        git rm -rf . || true
+
+        mkdir -p .github/scripts
+        mv temp_scripts/list_draft_content .github/scripts/
+
+    - name: Run Draft Content Script
+      run: |
+        echo "Running script to generate draftStatus.txt..."
+        bash .github/scripts/list_draft_content content draftStatus.txt
+        echo "Output:"
+        cat draftStatus.txt
+
+    - name: Commit and push draftStatus.txt
+      run: |
+        rm -f README.md
+        echo "TEMPORARY BRANCH, PLEASE NAVIGATE TO THE MASTER BRANCH" > README.md
+        git add draftStatus.txt README.md
+        git commit -m "generated draftStatus.txt"
+        git push --set-upstream origin $TARGET_BRANCH --force
 
   deploy:
     runs-on: ubuntu-latest
