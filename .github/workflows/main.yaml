@@ -35,7 +35,7 @@ jobs:
 
   listDraftContent:
     needs: linkChecker
-    runs-on: macos-latest
+    runs-on: ubuntu-latest   # ubuntu works fine for bash scripts
     if: github.ref == 'refs/heads/master'
     env:
       TARGET_BRANCH: draft-status
@@ -43,14 +43,6 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
-
-      - name: Install Scala CLI
-        run: |
-          brew install scala
-
-          # Optional but useful:
-          git config --global user.email "workflow-bot@bigelectrons.com"
-          git config --global user.name "workflow-bot"
 
       - name: Save script before switching branch
         run: |
@@ -65,11 +57,10 @@ jobs:
           mkdir -p .github/scripts
           mv temp_scripts/list_draft_content.sh .github/scripts/
 
-      - name: Run Draft Content Script
+      - name: Run draft status script
         run: |
-          echo "Running Scala script to generate draftStatus.txt..."
-          scala shebang .github/scripts/list_draft_content.sh content draftStatus.txt
-          echo "Output:"
+          bash .github/scripts/list_draft_content.sh content draftStatus.txt
+          echo "Output draftStatus.txt:"
           cat draftStatus.txt
 
       - name: Commit and push draftStatus.txt
@@ -78,6 +69,7 @@ jobs:
           git add draftStatus.txt README.md
           git commit -m "generated draftStatus.txt"
           git push --set-upstream origin $TARGET_BRANCH --force
+  
 
   deploy:
     runs-on: ubuntu-latest

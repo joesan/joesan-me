@@ -1,52 +1,18 @@
-#!/bin/sh
-exec scala "$0" "$@"
-!#
+#!/bin/bash
 
-import scala.io.Source
-import scala.util.Using
-import java.io.File
-import java.io.PrintWriter
-import scala.util.Try
-import scala.util.Success
+CONTENT_DIR=${1:-"content"}
+OUTPUT_FILE=${2:-"draftStatus.txt"}
 
-// Utility to print the files from a directors that matches a specific String
-object ListDraftContent {
+echo "Listing draft markdown files in $CONTENT_DIR..."
 
-  // The file extensions to check for the draft content
-  val fileExtensions: List[String] = List(".md", ".markdown")
+> "$OUTPUT_FILE"
 
-  def main(args: Array[String]) {
-    val pathName = if (args(0).isEmpty) "../content" else args(0).trim()
-    val fileName = if (args(1).isEmpty) "draftStatus" else args(1).trim()
-    val result: Array[File] = fetchFilesRecursively(new File(pathName))
-    val filteredFiles: Seq[File] = result.toSeq.filter{ file => fileExtensions.exists(file.getName.endsWith(_)) }
+find "$CONTENT_DIR" -name '*.md' | while read -r file; do
+  if grep -q "^draft *= *true" "$file"; then
+    echo "DRAFT: $file" >> "$OUTPUT_FILE"
+  else
+    echo "PUBLISHED: $file" >> "$OUTPUT_FILE"
+  fi
+done
 
-    println("---------------- Start: Printing all Files in draft=true status -------------------")
-    // This will be the target file where we write
-    val printWriter: PrintWriter = new PrintWriter(fileName)
-    val filtered: Seq[Try[String]] = filteredFiles.map { file =>
-      Using(Source.fromFile(file)) { source => source.getLines().take(10).mkString }.collect {
-        case elem if elem.contains("draft=true") =>
-          println(s"${file.getPath}")
-          file.getPath
-      }
-    }
-    println("---------------- End: Printing all Files in draft status --------------------------")
-    println(s"---------------- Start: Writing Files in draft status to file $printWriter.---------------")
-    try {
-      filtered.foreach {
-        case Success(value) =>
-          println(s"Writing filename $value")
-          printWriter.write(s"$value \n")
-        case _ => // do nothing
-      }
-    } finally { printWriter.close() }
-    println("---------------- END: Writing all Files in draft status to a file -----------------")
-  }
-
-  // Fetch the files recursively
-  def fetchFilesRecursively(f: File): Array[File] = {
-    val these = f.listFiles
-    these ++ these.filter(_.isDirectory).flatMap(fetchFilesRecursively)
-  }
-}
+echo "Draft status saved in $OUTPUT_FILE"
