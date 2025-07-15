@@ -44,22 +44,22 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Install Scala
+      - name: Install Scala CLI
         run: |
           brew install scala
+
+          # Optional but useful:
           git config --global user.email "workflow-bot@bigelectrons.com"
           git config --global user.name "workflow-bot"
 
       - name: Save script before switching branch
         run: |
-          echo "Copying script to temporary directory..."
           mkdir -p temp_scripts
           cp .github/scripts/list_draft_content.sh temp_scripts/
           chmod +x temp_scripts/list_draft_content.sh
 
       - name: Create orphan branch and restore script
         run: |
-          echo "Creating orphan branch: $TARGET_BRANCH"
           git checkout --orphan $TARGET_BRANCH
           git rm -rf . || true
           mkdir -p .github/scripts
@@ -67,9 +67,9 @@ jobs:
 
       - name: Run Draft Content Script
         run: |
-          echo "Running script to generate draftStatus.txt..."
-          bash .github/scripts/list_draft_content.sh content draftStatus.txt
-          echo "Output of draftStatus.txt:"
+          echo "Running Scala script to generate draftStatus.txt..."
+          scala shebang .github/scripts/list_draft_content.sh content draftStatus.txt
+          echo "Output:"
           cat draftStatus.txt
 
       - name: Commit and push draftStatus.txt
