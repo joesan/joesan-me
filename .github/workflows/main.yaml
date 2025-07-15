@@ -50,9 +50,7 @@ jobs:
           git checkout --orphan $TARGET_BRANCH
           echo "Current directory: $(pwd)"
           echo "Current contents: $(ls -lrt)"
-          cd ..
-          echo "One up: $(ls -lrt)"
-          bash .github/scripts/list_draft_content content draftStatus.txt
+          bash ./.github/scripts/list_draft_content content draftStatus.txt
           rm README.md
           echo -e "TEMPORARY BRANCH, PLEASE NAVIGATE TO THE MASTER BRANCH" > README.md
           git add .
