@@ -35,7 +35,7 @@ jobs:
 
   listDraftContent:
     needs: linkChecker
-    runs-on: ubuntu-latest   # ubuntu works fine for bash scripts
+    runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/master'
     env:
       TARGET_BRANCH: draft-status
@@ -44,38 +44,40 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Configure git
+      - name: Install tools and configure git
         run: |
+          brew install scala || echo "brew not available on ubuntu, skipping"
           git config --global user.email "workflow-bot@bigelectrons.com"
           git config --global user.name "workflow-bot"
 
-      - name: Save script before switching branch
+      - name: Run draft status script (on master branch)
         run: |
-          mkdir -p temp_scripts
-          cp .github/scripts/list_draft_content.sh temp_scripts/
-          chmod +x temp_scripts/list_draft_content.sh
+          chmod +x .github/scripts/list_draft_content.sh
+          .github/scripts/list_draft_content.sh content draftStatus.txt
+          echo "Output of draftStatus.txt:"
+          cat draftStatus.txt
 
-      - name: Create orphan branch and restore script
+      - name: Preserve files before orphaning
+        run: |
+          mkdir orphan_temp
+          mv draftStatus.txt orphan_temp/
+          echo "TEMPORARY BRANCH, PLEASE NAVIGATE TO THE MASTER BRANCH" > orphan_temp/README.md
+          cp .github/scripts/list_draft_content.sh orphan_temp/
+
+      - name: Create orphan branch and commit
         run: |
           git checkout --orphan $TARGET_BRANCH
           git rm -rf . || true
+
           mkdir -p .github/scripts
-          mv temp_scripts/list_draft_content.sh .github/scripts/
+          mv orphan_temp/list_draft_content.sh .github/scripts/
+          mv orphan_temp/draftStatus.txt .
+          mv orphan_temp/README.md .
 
-      - name: Run draft status script
-        run: |
-          bash .github/scripts/list_draft_content.sh content draftStatus.txt
-          echo "Output draftStatus.txt:"
-          cat draftStatus.txt
-
-      - name: Commit and push draftStatus.txt
-        run: |
-          echo "TEMPORARY BRANCH, PLEASE NAVIGATE TO THE MASTER BRANCH" > README.md
           git add draftStatus.txt README.md
           git commit -m "generated draftStatus.txt"
           git push --set-upstream origin $TARGET_BRANCH --force
-
-
+  
   deploy:
     runs-on: ubuntu-latest
     needs: linkChecker
