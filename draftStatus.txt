@@ -1,0 +1,14 @@
+content/post/infra/keep-it-up-to-date.md
+content/post/mlandai/enterprise-mcp-architecture.md
+content/post/mlandai/knn-image-classification.draft.md
+content/post/mlandai/linear-regression.md
+content/post/math/back-propogation-neural-network.md
+content/post/math/statistics-summary.draft.md
+content/post/math/gradient-descent-part-1.md
+content/post/math/math-probability-bayes-theorem.draft.md
+content/post/scala/scala-type-classes-hkt.md
+content/post/scala/scala-shell-script.md
+content/post/scala/scala-monads.md
+content/post/scala/scala-magnet-pattern.md
+content/post/engineering/handling-cascading-failures.draft.md
+content/post/engineering/latency-numbers-and-making-sense-of-it.md
