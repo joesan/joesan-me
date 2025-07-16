@@ -23,12 +23,6 @@ In this blog, I wanted to present my simple rational that helped me make my deci
 
 First, let us see what parameters we are going to use
 
-## Assumptions
-
--> No comparison based on pure Horse Power or Torque or any other performance metrics
-
--> This specific comparison is not to be generalized for any cars other than these two cars that are being compared
-
 ## Parameters to use
 
 **Purchase Price** - The most important parameter that heavily influences which car to buy
@@ -53,6 +47,10 @@ To keep it simple and not bloat this blog article, I have created the calculatio
 look [here](https://scastie.scala-lang.org/dfpAWiu7QI2Lf3Ptig0lZg)
 
 ## What were my assumptions?
+
+-> No comparison based on pure Horse Power or Torque or any other performance metrics
+
+-> This specific comparison is not to be generalized for any cars other than these two cars that are being compared
 
 In my calculations I assumed a 10% price increase every year for Fuel, and a 2% price increase for electricity every year.
 
